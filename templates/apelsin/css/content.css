@@ -1247,7 +1247,6 @@ form.reviews {
 
 .VacanciesValidString {
     margin: 0 auto;
-    /*width: 650px;*/
     border-bottom: 1px #999 dotted;
     height: 31px;
     margin-bottom: 2px;
@@ -1256,12 +1255,10 @@ form.reviews {
 
 .validVacancyAdress {
     float: left;
-    /*width: 140px;*/
     width: 130px;
     padding: 2px;
     height: 20px;
     font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
-    /*border-right: 1px #999 dotted;*/
     text-align: center;
 }
 
@@ -1272,13 +1269,11 @@ form.reviews {
     padding: 2px;
     height: 20px;
     font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
-    /*border-right: 1px #999 dotted;*/
     text-align: center;
 }
 
 .validVacancyContactInfo {
     float: left;
-    /*width: 190px;*/
     width: 130px;
     padding: 2px;
     height: 20px;
@@ -1301,4 +1296,9 @@ h1.shopContactTitle {
     background: #ef7f1a;
     margin: 0px 0px 0px 0px;
     padding: 0px 5px 0px 10px;
+}
+
+.contentBlock .ContactsMap ul {
+    margin-left: 30px;
+    margin-bottom: 0px;
 }

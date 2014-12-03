@@ -70,21 +70,6 @@
     text-align: center;
 }
 
-/*.pageTitleWrapper {
-    float: right;
-    width: 480px;
-    height: 94px;
-    display: table;
-    
-}
-.pageTitleBlock {
-    width: 480px;
-    height: 94px;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}*/
-
 .middleWrapper {
     
 }
@@ -92,9 +77,7 @@
 }
 
 .bottomWrapper {
-    /*height: 200px;*/
     width: 100%;
-    border-top: #fff solid 1px;
     background: url(../img/footer.png) repeat center center;
     clear: both;
     position: absolute;  
