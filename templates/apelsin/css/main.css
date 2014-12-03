@@ -1,0 +1,165 @@
+*, body, html, root {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,body {
+    height:100%;
+}
+
+root { 
+    display: block;
+}
+
+html {height: 100%;}  
+* html body {height: 100%;}  
+body {  
+    min-height: 100%;  
+    position: relative;  
+}  
+
+body {
+    /*background: #F0F0F0;*/
+    background: #FFF;
+    /*background: #fff url('../img/page_bg.png') 0 0 repeat;*/
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #4d4d4d;
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+}
+
+h1, h2, h3, h4, .materialHeder {
+    height: 30px;
+    padding-left: 10px;
+    font: 18px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    color: #9c9c9c;
+    text-align: left;
+    
+    font: 18px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    background: #ef7f1a;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 5px 0px 10px;
+}
+.materialHeder .materialTitle {
+    font: 18px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.Materials.Material h1,
+.Materials.Material h2,
+.Materials.Material h3,
+.Materials.Material h4 {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: underline;
+    text-decoration: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.page_title {
+    color: #ef7f1a;
+    text-shadow: 
+        1px 0px 0px #FFF, 
+        0px 1px 0px #FFF, 
+        -1px 0px 0px #FFF, 
+        0px -1px 0px #FFF, 
+        1px 1px 0px #FFF, 
+        -1px -1px 0px #FFF, 
+        0px 0px 3px #FFF;
+    
+    /*text-align: right;*/
+    font: bold 20px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 0px 30px 0px 30px;
+    display: block;
+    clear: both;
+}
+
+::-webkit-scrollbar { 
+    width: 5px; height: 5px;
+}
+::-webkit-scrollbar-button {  
+    background-color: #ef7f1a; 
+    width: 0px; height: 0px;
+}
+::-webkit-scrollbar-track {  
+    background-color: #ef581a;
+}
+::-webkit-scrollbar-track-piece { 
+    background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb { 
+    height: 50px; 
+    background-color: #ef581a; 
+    border-radius: 3px;
+}
+::-webkit-scrollbar-corner { 
+    background-color: #ef581a;
+}
+/*::-webkit-resizer { 
+    background-color: #ef581a;
+}*/
+input[type=text],
+input[type=password],
+textarea,
+.selectBox {
+    /*background: #efefef;*/
+    background: rgb(245,250,255);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font: 13px/17px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #ef7f1a;
+/*    width: 400px;*/
+    margin: 2px 0px 2px 0px;
+    border: none;
+    box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 0 #fff;
+}
+input[type=submit], input[type=button] {
+    font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ef7f1a;
+    padding: 5px 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    border: none;
+    background: #e2e2e2;
+    background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0px 1px 0px #fff;
+}
+
+input[type=submit]:hover, input[type=button]:hover {
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5);
+}
+
+input[type=button].bigButton {
+    font: 20px/30px 'Open Sans',Arial,Helvetica,sans-serif;
+    font-weight: bold;
+}
+
+input[type=file] {
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5);
+    background: rgb(245,250,255);
+}

@@ -1,0 +1,215 @@
+/*.Feedback {
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}*/
+a {
+    cursor: pointer;
+}
+
+
+/*форма отзыва ------------------------------------------------------------------------------*/
+.formFeedback {
+    display: none;
+}
+.feedbackFormFootNote {
+    font-size: .9em;
+    padding: 5px;
+}
+/*----------------------------------------------------------------------------------------------*/
+
+/*форма комментов -----------------------------------------------------------------------------*/
+.formFeedbackComment{
+    display: none;
+}
+/*-----------------------------------------------------------------------------------------------*/
+
+/*лист отзывов ----------------------------------------------------------------------------------*/
+.feedbackElement {
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.7);
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-shadow: 0 1px 0 white;
+    text-align: left;
+    background: rgba(0,0,0,0.10);
+    padding: 10px;
+    border-top: 1px solid #5bafff;
+    border-bottom: 1px solid #5bafff;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.7);
+    border-top: 1px solid #5bafff;
+    border-bottom: 1px solid #5bafff;
+}
+.feedbackElement > div {
+    padding: 10px;
+}
+.feedbackPanel {
+    height: 25px;
+    padding: 0 !important;
+}
+
+
+.feedbackDatePanel {
+    text-align: right;
+    height: 10px;
+    padding: 0 !important;
+}
+
+
+.feedbackCountLike {
+    float: left;
+    margin: 5px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    text-align: center;
+    line-height: 1.3em;
+}
+.feedbackLikeButton {
+    float: left;
+    margin: 5px;
+    cursor: pointer;
+}
+.feedbackSelectLike {
+    background: #ff0;
+}
+.feedbackSelectDislike {
+    background: #fa0;
+}
+
+
+.feedbackPanelShowComments {
+    float: right;
+}
+.feedbackShowComments {
+    display: none;
+    margin-top: 10px;
+}
+.feedbackListComments li {
+    list-style-type: none;
+}
+.feedbackShowButton {
+    float: left;
+    margin: 5px;
+    background: #cce9f2;
+    cursor: pointer;
+}
+.feedbackHideButton {
+    float: left;
+    margin: 5px 5px  0px 0px;
+    cursor: pointer;
+    background: #ffe3cf;
+}
+.feedbackCommentButton {
+    float: left;
+    margin: 5px 0px 5px 5px;
+    cursor: pointer;
+}
+.feedbackPaginationConteiner {
+    height: 20px;
+}
+.feedbackPagination {
+    list-style-type: none;
+}
+.feedbackPagination li {
+    float: left;
+    list-style-type: none;
+    margin-right: 5px;
+}
+.feedbackCurrentPagePagination {
+    color: green;
+}
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Rating  ----------------------------------------------------------------------------------------------------------*/
+.feedbackStarRatingConteiner {
+    margin: 0;
+    float: left;
+    width: 120px;
+    height: 20px;
+}
+dl.feedbackStarRating ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100px;
+    height: 20px;
+    position: relative;
+    background: url(./../image/stars.png);
+}
+dl.feedbackStarRating li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+dl.feedbackStarRating li a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    position: absolute;
+    text-decoration: none;
+    z-index: 10;
+}
+dl.feedbackStarRating li.feedbackCurrent {
+    background: url(./../image/stars.png) left bottom;
+    height: 20px;
+    z-index: 1;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
+/*для class  ErrorHelper  -----------------------------------------------------------------------------------------------------*/
+
+#parentPopup {
+    background: #000;
+    height: 100%;
+    opacity: 0.7;
+    position: fixed;
+    width: 100%;
+    z-index:  8041;
+    top: 0;
+    left: 0;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -165px;
+    margin-top: -30px;
+    width: 330px;
+    padding: 5px;
+    color: black;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.popup > div{
+    padding: 10px;
+    border: 2px solid black; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.popup p {
+    margin-left: 4px;
+    margin-top: 1px;
+}
+.popupButtonExit {
+    float: right;
+    width: 16px;
+    height: 16px;
+    border: #fff 3px solid;
+    color: #fff;
+    cursor: pointer;      
+    font: normal 12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    background-color: black;
+    margin: -8px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    box-shadow:  1px 3px 3px rgba(137, 68, 25,0.5);
+}
+.popup a:hover {
+    color: #fff;
+    background-color: black;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/

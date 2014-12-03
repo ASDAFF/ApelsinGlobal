@@ -1,0 +1,126 @@
+.ApelsinContactsNavigationPanel_MainWrapper {
+    height: 300px;
+    width: 960px;
+    border-bottom: 1px solid #ccc;
+}
+.ApelsinContactsNavigationPanel_LeftWrapper {
+    float: left;
+    height: 240px;
+    width: 200px;
+    background: #ef7f1a;
+    /*box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);*/
+    /*display: none;*/
+}
+.ApelsinContactsNavigationPanel_RightWrapper {
+    float: right;
+    height: 300px;
+    width: 759px;
+    /*width: 560px;*/
+    background: #fff;
+    position: relative;
+    border-right: 1px solid #ccc;
+}
+
+.ApelsinContactsNavigationPanel_menu {
+    list-style-type: none;
+}
+
+.ApelsinContactsNavigationPanel_menu li{
+    display: block;
+    /*height: 59px;*/
+    height: 60px;
+    font: bold 18px/60px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: none;
+    padding: 0px 10px 0px 10px;
+    width: 178px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    background: #ef7f1a;
+    cursor: pointer;
+    position: relative;
+}
+.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_ThisTab {
+    background: #fff;
+    color: #ef7f1a;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+    cursor: default;
+}
+/*--------------------------------*/
+.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_Tab:hover:after, 
+.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_Tab:hover:before {
+	right: -1px;
+	top: 30px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_Tab:hover:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #fff;
+	border-width: 10px;
+	margin-top: -10px;
+}
+.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_Tab:hover:before {
+	border-color: rgba(156, 156, 156, 0);
+	border-right-color: #efefef;
+	border-right-color: #ccc;
+	border-width: 11px;
+	margin-top: -11px;
+}
+/*.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_Tab:hover:after, 
+.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_Tab:hover:before {
+    left: -1px;
+    top: 30px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_Tab:hover:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-left-color: #ffffff;
+    border-width: 10px;
+    margin-top: -10px;
+}
+.ApelsinContactsNavigationPanel_menu li.ApelsinContactsNavigationPanel_Tab:hover:before {
+    border-color: rgba(156, 156, 156, 0);
+    border-left-color: #ccc;
+    border-width: 11px;
+    margin-top: -11px;
+}*/
+/*--------------------------------*/
+
+.ApelsinContactsNavigationPanel_RightWrapper:after, 
+.ApelsinContactsNavigationPanel_RightWrapper:before {
+	right: 100%;
+	top: 90px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.ApelsinContactsNavigationPanel_RightWrapper:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #fff;
+	border-width: 10px;
+	margin-top: -10px;
+}
+.ApelsinContactsNavigationPanel_RightWrapper:before {
+	border-color: rgba(156, 156, 156, 0);
+	border-right-color: #efefef;
+	border-right-color: #ccc;
+	border-width: 11px;
+	margin-top: -11px;
+}

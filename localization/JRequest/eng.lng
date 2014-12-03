@@ -1,0 +1,63 @@
+JRequestFormButtonText=Подать заявку
+contestLable=Вид заявки
+contest=На конкурс
+noContest=Вне конкурса
+durationPatern=Время выступления в секундах
+duration=Время выступления
+durationInfo=Время указывать в секундах, только цифрами, без пробелов и символов
+kosbendTitle=Название косбенда
+kosbendTitleInfo=Если у вас нет названия косбенда, оставить пустым
+characterName=Имя вашего персонажа
+characterNameInfo=Здесь вы указываете имя только вашего персонажа!
+fendomTitle=Фендом.
+fendomTitles=Фэндом(ы)
+fendomTitlesInfo=Перечислять через запятую, каждый фендом с новой строки
+sceneryAndProps=Используемые декорации и реквизит
+sceneryAndPropsInfo=Полный перечень всех декораций и реквизита
+numberOfParticipants=Количество участников
+wish=Ваши пожелания или комментарии 
+
+songTitleKaraoke=Название композиции
+songTitleInfoKaraoke=Название должно быть на английском или на русском
+artistSongsKaraoke=Исполнитель
+artistSongsInfoKaraoke=Если это OST, в скобочках указать откуда
+
+titleScene=Название вашей сценки
+
+titleDefile=Название вашего дефиле
+
+titleActionDefile=Название вашего экшен-дефиле
+
+titleImage=Название картинки
+
+titlePhoto=Название фотонсталяции
+photographer=Фотограф
+
+songTitleDance=Название композиции для танца
+songTitleInfoDance=Название должно быть на английском или на русском
+artistSongsDance=Исполнитель
+artistSongsInfoDance=Если это OST, в скобочках указать откуда
+
+titleAMV=Название работы
+musicTracksAMV=Используемые музыкальные треки
+musicTracksInfoAMV=Перечислять через запятую, каждый трек с новой строки, в скобках указать исполнителя или OST
+programsAMV=Используемые программы
+programsInfoAMV=Перечислять через запятую, каждую программу с новой строки
+
+titleVideoCosplay=Название видео косплея
+videographer=Оператор
+videographerInfo=Указать ФИО и в скобочках ник
+musicTracksVideoCosplay=Используемые музыкальные треки
+musicTracksInfoVideoCosplay=Перечислять через запятую, каждый трек с новой строки, в скобках указать исполнителя или OST
+programsVideoCosplay=Используемые программы
+programsInfoVideoCosplay=Перечислять через запятую, каждую программу с новой строки
+
+
+login=Логин
+loginAndPasswordPatern=От 3 до 25 латинских букв и цифр
+JRequestUserAddSubmitText=Добавить
+JRequestdelUserText=Удалить пользователя из заявки
+downloaded=закачан
+noDownloaded=отсутствует
+JRequestdelFileText=удалить файл
+JRequestAddFileText=добавить файл

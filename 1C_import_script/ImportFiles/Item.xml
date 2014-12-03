@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Item>
+	<Element>
+		<Alias>067acb7a-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095749</Article>
+		<Name>Эмаль алкидная  для окон и дверей полуматовая 0,5л L-010 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  для окон и дверей полуматовая 0,5л L-010 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>7</Amount>
+		<Measure>шт</Measure>
+		<Price>186</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb7c-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095750</Article>
+		<Name>Эмаль алкидная  для радиаторов полуматовая 0,5л L-015 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  для радиаторов полуматовая 0,5л L-015 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>65</Amount>
+		<Measure>шт</Measure>
+		<Price>168</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb7e-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095751</Article>
+		<Name>Эмаль алкидная  для радиаторов полуматовая 1,8л L-015 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  для радиаторов полуматовая 1,8л L-015 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>32</Amount>
+		<Measure>шт</Measure>
+		<Price>479</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb82-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095753</Article>
+		<Name>Эмаль алкидная  глянцевая черная 0,5л L-060 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  глянцевая черная 0,5л L-060 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>34</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb86-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095755</Article>
+		<Name>Эмаль алкидная  глянцевая серая 0,5л L-060 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  глянцевая серая 0,5л L-060 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>16</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb8a-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095757</Article>
+		<Name>Эмаль алкидная  глянцевая красная 0,5л L-060 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  глянцевая красная 0,5л L-060 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>28</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb8c-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095758</Article>
+		<Name>Эмаль алкидная  глянцевая коричневая 0,5л L-060 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  глянцевая коричневая 0,5л L-060 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>2</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb90-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095760</Article>
+		<Name>Эмаль алкидная  глянцевая зеленая 0,5л L-060 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  глянцевая зеленая 0,5л L-060 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>29</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb96-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095763</Article>
+		<Name>Эмаль алкидная  глянцевая желтая 0,5л L-060 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  глянцевая желтая 0,5л L-060 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>22</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb98-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095764</Article>
+		<Name>Эмаль алкидная  глянцевая голубая 0,5л L-060 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  глянцевая голубая 0,5л L-060 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>16</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb9c-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095766</Article>
+		<Name>Эмаль алкидная  матовая белая 0,5л L-007 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  матовая белая 0,5л L-007 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>11</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acb9e-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095767</Article>
+		<Name>Эмаль алкидная  глянцевая белая 0,5л L-060 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  глянцевая белая 0,5л L-060 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>16</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acba2-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095770</Article>
+		<Name>Грунтовка алкидная серая 0,75л РА-001 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Грунтовка алкидная серая 0,75л РА-001 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>4</Amount>
+		<Measure>шт</Measure>
+		<Price>148</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acba6-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095772</Article>
+		<Name>Грунтовка алкидная красно-коричневая 0,75л РА-001 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Грунтовка алкидная красно-коричневая 0,75л РА-001 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>6</Amount>
+		<Measure>шт</Measure>
+		<Price>148</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acbaa-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095774</Article>
+		<Name>Грунтовка алкидная белая 0,75л РА-001 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Грунтовка алкидная белая 0,75л РА-001 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>10</Amount>
+		<Measure>шт</Measure>
+		<Price>148</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acbae-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095776</Article>
+		<Name>Грунтовка с фунгицидом 10л Р-101 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Грунтовка с фунгицидом 10л Р-101 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>43</Amount>
+		<Measure>шт</Measure>
+		<Price>629</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acbb0-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095777</Article>
+		<Name>Грунтовка с фунгицидом  4л Р-101 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Грунтовка с фунгицидом  4л Р-101 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>47</Amount>
+		<Measure>шт</Measure>
+		<Price>269</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acbb2-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095778</Article>
+		<Name>Element L-100  Краска латексная для кухни и ванной 10л</Name>
+		<SiteName>Element L-100  Краска латексная для кухни и ванной 10л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>38</Amount>
+		<Measure>шт</Measure>
+		<Price>1462</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acbb4-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095779</Article>
+		<Name>Element L-100  Краска латексная для кухни и ванной  5л</Name>
+		<SiteName>Element L-100  Краска латексная для кухни и ванной  5л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>21</Amount>
+		<Measure>шт</Measure>
+		<Price>789</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>067acbb6-4634-11df-860d-000e0c431b58</Alias>
+		<Article>ЛК0095780</Article>
+		<Name>Element L-100  Краска латексная для кухни и ванной  2л</Name>
+		<SiteName>Element L-100  Краска латексная для кухни и ванной  2л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>17</Amount>
+		<Measure>шт</Measure>
+		<Price>377</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>c759e9df-62a1-11e1-9169-005056be3bd8</Alias>
+		<Article>ЛК060000964</Article>
+		<Name>Element R-1 краска фактурная для внутр. и наруж. работ 5л (9,5кг)</Name>
+		<SiteName>Element R-1 краска фактурная для внутр. и наруж. работ 5л (9,5кг)</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>28</Amount>
+		<Measure>шт</Measure>
+		<Price>775</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>c759e9e1-62a1-11e1-9169-005056be3bd8</Alias>
+		<Article>ЛК060000965</Article>
+		<Name>Element R-1 краска фактурная для внутр. и наруж. работ 9л (17,1кг)</Name>
+		<SiteName>Element R-1 краска фактурная для внутр. и наруж. работ 9л (17,1кг)</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>15</Amount>
+		<Measure>шт</Measure>
+		<Price>1323</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>238cec05-6b88-11de-9531-000e0c431b58</Alias>
+		<Article>ЛК0053148</Article>
+		<Name>Element IP-1  Акриловая краска для потолка  5л</Name>
+		<SiteName>Element IP-1  Акриловая краска для потолка  5л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>25</Amount>
+		<Measure>шт</Measure>
+		<Price>481</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>238cec07-6b88-11de-9531-000e0c431b58</Alias>
+		<Article>ЛК0053149</Article>
+		<Name>Element IP-1  Акриловая краска для потолка 10л</Name>
+		<SiteName>Element IP-1  Акриловая краска для потолка 10л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>18</Amount>
+		<Measure>шт</Measure>
+		<Price>894</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>238cec09-6b88-11de-9531-000e0c431b58</Alias>
+		<Article>ЛК0053150</Article>
+		<Name>Element I-2  Акриловая краска для обоев  5л</Name>
+		<SiteName>Element I-2  Акриловая краска для обоев  5л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>29</Amount>
+		<Measure>шт</Measure>
+		<Price>672</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>238cec0b-6b88-11de-9531-000e0c431b58</Alias>
+		<Article>ЛК0053151</Article>
+		<Name>Element I-2  Акриловая краска для обоев 10л</Name>
+		<SiteName>Element I-2  Акриловая краска для обоев 10л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>16</Amount>
+		<Measure>шт</Measure>
+		<Price>1344</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>238cec0d-6b88-11de-9531-000e0c431b58</Alias>
+		<Article>ЛК0053152</Article>
+		<Name>Element I-4  Акриловая краска для стен и потолка супербелая  5л</Name>
+		<SiteName>Element I-4  Акриловая краска для стен и потолка супербелая  5л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>25</Amount>
+		<Measure>шт</Measure>
+		<Price>936</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>fdf2e72e-6bb7-11de-9531-000e0c431b58</Alias>
+		<Article>ЛК0053153</Article>
+		<Name>Element I-4  Акриловая краска для стен и потолка супербелая 10л</Name>
+		<SiteName>Element I-4  Акриловая краска для стен и потолка супербелая 10л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>42</Amount>
+		<Measure>шт</Measure>
+		<Price>1669</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>fdf2e730-6bb7-11de-9531-000e0c431b58</Alias>
+		<Article>ЛК0053154</Article>
+		<Name>Element F-5  Акриловая краска фасадная  5л</Name>
+		<SiteName>Element F-5  Акриловая краска фасадная  5л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>20</Amount>
+		<Measure>шт</Measure>
+		<Price>891</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>fdf2e732-6bb7-11de-9531-000e0c431b58</Alias>
+		<Article>ЛК0053155</Article>
+		<Name>Element F-5  Акриловая краска фасадная 10л</Name>
+		<SiteName>Element F-5  Акриловая краска фасадная 10л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>28</Amount>
+		<Measure>шт</Measure>
+		<Price>1769</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>8d3bcdbd-bbf5-11df-a0c5-000e0c431b58</Alias>
+		<Article>ЛК0111496</Article>
+		<Name>Средство от плесени и грибка Элемент  0,5л</Name>
+		<SiteName>Средство от плесени и грибка Элемент  0,5л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>72</Amount>
+		<Measure>шт</Measure>
+		<Price>122</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>8d3bcdbf-bbf5-11df-a0c5-000e0c431b58</Alias>
+		<Article>ЛК0111498</Article>
+		<Name>Средство от плесени и грибка Элемент  4л</Name>
+		<SiteName>Средство от плесени и грибка Элемент  4л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>39</Amount>
+		<Measure>шт</Measure>
+		<Price>373</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>a7a10c2d-bfb5-11df-a0c5-000e0c431b58</Alias>
+		<Article>ЛК0111863</Article>
+		<Name>Element F-8  Акриловая краска фасадная долговечная 5л</Name>
+		<SiteName>Element F-8  Акриловая краска фасадная долговечная 5л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>11</Amount>
+		<Measure>шт</Measure>
+		<Price>928</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>a7a10c2f-bfb5-11df-a0c5-000e0c431b58</Alias>
+		<Article>ЛК0111865</Article>
+		<Name>Element F-8  Акриловая краска фасадная долговечная 10л</Name>
+		<SiteName>Element F-8  Акриловая краска фасадная долговечная 10л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>8</Amount>
+		<Measure>шт</Measure>
+		<Price>1737</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>852704eb-c149-11df-a0c5-000e0c431b58</Alias>
+		<Article>ЛК0112103</Article>
+		<Name>Эмаль алкидная  полуматовая белая 0,5л L-020 /ЭЛЕМЕНТ/</Name>
+		<SiteName>Эмаль алкидная  полуматовая белая 0,5л L-020 /ЭЛЕМЕНТ/</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>19</Amount>
+		<Measure>шт</Measure>
+		<Price>166</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>2828dcb0-ab5f-11e3-a33d-005056be1f7b</Alias>
+		<Article>ЛК060048753</Article>
+		<Name>Element I-4  Акриловая краска для стен и потолка супербелая База С 9,06л</Name>
+		<SiteName>Element I-4  Акриловая краска для стен и потолка супербелая  9,06л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>14</Amount>
+		<Measure>шт</Measure>
+		<Price>1546</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>4d702ec1-9777-11de-a774-000e0c431b58</Alias>
+		<Article>ЛК0071778</Article>
+		<Name>Element I-2  Акриловая краска для обоев  2л</Name>
+		<SiteName>Element I-2  Акриловая краска для обоев  2л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>26</Amount>
+		<Measure>шт</Measure>
+		<Price>325</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>4d702ec3-9777-11de-a774-000e0c431b58</Alias>
+		<Article>ЛК0071779</Article>
+		<Name>Element IP-1  Акриловая краска для потолка  2л</Name>
+		<SiteName>Element IP-1  Акриловая краска для потолка  2л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>24</Amount>
+		<Measure>шт</Measure>
+		<Price>257</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>4d702ec5-9777-11de-a774-000e0c431b58</Alias>
+		<Article>ЛК0071780</Article>
+		<Name>Element I-4  Акриловая краска для стен и потолка супербелая  2л</Name>
+		<SiteName>Element I-4  Акриловая краска для стен и потолка супербелая  2л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>30</Amount>
+		<Measure>шт</Measure>
+		<Price>436</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>f524c67f-8175-11e2-ab50-005056be3574</Alias>
+		<Article>ЛК060023413</Article>
+		<Name>Декоративная штукатурка для внутр. и наруж. работ Element S-1 15 кг</Name>
+		<SiteName>Декоративная штукатурка для внутр. и наруж. работ Element S-1 15 кг</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>NONE</Amount>
+		<Measure>шт</Measure>
+		<Price>1432</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>f524c681-8175-11e2-ab50-005056be3574</Alias>
+		<Article>ЛК060023415</Article>
+		<Name>Element I-3  Акриловая краска для стен (износостойкая)   2л</Name>
+		<SiteName>Element I-3  Акриловая краска для стен (износостойкая)   2л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>20</Amount>
+		<Measure>шт</Measure>
+		<Price>351</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>f524c683-8175-11e2-ab50-005056be3574</Alias>
+		<Article>ЛК060023416</Article>
+		<Name>Element I-3  Акриловая краска для стен (износостойкая)   5л</Name>
+		<SiteName>Element I-3  Акриловая краска для стен (износостойкая)   5л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>7</Amount>
+		<Measure>шт</Measure>
+		<Price>717</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+	<Element>
+		<Alias>f524c685-8175-11e2-ab50-005056be3574</Alias>
+		<Article>ЛК060023417</Article>
+		<Name>Element I-3  Акриловая краска для стен (износостойкая)  10л</Name>
+		<SiteName>Element I-3  Акриловая краска для стен (износостойкая)  10л</SiteName>
+		<Country>NONE</Country>
+		<Provider>NONE</Provider>
+		<Amount>15</Amount>
+		<Measure>шт</Measure>
+		<Price>1301</Price>
+		<PromotionalItem>0</PromotionalItem>
+	</Element>
+</Item>

@@ -1,0 +1,1304 @@
+/*
+    Document   : content
+    Created on : 26.07.2013, 11:01:47
+    Author     : zaytsev
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.contentBlock {
+    text-align: justify;
+    /*font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.4;
+    /*color: #000;*/
+    text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);
+    /*padding-top: 10px;*/
+}
+
+.contentBlock hr {
+    border: 0;
+    color: #ef7f1a;
+    background-color: #ef7f1a;
+    height: 1px;
+    margin: 5px 30px 5px 30px;
+}
+
+.contentBlock p {
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.contentBlock .Materials {
+    padding-top: 10px;
+    
+}
+
+.MaterialsList .text {
+    /*min-height: 100px;*/
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    font-weight: bold;
+    color: #ef7f1a;
+}
+
+a:hover {
+    text-decoration: none;
+    outline: none;
+    font-weight: bold;
+    color: #f30;
+    /*text-shadow: 1px 1px 0px rgba(0,0,0,0.7);*/
+}
+
+.contentBlock ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.contentBlock ol li {
+    margin-bottom: 10px;
+}
+.contentBlock ul {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+.contentBlock ul.dash {
+    list-style-type: none;
+}
+.contentBlock ul.dash li:before {
+    content: "- ";
+}
+
+.contentBlock ul.without_design {
+    list-style-type: none;
+}
+
+.contentBlock ul.materials_list {
+    margin: 0px;
+    margin-top: 15px;
+    list-style-type: none;
+    font-size: 10px;
+}
+
+.contentBlock ul.materials_list li {
+    text-align: left;
+    margin-top: 1px;
+    padding: 2px 10px 2px 10px;
+    border-bottom: 1px #666 solid;
+}
+.contentBlock ul.materials_list li:first-child {
+    border-top: 1px #666 solid;
+}
+
+.contentBlock ul.materials_list li:hover {
+    background: #ccc;
+}
+
+.contentBlock .main_paragraph {
+    /*font-weight: bold;*/
+}
+.contentBlock .info_paragraph {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.contentBlock .main_text {
+    color: #ef7f1a;
+    font-weight: bold;
+}
+
+.contentBlock .more_inf {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.contentBlock .inf {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    /*padding: 20px;*/
+}
+
+.contentBlock .inf a{
+    color: #999;
+    font-style: normal;
+}
+
+.contentBlock .right {
+    text-align: right;
+}
+
+/*.contentBlock .apelsin_button, .apelsin_button {
+	font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;
+        font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+	font-size: 12px;
+        font-weight: bold;
+	color: #000000;
+	padding: 5px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#ffd7bd 0%,
+		#ff6600);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffd7bd),
+		to(#ff6600));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 0px solid #000000;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	text-shadow:
+		0px -1px 0px rgba(255,102,0,0.4),
+		0px 1px 0px rgba(255,255,255,0.3);
+        cursor: pointer;
+        margin: 5px;
+}
+
+.contentBlock .apelsin_button:hover, .apelsin_button:hover {
+	color: #ff0000;
+}*/
+
+.apelsin_button_gray {
+    border: none;
+    border-bottom: #8f8f8f 2px solid;
+    box-shadow: 0px 1px 3px #8f8f8f;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+}
+.apelsin_button_gray:hover {
+    border: none;
+    box-shadow: inset 0px 0px 3px rgba(0,0,0,.5);
+    margin-bottom: 7px;
+}
+
+
+.contentBlock .apelsin_button, .apelsin_button {
+    /*width: 80px;*/
+    height: 20px;
+    background-color: #ef7f1a;
+    border-radius: 5px;
+    /*display: block;*/
+    text-decoration: none;
+    font: 12px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    text-shadow: none;
+    color: #fff;
+    text-align: center;
+    box-shadow: none;
+    border: none;
+    margin: 3px;
+    padding: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+.contentBlock .apelsin_button:hover, .apelsin_button:hover {
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5), inset 0px 1px 10px rgba(0,0,0,0.5);
+}
+
+.contentBlock table.table_whith_border, table.table_whith_border{
+    border-collapse: collapse;
+}
+.contentBlock table.table_whithout_border, table.table_whithout_border {
+    border: none;
+    border-collapse: collapse;
+}
+.contentBlock table.table_whith_border th, table.table_whith_border th {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.2);
+    padding: 5px;
+    font-size: 12px;
+}
+.contentBlock table.table_whith_border td, table.table_whith_border td {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    padding: 5px;
+    color: #333;
+    font-size: 12px;
+}
+.contentBlock table.table_whithout_border td, table.table_whithout_border td {
+    border: none;
+    border-collapse: collapse;
+    padding: 5px;
+    color: #333;
+    font-size: 12px;
+}
+.contentBlock table.table_whithout_border th, table.table_whithout_border th {
+    border: none;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.2);
+    padding: 5px;
+    font-size: 12px;
+}
+
+.table_whith_border {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    /*font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.4;
+    color: #000;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);
+    margin: 5px;
+}
+
+.table_whith_border td,
+.table_whith_border th {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.table_whith_border td {
+    font-size: 12px;
+}
+
+.table_whith_border th {
+    font-size: 14px;
+    color: #ef7f1a;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table_whithout_border {
+    border: none;
+    border-collapse: collapse;
+/*    font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.4;
+    color: #000;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);
+    margin: 5px;
+}
+
+.table_whithout_border td,
+.table_whithout_border th {
+    border: none;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.table_whithout_border td {
+    font-size: 12px;
+}
+
+.table_whithout_border th {
+    font-size: 14px;
+    color: #ef7f1a;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.material_img_icon {
+    border: 2px #888 solid;
+    width: 150px;
+    max-height: 150px;
+    margin-top: -30px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+.material_components_img_icon {
+    border: none;
+    width: 33px;
+}
+
+
+.contentBlock .materialsCategoriasTable {
+    border: none;
+    border-collapse: collapse;
+}
+.contentBlock .materialsCategoriasTable td{
+    border: none;
+    border-collapse: collapse;
+    font-size: 10px;
+    width: 50%;
+    vertical-align: top;
+}
+.contentBlock .materialsCategoriasTable td:first-child {
+    padding-right: 10px;
+}
+.contentBlock .materialsCategoriasTable td:last-child {
+    padding-left: 10px;
+}
+.contentBlock .materialsCategoriasTable td a{
+    font-size: 10px;
+    color: #666;
+}
+.contentBlock .materialsCategoriasTable td a:hover{
+    font-size: 10px;
+    text-shadow: none;
+    color: #ef7f1a;
+}
+
+.contentBlock .material_group_title {
+    background: none;
+    text-align: center;
+    color: #ef7f1a;
+    text-shadow: 0 1px 0 rgba(255,255,255,1);
+}
+
+.contentBlock h1.material_group_title {
+    background: rgba(0,0,0,0.1);
+    text-align: center;
+    color: #ef7f1a;
+    margin: 0px 30px 0px 30px;
+    text-shadow: 0 1px 0 rgba(255,255,255,1);
+    font-weight: bolder;
+    font-size: 22px;
+}
+.contentBlock h2.material_group_title {
+    font-size: 22px;
+}
+.contentBlock h3.material_group_title {
+    font-size: 16px;
+}
+.contentBlock h4.material_group_title {
+    color: #666;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 30px;
+}
+.contentBlock .material_group_title.info{
+    color: #666;
+    font-size: 14px;
+    margin: -10px 0px 5px 0px;
+}
+.contentBlock .materials_info_panel {
+    width: 100%;
+    text-align: right;
+    background: rgba(0,0,0,0.2);
+}
+
+.contentBlock .materials_info_panel .date {
+    padding: 3px 20px 3px 10px;
+}
+
+.contentBlock table {
+    width: 100%;
+    border: 1px #999 solid;
+    border-collapse: collapse;
+}
+
+.contentBlock table th {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.2);
+    padding: 5px;
+    font-size: 12px;
+}
+
+.contentBlock table td {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    padding: 5px;
+    color: #333;
+    font-size: 12px;
+}
+
+.contentBlock .epigraph {
+    text-align: right;
+    color: #666;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+/************ Contacts ***********/
+
+.contentBlock .ContactsShopBuilding, .contentBlock .ContactsDepartments{
+    /*width: 675px;*/
+    clear:both;
+    margin-bottom: 3px;
+}
+.Contacts .ContactsDepartments {
+    overflow:hidden;
+    height: 360px;
+    box-shadow: inset 0px 1px 10px rgba(0,0,0,0.5);
+    background: white url(../img/ContactDepartments_bg.jpg) no-repeat center center;
+}
+
+.Contacts .ContactsDepartments h2 {
+    height: 40px;
+    background: rgba(255,255,255,0.75);
+    /*background: rgba(0,0,0,0.5);*/
+    /*color: #ef7f1a;*/
+    color: #4f4f4f;
+    /*text-shadow: none;*/
+    /*text-shadow: 0px 2px 0px white;*/
+    text-shadow: 0px 1px 0px white, 0px -1px 0px white, 1px 0px 0px white, -1px 0px 0px white;
+    font: 26px/40px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    /*text-shadow: 0 1px 0px white;*/
+    /*border-bottom: 1px rgba(255,255,255,0.2) solid;*/
+    border-bottom: 1px rgba(255,255,255,0.3) solid;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.7);
+/*    text-align: right;
+    padding: 0px 30px 0px 30px;*/
+}
+
+.contentBlock .ContactsShopBuilding {
+    margin: 10px 0px 50px 0px;
+    /*border-bottom: 1px #8f8f8f solid;*/
+}
+
+.Contacts h1,
+.Contacts h2,
+.Contacts h3,
+.Contacts h4 {
+    background: none;
+/*    background: rgba(0,0,0,0.5);*/
+    text-align: center;
+    height: 25px;
+    font: 16px/25px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    text-shadow: 0 1px 0px white;
+    color: #ef7f1a;
+    margin: 0px;
+}
+
+.shopContactMapBlock {
+    width: 700px;
+    margin: 0px;
+    float: left;
+}
+.shopContactMapBlock .ymaps-glass-pane {
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5), inset 0px 1px 10px rgba(0,0,0,0.5);
+    border-right: none;
+}
+
+.shopContactMapAndContactBlock {
+    /*background: white url(../img/grid.png) repeat center center;*/
+    /*border: 1px #8f8f8f solid;*/
+    border: none;
+    /*box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5), inset 0px 1px 10px rgba(0,0,0,0.5);*/
+}
+
+.shopContactMapAndContactBlockEND {
+    clear: both;
+}
+
+.shopContactAddressBlock {
+    width: 250px;
+    float: right;
+}
+
+.ContactsShopBuilding_timeTable,
+.ContactsShopBuilding_contacts {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.ContactsShopBuilding {
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}
+
+.ContactsShopBuilding .time_table {
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    border: none;
+    border-collapse: collapse;
+}
+.ContactsShopBuilding .time_table .time_table_time {
+    border: none;
+    border-collapse: collapse;
+    text-align: left;
+    font-weight: bolder;
+    padding: 1px 3px 1px 3px;
+}
+.ContactsShopBuilding .time_table .time_table_text {
+    border: none;
+    border-collapse: collapse;
+    text-align: right;
+    font-weight: bolder;
+    padding: 1px 3px 1px 3px;
+}
+.ContactsShopBuilding .time_table .time_table_text .mainDay {
+    color: #ef7f1a;
+}
+
+
+.ContactsShopBuilding_contacts .Contacts_phone, 
+.ContactsShopBuilding_contacts .Contacts_email, 
+.ContactsShopBuilding_contacts .Contacts_adress {
+    font-weight: bolder;
+    margin: 1px 0px 1px 0px;
+}
+.ContactsShopBuilding_contacts .Contacts_email a {
+    color: #333;
+    text-shadow:none;
+}
+.ContactsShopBuilding_contacts .Contacts_email a:hover {
+    color: #ef7f1a;
+}
+
+
+
+
+
+
+
+
+
+.contentBlock .ContactsDepartments_contacts {
+    border: none;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.75);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    float: left;
+    padding: 0px;
+    margin: 100px 10px 20px 10px;
+    
+    /*box-shadow: inset 0px 1px 5px rgba(0,0,0,0.25), inset 0px 1px 10px rgba(0,0,0,0.25);*/
+}
+.contentBlock .ContactsDepartments_contacts {
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.7);
+}
+.contentBlock .ContactsShopBuilding_contacts_text, 
+.contentBlock .ContactsDepartments_contacts_text {
+    margin: 20px 10px 20px 10px;
+    font-weight: bolder;
+    color: #4f4f4f;
+    font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bolder;
+    text-shadow: 0px 1px 0px white, 0px -1px 0px white, 1px 0px 0px white, -1px 0px 0px white;
+}
+.Contacts_adress {
+    text-align: left;
+    /*font-size: 14px;*/
+    /*margin-bottom: 10px;*/
+}
+.Contacts_phone, .Contacts_email {
+    /*font-size: 14px;*/
+    font-weight: bolder;
+    margin: 1px 0px 1px 0px;
+}
+.contentBlock .Contacts_email a {
+    color: #4f4f4f;
+    text-shadow: 0px 1px 0px white, 0px -1px 0px white, 1px 0px 0px white, -1px 0px 0px white;
+}
+.contentBlock .Contacts_email a:hover {
+    color: #000;
+}
+.Contacts_phone img, 
+.Contacts_email img, 
+.Contacts_adress img {
+    margin: 0px 3px 0px 3px;
+    height: 14px;
+    width: 12px;
+}
+
+.contentBlock .ContactsShopBuilding_tableTime, 
+.contentBlock .ContactsDepartments_tableTime {
+    border: none;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.75);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    width: 190px;
+    float: right;
+    padding: 0px;
+    margin: 100px 10px 20px 10px;
+    /*box-shadow: inset 0px 1px 5px rgba(0,0,0,0.25), inset 0px 1px 10px rgba(0,0,0,0.25);*/
+}
+
+.contentBlock .ContactsDepartments.cd_studio_furniture .ContactsDepartments_tableTime {
+    margin: 90px 10px 20px 20px;
+    float: left;
+}
+
+
+.contentBlock .ContactsDepartments_tableTime {
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.7);
+}
+.contentBlock .ContactsShopBuilding_tableTime_text, 
+.contentBlock .ContactsDepartments_tableTime_text{
+    margin: 20px 5px 20px 5px;
+}
+
+.contentBlock .ContactsDepartments_tableTime_text {
+    font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #4f4f4f;
+    font-weight: bolder;
+    text-shadow: 0px 1px 0px white, 0px -1px 0px white, 1px 0px 0px white, -1px 0px 0px white;
+}
+
+/*.contentBlock .ContactsDepartments_tableTime_text table td {
+    font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font: 13px/13px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}*/
+
+.contentBlock .ContactsShopBuilding_tableTime .time_table, 
+.contentBlock .ContactsDepartments_tableTime .time_table {
+    border: none;
+    border-collapse: collapse;
+    font-size: 16px;
+    padding: 2px 5px 2px 5px;
+}
+.contentBlock .ContactsShopBuilding_tableTime .time_table_text, 
+.contentBlock .ContactsDepartments_tableTime .time_table_text {
+    border: none;
+    border-collapse: collapse;
+    text-align: right;
+    font-weight: bolder;
+    padding: 2px 5px 2px 5px;
+}
+.contentBlock .ContactsShopBuilding_tableTime .time_table_text .mainDay,
+.contentBlock .ContactsDepartments_tableTime .time_table_text .mainDay {
+    color: #ef7f1a;
+}
+.contentBlock .ContactsShopBuilding_tableTime .time_table_time,
+.contentBlock .ContactsDepartments_tableTime .time_table_time {
+    border: none;
+    border-collapse: collapse;
+    text-align: left;
+    font-weight: bolder;
+    padding: 2px 5px 2px 5px;
+}
+.contentBlock .ContactsDepartments_description {
+    margin: 10px 0px 20px 0px;
+    text-indent: 30px;
+    line-height: 1.2;
+    font-size: 14px;
+    clear: both;
+}
+.contentBlock .ContactsWorkersListTable {
+    margin: 15px 0px 15px 0px;
+}
+.contentBlock .ContactsWorkersListTable, .contentBlock .ContactsWorkersListTable td {
+    border: none;
+    border-collapse: collapse;
+}
+.contentBlock .ContactsWorkersListTable, .contentBlock .ContactsWorkersListTable td:last-child {
+    
+}
+.contentBlock .ContactsWorkersListTable {
+    
+}
+
+.contentBlock .ContactsWorkersText {
+    background: rgba(255,255,255,0.75) url(../img/grid.png) repeat center center;
+/*    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;*/
+    /*border: rgba(255,100,0,0.5) 1px solid;*/
+    /*margin: 0px 5px 0px 5px;*/
+    padding: 10px;
+    /*box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);*/
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+.ContactsWorkersFIO {
+    font-size: 14px;
+    color: #ef7f1a;
+    font-weight: bolder;
+    text-align: right;
+}
+.ContactsWorkersPost {
+    font-size: 12px;
+    color: #666;
+    font-weight: bolder;
+    margin-left: 30px;
+    text-align: right;
+    margin-bottom: 5px
+}
+.ContactsWorkersInfo {
+    color: #666;
+    /*font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);
+    font-size: 11px;
+    text-align: left;
+    height: 45px;
+    margin:0 auto;
+}
+
+.ContactsWorkersContacts_adress {
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.ContactsWorkersContacts_phone, .ContactsWorkersContacts_email {
+    font-size: 12px;
+    font-weight: bolder;
+    margin: 1px 0px 1px 0px;
+}
+.ContactsWorkersContacts_phone img, .ContactsWorkersContacts_email img{
+    margin: 0px 3px 0px 3px;
+    height: 12px;
+    width: 12px;
+}
+
+.Vacancies {
+    font-size: 14px;
+}
+.Vacancies h2 {
+    margin-bottom: 10px;
+}
+.valid_vacancy {
+    text-align: justify;
+    /*font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.2;
+    color: #000;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);
+    background: rgba(255,255,255,0.8) url(../img/grid.png) repeat center center;
+    border-radius: 10px 10px 0px 10px;
+    -moz-border-radius: 10px 10px 0px 10px;
+    -o-border-radius: 10px 10px 0px 10px;
+    -webkit-border-radius: 10px 10px 0px 10px;
+    border: rgba(255,100,0,0.5) 1px solid;
+    margin: 15px 0px 15px 0px;
+    padding: 0px;
+}
+
+.valid_vacancy_contacts {
+    background: rgba(200,200,200,0.5);
+    float: right;
+    text-align: right;
+    border-radius: 10px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 0px;
+    -o-border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+    margin: 5px 0px 0px 5px;
+    padding: 6px 6px 6px 20px;
+}
+.valid_vacancy_contacts img {
+    height: 12px;
+    width: 12px;
+    margin: 0px 2px 0px 15px;
+}
+.valid_vacancy_contacts .valid_vacancy_contacts_fio, .valid_vacancy_contacts .valid_vacancy_contacts_phone {
+    font-weight: bold;
+    font-size: 12px;
+}
+.valid_vacancy_vacancy {
+    background: rgba(200,200,200,0.5);
+    float: left;
+    text-align: right;
+    border-radius: 10px 0px 10px 0px;
+    -moz-border-radius: 10px 0px 10px 0px;
+    -o-border-radius: 10px 0px 10px 0px;
+    -webkit-border-radius: 10px 0px 10px 0px;
+    margin: 0px 5px 5px 0px;
+    padding: 6px 15px 6px 15px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.valid_vacancy_vacancy .valid_vacancy_text {
+    color: #666;
+}
+.valid_vacancy_text_vacancies {
+    font-size: 14px;
+    color: #000;
+}
+.valid_vacancy_text_adress {
+    color: #000;
+}
+.contentBlock .valid_vacancy_text_adress a{
+    text-shadow: none;
+    color: #000;
+}
+.contentBlock .valid_vacancy_text_adress a:hover{
+    text-shadow: none;
+    color: #ef7f1a;
+}
+.valid_vacancy_description {
+    margin: 0px 10px 0px 10px;
+    font-size: 12px;
+}
+
+.valid_vacancy_description .valid_vacancy_text {
+    color: #444;
+    font-weight: bolder;
+}
+
+.valid_vacancy_adress {
+    background: rgba(200,200,200,0.5);
+    float: right;
+    text-align: right;
+    border-radius: 0px 10px 0px 10px;
+    -moz-border-radius: 0px 10px 0px 10px;
+    -o-border-radius: 0px 10px 0px 10px;
+    -webkit-border-radius: 0px 10px 0px 10px;
+    margin: 0px 0px 5px 5px;
+    padding: 6px 20px 6px 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+a .valid_vacancy_adress {
+    background: rgba(255,100,0,0.5);
+}
+a .valid_vacancy_adress:hover {
+    background: #ef7f1a;
+    cursor: pointer;
+    text-shadow: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.contentBlock .ServiceCenterSelectBox {
+    background: #efefef;
+    background: rgb(245,250,255);
+    background: #fff url('../img/page_bg.png') 0 0 repeat;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #000;
+    width: 500px;
+    margin: 2px 0px 2px 0px;
+    border: none;
+    box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 0 #fff;
+}
+
+.contentBlock h2.ServiceCentersSection {
+    font: 18px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    text-align: center;
+    color: #fff;
+    height: 30px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 5px 0px 10px;
+    background: #ef7f1a;
+}
+
+.contentBlock .ServiceCentersGroup_Column1 {
+    width: 480px;
+    float: left;
+}
+.contentBlock .ServiceCentersGroup_Column2 {
+    width: 480px;
+    float: right;
+}
+.contentBlock .ServiceCentersElement {
+    width: 470px;
+    /*float: left;*/
+    /*background: rgba(255,255,255,0.5);*/
+    /*border-top: rgba(255,100,0,0.5) 1px solid;*/
+    margin: 0px 0px 0px 0px;
+    padding-bottom: 5px;
+    margin: 5px;
+    background: white url(../img/grid.png) repeat center center;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}
+.contentBlock .ServiceCentersElement .element, .contentBlock .ServiceCentersElement .inf {
+    text-align: justify;
+    /*font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.2;
+    margin: 0px;
+}
+.contentBlock .ServiceCentersElement .element {
+    background: rgba(200,200,200,0.5);
+    text-align: left;
+    margin: 0px 0px 5px 0px;
+    padding: 2px 10px 2px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    background: #989898;
+    color: #fff;
+    text-shadow: none;
+}
+.contentBlock .ServiceCentersElement .inf {
+    color: #444;
+    font-size: 12px;
+    margin: 0px 0px 8px 0px;
+    padding: 0px 10px 0px 30px;
+    text-align: left;
+}
+.contentBlock .info_paragraph {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.shop_review_element {
+    text-align: justify;
+    /*font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.2;
+    color: #000;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);
+    background: rgba(255,255,255,0.8) url(../img/grid.png) repeat center center;
+    border-radius: 10px 10px 0px 10px;
+    -moz-border-radius: 10px 10px 0px 10px;
+    -o-border-radius: 10px 10px 0px 10px;
+    -webkit-border-radius: 10px 10px 0px 10px;
+    border: rgba(255,100,0,0.5) 1px solid;
+    margin: 15px 0px 15px 0px;
+    padding: 0px;
+}
+
+.shop_review_element .shop_review_element_fio {
+background: rgba(200,200,200,0.5);
+float: left;
+text-align: right;
+border-radius: 10px 0px 10px 0px;
+-moz-border-radius: 10px 0px 10px 0px;
+-o-border-radius: 10px 0px 10px 0px;
+-webkit-border-radius: 10px 0px 10px 0px;
+margin: 0px 5px 5px 0px;
+padding: 6px 15px 6px 15px;
+font-weight: bold;
+font-size: 12px;
+}
+
+.shop_review_element .shop_review_element_date {
+    background: rgba(200,200,200,0.5);
+    float: right;
+    text-align: right;
+    border-radius: 10px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 0px;
+    -o-border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+    margin: 5px 0px 0px 5px;
+    padding: 2px 2px 2px 10px;
+    font-size: 10px;
+}
+
+.shop_review_element .shop_review_element_rating {
+    background: rgba(200,200,200,0.5);
+    float: right;
+    text-align: right;
+    border-radius: 0px 10px 0px 10px;
+    -moz-border-radius: 0px 10px 0px 10px;
+    -o-border-radius: 0px 10px 0px 10px;
+    -webkit-border-radius: 0px 10px 0px 10px;
+    margin: 0px 0px 5px 5px;
+    padding: 6px 20px 6px 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.shop_review_element_dignity,
+.shop_review_element_limitations,
+.shop_review_element_wishes,
+.shop_review_element_comments {
+    margin: 5px 10px 5px 10px;
+    font-size: 12px;
+}
+
+.shop_review_element_text_title {
+    font-weight: bold;
+}
+
+table.reviews_table {
+    border: none;
+    border-collapse: collapse;
+}
+table.reviews_table td {
+    border: none;
+    border-collapse: collapse;
+    padding: 2px;
+}
+
+table.reviews_table td:first-child {
+    text-align: right;
+}
+
+table.reviews_table td:last-child {
+    width: 450px;
+}
+
+form.reviews {
+    text-align: justify;
+    /*font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.2;
+    color: #000;
+    text-shadow: none;
+/*    background: #f5f5f5;
+    border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -o-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border: #fa0 1px solid;
+    border-top: none;*/
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    padding-top: 10px;
+}
+
+.reviews_table td input[type=text] {
+    /*background: #efefef;*/
+    /*border: 1px solid #fa0;*/
+    height: 24px;
+    width: 400px;
+    border-radius: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5);
+}
+
+.reviews_table td .reviews_table_select {
+/*    background: #efefef;
+    border: 1px solid #fa0;*/
+    height: 24px;
+    width: 420px;
+    border-radius: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5);
+    background-color: white;
+}
+
+.form_step {
+    min-height: 310px;
+    vertical-align: bottom;
+}
+
+.left_button {
+    float: left;
+}
+.right_button {
+    float: right;
+}
+
+.nav_button_table {
+    
+}
+
+.nav_button_table .nav_button_table_left {
+    width: 150px;
+}
+
+.nav_button_table .nav_button_table_right {
+    width: 150px;
+}
+
+.nav_button_table .nav_button_table_center {
+    text-align: center;
+}
+
+.reviews_table td textarea {
+/*    background: #efefef;
+    border: 1px solid #fa0;*/
+    height: 50px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #000;
+    font-weight: bolder;
+    max-width: 400px;
+    max-height: 300px;
+    border: none;
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5);
+}
+
+.error {
+    color: #f00;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ServiceCentersSection {
+    margin-bottom: 0px;
+}
+
+
+
+/* ICONS */
+.Icon20x20 {
+    width: 20px;
+    height: 20px;
+    /*display: inline-table;*/
+}
+.Icon12x12 {
+    width: 12px;
+    height: 12px;
+    /*display: inline-table;*/
+}
+
+.Icon20x20.EmailIcon{
+    background: url('../img/icons/mail_20.png');
+}
+.Icon20x20.PhoneIcon {
+    background: url('../img/icons/phone_20.png');
+}
+.Icon12x12.EmailIcon {
+    background: url('../img/icons/mail_12.png');
+}
+.Icon12x12.PhoneIcon {
+    background: url('../img/icons/phone_12.png');
+}
+
+.Contacts_email .Icon20x20,
+.Contacts_phone .Icon20x20,
+.Contacts_adress .Icon20x20,
+.Contacts_email .Icon12x12,
+.Contacts_phone .Icon12x12,
+.Contacts_adress .Icon12x12,
+.ContactsWorkersContacts_phone .Icon12x12,
+.ContactsWorkersContacts_email .Icon12x12{
+    float: left;
+    margin: 0px 5px 0px 0px;
+}
+
+.DepartmentsList {
+    padding-bottom: 20px;
+}
+
+/* Вакансии */
+.VacanciesValidBlock {
+    background: white url(../img/grid.png) repeat center center;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    margin: 10px 0px 10px 0px;
+    /*clear: both;*/
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    padding-bottom: 20px;
+    width: 470px;
+    /*float: left;*/
+    margin: 5px;
+    
+}
+
+.VacanciesValidBlockArchive {
+    display: none;
+}
+.VacanciesValidBlockColumn_01 {
+    width: 480px;
+    float: left;
+}
+.VacanciesValidBlockColumn_02 {
+    width: 480px;
+    float: right;
+}
+
+.VacanciesValidBlockTitle {
+    clear: both;
+    height: 32px;
+    background: #ef7f1a;
+}
+
+.VacanciesValidBlockTitleText {
+    float: right;
+    color: #fff;
+    font: 20px/32px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    padding-left: 6px;
+    height: 32px;
+    text-align: center;
+    text-shadow: none;
+}
+
+.VacanciesValidBlockTitleInfoIcon {
+    float: right;
+    height: 32px;
+    width: 32px;
+    background: #ef7f1a url(../img/icons/i-icon.png) no-repeat bottom center;
+}
+.VacanciesValidBlockTitleInfoIcon:hover {
+    background: #ef7f1a url(../img/icons/i-icon.png) no-repeat top center;
+}
+
+.VacanciesValidBlockTitleInfoIcon a {
+    display: block;
+    height: 32px;
+    width: 32px;
+}
+
+.VacanciesValidString {
+    margin: 0 auto;
+    /*width: 650px;*/
+    border-bottom: 1px #999 dotted;
+    height: 31px;
+    margin-bottom: 2px;
+    font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}
+
+.validVacancyAdress {
+    float: left;
+    /*width: 140px;*/
+    width: 130px;
+    padding: 2px;
+    height: 20px;
+    font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    /*border-right: 1px #999 dotted;*/
+    text-align: center;
+}
+
+.validVacancyContactUser {
+    float: left;
+    /*width: 290px;*/
+    width: 190px;
+    padding: 2px;
+    height: 20px;
+    font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    /*border-right: 1px #999 dotted;*/
+    text-align: center;
+}
+
+.validVacancyContactInfo {
+    float: left;
+    /*width: 190px;*/
+    width: 130px;
+    padding: 2px;
+    height: 20px;
+    font: 14px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: center;
+}
+
+h1.shopContactTitle {
+    height: 30px;
+    padding-left: 10px;
+    font: 18px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    color: #9c9c9c;
+    text-align: center;
+    
+    font: 18px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    background: #ef7f1a;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 10px;
+}

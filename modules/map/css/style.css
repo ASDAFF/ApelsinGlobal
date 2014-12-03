@@ -1,0 +1,77 @@
+.m_block.map {
+    /*width: 900px;*/
+    height: 400px;
+    background: rgba(255, 255, 255, 0.5) url(../img/map.png) no-repeat center center;
+    margin-bottom: -5px;
+    /*border-bottom: #777 1px solid;*/
+}
+.m_block.map .right, .m_block.map .left {
+    width: 150px;
+}
+.m_block.map .right {
+    float: right;
+    text-align: left;
+}
+.m_block.map .left {
+    float: left;
+    text-align: right;
+}
+
+.m_block.map ul{
+    list-style-type: none;
+}
+
+.m_block.map ul li {
+    font: 0.95em 'Open Sans',Arial,Helvetica,sans-serif;
+    color: #000;
+    /*text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);*/
+    font-weight: bold;
+    font-size:12px;
+    line-height: 1.2;
+}
+
+.m_block.map ul li a {
+    color: #666;
+    text-decoration: none;
+    outline: none;
+}
+.m_block.map ul li a:hover {
+    color: #000;
+}
+
+.m_block.map .shopping_mall_on_the_city_ring_road {
+    height: 36px;
+}
+.m_block.map .shopping_mall_on_the_city_ring_road.ru {
+    padding-top: 9px;
+    height: 19px;
+    padding-bottom: 8px;
+}
+
+
+.map1, .map2, .map3 {
+    /*width: 900px;*/
+    height: 400px;
+}
+
+.mapsSelector {
+    width: 960px;
+    height: 0px;
+    text-align: center;
+    z-index: 9000;
+    padding-bottom: 10px;
+    position: absolute;
+    padding-top: 5px;
+}
+
+.mapsSelector select {
+    font: 13px/29px Arial,sans-serif;
+    z-index: 9000;
+    height: 29px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px #999 solid;
+}
