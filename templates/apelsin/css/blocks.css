@@ -107,6 +107,7 @@
 
 .middleWrapper {
     background: #fff;
+    background: #fff url('../img/main_bg.jpg') 0 0 repeat;
     /*padding-bottom: 250px;*/
 }
 
@@ -118,6 +119,7 @@
 .mainSiteWrapper {
     padding-bottom: 250px;
     background: #fff;
+    background: #fff url('../img/main_bg.jpg') 0 0 repeat;
     /*box-shadow: 0px 5px 5px rgba(0,0,0,0.7);*/
     overflow: hidden;
 }
