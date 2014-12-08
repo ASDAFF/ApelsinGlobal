@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 03 2014 г., 08:40
+-- Время создания: Дек 08 2014 г., 08:35
 -- Версия сервера: 5.5.33-MariaDB
 -- Версия PHP: 5.4.20
 
@@ -682,6 +682,112 @@ INSERT INTO `ContactsShop_Lang` (`shop`, `lang`, `name`, `description`, `info`) 
 ('shop_yesenina', 'rus', 'Контакты магазина на Есенина 13', NULL, '\n* Для набора добавочного номера с городского телефона необходимо перевести его в \nтональный набор (&laquo;*&raquo;, кнопка либо переключатель &laquo;TONE&raquo;»). Набирать добавочный \nномер можно сразу после начала сообщения автоответчика. С сотовых \nтелефонов набирать добавочные номера можно так же после начала сообщения \nавтоответчика.<br />\nЕсли у Вас возникают какие-либо трудности - Вы можете дождаться ответа секретаря.\n'),
 ('shop_zubkovoy', 'eng', '27B Zubkovoy str.', NULL, '\n* To dial an extension number from a stationary phone, please switch the phone \nto the tone dialing (&laquo;*&raquo;, button or switch &laquo;TONE&raquo;). \nYou can begin dialing the number right after the start of the auto-answer. \nThe users of cellular phones can also dial the extension right after the \nstart of the auto-answer.<br />\nIf you come across some difficulties, please wait for the secretary to answer.\n'),
 ('shop_zubkovoy', 'rus', 'Зубковой, 27Б', NULL, '\n* Для набора добавочного номера с городского телефона необходимо перевести его в \nтональный набор (&laquo;*&raquo;, кнопка либо переключатель &laquo;TONE&raquo;»). Набирать добавочный \nномер можно сразу после начала сообщения автоответчика. С сотовых \nтелефонов набирать добавочные номера можно так же после начала сообщения \nавтоответчика.<br />\nЕсли у Вас возникают какие-либо трудности - Вы можете дождаться ответа секретаря.\n');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ContactsUnits`
+--
+
+DROP TABLE IF EXISTS `ContactsUnits`;
+CREATE TABLE IF NOT EXISTS `ContactsUnits` (
+  `unit` varchar(100) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `feedbackEmail` varchar(45) DEFAULT NULL,
+  `phone1` varchar(50) DEFAULT NULL,
+  `additional1` varchar(9) DEFAULT NULL,
+  `phone2` varchar(50) DEFAULT NULL,
+  `additional2` varchar(9) DEFAULT NULL,
+  `monH_s` int(2) unsigned DEFAULT NULL,
+  `monM_s` int(2) unsigned DEFAULT NULL,
+  `monH_e` int(2) unsigned DEFAULT NULL,
+  `monM_e` int(2) unsigned DEFAULT NULL,
+  `tueH_s` int(2) unsigned DEFAULT NULL,
+  `tueM_s` int(2) unsigned DEFAULT NULL,
+  `tueH_e` int(2) unsigned DEFAULT NULL,
+  `tueM_e` int(2) unsigned DEFAULT NULL,
+  `wedH_s` int(2) unsigned DEFAULT NULL,
+  `wedM_s` int(2) unsigned DEFAULT NULL,
+  `wedH_e` int(2) unsigned DEFAULT NULL,
+  `wedM_e` int(2) unsigned DEFAULT NULL,
+  `thuH_s` int(2) unsigned DEFAULT NULL,
+  `thuM_s` int(2) unsigned DEFAULT NULL,
+  `thuH_e` int(2) unsigned DEFAULT NULL,
+  `thuM_e` int(2) unsigned DEFAULT NULL,
+  `friH_s` int(2) unsigned DEFAULT NULL,
+  `friM_s` int(2) unsigned DEFAULT NULL,
+  `friH_e` int(2) unsigned DEFAULT NULL,
+  `friM_e` int(2) unsigned DEFAULT NULL,
+  `satH_s` int(2) unsigned DEFAULT NULL,
+  `satM_s` int(2) unsigned DEFAULT NULL,
+  `satH_e` int(2) unsigned DEFAULT NULL,
+  `satM_e` int(2) unsigned DEFAULT NULL,
+  `sunH_s` int(2) unsigned DEFAULT NULL,
+  `sunM_s` int(2) unsigned DEFAULT NULL,
+  `sunH_e` int(2) unsigned DEFAULT NULL,
+  `sunM_e` int(2) unsigned DEFAULT NULL,
+  PRIMARY KEY (`unit`),
+  KEY `fk_ContactsUnits_1_idx` (`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ContactsUnitsMaps`
+--
+
+DROP TABLE IF EXISTS `ContactsUnitsMaps`;
+CREATE TABLE IF NOT EXISTS `ContactsUnitsMaps` (
+  `unit` varchar(100) NOT NULL,
+  `map` varchar(100) NOT NULL,
+  PRIMARY KEY (`unit`,`map`),
+  KEY `fk_ContactsUnitsMaps_2_idx` (`map`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ContactsUnitsTypes`
+--
+
+DROP TABLE IF EXISTS `ContactsUnitsTypes`;
+CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes` (
+  `type` varchar(100) NOT NULL,
+  PRIMARY KEY (`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ContactsUnitsTypes_Lang`
+--
+
+DROP TABLE IF EXISTS `ContactsUnitsTypes_Lang`;
+CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes_Lang` (
+  `type` varchar(100) NOT NULL,
+  `lang` varchar(3) NOT NULL,
+  `typeName` varchar(100) NOT NULL,
+  PRIMARY KEY (`type`,`lang`),
+  KEY `fk_ContactsTypes_Lang_2_idx` (`lang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ContactsUnits_lang`
+--
+
+DROP TABLE IF EXISTS `ContactsUnits_lang`;
+CREATE TABLE IF NOT EXISTS `ContactsUnits_lang` (
+  `unit` varchar(100) NOT NULL,
+  `lang` varchar(3) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `adress` varchar(200) DEFAULT NULL,
+  `postAdress` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`unit`,`lang`),
+  KEY `fk_ContactsUnits_lang_2_idx` (`lang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -4410,32 +4516,33 @@ CREATE TABLE IF NOT EXISTS `VacanciesValid` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_VacanciesValid_1_idx` (`vacancies`),
   KEY `fk_VacanciesValid_2_idx` (`adress`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Дамп данных таблицы `VacanciesValid`
 --
 
 INSERT INTO `VacanciesValid` (`id`, `vacancies`, `adress`, `contactUser`, `contactInfo`) VALUES
-(1, 'Кассир', 'Есенина', 'Кадыров Фархад', '8(920)954-08-64'),
-(2, 'Работник склада', 'ТЦ на Окружной', 'Власов Евгений', '8(920)632-00-38'),
-(3, 'Уборщица', 'Островского', 'Овчинников Евгений', '8(920)638-33-98'),
-(4, 'Менеджер кредитного отдела', 'Шабулина', 'Сажина Ольга', '8(920)635-52-56'),
-(5, 'Менеджер по продажам', 'Островского', 'Овчинников Евгений', '8(920)638-33-98'),
-(6, 'Работник склада', 'Бутырки', 'Гудков Сергей', '8(953)746-54-14'),
-(7, 'Менеджер по продажам', 'ТЦ на Окружной', 'Вахитов Фарит', '8(920)635-60-95'),
-(8, 'Менеджер по продажам', 'Есенина', 'Кадыров Фархад', '8(920)954-08-64'),
-(9, 'Менеджер по продажам', 'Шабулина', 'Павлова Ольга', '8(920)972-02-09'),
-(10, 'Уборщица', 'Луховицы', 'Хохлова Надежда', '8(930)888-75-00'),
-(11, 'Менеджер по продажам', 'Бутырки', 'Жилина Анастасия', '8(920)950-61-31'),
-(12, 'Работник склада', 'Луховицы', 'Абросин Виктор', '8(929)065-11-21'),
-(13, 'Уборщица', 'Есенина', 'Степанчук Дмитрий', '8(929)066-73-50'),
+(1, 'Работник склада', 'ТЦ на Окружной', 'Щукин Николай', '8(920)632-72-50'),
+(2, 'Работник склада', 'Бутырки', 'Гудков Сергей', '8(953)746-54-14'),
+(3, 'Уборщица', 'Бутырки', 'Жилина Анастасия', '8(920)950-61-31'),
+(4, 'Работник склада', 'Шабулина', 'Галяев Александр', '8(920)956-59-69'),
+(5, 'Уборщица', 'Островского', 'Овчинников Евгений', '8(920)638-33-98'),
+(6, 'Менеджер кредитного отдела', 'Шабулина', 'Сажина Ольга', '8(920)635-52-56'),
+(7, 'Менеджер по продажам', 'Островского', 'Овчинников Евгений', '8(920)638-33-98'),
+(8, 'Менеджер по продажам', 'ТЦ на Окружной', 'Вахитов Фарит', '8(920)635-60-95'),
+(9, 'Менеджер по продажам', 'Есенина', 'Кадыров Фархад', '8(920)954-08-64'),
+(10, 'Менеджер по продажам', 'Шабулина', 'Павлова Ольга', '8(920)972-02-09'),
+(11, 'Уборщица', 'Луховицы', 'Хохлова Надежда', '8(930)888-75-00'),
+(12, 'Менеджер по продажам', 'Бутырки', 'Жилина Анастасия', '8(920)950-61-31'),
+(13, 'Работник склада', 'Луховицы', 'Абросин Виктор', '8(929)065-11-21'),
 (14, 'Уборщица', 'Верхняя', 'Давыдова Татьяна', '8(910)645-02-60'),
 (15, 'Логист', 'Отдел Логистики', 'Бан Кристина', '8(920)635-50-08'),
 (16, 'Продавец корпусной мебели', 'Студия Мебели', 'Бородин Игорь', '8(905)187-67-70'),
-(17, 'Менеджер по продажам', 'Луховицы', 'Руньков Игорь', '8(920)950-12-00'),
-(18, 'Уборщица', 'Чкалова', 'Кузьмин Александр', '8(920)991-01-28'),
-(19, 'Кассир', 'Зубковой', 'Люлин Алексей', '8(920)950-93-39');
+(17, 'Менеджер по продажам', 'Пол &amp; Стены', 'Кадыкова Мария', '8(920)975-59-80'),
+(18, 'Менеджер по продажам', 'Луховицы', 'Руньков Игорь', '8(920)950-12-00'),
+(19, 'Уборщица', 'Чкалова', 'Кузьмин Александр', '8(920)991-01-28'),
+(20, 'Кассир', 'Зубковой', 'Люлин Алексей', '8(920)950-93-39');
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -4521,6 +4628,33 @@ ALTER TABLE `ContactsShopReviews`
 ALTER TABLE `ContactsShop_Lang`
   ADD CONSTRAINT `fk_ContactsShop_Lang_1` FOREIGN KEY (`shop`) REFERENCES `ContactsShop` (`alias`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_ContactsShop_Lang_2` FOREIGN KEY (`lang`) REFERENCES `Lang` (`lang`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `ContactsUnits`
+--
+ALTER TABLE `ContactsUnits`
+  ADD CONSTRAINT `fk_ContactsUnits_1` FOREIGN KEY (`type`) REFERENCES `ContactsUnitsTypes` (`type`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `ContactsUnitsMaps`
+--
+ALTER TABLE `ContactsUnitsMaps`
+  ADD CONSTRAINT `fk_ContactsUnitsMaps_1` FOREIGN KEY (`unit`) REFERENCES `ContactsUnits` (`unit`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_ContactsUnitsMaps_2` FOREIGN KEY (`map`) REFERENCES `Maps` (`alias`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `ContactsUnitsTypes_Lang`
+--
+ALTER TABLE `ContactsUnitsTypes_Lang`
+  ADD CONSTRAINT `fk_ContactsUnitsTypes_Lang_1` FOREIGN KEY (`type`) REFERENCES `ContactsUnitsTypes` (`type`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_ContactsUnitsypes_Lang_2` FOREIGN KEY (`lang`) REFERENCES `Lang` (`lang`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `ContactsUnits_lang`
+--
+ALTER TABLE `ContactsUnits_lang`
+  ADD CONSTRAINT `fk_ContactsUnits_lang_1` FOREIGN KEY (`unit`) REFERENCES `ContactsUnits` (`unit`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_ContactsUnits_lang_2` FOREIGN KEY (`lang`) REFERENCES `Lang` (`lang`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `ContactsWorkers`
