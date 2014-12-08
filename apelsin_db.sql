@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 08 2014 г., 08:55
+-- Время создания: Дек 08 2014 г., 10:59
 -- Версия сервера: 5.5.33-MariaDB
 -- Версия PHP: 5.4.20
 
@@ -129,7 +129,8 @@ CREATE TABLE IF NOT EXISTS `Components` (
 
 INSERT INTO `Components` (`alias`, `name`, `author`, `version`, `description`, `adminDir`, `admin`) VALUES
 ('Adminpanel', 'Adminpanel', 'Compu Project', '1.0', 'Панель администрирования', 'admin', 'index.php'),
-('Contacts_old', 'Контакты на сайте', 'Compu Project', '1.0', 'Модуль для работы с контактами магазина апельсин', 'admin', 'index.php'),
+('Contacts', 'Контакты', 'CompuProject', '1.0', 'Модуль для работы с контактами', 'admin', 'index.php'),
+('Contacts_old', 'Контакты на сайте', 'Compu Project', '1.0', 'Модуль для работы с контактами (Устаревший)', 'admin', 'index.php'),
 ('Materials', 'Материалы сайта', 'Compu Project', '1.0', 'Компонент для размещение материалов на сайте.', 'admin', 'index.php'),
 ('ServiceCenters', 'сервисные центры', 'Compu Project', '1.0', 'Компонент для работы с сервисными центрами магазина апельсин', 'admin', 'index.php'),
 ('Users', 'Пользователи', 'Compu Project', '1.0', 'Компонент для работы с пользователями.', 'admin', 'index.php'),
@@ -224,12 +225,13 @@ INSERT INTO `ComponentsElements` (`id`, `alias`, `component`, `name`, `descripti
 (103, 'MaterialsCategory', 'Materials', 'Категории материалов', 'Выводит на страницу сайта категорию материалов', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (104, 'MaterialsCategoryList', 'Materials', 'Список категорий материалов', 'Выводит на страницу сайта список категорий материалов', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (105, 'MaterialsBlog', 'Materials', 'Блог материалов', 'Выводит список материалов в виде блога. Отличается от обычного вывода списка материалов блочной структурой.', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
-(201, 'Shops', 'Contacts_old', 'Магазин', 'Контакты магазина', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
-(202, 'Departments', 'Contacts_old', 'Отдел', 'Контакты отдела', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
-(203, 'DepartmentsList', 'Contacts_old', 'Список отделов', 'Контакты нескольких отделов в виде списка', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
-(204, 'ContactsMap', 'Contacts_old', 'Contacts Map', NULL, 'index.php', 'index.php', 'index.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', NULL),
+(201, 'Contacts', 'Contacts', 'Контакты', NULL, 'index.php', 'index.php', 'index.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (301, 'AllServiceCenters', 'ServiceCenters', 'Сервисные центры', 'Список сервисных центров', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (401, 'Vacancies', 'Vacancies', 'Вакансии', 'Список вакансий', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
+(900001, 'Shops', 'Contacts_old', 'Магазин', 'Контакты магазина', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
+(900002, 'Departments', 'Contacts_old', 'Отдел', 'Контакты отдела', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
+(900003, 'DepartmentsList', 'Contacts_old', 'Список отделов', 'Контакты нескольких отделов в виде списка', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
+(900004, 'ContactsMap', 'Contacts_old', 'Contacts Map', NULL, 'index.php', 'index.php', 'index.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', NULL),
 (999801, 'Accounts', 'Users', 'Аккаунт', 'Аккаунт пользователя', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (999802, 'AccountSettings', 'Users', 'Настройки аккаунта', 'Настройки аккаунта пользователя', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (999803, 'Registration', 'Users', 'Регистрация', 'Страница регистрации пользователя', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
@@ -2638,39 +2640,39 @@ CREATE TABLE IF NOT EXISTS `Pages` (
 --
 
 INSERT INTO `Pages` (`alias`, `showTitle`, `cssClasses`, `componentElement`, `template`, `isMainPage`, `index`, `follow`, `archive`, `notModifiable`) VALUES
-('109-2_ostrovskogo_str', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('10b_svyazi_str_sokolovka', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('13_yesenina_str', 0, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('170v_pushkina_str_luhovitsy', 1, NULL, 201, 'apelsin', 0, 1, 1, 1, 0),
-('1v_3rd_butyrki_str', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('24b_directions_shabulina', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('27b_zubkovoy_str', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('50_verkhnyaya_str', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('5_chernovitskaya_str', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('70b_chkalova_str', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
+('109-2_ostrovskogo_str', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('10b_svyazi_str_sokolovka', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('13_yesenina_str', 0, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('170v_pushkina_str_luhovitsy', 1, NULL, 900001, 'apelsin', 0, 1, 1, 1, 0),
+('1v_3rd_butyrki_str', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('24b_directions_shabulina', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('27b_zubkovoy_str', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('50_verkhnyaya_str', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('5_chernovitskaya_str', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('70b_chkalova_str', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
 ('about', 0, NULL, 101, 'apelsin', 1, 1, 1, 1, 0),
 ('accounts', 1, NULL, 999801, 'apelsin', 0, 1, 1, 1, 0),
 ('account_settings', 1, NULL, 999802, 'apelsin', 0, 1, 1, 1, 0),
 ('adminpanel', 1, 'adminpanel', 999901, 'apelsin', 0, 0, 0, 0, 0),
-('contacts', 1, '', 204, 'apelsin', 0, 1, 1, 1, 0),
+('contacts', 1, '', 900004, 'apelsin', 0, 1, 1, 1, 0),
 ('credit', 1, '', 101, 'apelsin', 0, 1, 1, 1, 0),
 ('discount', 1, '', 101, 'apelsin', 0, 1, 1, 1, 0),
 ('documents', 1, '', 101, 'apelsin', 0, 1, 1, 1, 0),
-('general_enquiries_department', 1, '', 202, 'apelsin', 0, 1, 1, 1, 0),
+('general_enquiries_department', 1, '', 900002, 'apelsin', 0, 1, 1, 1, 0),
 ('gift_cards', 1, '', 101, 'apelsin', 0, 1, 1, 1, 0),
 ('information', 1, 'withoutShortMaterialsText', 105, 'apelsin', 0, 1, 1, 1, 0),
-('marketing_department', 1, '', 202, 'apelsin', 0, 1, 1, 1, 0),
+('marketing_department', 1, '', 900002, 'apelsin', 0, 1, 1, 1, 0),
 ('news', 1, '', 105, 'apelsin', 0, 1, 1, 1, 0),
-('procurement_department', 1, '', 202, 'apelsin', 0, 1, 1, 1, 0),
+('procurement_department', 1, '', 900002, 'apelsin', 0, 1, 1, 1, 0),
 ('registration', 1, NULL, 999803, 'apelsin', 0, 1, 1, 1, 0),
-('sales_department', 1, '', 202, 'apelsin', 0, 1, 1, 1, 0),
+('sales_department', 1, '', 900002, 'apelsin', 0, 1, 1, 1, 0),
 ('service_centers', 1, '', 301, 'apelsin', 0, 1, 1, 1, 0),
-('shopping_mall_on_the_city_ring_road', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
-('studio_furniture', 1, NULL, 203, 'apelsin', 0, 1, 1, 1, 0),
-('studio_furniture_ostrovskogo', 1, NULL, 202, 'apelsin', 0, 1, 1, 1, 0),
-('studio_furniture_shabulina', 1, NULL, 202, 'apelsin', 0, 1, 1, 1, 0),
-('studio_furniture_yesenina', 1, NULL, 202, 'apelsin', 0, 1, 1, 1, 0),
-('the_185th_km_of_the_beltway_hangar', 1, '', 201, 'apelsin', 0, 1, 1, 1, 0),
+('shopping_mall_on_the_city_ring_road', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
+('studio_furniture', 1, NULL, 900003, 'apelsin', 0, 1, 1, 1, 0),
+('studio_furniture_ostrovskogo', 1, NULL, 900002, 'apelsin', 0, 1, 1, 1, 0),
+('studio_furniture_shabulina', 1, NULL, 900002, 'apelsin', 0, 1, 1, 1, 0),
+('studio_furniture_yesenina', 1, NULL, 900002, 'apelsin', 0, 1, 1, 1, 0),
+('the_185th_km_of_the_beltway_hangar', 1, '', 900001, 'apelsin', 0, 1, 1, 1, 0),
 ('vacancies', 1, '', 401, 'apelsin', 0, 1, 1, 1, 0);
 
 -- --------------------------------------------------------
@@ -2789,9 +2791,9 @@ INSERT INTO `ParamInfo_ComponentsElements` (`id`, `componentElement`, `param`, `
 (1, 101, 'name', 1, 'alias материала для вывода настранице', 'Materials', 'alias'),
 (2, 102, 'name', 1, 'name списка категорий', 'MaterialsCategoriesList', 'name'),
 (5, 105, 'name', 1, 'name списка категорий для вывода списка материалов', 'MaterialsCategoriesList', 'name'),
-(11, 202, 'name', 1, 'alias депортамента', 'ContactDepartments', 'alias'),
-(12, 203, 'name', 1, 'alias списка депортаментов', 'ContactDepartmentsList', 'alias'),
-(13, 201, 'name', 1, 'alias магазина', 'ContactsShop', 'alias');
+(11, 900002, 'name', 1, 'alias депортамента', 'ContactDepartments', 'alias'),
+(12, 900003, 'name', 1, 'alias списка депортаментов', 'ContactDepartmentsList', 'alias'),
+(13, 900001, 'name', 1, 'alias магазина', 'ContactsShop', 'alias');
 
 -- --------------------------------------------------------
 
