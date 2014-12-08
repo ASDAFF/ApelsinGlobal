@@ -7,7 +7,7 @@
 </div>
 <div id="ContactsMapBox1" class="map1" style="display: block;">
     <?php
-    include_once './components/Contacts/classes/ContactsMap.php';
+    include_once './components/Contacts_old/classes/ContactsMap.php';
     $contactsMap = new ContactsMap();
     $contactsMap->get();
     ?>

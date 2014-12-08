@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 08 2014 г., 08:35
+-- Время создания: Дек 08 2014 г., 08:55
 -- Версия сервера: 5.5.33-MariaDB
 -- Версия PHP: 5.4.20
 
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `Components` (
 
 INSERT INTO `Components` (`alias`, `name`, `author`, `version`, `description`, `adminDir`, `admin`) VALUES
 ('Adminpanel', 'Adminpanel', 'Compu Project', '1.0', 'Панель администрирования', 'admin', 'index.php'),
-('Contacts', 'Контакты на сайте', 'Compu Project', '1.0', 'Модуль для работы с контактами магазина апельсин', 'admin', 'index.php'),
+('Contacts_old', 'Контакты на сайте', 'Compu Project', '1.0', 'Модуль для работы с контактами магазина апельсин', 'admin', 'index.php'),
 ('Materials', 'Материалы сайта', 'Compu Project', '1.0', 'Компонент для размещение материалов на сайте.', 'admin', 'index.php'),
 ('ServiceCenters', 'сервисные центры', 'Compu Project', '1.0', 'Компонент для работы с сервисными центрами магазина апельсин', 'admin', 'index.php'),
 ('Users', 'Пользователи', 'Compu Project', '1.0', 'Компонент для работы с пользователями.', 'admin', 'index.php'),
@@ -224,10 +224,10 @@ INSERT INTO `ComponentsElements` (`id`, `alias`, `component`, `name`, `descripti
 (103, 'MaterialsCategory', 'Materials', 'Категории материалов', 'Выводит на страницу сайта категорию материалов', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (104, 'MaterialsCategoryList', 'Materials', 'Список категорий материалов', 'Выводит на страницу сайта список категорий материалов', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (105, 'MaterialsBlog', 'Materials', 'Блог материалов', 'Выводит список материалов в виде блога. Отличается от обычного вывода списка материалов блочной структурой.', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
-(201, 'Shops', 'Contacts', 'Магазин', 'Контакты магазина', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
-(202, 'Departments', 'Contacts', 'Отдел', 'Контакты отдела', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
-(203, 'DepartmentsList', 'Contacts', 'Список отделов', 'Контакты нескольких отделов в виде списка', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
-(204, 'ContactsMap', 'Contacts', 'Contacts Map', NULL, 'index.php', 'index.php', 'index.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', NULL),
+(201, 'Shops', 'Contacts_old', 'Магазин', 'Контакты магазина', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
+(202, 'Departments', 'Contacts_old', 'Отдел', 'Контакты отдела', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
+(203, 'DepartmentsList', 'Contacts_old', 'Список отделов', 'Контакты нескольких отделов в виде списка', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
+(204, 'ContactsMap', 'Contacts_old', 'Contacts Map', NULL, 'index.php', 'index.php', 'index.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', NULL),
 (301, 'AllServiceCenters', 'ServiceCenters', 'Сервисные центры', 'Список сервисных центров', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (401, 'Vacancies', 'Vacancies', 'Вакансии', 'Список вакансий', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
 (999801, 'Accounts', 'Users', 'Аккаунт', 'Аккаунт пользователя', 'index.php', 'print.php', 'mobile.php', 'head.php', 'bodyStart.php', 'bodyEnd.php', 'index.php'),
@@ -757,6 +757,15 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes` (
   PRIMARY KEY (`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `ContactsUnitsTypes`
+--
+
+INSERT INTO `ContactsUnitsTypes` (`type`) VALUES
+('departament'),
+('shop'),
+('studio_furniture');
+
 -- --------------------------------------------------------
 
 --
@@ -771,6 +780,18 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes_Lang` (
   PRIMARY KEY (`type`,`lang`),
   KEY `fk_ContactsTypes_Lang_2_idx` (`lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ContactsUnitsTypes_Lang`
+--
+
+INSERT INTO `ContactsUnitsTypes_Lang` (`type`, `lang`, `typeName`) VALUES
+('departament', 'eng', 'Departament'),
+('departament', 'rus', 'Отдел'),
+('shop', 'eng', 'Shop'),
+('shop', 'rus', 'Магазин'),
+('studio_furniture', 'eng', 'Studio furniture'),
+('studio_furniture', 'rus', 'Студия мебели');
 
 -- --------------------------------------------------------
 

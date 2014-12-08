@@ -26,7 +26,7 @@ class ContactDepartments {
     private $showInfo;
     private $showTimeTable;
     
-    private $imagePath = './resources/Components/Contacts/Departments/';
+    private $imagePath = './resources/Components/Contacts_old/Departments/';
     
     public function __construct($departament,$showParams) {
         $this->noData = false;

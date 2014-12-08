@@ -436,14 +436,14 @@ a:hover {
     clear:both;
     margin-bottom: 3px;
 }
-.Contacts .ContactsDepartments {
+.Contacts_old .ContactsDepartments {
     overflow:hidden;
     height: 360px;
     box-shadow: inset 0px 1px 10px rgba(0,0,0,0.5);
     background: white url(../img/ContactDepartments_bg.jpg) no-repeat center center;
 }
 
-.Contacts .ContactsDepartments h2 {
+.Contacts_old .ContactsDepartments h2 {
     height: 40px;
     background: rgba(255,255,255,0.75);
     /*background: rgba(0,0,0,0.5);*/
@@ -467,10 +467,10 @@ a:hover {
     /*border-bottom: 1px #8f8f8f solid;*/
 }
 
-.Contacts h1,
-.Contacts h2,
-.Contacts h3,
-.Contacts h4 {
+.Contacts_old h1,
+.Contacts_old h2,
+.Contacts_old h3,
+.Contacts_old h4 {
     background: none;
 /*    background: rgba(0,0,0,0.5);*/
     text-align: center;
