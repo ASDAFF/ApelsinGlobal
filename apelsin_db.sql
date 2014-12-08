@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 08 2014 г., 10:59
+-- Время создания: Дек 08 2014 г., 11:37
 -- Версия сервера: 5.5.33-MariaDB
 -- Версия PHP: 5.4.20
 
@@ -694,9 +694,12 @@ INSERT INTO `ContactsShop_Lang` (`shop`, `lang`, `name`, `description`, `info`) 
 DROP TABLE IF EXISTS `ContactsUnits`;
 CREATE TABLE IF NOT EXISTS `ContactsUnits` (
   `unit` varchar(100) NOT NULL,
+  `show` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `showOnMain` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `type` varchar(100) NOT NULL,
+  `sequence` int(5) unsigned NOT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `feedbackEmail` varchar(45) DEFAULT NULL,
+  `feedbackEmail` varchar(100) DEFAULT NULL,
   `phone1` varchar(50) DEFAULT NULL,
   `additional1` varchar(9) DEFAULT NULL,
   `phone2` varchar(50) DEFAULT NULL,
@@ -743,6 +746,7 @@ DROP TABLE IF EXISTS `ContactsUnitsMaps`;
 CREATE TABLE IF NOT EXISTS `ContactsUnitsMaps` (
   `unit` varchar(100) NOT NULL,
   `map` varchar(100) NOT NULL,
+  `show` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`unit`,`map`),
   KEY `fk_ContactsUnitsMaps_2_idx` (`map`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -756,6 +760,7 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsMaps` (
 DROP TABLE IF EXISTS `ContactsUnitsTypes`;
 CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes` (
   `type` varchar(100) NOT NULL,
+  `show` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -763,10 +768,10 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes` (
 -- Дамп данных таблицы `ContactsUnitsTypes`
 --
 
-INSERT INTO `ContactsUnitsTypes` (`type`) VALUES
-('departament'),
-('shop'),
-('studio_furniture');
+INSERT INTO `ContactsUnitsTypes` (`type`, `show`) VALUES
+('departament', 1),
+('shop', 1),
+('studio_furniture', 1);
 
 -- --------------------------------------------------------
 
@@ -779,6 +784,8 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes_Lang` (
   `type` varchar(100) NOT NULL,
   `lang` varchar(3) NOT NULL,
   `typeName` varchar(100) NOT NULL,
+  `topText` longtext,
+  `bottomText` longtext,
   PRIMARY KEY (`type`,`lang`),
   KEY `fk_ContactsTypes_Lang_2_idx` (`lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -787,13 +794,13 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes_Lang` (
 -- Дамп данных таблицы `ContactsUnitsTypes_Lang`
 --
 
-INSERT INTO `ContactsUnitsTypes_Lang` (`type`, `lang`, `typeName`) VALUES
-('departament', 'eng', 'Departament'),
-('departament', 'rus', 'Отдел'),
-('shop', 'eng', 'Shop'),
-('shop', 'rus', 'Магазин'),
-('studio_furniture', 'eng', 'Studio furniture'),
-('studio_furniture', 'rus', 'Студия мебели');
+INSERT INTO `ContactsUnitsTypes_Lang` (`type`, `lang`, `typeName`, `topText`, `bottomText`) VALUES
+('departament', 'eng', 'Departament', NULL, NULL),
+('departament', 'rus', 'Отдел', NULL, NULL),
+('shop', 'eng', 'Shop', NULL, NULL),
+('shop', 'rus', 'Магазин', NULL, NULL),
+('studio_furniture', 'eng', 'Studio furniture', NULL, NULL),
+('studio_furniture', 'rus', 'Студия мебели', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -808,6 +815,7 @@ CREATE TABLE IF NOT EXISTS `ContactsUnits_lang` (
   `name` varchar(100) NOT NULL,
   `adress` varchar(200) DEFAULT NULL,
   `postAdress` varchar(200) DEFAULT NULL,
+  `text` longtext,
   PRIMARY KEY (`unit`,`lang`),
   KEY `fk_ContactsUnits_lang_2_idx` (`lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
