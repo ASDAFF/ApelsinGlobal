@@ -10,7 +10,7 @@ class AP_DeleteFileBackUpMain {
     private $dir;
 
     public function __construct() {
-        $this->dir= './resources/ServiceCenters/';
+        $this->dir= './resources/Components/ServiceCenters/';
         $this->deleteFileBackUp();
     }
 

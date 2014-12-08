@@ -11,7 +11,7 @@ class AP_DownloadFileMain {
     private $fileName = 'service_centers.xml';
 
     public function __construct() {
-        $this->dir= './resources/ServiceCenters/';
+        $this->dir= './resources/Components/ServiceCenters/';
         $this->getForm();
         $this->uploadFile();
     }

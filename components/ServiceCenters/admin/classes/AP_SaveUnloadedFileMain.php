@@ -11,7 +11,7 @@ class AP_SaveUnloadedFileMain {
     private $fileName = 'service_centers.xml';
 
     public function __construct() {
-        $this->dir= './resources/ServiceCenters/';
+        $this->dir= './resources/Components/ServiceCenters/';
         $this->saveUnloadedFile();
     }
 
