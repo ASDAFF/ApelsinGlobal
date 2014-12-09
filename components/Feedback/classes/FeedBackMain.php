@@ -4,9 +4,6 @@
  *
  * @author olga
  */
-include_once './components/Feedback/classes/FeedBackAdd.php';
-include_once './components/Feedback/classes/FeedBackList.php';
-include_once './components/Feedback/classes/FeedBackAddComment.php';
 class FeedBackMain {
     
     private $html;
