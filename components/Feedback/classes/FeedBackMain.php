@@ -7,14 +7,11 @@
 class FeedBackMain {
     
     private $html;
-    private $SQL_HELPER;
     private $inputHelper;
     private $formAddFeedback;
     private $listFeedback;
 
     public function __construct() {
-        global $_SQL_HELPER;
-        $this->SQL_HELPER = $_SQL_HELPER;
         $this->inputHelper = new InputHelper();
         $this->listFeedback = new FeedBackList();
         $this->formAddFeedback = new FeedBackAdd();
