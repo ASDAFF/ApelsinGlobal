@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 08 2014 г., 11:37
+-- Время создания: Дек 09 2014 г., 05:46
 -- Версия сервера: 5.5.33-MariaDB
 -- Версия PHP: 5.4.20
 
@@ -760,18 +760,20 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsMaps` (
 DROP TABLE IF EXISTS `ContactsUnitsTypes`;
 CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes` (
   `type` varchar(100) NOT NULL,
+  `sequence` tinyint(1) unsigned NOT NULL,
   `show` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`type`)
+  PRIMARY KEY (`type`),
+  UNIQUE KEY `unique_sequence` (`sequence`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ContactsUnitsTypes`
 --
 
-INSERT INTO `ContactsUnitsTypes` (`type`, `show`) VALUES
-('departament', 1),
-('shop', 1),
-('studio_furniture', 1);
+INSERT INTO `ContactsUnitsTypes` (`type`, `sequence`, `show`) VALUES
+('departament', 3, 1),
+('shop', 1, 1),
+('studio_furniture', 2, 1);
 
 -- --------------------------------------------------------
 
