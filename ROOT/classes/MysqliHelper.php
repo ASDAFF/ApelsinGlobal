@@ -47,13 +47,13 @@ class MysqliHelper {
     public function select($query, $rowNumber=null) {
         if($this->error!=null) {
             echo $this->error;
-            return null;
+            return array();
         }
         $result = $this->mysqli->query($query);
         $i=0;
         $data = array();
         if($result==null) {
-            return null;
+            return array();
         }
         while($row = $result->fetch_assoc()){
             foreach (array_keys($row) as $key) {
@@ -62,7 +62,7 @@ class MysqliHelper {
             $i++;
         }
         if(count($data)<1) {
-            $data=null;
+            $data=array();
         }
         if($rowNumber!=null && !isset($data[$rowNumber-1])) {
             $data[$rowNumber-1]=null;
