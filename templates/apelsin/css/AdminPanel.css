@@ -381,5 +381,21 @@
 }
 .AP_FormTable td.FormTable_Input input[type=text].dayBox {
     width: 70px;
+    margin: 0 5px 0 5px;
+}
+.AP_FormTable td.FormTable_Input input[type=text].ContactsUnitsPhoneBox {
+    width: 145px;
     margin-right: 10px;
+}
+.AP_FormTable td.FormTable_Input .ContactsUnitsDayoff {
+    margin: 0 5px;
+    vertical-align: middle;
+}
+.ContactsUnitsDayoffWrapper {
+    float: left;
+    display: block;
+}
+.ContactsUnitsWrapper {
+    float: right;
+    margin-right: 60px;
 }

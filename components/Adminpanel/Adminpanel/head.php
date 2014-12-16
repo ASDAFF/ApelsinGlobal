@@ -1,3 +1,5 @@
+<script type="text/javascript" src="./components/Adminpanel/js/contactsUnitsDayoff.js"></script>
+
 <?php
 include_once './components/Adminpanel/classes/AdminPanel_ROOT.php';
 include_once './components/Adminpanel/classes/AdminPanel_Components.php';
