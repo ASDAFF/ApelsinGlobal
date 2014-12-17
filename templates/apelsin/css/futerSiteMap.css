@@ -35,9 +35,18 @@
     float: left;
     text-align: center;
     border-right: #EDEDED 1px solid;
-    min-height: 125px
+    min-height: 125px;
+    min-height: 107px;
+    margin-bottom: 10px;
 }
 .futerSiteMapWrapper .SiteMapGroup.SiteMapGroup_shops .SiteMapGroupElementBlock:last-child {
+    border: none;
+    border-right: #EDEDED 1px solid;
+}
+.futerSiteMapWrapper .SiteMapGroup.SiteMapGroup_shops .SiteMapGroupElementBlock {
+    border: none;
+}
+.futerSiteMapWrapper .SiteMapGroup.SiteMapGroup_information .SiteMapGroupElementBlock {
     border: none;
 }
 

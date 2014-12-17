@@ -22,6 +22,7 @@ global $ROOT;
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/AdminPanel.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/ng.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/futerSiteMap.css" type="text/css" />
+    <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/ContactsUI.css" type="text/css" />
     <script type="text/javascript" src="<?php $ROOT->templatePath();?>js/back-top.js"></script>
     <!--[if IE]>
         <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/main_ie.css" type="text/css" />
