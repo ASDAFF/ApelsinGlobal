@@ -1302,3 +1302,58 @@ h1.shopContactTitle {
     margin-left: 30px;
     margin-bottom: 0px;
 }
+
+
+.mainPageInfoBlockElement {
+    width: 700px;
+    text-align: center;
+    margin: 0px auto;
+    padding: 20px;
+    font: 16px/18px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}
+.mainPageInfoBlockElementSeparator {
+    width: 700px;
+    margin: 0px auto;
+    /*height: 71px;*/
+    /*height: 3px;*/
+    /*padding: 34px 0px 34px 0px;*/
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorLine {
+    height: 3px;
+    margin: 34px 0px 34px 0px;
+    background: #ef7f1a;
+    position: relative;
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG {
+    height: 71px;
+    width: 100%;
+    margin: 0px auto;
+    position: absolute;
+    top: -34px;
+    /*margin-top: -34px;*/
+}
+
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img01 {
+    background: url(../img/homePageIcons/01.png) no-repeat center center;
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img02 {
+    background: url(../img/homePageIcons/02.png) no-repeat center center;
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img03 {
+    background: url(../img/homePageIcons/03.png) no-repeat center center;
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img04 {
+    background: url(../img/homePageIcons/04.png) no-repeat center center;
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img05 {
+    background: url(../img/homePageIcons/05.png) no-repeat center center;
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img06 {
+    background: url(../img/homePageIcons/06.png) no-repeat center center;
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img07 {
+    background: url(../img/homePageIcons/07.png) no-repeat center center;
+}
+.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img08 {
+    background: url(../img/homePageIcons/08.png) no-repeat center center;
+}
