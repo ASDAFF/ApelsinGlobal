@@ -258,3 +258,39 @@
 .bottomWrapper .bottomBottomBlock .m_block.html.futerCopyright_Right .futerCopy {
     
 }
+
+.socialPanelBox {
+    height: 50px;
+    width: 490px;
+    margin: 0px auto;
+}
+.socialPanelBox .socialPanelElement {
+    height: 50px;
+    width: 100px;
+    float: left;
+}
+.socialPanelBox .socialPanelElement.vk {
+    height: 22px;
+    padding: 14px 0px 14px 0px;
+    width: 90px;
+}
+.socialPanelBox .socialPanelElement.google {
+    height: 20px;
+    padding: 15px 0px 15px 0px;
+    width: 70px;
+}
+.socialPanelBox .socialPanelElement.mailru {
+    height: 20px;
+    padding: 15px 0px 15px 0px;
+    width: 70px;
+}
+.socialPanelBox .socialPanelElement.odnoklassniki {
+    height: 20px;
+    padding: 15px 0px 15px 0px;
+    width: 60px;
+}
+.socialPanelBox .socialPanelElement.facebook {
+    height: 20px;
+    width: 200px;
+    padding: 15px 0px 15px 0px;
+}

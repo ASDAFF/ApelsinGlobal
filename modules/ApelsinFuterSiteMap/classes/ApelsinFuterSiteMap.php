@@ -28,7 +28,7 @@ class ApelsinFuterSiteMap {
     private function generationPage() {
         $this->html = '';
         $this->html .= '<div class="futerSiteMapWrapper" >';
-            $this->html .= $this->siteMap->getHtml(6,null,true);
+            $this->html .= $this->siteMap->getHtml(2,null,true);
         $this->html .= '</div>';
         $this->html .= $this->getBlockMoreInfo() ;
         $this->html .= '<div class="clear"></div>';
