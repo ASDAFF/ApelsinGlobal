@@ -1311,6 +1311,9 @@ h1.shopContactTitle {
     padding: 20px;
     font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
 }
+.mainPageInfoBlockElement:last-child {
+    margin-bottom: 20px;
+}
 .mainPageInfoBlockElementSeparator {
     width: 900px;
     margin: 0px auto;
