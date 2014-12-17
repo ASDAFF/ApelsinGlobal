@@ -1305,14 +1305,14 @@ h1.shopContactTitle {
 
 
 .mainPageInfoBlockElement {
-    width: 700px;
-    text-align: center;
+    width: 900px;
+    text-align: justify;
     margin: 0px auto;
     padding: 20px;
-    font: 16px/18px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
 }
 .mainPageInfoBlockElementSeparator {
-    width: 700px;
+    width: 900px;
     margin: 0px auto;
     /*height: 71px;*/
     /*height: 3px;*/
@@ -1341,19 +1341,4 @@ h1.shopContactTitle {
 }
 .mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img03 {
     background: url(../img/homePageIcons/03.png) no-repeat center center;
-}
-.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img04 {
-    background: url(../img/homePageIcons/04.png) no-repeat center center;
-}
-.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img05 {
-    background: url(../img/homePageIcons/05.png) no-repeat center center;
-}
-.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img06 {
-    background: url(../img/homePageIcons/06.png) no-repeat center center;
-}
-.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img07 {
-    background: url(../img/homePageIcons/07.png) no-repeat center center;
-}
-.mainPageInfoBlockElementSeparator .mainPageInfoBlockElementSeparatorIMG.img08 {
-    background: url(../img/homePageIcons/08.png) no-repeat center center;
 }
