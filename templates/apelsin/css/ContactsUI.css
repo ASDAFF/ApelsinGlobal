@@ -29,6 +29,7 @@
 
 .ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsTypesElementInfo .ContactsUnitsTypesElementContacts .ContactsElement {
     font: bold 12px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: left;
 }
 
 .ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsTypesElementInfo .ContactsUnitsTypesElementtimeTable {
@@ -124,10 +125,16 @@
 
 .ContactsAllUnitsList .ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementContacts {
     height: 150px;
+    width: 250px;
     float: left;
+}
+.ContactsAllUnitsList .ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementContacts .ContactsElement {
+    font: 11px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: left;
 }
 .ContactsAllUnitsList .ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementTable {
     height: 150px;
+    width: 150px;
     float: right;
 }
 .ContactsAllUnitsList .ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementShowHide {
@@ -203,7 +210,7 @@
 }
 
 .ContactsUnitsElementTable {
-    width: 160px;
+    width: 150px;
 }
 
 .ContactsUnitsElementTable .time_table {
@@ -215,7 +222,7 @@
 .ContactsUnitsElementTable .time_table td {
     border-collapse: collapse;
     border: none;
-    font: bold 12px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font: bold 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
     padding: 3px;
 }
 .ContactsUnitsElementTable .time_table td.time_table_text {

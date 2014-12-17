@@ -80,7 +80,7 @@ class Contacts {
             Ma.`sid`, CU.`mapShow`, Ma.`width`, Ma.`height`
             FROM (
                 SELECT 
-                CU.`unit`, CU.`email`, CU.`feedbackEmail`, 
+                CU.`unit`, CU.`sequence`, CU.`email`, CU.`feedbackEmail`, 
                 CU.`phoneText1`, CU.`phone1`, CU.`additional1`, 
                 CU.`phoneText2`, CU.`phone2`, CU.`additional2`, 
                 CU.`monH_s`, CU.`monM_s`, CU.`monH_e`, CU.`monM_e`, 
@@ -95,9 +95,9 @@ class Contacts {
                 left join `ContactsUnitsMaps` as CUM
                 on CU.`unit` = CUM.`unit`
                 WHERE CU.`show` = '1' AND CU.`type` = '".$type."'
-                order by `sequence` asc
             ) as CU left join `Maps` as Ma
-            on CU.`map` = Ma.`alias`;";
+            on CU.`map` = Ma.`alias`
+            order by CU.`sequence` asc;";
         $rezult = $this->SQL_HELPER->select($query);
         $units = array();
         foreach ($rezult as $key => $value) {
@@ -152,7 +152,7 @@ class Contacts {
             Ma.`sid`, CU.`mapShow`, Ma.`width`, Ma.`height`
             FROM (
                 SELECT 
-                CU.`unit`,
+                CU.`unit`, CU.`sequence`,
                 CU.`type`, CU.`email`, CU.`feedbackEmail`, 
                 CU.`phoneText1`, CU.`phone1`, CU.`additional1`, 
                 CU.`phoneText2`, CU.`phone2`, CU.`additional2`, 
@@ -168,9 +168,9 @@ class Contacts {
                 left join `ContactsUnitsMaps` as CUM
                 on CU.`unit` = CUM.`unit`
                 WHERE CU.`showOnMain` = '1'
-                order by `sequence` asc
             ) as CU left join `Maps` as Ma
-            on CU.`map` = Ma.`alias`;";
+            on CU.`map` = Ma.`alias`
+            order by CU.`sequence` asc;";
         $rezult = $this->SQL_HELPER->select($query);
         foreach ($rezult as $key => $value) {
             $unitText = $this->getContactsUnitsData_Lang($value['unit']);
