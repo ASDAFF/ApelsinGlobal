@@ -34,7 +34,7 @@
     padding-right: 10px;
 }
 .contentBlock .Materials {
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     
 }
 
@@ -1309,7 +1309,9 @@ h1.shopContactTitle {
     text-align: justify;
     margin: 0px auto;
     padding: 20px;
-    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font: 14px/18px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
 }
 .mainPageInfoBlockElement:last-child {
     margin-bottom: 20px;

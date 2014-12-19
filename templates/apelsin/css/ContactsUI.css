@@ -77,6 +77,7 @@
 /* ContactsAllUnitsList */
 .ContactsAllUnitsList {
     font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    display: none;
 }
 .ContactsAllUnitsList p {
     font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
@@ -86,6 +87,9 @@
 .ContactsAllUnitsList .ContactsUnitsList {
     display: none;
 }
+/*.ContactsAllUnitsList .ContactsUnitsList.shop {
+    display: block;
+}*/
 .ContactsAllUnitsList .ContactsUnitsList .ContactsUnitsListTitle {
     height: 40px;
     color: #4d4d4d;
@@ -238,6 +242,7 @@
     height: 30px;
     margin-bottom: 10px;
     background: #ef7f1a;
+    display: none;
     /*border: 1px dotted #ccc;*/
     /*background: white;*/
 }
@@ -329,4 +334,43 @@
     /*background: #dfdfdf;*/
     color: #ef7f1a;
     /*border-bottom: 1px dotted #ef7f1a;*/
+}
+
+
+/* ContactsUnitsElementWokersBlock */
+.ContactsUnitsElementWokersBlock {
+    margin-bottom: 10px;
+}
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement {
+    width: 226px;
+    height: 110px;
+    /*height: 120px;*/
+    margin: 2px;
+    padding: 5px;
+    float: left;
+    background: rgba(255,255,255,0.75) url(../img/grid.png) repeat center center;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementFIO {
+    font: bold 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #ef7f1a;
+    text-align: right;
+}
+
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementPost {
+    font: bold 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #777;
+    text-align: right;
+}
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementInfo {
+    /*height: 50px;*/
+    font: 10px/11px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #777;
+    text-align: justify;
+    margin: 5px 0px 5px 0px;
+}
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementContacts {
+    font: 10px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    
 }

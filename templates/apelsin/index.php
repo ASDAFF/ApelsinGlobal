@@ -47,14 +47,19 @@ global $ROOT;
                     <?php $ROOT->block('topRightBlock');?><!-- 3 -->
                 </div>
             </div>
-            <div class="pageTitleWrapper">
+<!--            <div class="pageTitleWrapper">
                 <div class="pageTitleBlock">
                     <?php $ROOT->title();?>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
     <div class="middleWrapper">
+        <div class="pageTitleWrapper">
+            <div class="pageTitleBlock">
+                <?php $ROOT->title();?>
+            </div>
+        </div>
         <div class='mainSiteWrapper mainBlockArea'>
             <div class='middleTopBlock mainBlockArea'>
                 <?php $ROOT->block('middleTopBlock');?><!-- 4 -->

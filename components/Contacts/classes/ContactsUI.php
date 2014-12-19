@@ -17,6 +17,16 @@ class ContactsUI {
     public function getHTML() {
         return $this->HTML;
     }
+    
+    public function getJS() {
+        $html = '';
+        $html .= "<script type='text/javascript'>";
+        $html .= "$(document).ready(function() {";
+        $html .= "ContactsUnitsTypesListSwitchElement('".$this->contactsData[0]['type']."','".$this->contactsData[0]['typeName']."');";
+        $html .= "});";
+        $html .= "</script>";
+        return $html;
+    }
 }
 
 class ContactsUI_Elements {
@@ -74,11 +84,11 @@ class ContactsUI_Elements {
 //        $ContactsUnitsTypesListShowText = '';
         $html = '';
         if($data != null && count($data) > 0) {
-            $html .= "<script type='text/javascript'>";
-            $html .= "$(document).ready(function() {";
-            $html .= "ContactsUnitsTypesListSwitchElement('".$data[0]['type']."','".$data[0]['typeName']."');";
-            $html .= "});";
-            $html .= "</script>";
+//            $html .= "<script type='text/javascript'>";
+//            $html .= "$(document).ready(function() {";
+//            $html .= "ContactsUnitsTypesListSwitchElement('".$data[0]['type']."','".$data[0]['typeName']."');";
+//            $html .= "});";
+//            $html .= "</script>";
             $html .= "<div id='ContactsUnitsTypesListSwitcher' class='ContactsUnitsTypesListSwitcher'>";
                 $html .= "<div id='ContactsUnitsTypesListSwitcherElementTitle' class='ContactsUnitsTypesListSwitcherElementTitle'></div>";
                 $html .= "<div id='ContactsUnitsTypesListSwitcherButton' class='ContactsUnitsTypesListSwitcherButton' onclick='ContactsUnitsTypesListShow()'>".$ContactsUnitsTypesListShowText."</div>";
@@ -101,9 +111,6 @@ class ContactsUI_Elements {
 //        }
         $html = '';
         $html .= "<div id='ContactsUnitsList_".$data['type']."' class='ContactsUnitsList ".$data['type']."'>";
-//        $html .= "<div class='ContactsUnitsListTitle'>";
-//        $html .= $data['typeName'];
-//        $html .= "</div>";
         if($data['topText'] != null && $data['topText'] != '') {
             $html .= "<div class='ContactsUnitsListTopText ".$data['type']."'>";
             $html .= $data['topText'];
@@ -178,8 +185,39 @@ class ContactsUI_Elements {
             }
         $html .= "</div>";
         $html .= "</div>";
+        if(is_array($data['contactsWorkers']) && count($data['contactsWorkers']) > 0) {
+            $html .= "<div class='ContactsUnitsElementWokersBlock ".$data['unit']."'>";
+            foreach ($data['contactsWorkers'] as $worker) {
+                $html .= self::getContactsUnitsElementWokersElement($worker);
+            }
+            $html .= "<div class='clear'></div>";
+            $html .= "</div>";
+        }
         return $html;
     }
+    
+    private static function getContactsUnitsElementWokersElement($worker) {
+        $html = '';
+        $html .= "<div class='ContactsUnitsElementWokersElement'>";
+            $html .= "<div class='ContactsUnitsElementWokersElementFIO'>";
+            $html .= $worker['fio'];
+            $html .= "</div>";
+            $html .= "<div class='ContactsUnitsElementWokersElementPost'>";
+            $html .= $worker['post'];
+            $html .= "</div>";
+            $html .= "<div class='ContactsUnitsElementWokersElementInfo'>";
+            $html .= $worker['info'];
+            $html .= "</div>";
+            $html .= "<div class='ContactsUnitsElementWokersElementContacts'>";
+            $html .= self::ContactsEmailString($worker['email1']);
+            $html .= self::ContactsEmailString($worker['email2']);
+            $html .= self::ContactsPhoneString($worker,'1');
+            $html .= self::ContactsPhoneString($worker,'2');
+            $html .= "</div>";
+        $html .= "</div>";
+        return $html;
+    }
+    
     public static function switchContactsUnitsMoreInfoElementPanel($inut,$img,$map,$text) {
         $html = '';
 //        if(!(!$img && !$map && !$text) && !(!$img && !$map && $text) && !(!$img && $map && !$text) && !($img && !$map && !$text)) {

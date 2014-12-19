@@ -1,3 +1,9 @@
+//$('#ContactsAllUnitsList').ready(function () {
+//    $('#ContactsUnitsTypesListSwitcher').show();
+//    $('#ContactsAllUnitsList').show();
+//});
+
+
 var contactsUnitsMoreInfoElement = { 
     img: '#ContactsUnitsElementIMG_', 
     map: '#ContactsUnitsElementMap_', 
@@ -33,6 +39,8 @@ function ContactsUnitsTypesListShow() {
 }
 
 function ContactsUnitsTypesListSwitchElement(type,text) {
+    $('#ContactsUnitsTypesListSwitcher').show();
+    $('#ContactsAllUnitsList').show();
     jQuery.each($('#ContactsAllUnitsList').children(), function() {
         $(this).hide();
     });

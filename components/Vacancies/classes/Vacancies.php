@@ -164,17 +164,7 @@ class Vacancies {
     
     private function generateHtmlFirst() {
         $this->firstHtml = "";
-        $this->firstHtml .= "<br>";
-//        $this->firstHtml .= "<h2>";
-//        $this->firstHtml .= $this->localization->getText('vacancies');
-//        $this->firstHtml .= "</h2>";
         $this->firstHtml .= $this->text;
-//        $this->firstHtml .= "<center>";
-//        $this->firstHtml .= $this->blank->getButonHTML();
-//        $this->firstHtml .= "</center>";
-//        $this->firstHtml .= "<h2>";
-//        $this->firstHtml .= $this->localization->getText('available_vacancies');
-//        $this->firstHtml .= "</h2>";
         $this->firstHtml .= "<br>";
         $this->firstHtml .= "<div id='VacanciesValidBlockArchive' class='VacanciesValidBlockArchive'>";
         if(!$this->noData) {

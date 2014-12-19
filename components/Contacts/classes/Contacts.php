@@ -102,6 +102,7 @@ class Contacts {
         $units = array();
         foreach ($rezult as $key => $value) {
             $unitText = $this->getContactsUnitsData_Lang($value['unit']);
+            $contactsWorkers = new ContactsWorkers($value['unit']);
             $units[$key]['unit'] = $value['unit'];
             $units[$key]['name'] = $unitText['name'];
             $units[$key]['adress'] = $unitText['adress'];
@@ -130,6 +131,7 @@ class Contacts {
             $units[$key]['mapShow'] = $value['mapShow'];
             $units[$key]['width'] = $value['width'];
             $units[$key]['height'] = $value['height'];
+            $units[$key]['contactsWorkers'] = $contactsWorkers->getData();
         }
         return $units;
     }
@@ -294,5 +296,8 @@ class Contacts {
     
     public function getHTML() {
         return $this->UI->getHTML();
+    }
+    public function getJS() {
+        return $this->UI->getJS();
     }
 }
