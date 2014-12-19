@@ -175,7 +175,7 @@ class ContactsUI_Elements {
             }
 //            if($data['mapShow'] > 0 && $data['sid'] != null && $data['sid'] != '') {
             $html .= "<div id='ContactsUnitsElementFeedback_".$data['unit']."' class='ContactsUnitsElementFeedback ".$data['unit']."'>";
-            $html .= self::ContactsFeedback($data['sid'],$data['width'],$data['height']);
+            $html .= self::ContactsFeedback($data['unit']);
             $html .= "</div>";
 //            }
             if($data['text'] != null && $data['text'] != '') {
@@ -319,7 +319,60 @@ class ContactsUI_Elements {
         return '<script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid='.$sid.'&width='.$width.'&height='.$height.'"></script>';
     }
     
-    private static function ContactsFeedback() {
-        return 'Извините, данный функционал на стадии разработки';
+    private static function ContactsFeedback($unit) {
+//        return 'Извините, данный функционал на стадии разработки';
+        $out = '';
+        $out .= '<form class="reviewsContactsFeedback" name="shop_reviews'.$unit.'" action="javascript:void(0);" onsubmit="ajaxContactsUnitFeedback(\''.$unit.'\')" 
+            id="ajaxContactsUnitFeedback'.$unit.'"  method="post" accept-charset="UTF-8" autocomplete="on" >';
+        $out .= '<input type="hidden" name="shop" value="'.$unit.'" id="shop" />';
+        $out .= '<table class="reviews_tableContactsFeedback">';
+        $out .= '<tr>';
+            $out .= '<td class="reviews_table_labelContactsFeedback">';
+            $out .= '* ФИО: ';
+            $out .= '</td>';
+            $out .= '<td class="reviews_table_inputContactsFeedback">';
+            $out .= '<input type="text" name="fio" value="" id="fio" maxlength="100" required placeholder="Ваше имя"/>';
+            $out .= '</td>';
+            $out .= '</td>';
+            $out .= '<td class="reviews_table_inputContactsFeedback" rowspan="4">';
+            $out .= '<textarea  name="comments" value="" id="comments" class="textareaContactsFeedback" required placeholder="Сообщение.."  ></textarea>';
+            $out .= '</td>';
+        $out .= '</tr>';
+        $out .= '<tr>';
+            $out .= '<td class="reviews_table_labelContactsFeedback">';
+            $out .= '* E-mail: ';
+            $out .= '</td>';
+            $out .= '<td class="reviews_table_inputContactsFeedback">';
+            $out .= '<input type="text" name="mail" value="" id="mail" maxlength="100" required placeholder="Ваш e-mail" />';
+            $out .= '</td>';
+        $out .= '</tr>';
+        $out .= '<tr>';
+            $out .= '<td class="reviews_table_labelContactsFeedback">';
+            $out .= '* Ваша отценка: ';
+            $out .= '</td>';
+            $out .= '<td class="reviews_table_inputContactsFeedback">';
+            $out .= '<select class="reviews_table_select" name="rating" id="rating">';
+            $out .= '<option selected value="5">5</option>';
+            $out .= '<option value="4">4</option>';
+            $out .= '<option value="3">3</option>';
+            $out .= '<option value="2">2</option>';
+            $out .= '<option value="1">1</option>';
+            $out .= '</select>';
+            $out .= '</td>';
+        $out .= '</tr>';
+        $out .= '<tr>';
+            $out .= '<td class="reviews_table_labelContactsFeedback">';
+            $out .= '<td>';
+            $out .= '<input class="apelsin_buttonContactsFeedback" type="submit" name ="submit'.$unit.'" value="Оставить отзыв"/>';
+            $out .= '</td>';
+        $out .= '</tr>';
+        $out .= '</table>';
+        $out .= '</form>';
+        $out .= '<div class="inf infContactsFeedback">';
+        $out .= 'Символом * отмечены обязательные для заполнения поля.';
+        $out .= '</div>';
+        $out .= '<div id="resultsContactsFeedback'.$unit.'" class="resultsContactsFeedback">';
+        $out .= '</div>';
+        return $out;
     }
 }
