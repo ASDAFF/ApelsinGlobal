@@ -62,9 +62,11 @@ class AP_contactsUnitsTypesEdit extends AdminPanel_ComponentPanelUI_Element_Edit
             $error = true;
             $this->checkAllValueErrors[] = "Разрешены только цифры";
         }
-        if(!$this->checkExtension()) {
-            $error = true;
-            $this->checkAllValueErrors[] = "Не поддерживаемый тип изображения. Допустимы jpeg и png";
+        if (isset($_FILES['unitImage']) && $_FILES['unitImage']['name'] != null && $_FILES['unitImage']['name'] != "") {
+            if (!$this->checkExtension()) {
+                $error = true;
+                $this->checkAllValueErrors[] = "Не поддерживаемый тип изображения. Допустимы jpg и png";
+            }
         }
         $local = false;
         foreach ($this->langArray as $langData) {

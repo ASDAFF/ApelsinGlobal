@@ -53,6 +53,11 @@ class AP_contactsUnitsAdd  extends AdminPanel_ComponentPanelUI_Element_Add {
                 $this->insertValue['text'][$key] = parent::getMysqlText($value);
             }
         }
+        if(isset($_POST['workers']) && $_POST['workers']!=null && $_POST['workers']!="") {
+            $this->insertValue['workers'] = $_POST['workers'];
+        } else {
+            $this->insertValue['workers'] = array();
+        }
     }
     
     protected function checkAllValue() {         
@@ -151,16 +156,16 @@ class AP_contactsUnitsAdd  extends AdminPanel_ComponentPanelUI_Element_Add {
             }
         }
         $image = false;
-            if (isset($_FILES['unitImage']) && $_FILES['unitImage']['name'] != null && $_FILES['unitImage']['name'] != "") {
-                $image = true;
+        if (isset($_FILES['unitImage']) && $_FILES['unitImage']['name'] != null && $_FILES['unitImage']['name'] != "") {
+            $image = true;
+            if (!$this->checkExtension()) {
+                $error = true;
+                $this->checkAllValueErrors[] = "Не поддерживаемый тип изображения. Допустимы jpg и png";
+            }
         }
         if (!$image) {
             $error = true;
             $this->checkAllValueErrors[] = "Загрузите изображение";
-        }
-        if(!$this->checkExtension()) {
-            $error = true;
-            $this->checkAllValueErrors[] = "Не поддерживаемый тип изображения. Допустимы jpg и png";
         }
         $local = false;
         foreach ($this->langArray as $langData) {
@@ -233,6 +238,11 @@ class AP_contactsUnitsAdd  extends AdminPanel_ComponentPanelUI_Element_Add {
                 $this->insertValue['text'][$key] = $value;
             }
         }
+        if(isset($_POST['workers']) && $_POST['workers']!=null && $_POST['workers']!="") {
+            $this->insertValue['workers'] = $_POST['workers'];
+        } else {
+            $this->insertValue['workers'] = array();
+        }
         $this->originalInsertValue = $this->insertValue;
     }
     
@@ -280,6 +290,16 @@ class AP_contactsUnitsAdd  extends AdminPanel_ComponentPanelUI_Element_Add {
         $queryContactsUnitsMaps .= "`map` = '".$this->insertValue['map']."', ";
         $queryContactsUnitsMaps .= "`show` = '".$this->insertValue['showMap']."'; ";
         
+        $queryContactsUnitsWokers = array();
+        if($this->insertValue['workers'] != null) {
+            foreach ($this->insertValue['workers'] as $worker) {
+                $query = "INSERT INTO `ContactsUnitsWokers` SET ";
+                $query .= "`unit`='".$this->insertValue['alias']."', ";
+                $query .= "`worker`='".$worker."';";
+                $queryContactsUnitsWokers[] = $query;
+            }
+        }
+        
         if ($this->SQL_HELPER->insert($queryContactsUnits)) {
             foreach($queryContactsUnits_Lang as $queryContactsUnits_Lg) {
                 $this->SQL_HELPER->insert($queryContactsUnits_Lg);
@@ -287,6 +307,9 @@ class AP_contactsUnitsAdd  extends AdminPanel_ComponentPanelUI_Element_Add {
             $this->uploadImage();
             if ($this->insertValue['map'] != 'noMap') {
             $this->SQL_HELPER->insert($queryContactsUnitsMaps);
+            }
+            foreach($queryContactsUnitsWokers as $queryContactsUnitsWoker) {
+                $this->SQL_HELPER->insert($queryContactsUnitsWoker);
             } 
         } else {
             echo 'Данные не были добавлены. Попробуйте позже.';
@@ -343,6 +366,9 @@ class AP_contactsUnitsAdd  extends AdminPanel_ComponentPanelUI_Element_Add {
         // image
         $image = '<input type="file" class="unitImage" name="unitImage" id="unitImage">';
         $html .= $this->inputHelper->createFormRow($image, true, 'Изображение');
+        // worker
+        $worker = $this->inputHelper->getChekBoxGroup('workers', 'workers', $this->getContactsUnitsWokers(), false, $this->originalInsertValue['workers'], '', '','contactsChekBoxGroup');
+        $html .= $this->inputHelper->createFormRow($worker, false, 'Работник');
         return $html;
     }
     
@@ -589,4 +615,27 @@ class AP_contactsUnitsAdd  extends AdminPanel_ComponentPanelUI_Element_Add {
         }
         return !$error;
     }
+    
+    private function getContactsUnitsWokers() {
+        $worker = array();
+        $query = "SELECT * FROM  `ContactsWorkers`;";
+        $result = $this->SQL_HELPER->select($query);
+        foreach ($result as $key => $value) {
+            $worker[$key]['text']=$this->getContactsWorkersDataText($value['worker']);
+            $worker[$key]['value']=$value['worker'];
+            $worker[$key]['checked']="0";
+        }
+        return $worker;
+    }
+    
+    private function getContactsWorkersDataText($worker) {
+        $title = "";
+        $this->langHelper = new LangHelper("ContactsWorkers_Lang","lang","worker",$worker,$this->thisLang);
+        $this->langType = $this->langHelper->getLangType();
+        if($this->langType != -1){
+            $langData = $this->langHelper->getLangData();
+            $title = $langData["fio"];
+        }
+        return $title;
+    } 
 }

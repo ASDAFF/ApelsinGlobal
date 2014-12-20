@@ -192,7 +192,7 @@ class InputHelper {
         return self::select($name,$id,$array,$mandatory,$value,$JSevents=null);
     }
     
-    public static function getChekBoxGroup($name,$id,$array,$mandatory,$value=null,$allCheck=false,$JSevents=null) {
+    public static function getChekBoxGroup($name,$id,$array,$mandatory,$value=null,$allCheck=false,$JSevents=null,$cssClass=null) {
         if($mandatory) {
             $required = " required ";
         } else {
@@ -201,8 +201,11 @@ class InputHelper {
         if($JSevents==null) {
             $JSevents="";
         }
+        if($cssClass==null) {
+            $cssClass="";
+        }
         $out = "";
-        $out .= '<div class="checkboxGroup">';
+        $out .= '<div class="checkboxGroup '.$cssClass.'">';
         foreach ($array as $key => $element) {
             if($allCheck || ($value!=null && in_array($element['value'],$value))) {
                 $checked = 'checked';
@@ -213,6 +216,7 @@ class InputHelper {
                 $element['value'].'" id="'.$id.'" '.
                 $required.' '.$checked.' '.$JSevents.' autocomplete="off" />'.$element['text'].'</label>';
         }
+        $out .= '<div class="clear"></div>';
         $out .= '</div>';
         return $out;
     }

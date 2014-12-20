@@ -399,3 +399,19 @@
     float: right;
     margin-right: 60px;
 }
+
+
+.AP_FormTable .checkboxGroup.contactsChekBoxGroup {
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.AP_FormTable td.FormTable_Input .checkboxGroup.contactsChekBoxGroup > label {
+    width: 200px;
+    height: 25px;
+    padding: 0px 5px;
+    float: left;
+}
+.AP_FormTable td.FormTable_Input .checkboxGroup > label > input[type=checkbox] {
+    vertical-align: middle;
+}

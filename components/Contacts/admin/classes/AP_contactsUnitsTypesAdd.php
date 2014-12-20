@@ -54,8 +54,12 @@ class AP_contactsUnitsTypesAdd  extends AdminPanel_ComponentPanelUI_Element_Add 
             $this->checkAllValueErrors[] = "Такой приоритет уже используется";
         }
         $image = false;
-            if (isset($_FILES['unitImage']) && $_FILES['unitImage']['name'] != null && $_FILES['unitImage']['name'] != "") {
-                $image = true;
+        if (isset($_FILES['unitImage']) && $_FILES['unitImage']['name'] != null && $_FILES['unitImage']['name'] != "") {
+            $image = true;
+            if (!$this->checkExtension()) {
+                $error = true;
+                $this->checkAllValueErrors[] = "Не поддерживаемый тип изображения. Допустимы jpg и png";
+            }
         }
         if (!$image) {
             $error = true;

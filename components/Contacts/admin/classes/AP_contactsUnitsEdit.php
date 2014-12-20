@@ -5,7 +5,8 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
     private $dir = './resources/Components/Contacts/Units/';
     private $unitLang;
     private $map;
-
+    private $workerData;
+    
     protected function checkAllValue() {         
         parent::checkAllValue();
         $errorArray = array();
@@ -97,9 +98,11 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
                 $this->checkAllValueErrors[] = $errorArray[0];
             }
         }
-        if(!$this->checkExtension()) {
-            $error = true;
-            $this->checkAllValueErrors[] = "Не поддерживаемый тип изображения. Допустимы jpg и png";
+        if (isset($_FILES['unitImage']) && $_FILES['unitImage']['name'] != null && $_FILES['unitImage']['name'] != "") {
+            if (!$this->checkExtension()) {
+                $error = true;
+                $this->checkAllValueErrors[] = "Не поддерживаемый тип изображения. Допустимы jpg и png";
+            }
         }
         $local = false;
         foreach ($this->langArray as $langData) {
@@ -159,6 +162,11 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
                 $this->insertValue['text'][$key] = parent::getMysqlText($value);
             }
         }
+        if(isset($_POST['workers']) && $_POST['workers']!=null && $_POST['workers']!="") {
+            $this->insertValue['workers'] = $_POST['workers'];
+        } else {
+            $this->insertValue['workers'] = array();
+        }
     }
     
     protected function getInputBlocks() { 
@@ -214,6 +222,9 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
         // image
         $image = '<input type="file" class="unitImage" name="unitImage" id="unitImage">';
         $html .= $this->inputHelper->createFormRow($image, false, 'Сменить изображение');
+        // worker
+        $worker = $this->inputHelper->getChekBoxGroup('workers', 'workers', $this->getContactsUnitsWokers(), false, $this->originalInsertValue['workers'], '', '','contactsChekBoxGroup');
+        $html .= $this->inputHelper->createFormRow($worker, false, 'Работник');
         return $html;
     }
 
@@ -239,12 +250,15 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
         $this->data = array();
         $this->dataUnitLang = array();
         $this->map = array();
+        $this->workerData = array();
         $query = "SELECT * FROM `ContactsUnits` WHERE `unit`='".$this->editElement."';";
         $this->data = $this->SQL_HELPER->select($query,1);
         $query = "SELECT * FROM `ContactsUnits_Lang` WHERE `unit`='".$this->editElement."';";
         $this->unitLang = $this->SQL_HELPER->select($query);
         $query = "SELECT * FROM `ContactsUnitsMaps` WHERE `unit`='".$this->editElement."';";
         $this->map = $this->SQL_HELPER->select($query,1);
+        $query = "SELECT * FROM `ContactsUnitsWokers` WHERE `unit`='".$this->editElement."';";
+        $this->workerData = $this->SQL_HELPER->select($query);
     }
     
     protected function setDefaltInput() {
@@ -291,6 +305,12 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
             $this->insertValue['adress'][$langData['lang']] = $langData['adress'];
             $this->insertValue['postAdress'][$langData['lang']] = $langData['postAdress'];
             $this->insertValue['text'][$langData['lang']] = $langData['text'];
+        }
+        $this->insertValue['workers'] = array();
+        if($this->workerData != null) {
+            foreach ($this->workerData as $key => $workerData) {
+                $this->insertValue['workers'][$key] = $workerData['worker'];
+            }
         }
         $this->originalInsertValue = $this->insertValue;
     }
@@ -343,6 +363,19 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
                 $queryContactsUnits_Lang[] = $queryLang;
             }
         }
+        
+        $queryContactsUnitsWokers = array();
+        if($this->insertValue['workers'] != null) {
+            foreach ($this->insertValue['workers'] as $worker) {
+                $query = "INSERT INTO `ContactsUnitsWokers` SET ";
+                $query .= "`unit`='".$this->insertValue['alias']."', ";
+                $query .= "`worker`='".$worker."';";
+                $queryContactsUnitsWokers[] = $query;
+            }
+        }
+        
+        $queryContactsUnitsWokersDel = "DELETE FROM `ContactsUnitsWokers` WHERE `unit` = '".$this->editElement."';";
+        
         if ($this->SQL_HELPER->insert($queryContactsUnits)) {
             $this->SQL_HELPER->insert($queryContactsUnits_LangDel);
             foreach($queryContactsUnits_Lang as $queryContactsUnits_Lg) {
@@ -350,6 +383,11 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
             }
             $this->SQL_HELPER->insert($queryContactsUnitsMapsDel);
             $this->SQL_HELPER->insert($queryContactsUnitsMaps);
+            
+            $this->SQL_HELPER->insert($queryContactsUnitsWokersDel);
+            foreach($queryContactsUnitsWokers as $queryContactsUnitsWoker) {
+                $this->SQL_HELPER->insert($queryContactsUnitsWoker);
+            }
             $this->uploadImage();
         } else {
             echo 'Данные не были добавлены. Попробуйте позже.';
@@ -477,10 +515,10 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
                 $extension = $this->getExtension();
                 // Если файл загружен успешно, перемещаем его из временной директории в конечную
                 move_uploaded_file($_FILES["unitImage"]["tmp_name"], $this->dir.$this->insertValue['alias'].".".$extension);
-            } else {
-                $extension = strrchr($oldImage, "." ) ;
-                rename($oldImage, $this->dir.$this->insertValue['alias'].$extension);
-            }
+            } 
+        } else {
+            $extension = strrchr($oldImage, "." ) ;
+            rename($oldImage, $this->dir.$this->insertValue['alias'].$extension);
         }
     }
     
@@ -641,4 +679,27 @@ class AP_contactsUnitsEdit extends AdminPanel_ComponentPanelUI_Element_Edit {
         }
         return !$error;
     }
+    
+    private function getContactsUnitsWokers() {
+        $worker = array();
+        $query = "SELECT * FROM  `ContactsWorkers`;";
+        $result = $this->SQL_HELPER->select($query);
+        foreach ($result as $key => $value) {
+            $worker[$key]['text']=$this->getContactsWorkersDataText($value['worker']);
+            $worker[$key]['value']=$value['worker'];
+            $worker[$key]['checked']="0";
+        }
+        return $worker;
+    }
+    
+    private function getContactsWorkersDataText($worker) {
+        $title = "";
+        $this->langHelper = new LangHelper("ContactsWorkers_Lang","lang","worker",$worker,$this->thisLang);
+        $this->langType = $this->langHelper->getLangType();
+        if($this->langType != -1){
+            $langData = $this->langHelper->getLangData();
+            $title = $langData["fio"];
+        }
+        return $title;
+    } 
 }
