@@ -334,7 +334,7 @@ class ContactsUI_Elements {
             $out .= '<input type="text" name="fio" value="" id="fio" maxlength="100" required placeholder="Ваше имя"/>';
             $out .= '</td>';
             $out .= '</td>';
-            $out .= '<td class="reviews_table_inputContactsFeedback" rowspan="4">';
+            $out .= '<td class="reviews_table_inputContactsFeedback text" rowspan="4">';
             $out .= '<textarea  name="comments" value="" id="comments" class="textareaContactsFeedback" required placeholder="Сообщение.."  ></textarea>';
             $out .= '</td>';
         $out .= '</tr>';
@@ -348,10 +348,10 @@ class ContactsUI_Elements {
         $out .= '</tr>';
         $out .= '<tr>';
             $out .= '<td class="reviews_table_labelContactsFeedback">';
-            $out .= '* Ваша отценка: ';
+            $out .= '* Оценка: ';
             $out .= '</td>';
             $out .= '<td class="reviews_table_inputContactsFeedback">';
-            $out .= '<select class="reviews_table_select" name="rating" id="rating">';
+            $out .= '<select class="reviews_table_select selectBox" name="rating" id="rating">';
             $out .= '<option selected value="5">5</option>';
             $out .= '<option value="4">4</option>';
             $out .= '<option value="3">3</option>';

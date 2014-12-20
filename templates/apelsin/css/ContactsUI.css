@@ -373,46 +373,66 @@
 .ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementContacts {
     font: 10px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
 }
-.reviewsContactsFeedback {
-    border-collapse: collapse;
-    width: 560px;
-}
-.reviewsContactsFeedback table.reviews_tableContactsFeedback,
-.reviewsContactsFeedback table.reviews_tableContactsFeedback td {
+
+
+
+
+/* ContactsUnitsElementFeedback */
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback {
     border: none;
     border-collapse: collapse;
+    width: 560px;
+    height: 120px;
+    padding: 0px;
+    margin: 0px;
 }
-.reviewsContactsFeedback table.reviews_tableContactsFeedback tr {
-    height: 27px;
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback,
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback td {
+    height: 26px;
+    border: none;
+    border-collapse: collapse;
+    padding: 2px;
+    margin: 0px;
 }
-.reviewsContactsFeedback table.reviews_tableContactsFeedback .reviews_table_labelContactsFeedback{
-    width: 80px;
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback td.reviews_table_labelContactsFeedback{
+    font: 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
     text-align: right;
+    width: 56px;
 }
-.reviewsContactsFeedback table.reviews_tableContactsFeedback .reviews_table_inputContactsFeedback {
-    width: 100px; 
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback td.reviews_table_inputContactsFeedback {
+    width: 196px;
 }
-.reviewsContactsFeedback table.reviews_tableContactsFeedback .textareaContactsFeedback {
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback td.reviews_table_inputContactsFeedback.text {
+    width: 296px;
+}
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback 
+td.reviews_table_inputContactsFeedback input[type=text] {
+    width: 176px;
+}
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback 
+td.reviews_table_inputContactsFeedback .selectBox {
+    width: 196px;
+}
+
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback 
+td.reviews_table_inputContactsFeedback.text .textareaContactsFeedback {
+    min-width: 276px;
+    min-height: 109px;
+    max-width: 276px;
+    max-height: 109px;
     resize: none;
-    width: 300px;
-    height: 130px; 
 }
-.reviewsContactsFeedback table.reviews_tableContactsFeedback .reviews_table_select {
-    width: 100%;
-    border-radius: 5px;
-}
-.inf.infContactsFeedback {
+.ContactsUnitsElementFeedback .inf.infContactsFeedback {
     text-align: right;
 }
-.resultsContactsFeedback {
-    font: 10px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+.ContactsUnitsElementFeedback .resultsContactsFeedback {
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
     width: 540px;
-    height: 20px;
+    height: 28px;
     padding: 5px 10px;
-    /*background: #fce8cf;*/
     margin-top: 10px; 
 }
-input[type=submit].apelsin_buttonContactsFeedback {
+.ContactsUnitsElementFeedback input[type=submit].apelsin_buttonContactsFeedback {
     background: #ef7f1a;
     font: 12px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
     font-weight: bold;

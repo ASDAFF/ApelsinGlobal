@@ -49,7 +49,7 @@ class ContactsUnitFeedback {
             $message .= "Комментарии: ".$this->msg['comments']."\r\n";
             $message .= "Рейтинг: ".$this->msg['rating']."\r\n";
             $message .= "Дата: ".date("d.m.Y - h:i:s")."\r\n";
-            $this->error = "Ваш отзыв успешно добавлен. 
+            $this->error = "Ваш отзыв успешно добавлен.<br />
                 Наши менеджеры рассмотрят его в ближайшее 
                 время и при необходимости свяжутся с вами по E-mail";
             if($this->getEmailAdress($this->msg['shop'])) {
