@@ -1,8 +1,18 @@
+//$('#ContactsAllUnitsList').ready(function () {
+//    $('#ContactsUnitsTypesListSwitcher').show();
+//    $('#ContactsAllUnitsList').show();
+//});
+
+
 var contactsUnitsMoreInfoElement = { 
     img: '#ContactsUnitsElementIMG_', 
     map: '#ContactsUnitsElementMap_', 
     text: '#ContactsUnitsElementText_', 
     feedback: '#ContactsUnitsElementFeedback_'};
+
+//$(document).ready(function() {
+//    ContactsUnitsTypesListSwitchElement('departament','Контакты отделов');
+//});
 
 $(document).mouseup(function (e) {
     var container = $('#ContactsUnitsTypesList');
@@ -29,6 +39,8 @@ function ContactsUnitsTypesListShow() {
 }
 
 function ContactsUnitsTypesListSwitchElement(type,text) {
+    $('#ContactsUnitsTypesListSwitcher').show();
+    $('#ContactsAllUnitsList').show();
     jQuery.each($('#ContactsAllUnitsList').children(), function() {
         $(this).hide();
     });
