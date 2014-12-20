@@ -1313,6 +1313,9 @@ h1.shopContactTitle {
     letter-spacing: 1px;
     text-align: center;
 }
+.mainPageInfoBlockElement:first-child {
+    padding-top: 0px;
+}
 .mainPageInfoBlockElement:last-child {
     margin-bottom: 20px;
 }
