@@ -5,7 +5,9 @@ class UserData {
     private $localization;
     private $isAuthorization;
     private $error;
-    
+    private $_SITECONFIG;
+
+
     /**
      * Конструктор
      * @global type $_SQL_HELPER
@@ -18,6 +20,8 @@ class UserData {
         $this->localization = new Localization();
         global $_SQL_HELPER;
         $this->SQL_HELPER = $_SQL_HELPER;
+        global $_SITECONFIG;
+        $this->_SITECONFIG = $_SITECONFIG;
         @session_start();
     }
     
@@ -30,7 +34,7 @@ class UserData {
     private function getDBUserData($login) {
         $query = "select * from `Users`
             where 
-            `login`='".$login."';";
+            `login`='".mb_strtolower($login, $this->_SITECONFIG->getCharset())."';";
         $this->userData = $this->SQL_HELPER->select($query,1);
     }
     

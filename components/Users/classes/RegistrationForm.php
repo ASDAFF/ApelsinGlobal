@@ -12,6 +12,7 @@ class RegistrationForm {
     private $params;
     private $agreementsData;
     private $checkAllValueErrors = null;
+    private $_SITECONFIG;
     
     /**
      * Конструктор
@@ -23,6 +24,8 @@ class RegistrationForm {
         $this->SQL_HELPER = $_SQL_HELPER;
         global $_URL_PARAMS;
         $this->params = $_URL_PARAMS['params'];
+        global $_SITECONFIG;
+        $this->_SITECONFIG = $_SITECONFIG;
         $this->inputHelper = new InputHelper();
         $this->localization = new Localization("Users/RegistrationForm");
         $this->message = "";
@@ -120,7 +123,7 @@ class RegistrationForm {
         $password = $this->inputHelper->paternPasswordBox("password", "password", "password", 25, true, $this->localization->getText($loginAndPasswordPatern), "[A-Za-z0-9]{3,20}", null);
         $this->form .= $this->createLocalizationFormRow($password, true, 'password',$loginAndPasswordPatern);
         // repeatPassword
-        $repeatPassword = $this->inputHelper->paternPasswordBox("repeatPassword", "repeatPassword", "repeatPassword", 25, true, $this->localization->getText($loginAndPasswordPatern), "[A-Za-z0-9]{6,20}", null);
+        $repeatPassword = $this->inputHelper->paternPasswordBox("repeatPassword", "repeatPassword", "repeatPassword", 25, true, $this->localization->getText($loginAndPasswordPatern), "[A-Za-z0-9]{3,20}", null);
         $this->form .= $this->createLocalizationFormRow($repeatPassword, true, 'repeatPassword',$loginAndPasswordPatern);
         // email
         $email = $this->inputHelper->paternTextBox("email", "email", "email", 200, true, "user@domen.zone", "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$", $this->insertValue['email']);
@@ -402,7 +405,9 @@ class RegistrationForm {
         $this->insertValue['birthday'] = $this->getPostValue('birthday');
         $this->insertValue['sex'] = $this->getPostValue('sex');
         $this->insertValue['city'] = $this->getPostValue('city');
-        $this->insertValue['login'] = $this->getPostValue('login');
+        $login = $this->getPostValue('login');
+        $this->insertValue['login'] = mb_strtolower($login, $this->_SITECONFIG->getCharset());
+        $this->insertValue['nickname'] = $login;
         $this->insertValue['password'] = md5($this->getPostValue('password'));
         $this->insertValue['email'] = mb_strtolower($this->getPostValue('email'));
         $this->insertValue['phone'] = $this->getPostValue('phone');

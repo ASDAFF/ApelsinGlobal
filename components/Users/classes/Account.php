@@ -171,7 +171,8 @@ class Account {
                 $out .= $sex;
             $out .= '</div>';
             $out .= '<div class="login">';
-                $out .= $this->login;
+//                $out .= $this->login;
+                $out .= $this->accountData['nickname'];
             $out .= '</div>';
             if($this->isYou() || $this->isAdministrator()) {
                 $out .= '<div class="fio">';
