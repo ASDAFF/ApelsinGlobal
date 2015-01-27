@@ -155,6 +155,31 @@ class InputHelper {
         return $out;
     }
     
+    /**
+     * Загрузки любых файлов
+     * @param type $name - 1) name input
+     * @param type $id - 2) id input
+     * @param type $class - 3) css класс
+     * @param type $mandatory - 4) обязательное поле
+     * @param type $multiple - 5) загрузки более одного файла
+     * @param type $accept - 6) фильтр на типы файлов. Тип файла указывается как MIME-тип, 
+     *          при нескольких значениях они перечисляются через запятую.Если файл не подходит
+     *          под установленный фильтр, он не показывается в окне выбора файлов.
+     * @return string
+     */
+    public static function loadFiles($name, $id, $class, $mandatory, $multiple = false, $accept = null) {
+        $mandatory ? $required = " required " : $required = '';
+        $accept != null ? $acceptHtml = ' accept="'.$accept.'"' : $acceptHtml = '';
+        if ($multiple) {
+            $multipleHtml = ' multiple ';
+            $name = $name.'[]';
+        } else {
+            $multipleHtml = '';
+        }
+        $file = '<input type="file" class="'.$class.'" name="'.$name.'" id="'.$id.'" '.$required.$acceptHtml.$multipleHtml.'  autocomplete="off">';
+        return $file;
+    }
+    
     public static function createFormRow($input,$mandatory,$text,$info=null) {
         $mandatoryText = "";
         if($mandatory) {
