@@ -124,6 +124,8 @@ class AuthorizationUserPanel {
                     $out .= '<div class="UserPanelLoginBlockElementMenuElement"><a href="'.$this->urlHelper->pageUrl('account_settings', $urlParam).'">Сменить аватар</a></div>';
                     $urlParam[0]="data";
                     $out .= '<div class="UserPanelLoginBlockElementMenuElement"><a href="'.$this->urlHelper->pageUrl('account_settings', $urlParam).'">Изменить данные</a></div>';
+                    $urlParam[0]="change_password";
+                    $out .= '<div class="UserPanelLoginBlockElementMenuElement"><a href="'.$this->urlHelper->pageUrl('account_settings', $urlParam).'">Изменить пароль</a></div>';
 //                    $out .= '<div class="UserPanelLoginBlockElementMenuElement">Сообщения [12]</div>';
 //                    $out .= '<div class="UserPanelLoginBlockElementMenuElement">Публикации</div>';
 //                    $out .= '<div class="UserPanelLoginBlockElementMenuElement">Друзья</div>';

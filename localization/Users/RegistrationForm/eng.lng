@@ -1,5 +1,12 @@
 login=Логин
 loginAndPasswordPatern=От 3 до 25 латинских букв и цифр
+currentPassword=Текущий пароль
+newPassword=Новый пароль
+repeatNewPassword=Повторите новый пароль
+changePasswordFormButtonText=Изменить
+checkPasswordTrue=Ваш пароль был успешно изменен. Выйдите и авторизуйтесь под новым паролем. 
+checkPasswordFalse= Ошибка при вводе пароля.
+changePasswordExitButtonText=Выйти
 password=Пароль
 repeatPassword=Повторите пароль
 email=Электронная почта

@@ -473,5 +473,119 @@ class AccountSettings {
             $this->message = $this->localization->getText("checkCaptchaFalse");
         }
     }
+
+public function getChangePasswordForm() {
+        if (isset($_POST['changePasswordFormSubmit'])) {
+            $this->updatePassword();
+        }
+        $form = '<form class="changePasswordForm" name="RegistrationForm" action="'.$this->urlHelper->getThisPage().'" 
+            method="post" accept-charset="UTF-8" autocomplete="on">';
+        $form .= "<div class='message'>$this->message</div>";
+        $form .= '<table class="changePasswordFormTable" >';
+        $loginAndPasswordPatern = "loginAndPasswordPatern";
+        // currentPassword
+        $currentPassword = $this->inputHelper->paternPasswordBox("currentPassword", "currentPassword", "changePassword", 25, true, $this->localization->getText($loginAndPasswordPatern), "[A-Za-z0-9]{3,20}", null);
+        $form .= $this->createLocalizationFormRow($currentPassword, true, 'currentPassword');
+        // newPassword
+        $newPassword = $this->inputHelper->paternPasswordBox("newPassword", "newPassword", "changePassword", 25, true, $this->localization->getText($loginAndPasswordPatern), "[A-Za-z0-9]{3,20}", null);
+        $form .= $this->createLocalizationFormRow($newPassword, true, 'newPassword');
+        // repeatNewPassword
+        $repeatNewPassword = $this->inputHelper->paternPasswordBox("repeatNewPassword", "repeatNewPassword", "changePassword", 25, true, $this->localization->getText($loginAndPasswordPatern), "[A-Za-z0-9]{3,20}", null);
+        $form .= $this->createLocalizationFormRow($repeatNewPassword, true, 'repeatNewPassword');
+        // captcha
+        $captcha = $this->inputHelper->textBox("captcha", "captcha", "changePassword", 20, true, null);
+        $form .= $this->createFormRow($captcha, true, getCaptcha(120, 25));
+        $form .= '</table>';
+        $form .= '<input class="RegistrationFormButton" type="submit" name="changePasswordFormSubmit" value="'.$this->localization->getText("changePasswordFormButtonText").'">';
+        $form .= '</form>';
+        return $form;
+    }
+    
+    private function checkRepeatPassword() {
+        return ($_POST['newPassword'] == $_POST['repeatNewPassword']);
+    }
+    
+    private function checkPassword() {
+        $query = "SELECT `password` FROM `Users` WHERE `login` = '".$this->userData['login']."';";
+        $password = $this->SQL_HELPER->select($query);
+        return (md5(InputValueHelper::getPostValue('currentPassword')) === $password[0]['password']) ? true : false ;
+    }
+
+    private function checkValueNewPassword() {
+        $this->checkAllValueErrors = array();
+        $error = false;
+        if (!$this->checkValue('currentPassword',"/^[A-Za-z0-9]{3,25}+$/u")) {
+            $error = true;
+            $this->checkAllValueErrors[] = "Ваш текущийй пароль не совпадает с введённым. Попробуйте ещё раз";
+        }
+        if (!$this->checkValue('newPassword',"/^[A-Za-z0-9]{3,25}+$/u")) {
+            $error = true;
+            $this->checkAllValueErrors[] = "Неверно указан пароль. Он может состоять из английских букв и цифр. Минимальная длина пароля 3 символа, максимальная - 25.";
+        }
+        if (!$this->checkValue('repeatNewPassword',"/^[A-Za-z0-9]{3,25}+$/u")) {
+            $error = true;
+            $this->checkAllValueErrors[] = "Не задан или не корректно введён повторный пароль.";
+        }
+        if (!$this->checkValue('captcha',"/^[A-Za-z0-9]{1,20}+$/u")) {
+            $error = true;
+            $this->checkAllValueErrors[] = "Проверьте правильность заполнения каптчи";
+        }
+        return !$error;
+    }
+    
+    private function getQueryForUpdatePassword() {
+        return ($query = "UPDATE `Users` SET `password` = '".md5(InputValueHelper::getPostValue('newPassword'))."' WHERE `login` = '".$this->userData['login']."';");
+    }
+  
+    private function getButtonExit() {
+        $html = '<a href="./out.php?backURL='.$this->urlHelper->getThisPage().'">';
+            $html .= '<input class="RegistrationFormButton" type="button"  value="'.$this->localization->getText("changePasswordExitButtonText").'">';
+        $html .= '</a>';
+        return $html;
+    }
+    
+    private function updatePassword() {
+        if ($this->checkCaptcha()) {
+            if ($this->checkPassword()) {
+                if ($this->checkRepeatPassword()) {
+                    if ($this->checkValueNewPassword()) {
+                        $update = $this->getQueryForUpdatePassword();
+                        if ($this->SQL_HELPER->insert($update)) {
+                            $this->message = $this->localization->getText("checkPasswordTrue");
+                            $this->yourUser->authorization($this->userData['login'], InputValueHelper::getPostValue('newPassword'));
+//                            $this->message .= $this->getButtonExit();
+                        } else {
+                            $this->message = $this->localization->getText("dbError");
+                            // если необходима запись в логи
+//                            $this->message .= $this->reportError($update);
+                        }
+                    } else {
+                        $this->message = $this->localization->getText("checkAllValueFalse")."<br>";
+                        if ($this->checkAllValueErrors!=null) {
+                            foreach ($this->checkAllValueErrors as $CVerror) {
+                                $this->message .= "<br>".$CVerror;
+                            }
+                            $this->message .= "<br>";
+                        }
+                    }
+                } else {
+                    $this->message = $this->localization->getText("checkRepeatPasswordFalse");
+                } 
+            } else {
+                $this->message = $this->localization->getText("checkPasswordFalse");
+            }
+        } else {
+            $this->message = $this->localization->getText("checkCaptchaFalse");
+        }
+    }
+    
+    // если необходима запись в логи
+//    private function reportError($sql) {
+//        $sql = $this->getMysqlText($sql);
+//        $query = "INSERT INTO `DBerrors`(`element`, `sql`, `date`) VALUES ('RegistrationForm','".$sql."','".date("Y-m-d h:i:s")."');";
+//        $this->SQL_HELPER->insert($query);
+//        return "Сделана запись в логах<br>";
+//    }
+    
 }
 ?>

@@ -689,3 +689,15 @@ ul.accountSocial li.icon.siteUrl:hover {
 .UserSearchResult .searchResultElement:hover a {
     color: #000;
 }
+.changePasswordForm {
+    width: 45%;
+}
+.changePasswordForm .changePasswordFormTable .EditUserDataFormTable_Text {
+    width: 40%;
+    text-align: right;
+    padding-right: 5px;
+    vertical-align: middle;
+} 
+.changePasswordForm .changePasswordFormTable .EditUserDataFormTable_Input .changePassword {
+    width: 90%;
+} 
