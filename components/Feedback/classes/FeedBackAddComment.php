@@ -95,12 +95,12 @@ class FeedBackAddComment {
     }
     
     private function setDefaltInput() { 
-//        $this->insertValue['fio'] = InputValueHelper::getOriginalPostValue('fio');
-        $this->insertValue['fio'] = $this->userData['login'];
-        $this->insertValue['phone'] = InputValueHelper::getOriginalPostValue('phone');
-        $this->insertValue['email'] = InputValueHelper::getOriginalPostValue('email');
-        $this->insertValue['title'] = InputValueHelper::getOriginalPostValue('title');
-        $this->insertValue['text'] = InputValueHelper::getOriginalPostValue('text');
+        $this->insertValue['fio'] = $this->userData['ferstName'].' '.$this->userData['lastName'];
+        $this->insertValue['phone'] = '';
+        $this->insertValue['email'] = '';
+        $this->insertValue['title'] = '';
+        $this->insertValue['text'] = '';
+        $this->insertValue['rating'] = '';
         $this->originalInsertValue = $this->insertValue;
     }
     
@@ -182,9 +182,6 @@ class FeedBackAddComment {
     
     private function insertComments() {
         $ip = $_SERVER['REMOTE_ADDR'];
-        
-        // для отладки
-//        $ip = '127.0.0.4';
         $this->getDataIPStatus($ip);
         $queryFeedbacks = "INSERT INTO `Feedbacks` SET ";
         $queryFeedbacks .= "`fio` = '".$this->insertValue['fio']."', ";
@@ -203,14 +200,10 @@ class FeedBackAddComment {
         $queryListIP .= "`ip` = '".$ip."', ";
         $queryListIP .= "`status` = 'default';";
        
-        // 8(910)567-58-98
-        // sokolovka@apelsin.ru
-       
         // если статус IP 'blocked'
         if ($this->status['status'] == 'blocked') {
             return (ErrorHelper::getMessageError("Этот IP заблокирован. Вы не можете оставлять отзывы и комментарии "));
         }
-        
         // проверка существования IP в таблице `FeedbacksListIP`
         if (!(isset($this->status['ip']))) {
             $this->SQL_HELPER->insert($queryListIP);

@@ -27,5 +27,12 @@ function setLike(feedback, ip, like) {
     });
     return false;	
 };
+// если нельзя оставлять отзывы и комментарии
+function errorComments(id) {  
+    var elm = document.getElementById(id);
+    var style = window.getComputedStyle(elm,"");
+    elm.style.display = (style.display === 'none')?'block':'none';
+    return false;
+};
 </script>
 <link rel="stylesheet" href="./components/Feedback/css/feedback.css" type="text/css" />

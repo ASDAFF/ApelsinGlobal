@@ -30,7 +30,6 @@ class FeedBackList {
         global $_URL_PARAMS;
         $this->URL_PARAMS = $_URL_PARAMS['params'];
         $this->urlHelper = new UrlHelper();
-        
         $this->getDataCountFeedback();
         $params = array();  
         if (isset($this->URL_PARAMS[0]) && $this->URL_PARAMS[0] != '' && $this->URL_PARAMS[0] != null) {
@@ -114,7 +113,7 @@ class FeedBackList {
                     LEFT JOIN  `FeedbacksListIPStatus` AS FLIPS 
                     ON  Feed.`status`= FLIPS.`status` 
                     ) AS REZULT
-                where REZULT.`feedback` IS NULL  AND REZULT.`show`= '1' AND REZULT.`showReview`= '1' ";
+                where REZULT.`feedback` IS NULL  AND REZULT.`show`= '1' AND REZULT.`showReview`= '1' ORDER BY `date` DESC";
         $result = $this->SQL_HELPER->select($query,1);
         $this->countFeedback = $result['allRow'];
     }
@@ -171,7 +170,7 @@ class FeedBackList {
                     LEFT JOIN  `FeedbacksListIPStatus` AS FLIPS 
                     ON  Feed.`status`= FLIPS.`status` 
                     ) AS REZULT
-                where REZULT.`feedback` IS NULL  AND REZULT.`show`= '1' AND REZULT.`showReview`= '1' LIMIT ".$start.", ".$number.";";
+                where REZULT.`feedback` IS NULL  AND REZULT.`show`= '1' AND REZULT.`showReview`= '1' ORDER BY `date` DESC LIMIT ".$start.", ".$number.";";
         $this->data = $this->SQL_HELPER->select($query);
     }
 
@@ -183,7 +182,6 @@ class FeedBackList {
             $start = 0;
         }
         $this-> getDataFeedback($start, $this->countFeedbackinPage);
-//        echo var_dump($this->data);
         if($this->data!=null) {
             foreach ($this->data as $key => $element) {
                 $this->html .= '<div class="feedbackElement" >';
@@ -200,7 +198,6 @@ class FeedBackList {
     
     private function getPagination() {
         // $this->countFeedback - кол-во записей
-        
         // $totalPage - кол-во страниц общее 
         $totalPage = intval(($this->countFeedback - 1) / $this->countFeedbackinPage) + 1; 
         
@@ -250,17 +247,21 @@ class FeedBackList {
                     $this->html .= ' <a href="'.$this->urlHelper->chengeParams($params).'"><</a> '; 
                 $this->html .= '</li>';
             }
-            
             for($i = $this->page-$this->pageBasically_prew; $i<=($this->page+$this->pageBasically_next); $i++) {
-                if ($i != $this->page) {
-                    $this->html .= '<li>';
-                        $params[0] = $i;
-                        $this->html .=  ' <a href="'.$this->urlHelper->chengeParams($params).'">'.$i.'</a>'; 
-                    $this->html .= '</li>';  
+                // если общее кол-во страниц равно 1, то номер страницы (1) не выводить 
+                if ($totalPage != 1) {
+                    if ($i != $this->page) {
+                        $this->html .= '<li>';
+                            $params[0] = $i;
+                            $this->html .=  ' <a href="'.$this->urlHelper->chengeParams($params).'">'.$i.'</a>'; 
+                        $this->html .= '</li>';  
+                    } else {
+                        $this->html .= '<li>';
+                            $this->html .=  '<span class="feedbackCurrentPagePagination">'.$this->page.'</span>  '; 
+                        $this->html .= '</li>';
+                    }
                 } else {
-                    $this->html .= '<li>';
-                        $this->html .=  '<span class="feedbackCurrentPagePagination">'.$this->page.'</span>  '; 
-                    $this->html .= '</li>';
+                    $this->html .= ''; 
                 }
             }
             // стрелки вперед 
@@ -287,9 +288,9 @@ class FeedBackList {
         $this->html = '';
         $this->html .= '<div class="feedbackListConteiner">';
             $this->getPageFeedback();
-            $this->html .= '<div class="feedbackPaginationConteiner">';
-                $this->getPagination();
-            $this->html .= '</div>';
+        $this->html .= '</div>';
+        $this->html .= '<div class="feedbackPaginationConteiner">';
+            $this->getPagination();
         $this->html .= '</div>';
     }
 
@@ -322,13 +323,11 @@ class FeedBackList {
             $this->html .= '<div>';
             $this->html .= $element['fio'];
             $this->html .= '</div>';
-
             if ($element['title'] != '' && $element['title'] != null) {
                 $this->html .= '<div>';
                 $this->html .= $element['title'];
                 $this->html .= '</div>';
             }
-
             $this->html .= '<div>';
             $this->html .= $element['text'];
             $this->html .= '</div>';
@@ -343,12 +342,11 @@ class FeedBackList {
             }
             $this->html .= $this->getLike($element);
             $this->html .= '<div class="feedbackPanelShowComments">';
-                if (in_array($element['id'], $this->dataCommentsKeyFeedbackParentPure)) {
-                    $this->generationButtonShowHideComments('Смотреть комментарии',$element['id']);
-                }
-                $this->html .= $this->generationButtonAddComments($element['id']);
+            if (in_array($element['id'], $this->dataCommentsKeyFeedbackParentPure)) {
+                $this->generationButtonShowHideComments('Смотреть комментарии',$element['id']);
+            }
+            $this->html .= $this->generationButtonAddComments($element['id']);
             $this->html .= '</div>';
-
             $this->html .= $this->addComments($element['id'], $element['fio']);
         $this->html .= '</div>';
     }
@@ -417,15 +415,11 @@ class FeedBackList {
     //панель Like
     private function getLike($element) {
         $ip = $_SERVER['REMOTE_ADDR'];
-        // для отладки
-//        $ip = '';
-        
         $likePlus = $this->getDataCountLike('1', $element['id']);
         $likeMinus = $this->getDataCountLike('0', $element['id']);
         $colorDislik = '';
         $colorLike = '';
         $initLike = $this->getDataLike($element['id'], $ip);
-        
         if ($initLike['like'] != null ) {
             if ($initLike['like'] == 1 ) {
                 $colorLike = $this->classCSS;
@@ -433,38 +427,72 @@ class FeedBackList {
                 $colorDislik = $this->classCSS;
             } 
         } 
-       
         $this->html .= '<div class="feedbackPanelLike" id="feedbackPanelLike'.$element['id'].'">';
-
             $this->html .= '<div class="feedbackLikeButton" onclick="setLike( \''.$element['id'].'\', \''.$ip.'\', \'1\');">';
                 $this->html .= 'Нравиться';
             $this->html .= '</div>';
-
             $this->html .= '<div class="feedbackCountLike '.$colorLike.'">';
                 $this->html .= $element['like'] + $likePlus;
             $this->html .= '</div>';
-
             $this->html .= '<div class="feedbackLikeButton" onclick="setLike( \''.$element['id'].'\', \''.$ip.'\', \'0\');">';
                 $this->html .= 'Не нравиться';
             $this->html .= '</div>';
-
             $this->html .= '<div class="feedbackCountLike '.$colorDislik.'">';
                 $this->html .= $element['dislike'] + $likeMinus;
             $this->html .= '</div>';
-//            $this->html .= $element['id'];
-
         $this->html .= '</div>';
     }
 
     //кнопка Комментировать
     private function generationButtonAddComments($id) {
-        $this->html .= '<a id="formFeedbackFancybox" class="fancybox-doc" href="#formFeedbackComment'.$id.'">';
-            $this->html .= '<div class="feedbackCommentButton">';
-                $this->html .= 'Комментировать';
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $status = $this->getDataIPStatus($ip);
+        if ($status['status'] == 'blocked') {
+            $this->html .= '<div id="errorCommentBlocked" style="display: none;">';
+                $this->html .= ErrorHelper::getMessageErrorFeedbackNoComments("Этот IP заблокирован. Вы не можете оставлять отзывы и комментарии ", 'errorCommentBlocked');
             $this->html .= '</div>';
-        $this->html .= '</a>';
+            $this->html .= '<a><div class="feedbackCommentButton" onclick="errorComments(\'errorCommentBlocked\');">';
+                $this->html .= 'Комментировать';
+            $this->html .= '</div></a>';
+        } else {
+            if ($status['commentYourself'] == 0  && $this->getDataIP($id) == $ip) {
+                $this->html .= '<div id="errorCommentYourself" style="display: none;">';
+                    $this->html .= ErrorHelper::getMessageErrorFeedbackNoComments("Вы не можете комментировать свои отзывы", 'errorCommentYourself');
+                $this->html .= '</div>';
+                $this->html .= '<a><div class="feedbackCommentButton" onclick="errorComments(\'errorCommentYourself\');">';
+                    $this->html .= 'Комментировать';
+                $this->html .= '</div></a>';
+            } else {
+                $this->html .= '<a id="formFeedbackFancybox" class="fancybox-doc" href="#formFeedbackComment'.$id.'">';
+                    $this->html .= '<div class="feedbackCommentButton">';
+                        $this->html .= 'Комментировать';
+                    $this->html .= '</div>';
+                $this->html .= '</a>';
+            }
+        }
     }
 
+    private function getDataIPStatus($ip) {
+        $query = "SELECT 
+            FLIP.`status` ,
+            FLIP.`ip` ,
+            FLIPS.`commentYourself` ,
+            FLIPS.`checkingModerator` 
+            FROM (
+                SELECT `status`, `ip` FROM `FeedbacksListIP`  WHERE `ip` = '".$ip."'
+                ) AS FLIP
+            LEFT JOIN  `FeedbacksListIPStatus` AS FLIPS 
+            ON  FLIP.`status`= FLIPS.`status`;";
+        $status = $this->SQL_HELPER->select($query,1);
+        return $status;
+    }
+    
+    private function getDataIP($id) {
+        $query = "SELECT  `ip` FROM `Feedbacks` WHERE `id` = '".$id."';";
+        $ip = $this->SQL_HELPER->select($query,1);
+        return $ip['ip'];
+    }
+    
     //кнопка ShowHideComments
     private function generationButtonShowHideComments($name,$value) {
         $this->html .= '<div class="feedback_hide_show'.$value.' feedbackShowButton" title="'.$name.'"  onclick="showComments('.$value.'); ">';
@@ -485,49 +513,3 @@ class FeedBackList {
         return $this->html;
     }
 }
-
-
-        
-        
-        
-            // Проверяем нужны ли стрелки назад 
-//            if ($this->page != 1) {
-//                $params[0] = 1;
-//                $pervpage = '<a href="'.$this->urlHelper->chengeParams($params).'"><<</a>'; 
-//                
-//                $params[0] = $this->page - 1;
-//                $pervpage .= ' <a href="'.$this->urlHelper->chengeParams($params).'"><</a> '; 
-//            } 
-//            
-            // Находим две ближайшие станицы с обоих краев, если они есть 
-//            if($this->page - 2 > 0) {
-//                $params[0] = $this->page - 2;
-//                $page2left = ' <a href="'.$this->urlHelper->chengeParams($params).'">'. ($this->page - 2) .'</a> | '; 
-//            }
-//            if($this->page - 1 > 0) {
-//                $params[0] = $this->page - 1;
-//                $page1left = '<a href="'.$this->urlHelper->chengeParams($params).'">'. ($this->page - 1) .'</a> | '; 
-//            }
-//            
-//            $this->html .=  '<a href="'.$this->urlHelper->chengeParams($params).'">'. $this->page .'</a> | '; 
-//            
-//            if($this->page + 2 <= $totalPage) {
-//                $params[0] = $this->page + 2;
-//                $page2right = ' | <a href="'.$this->urlHelper->chengeParams($params).'">'. ($this->page + 2) .'</a>'; 
-//            }
-//            if($this->page + 1 <= $totalPage) {
-//                $params[0] = $this->page + 1;
-//                $page1right = ' | <a href="'.$this->urlHelper->chengeParams($params).'">'. ($this->page + 1) .'</a>'; 
-//            }
-            
-//            // Проверяем нужны ли стрелки вперед 
-//            if ($this->page != $totalPage) {
-//                $params[0] = $this->page + 1;
-//                $nextpage = ' <a href="'.$this->urlHelper->chengeParams($params).'">></a> ';
-//                
-//                $params[0] = $totalPage;
-//                $nextpage .= '<a href="'.$this->urlHelper->chengeParams($params).'">>></a>';
-//                
-//            } 
-            // Вывод меню 
-//            $this->html .=  $pervpage.$page2left.$page1left.'<b>'.$this->page.'</b>'.$page1right.$page2right.$nextpage; 

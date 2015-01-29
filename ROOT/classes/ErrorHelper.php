@@ -7,7 +7,7 @@
 class  ErrorHelper {
     
     private static $html;
-    
+
     public static function getMessageError($message) {
         self::$html = '';
         self::$html .= '<div id="parentPopup">';//родительский затемняющий экран
@@ -21,5 +21,21 @@ class  ErrorHelper {
             self::$html .= '</div>'; //основной div
         self::$html .= '</div>'; //родительский затемняющий экран
         echo self::$html; 
+    }
+
+    // специальная функция для класса Feedback()
+    public static function getMessageErrorFeedbackNoComments($message, $id) {
+        $out = '';
+        $out .= '<div id="parentPopup">';//родительский затемняющий экран
+            $out .= '<div class="popup">'; //основной div
+                $out .= '<span class="popupButtonExit" style="cursor: pointer;" onclick="errorComments(\''.$id.'\');;">';
+                    $out .= '<b><p>X</p></b>';
+                $out .= '</span>';
+                $out .= '<div >'; 
+                    $out .= '<p>'.$message.'</p>';
+                $out .= '</div>'; 
+            $out .= '</div>'; //основной div
+        $out .= '</div>'; //родительский затемняющий экран
+        return $out; 
     }
 }

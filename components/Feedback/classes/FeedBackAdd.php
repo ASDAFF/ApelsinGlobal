@@ -14,7 +14,6 @@ class FeedBackAdd {
     private $errorEncounter = false;
     private $insertValue;
     private $status;
-    private $timeValide = '30';
     // для вывода ошибок без модального окна
 //    private $message;
     private $yourUser;
@@ -23,11 +22,7 @@ class FeedBackAdd {
 
     public function __construct() {
         global $_SQL_HELPER;
-        global $_PARAM;
         $this->SQL_HELPER = $_SQL_HELPER;
-        if(isset($_PARAM['timeValide'])) {
-            $this->timeValide = $_PARAM['timeValide'];
-        }
         $this->urlHelper = new UrlHelper();
         $this->yourUser = new UserData();
         $this->authorization = $this->yourUser->checkAuthorization();
@@ -80,15 +75,15 @@ class FeedBackAdd {
     }
     
     private function setDefaltInput() { 
-        $this->insertValue['fio'] = $this->userData['login'];
-        $this->insertValue['phone'] = InputValueHelper::getOriginalPostValue('phone');
-        $this->insertValue['email'] = InputValueHelper::getOriginalPostValue('email');
-        $this->insertValue['title'] = InputValueHelper::getOriginalPostValue('title');
-        $this->insertValue['text'] = InputValueHelper::getOriginalPostValue('text');
-        $this->insertValue['rating'] = InputValueHelper::getOriginalPostValue('rating');
+        $this->insertValue['fio'] = $this->userData['ferstName'].' '.$this->userData['lastName'];
+        $this->insertValue['phone'] = '';
+        $this->insertValue['email'] = '';
+        $this->insertValue['title'] = '';
+        $this->insertValue['text'] = '';
+        $this->insertValue['rating'] = '';
         $this->originalInsertValue = $this->insertValue;
     }
-
+    
     private function generationFormAdd() {
         $this->html .= '<form class="AP_Form" name="AP_Form" action="'.$this->urlHelper->getThisPage().'"  method="post" accept-charset="UTF-8"  autocomplete="on">';
 //            $this->html .= "<div class='message'>$this->message</div>";
@@ -133,6 +128,7 @@ class FeedBackAdd {
             FLIP.`status` ,
             FLIP.`ip` ,
             FLIPS.`timeLimit` ,
+            FLIPS.`showReview`, 
             FLIPS.`checkingModerator` 
             FROM (
                 SELECT `status`, `ip` FROM `FeedbacksListIP`  WHERE `ip` = '".$ip."'
@@ -193,13 +189,8 @@ class FeedBackAdd {
         return !$error;
     }
     
-    private function insertFeedbacks() {
-        $error = false;
-        $ip = $_SERVER['REMOTE_ADDR'];
-        // для отладки
-//        $ip = '127.0.0.5';
+    private function getInsertSql($ip) {
         $this->getDataIPStatus($ip);
-        
         $queryFeedbacks = "INSERT INTO `Feedbacks` SET ";
         $queryFeedbacks .= "`fio` = '".$this->insertValue['fio']."', ";
         $queryFeedbacks .= "`title` = ".InputValueHelper::mayByNull($this->insertValue['title']).", ";
@@ -209,34 +200,27 @@ class FeedBackAdd {
         $queryFeedbacks .= "`ip` = '".$ip."', ";
         $queryFeedbacks .= "`date` = '".date("Y-m-d h:i:s")."', ";
         $queryFeedbacks .= "`rating` = '".$this->insertValue['rating']."', ";
-        $queryFeedbacks .= "`show` = '".  $this->status['checkingModerator']."', ";
+        $queryFeedbacks .= "`show` = '".$this->status['showReview']."', ";
         $queryFeedbacks .= "`like` = '0', ";
-        $queryFeedbacks .= "`dislike` = '0' ; ";
-        
-        // 8(910)567-58-98
-        
-        // если статус IP 'blocked'
-        if ($this->status['status'] == 'blocked') {
-            return (ErrorHelper::getMessageError("Этот IP заблокирован. Вы не можете оставлять отзывы и комментарии "));
-        }
-        
+        $queryFeedbacks .= "`dislike` = '0' ;";
+        return $queryFeedbacks;
+    }
+    
+    private function insertFeedbacks() {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $this->getDataIPStatus($ip);
         // проверка существования IP в таблице `FeedbacksListIP`
         if (!(isset($this->status['ip']))) {
             $queryListIP = "INSERT INTO `FeedbacksListIP` SET ";
             $queryListIP .= "`ip` = '".$ip."', ";
             $queryListIP .= "`status` = 'default';";
-            
+
             $this->SQL_HELPER->insert($queryListIP);
-            $this->SQL_HELPER->insert($queryFeedbacks);
+            $this->SQL_HELPER->insert($this->getInsertSql($ip));
             $this->checkingModerator();
         } else {
-//            $this->timeValide = $this->checkCountDaysInMonth($this->checkLastVisit($ip));
-            if (floor(($this->checkDifferenceBetweenVisits($ip))) < $this->timeValide && $this->status['timeLimit'] == 1) {
-                ErrorHelper::getMessageError("Вы можете добавить отзыв только один раз в ".$this->timeValide." дней");
-            } else {
-                $this->SQL_HELPER->insert($queryFeedbacks);
-                $this->checkingModerator();
-            }
+            $this->SQL_HELPER->insert($this->getInsertSql($ip));
+            $this->checkingModerator();
         }
     }
     
@@ -246,42 +230,6 @@ class FeedBackAdd {
             ErrorHelper::getMessageError("Ваш отзыв направлен модератору.");
         }
     }
-
-    // определяем разницу (кол-во) дней прошедших с даты последнего отзыва
-    private function checkDifferenceBetweenVisits($ip) {
-        $last = strtotime($this->checkLastVisit($ip));
-        $current = strtotime(date("Y-m-d H:i:s"));
-        $difference = ($current - $last)/(60*60*24);
-        return $difference;
-    }
-
-    // определяем дату последнего отзыва
-    private function checkLastVisit($ip) {
-        $query = "SELECT `ip`, `date` FROM `Feedbacks`  WHERE `ip`= '".$ip."' ORDER BY `date` DESC LIMIT 1 ;";
-        $result = $this->SQL_HELPER->select($query,1);
-        return $result['date'];
-    }
-    
-    // определяем с каким кол-вом дней сравнивать разницу с даты последнего отзыва, если надо раз в МЕСЯЦ
-//    private function checkCountDaysInMonth($date) {
-//        $dateMonth = substr($date, 5, 2);
-//        $thirtyOne = array(1,3,5,7,8,10,12);
-//        $thirty = array(4,6,9,11);
-//        $twentyEight = array(2016,2020,2024);
-//        if (in_array($dateMonth, $thirtyOne)) {
-//            $countDays = '31';
-//        } elseif (in_array($dateMonth, $thirty)) {
-//            $countDays = '30';
-//        } else {
-//            $dateMonth = substr($date, 0, 4);
-//            if (in_array($dateMonth, $twentyEight)) {
-//                $countDays = '29';
-//            } else {
-//                $countDays = '28'; 
-//            }
-//        }
-//        return $countDays;
-//    }
 
     public function getForm() {
         return $this->html ;
