@@ -1,6 +1,7 @@
 <?php
 class AllServiceCenters {
     private $file = './resources/Components/ServiceCenters/service_centers.xml';
+    private $logos = './resources/Components/ServiceCenters/logos/';
     private $xmlwebi;
     private $xmlData;
     private $massServiceCenter;
@@ -29,11 +30,12 @@ class AllServiceCenters {
             $this->massServiceCenterGroup[$j] = $group['@']['name'];
             //asort($group['#']['Item']);
             foreach ($group['#']['Item'] as $item) {
+                $this->massServiceCenter[$j][$i]['Code'] = $item['#']['Code'][0]['#'];
+                $this->massServiceCenter[$j][$i]['Title'] = $item['#']['Title'][0]['#'];
                 $Adress = str_replace("---// ","",$item['#']['Adress'][0]['#']);
                 $Adress = str_replace("--- // ","",$Adress);
                 $Adress = str_replace("// ","<br />",$Adress);
-                $this->massServiceCenter[$j][$i]['Adress'] = nl2br($Adress);
-                $this->massServiceCenter[$j][$i++]['Title'] = $item['#']['Title'][0]['#'];
+                $this->massServiceCenter[$j][$i++]['Adress'] = nl2br($Adress);
             }
             $j++;
         }
@@ -81,10 +83,25 @@ class AllServiceCenters {
                 $i=0;
                 $this->HTML .= "<div class='ServiceCentersGroup_Arcive' id='".$this->getServiceCentersGroupIdArchive($j)."' style='display: none;'>";
                     foreach ($serviceCenterGroup as $serviceCenter) {
+                        
+                        
                         $elementId = 'ServiceCenterBlock_'.$j.'_'.$i++;
                         $this->HTML .= "<div class='ServiceCentersElement' id='$elementId' style='display: ;'>";
-                        $this->HTML .= "<div class='element'>".$serviceCenter['Title']."</div>";
-                        $this->HTML .= "<div class='inf'>".$serviceCenter['Adress']."</div>";
+                            $this->HTML .= "<div class='element'>".$serviceCenter['Title']."</div>";
+                            $this->HTML .= "<div class='inf'>";
+                                $this->HTML .= "<table class='ServiceCentersInformationTable'>";
+                                $this->HTML .= "<tr>";
+                                    $this->HTML .= "<td class='ServiceCentersInformationTable_Adress'>";
+                                    $this->HTML .= $serviceCenter['Adress'];
+                                    $this->HTML .= "</td>";
+                                    $this->HTML .= "<td class='ServiceCentersInformationTable_Logo'>";
+                                    $this->HTML .= $this->GetUnitsIMG($serviceCenter['Code']);
+//                                    $this->HTML .= $serviceCenter['Code'];
+                                    $this->HTML .= "</td>";
+                                $this->HTML .= "</tr>";
+                                $this->HTML .= "</table>";
+                                
+                            $this->HTML .= "</div>";
                         $this->HTML .= "</div>";
                     }
                 $this->HTML .= "</div>";
@@ -96,6 +113,23 @@ class AllServiceCenters {
             $j++;
         }
     }
+    
+    public function GetUnitsIMG($code) {
+        $IMG_URL = $this->logos.$code.".png";
+        if(!file_exists($IMG_URL)) {
+            $IMG_URL = $this->logos.$code.".jpg";
+            if(!file_exists($IMG_URL)) {
+                $IMG_URL = null;
+            }
+        }
+        if($IMG_URL!=null) {
+            $logo = "<img class='ServiceCentersLogo' src='".$IMG_URL."'>";
+        } else {
+            $logo = '';
+        }
+        return $logo;
+    }
+    
     private function getServiceCentersGroupId($id) {
         return $this->serviceCentersGroupIdPrefix.$id;
     }

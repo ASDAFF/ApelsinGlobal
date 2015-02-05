@@ -943,9 +943,27 @@ a .valid_vacancy_adress:hover {
 .contentBlock .ServiceCentersElement .inf {
     color: #444;
     font-size: 12px;
-    margin: 0px 0px 8px 0px;
+    margin: 0px 0px 0px 0px;
     padding: 0px 10px 0px 30px;
     text-align: left;
+}
+.contentBlock .ServiceCentersElement .inf .ServiceCentersInformationTable,
+.contentBlock .ServiceCentersElement .inf .ServiceCentersInformationTable td {
+    border-collapse: collapse;
+    border: none;
+}
+.contentBlock .ServiceCentersElement .inf .ServiceCentersInformationTable .ServiceCentersInformationTable_Adress {
+    padding-bottom: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+.contentBlock .ServiceCentersElement .inf .ServiceCentersInformationTable .ServiceCentersInformationTable_Logo {
+    text-align: right;
+    vertical-align: bottom;
+}
+.contentBlock .ServiceCentersElement .inf .ServiceCentersInformationTable .ServiceCentersInformationTable_Logo .ServiceCentersLogo {
+    max-width: 150px;
+    max-height: 20px;
 }
 .contentBlock .info_paragraph {
     color: #666;

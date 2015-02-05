@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Groups>
+    <Group>
+        <id>идентификатор группы из 1С</id>
+        <groupName>Название группы для сайта</groupName>
+        <shown>
+            флаг со значение 1 или 0 который определяет 
+            будет ли отображаться группа на сайте
+        </shown>
+        <properties>
+            <property>
+                <id>идентификатор свойства из 1С</id>
+                <propertyName>Название свойства для сайта</propertyName>
+                <filterType>Тип фильтра для сайта</filterType>
+                <valueType>Тип значения свойства для сайта</valueType>
+                <oneOfAllValues>
+                    Булевое значение (1|0) определяющее поведение в 
+                    случае когда для одного свойства задано несколько значений
+                </oneOfAllValues>
+                <sequence>Порядковый номер для свойства</sequence>
+            </property>
+            ...
+        </properties>
+    </Group>
+    ...
+</Groups>
+<GroupsHierarchy>
+    <Relation>
+        <group>Группа</group>
+        <parentGroup>Подгруппа</parentGroup>
+    </Relation>
+    ...
+</GroupsHierarchy>
+<Items>
+    <Item>
+        <id>идентификатор товара из 1С</id>
+        <itemName>Название товара для сайта</itemName>
+        <group>Группа в которой находится товар</group>
+        <price>Цена товара</price>
+        <amount>Количество товара</amount>
+        <description>Описание товара</description>
+        <shown>
+            флаг со значение 1 или 0 который определяет 
+            будет ли отображаться товар на сайте
+        </shown>
+        <propertiesValues>
+            <propertyValue>
+                <property>идентификатор свойства из 1С</property>
+                <value>знаение свойства</value>
+                <measure>
+                    единица измерения которая будет 
+                    приписыватсья к значению
+                </measure>
+            </propertyValue>
+            ...
+        </propertiesValues>
+    </Item>
+    ...
+</Items>
+
