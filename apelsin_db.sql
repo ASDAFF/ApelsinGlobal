@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 19 2014 г., 14:09
+-- Время создания: Фев 10 2015 г., 13:28
 -- Версия сервера: 5.5.33-MariaDB
 -- Версия PHP: 5.4.20
 
@@ -28,7 +28,6 @@ USE `apelsin_db`;
 -- Структура таблицы `ApelsinContactsNavigationPanel`
 --
 
-DROP TABLE IF EXISTS `ApelsinContactsNavigationPanel`;
 CREATE TABLE IF NOT EXISTS `ApelsinContactsNavigationPanel` (
   `alias` varchar(50) NOT NULL,
   `sequence` int(1) unsigned NOT NULL,
@@ -55,7 +54,6 @@ INSERT INTO `ApelsinContactsNavigationPanel` (`alias`, `sequence`, `htmlFirst`, 
 -- Структура таблицы `ApelsinContactsNavigationPanel_Lang`
 --
 
-DROP TABLE IF EXISTS `ApelsinContactsNavigationPanel_Lang`;
 CREATE TABLE IF NOT EXISTS `ApelsinContactsNavigationPanel_Lang` (
   `alias` varchar(50) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -87,7 +85,6 @@ INSERT INTO `ApelsinContactsNavigationPanel_Lang` (`alias`, `lang`, `tabName`, `
 -- Структура таблицы `ApelsinContactsNavigationPanel_SiteMapGroup`
 --
 
-DROP TABLE IF EXISTS `ApelsinContactsNavigationPanel_SiteMapGroup`;
 CREATE TABLE IF NOT EXISTS `ApelsinContactsNavigationPanel_SiteMapGroup` (
   `alias` varchar(50) NOT NULL,
   `group` varchar(50) NOT NULL,
@@ -102,7 +99,6 @@ CREATE TABLE IF NOT EXISTS `ApelsinContactsNavigationPanel_SiteMapGroup` (
 -- Структура таблицы `Components`
 --
 
-DROP TABLE IF EXISTS `Components`;
 CREATE TABLE IF NOT EXISTS `Components` (
   `alias` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -134,7 +130,6 @@ INSERT INTO `Components` (`alias`, `name`, `author`, `version`, `description`, `
 -- Структура таблицы `ComponentsDepends`
 --
 
-DROP TABLE IF EXISTS `ComponentsDepends`;
 CREATE TABLE IF NOT EXISTS `ComponentsDepends` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `elementType` varchar(50) NOT NULL,
@@ -164,7 +159,6 @@ INSERT INTO `ComponentsDepends` (`id`, `elementType`, `component`, `depends`, `v
 -- Структура таблицы `ComponentsDependsElementsType`
 --
 
-DROP TABLE IF EXISTS `ComponentsDependsElementsType`;
 CREATE TABLE IF NOT EXISTS `ComponentsDependsElementsType` (
   `elementType` varchar(50) NOT NULL,
   `tableName` varchar(50) NOT NULL,
@@ -187,7 +181,6 @@ INSERT INTO `ComponentsDependsElementsType` (`elementType`, `tableName`) VALUES
 -- Структура таблицы `ComponentsElements`
 --
 
-DROP TABLE IF EXISTS `ComponentsElements`;
 CREATE TABLE IF NOT EXISTS `ComponentsElements` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `alias` varchar(50) NOT NULL,
@@ -235,7 +228,6 @@ INSERT INTO `ComponentsElements` (`id`, `alias`, `component`, `name`, `descripti
 -- Структура таблицы `ContactsUnits`
 --
 
-DROP TABLE IF EXISTS `ContactsUnits`;
 CREATE TABLE IF NOT EXISTS `ContactsUnits` (
   `unit` varchar(100) NOT NULL,
   `show` tinyint(1) unsigned NOT NULL DEFAULT '1',
@@ -287,24 +279,35 @@ CREATE TABLE IF NOT EXISTS `ContactsUnits` (
 --
 
 INSERT INTO `ContactsUnits` (`unit`, `show`, `showOnMain`, `type`, `sequence`, `email`, `feedbackEmail`, `phoneText1`, `phone1`, `additional1`, `phoneText2`, `phone2`, `additional2`, `monH_s`, `monM_s`, `monH_e`, `monM_e`, `tueH_s`, `tueM_s`, `tueH_e`, `tueM_e`, `wedH_s`, `wedM_s`, `wedH_e`, `wedM_e`, `thuH_s`, `thuM_s`, `thuH_e`, `thuM_e`, `friH_s`, `friM_s`, `friH_e`, `friM_e`, `satH_s`, `satM_s`, `satH_e`, `satM_e`, `sunH_s`, `sunM_s`, `sunH_e`, `sunM_e`) VALUES
-('butyrki', 1, 0, 'shop', 207, 'butyrki@apelsin.ru', 'butyrki@apelsin.ru', '8(4912)950-378', '84912950378', '', '8(4912)950-379', '84912950379', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 18, 0, 9, 0, 17, 0),
-('chernovitskaya', 1, 0, 'shop', 208, 'chernovitskaya@apelsin.ru', 'chernovitskaya@apelsin.ru', '8(4912)226-160', '84912226160', '', '8(4912)502-020', '84912502020', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0, 9, 0, 15, 0),
-('chkalova', 1, 0, 'shop', 209, 'chkalova@apelsin.ru', 'chkalova@apelsin.ru', '8(4912)248-289', '84912248289', '', '8(4912)758-793', '84912758793', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0, 9, 0, 15, 0),
-('general_enquiries_department', 0, 1, 'departament', 101, 'mail@apelsin.ru', 'mail@apelsin.ru', '8(4912)240-220', '84912240220', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
-('marketing_department', 1, 0, 'departament', 102, '', '', '', '', '', '', '', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
-('ostrovskogo', 1, 0, 'shop', 203, 'ostrovskogo@apelsin.ru', 'ostrovskogo@apelsin.ru', '8(4912)226-160', '84912226160', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
-('procurement_department', 1, 0, 'departament', 103, '', '', '', '', '', '', '', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 18, 0),
-('pushkina', 1, 0, 'shop', 212, 'luhovitsy@apelsin.ru', 'luhovitsy@apelsin.ru', '8(496)639-6100', '84966396100', '', '', '', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0),
-('shabulina', 1, 0, 'shop', 206, 'shabulina@apelsin.ru', 'shabulina@apelsin.ru', '8(4912)950-395', '84912950395', '', '8(4912)950-340', '84912950340', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 17, 0),
-('shopping_mall_on_the_city_ring_road', 1, 0, 'shop', 204, 'tc.okruzhnaya@apelsin.ru', 'tc.okruzhnaya@apelsin.ru', '8(4912)240-220', '84912240220', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('marketing_department', 1, 0, 'suppliers', 102, '', '', '', '', '', '', '', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('procurement_department', 1, 0, 'procurement', 103, '', '', '', '', '', '', '', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('shop_butyrki', 1, 0, 'shop', 207, 'butyrki@apelsin.ru', 'butyrki@apelsin.ru', '8(4912)950-378', '84912950378', '', '8(4912)950-379', '84912950379', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 18, 0, 9, 0, 17, 0),
+('shop_chernovitskaya', 1, 0, 'shop', 208, 'chernovitskaya@apelsin.ru', 'chernovitskaya@apelsin.ru', '8(4912)226-160', '84912226160', '', '8(4912)502-020', '84912502020', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0, 9, 0, 15, 0),
+('shop_chkalova', 1, 0, 'shop', 209, 'chkalova@apelsin.ru', 'chkalova@apelsin.ru', '8(4912)248-289', '84912248289', '', '8(4912)758-793', '84912758793', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0, 9, 0, 15, 0),
+('shop_hangar_ring_road', 1, 0, 'shop', 210, 'angar.okruzhnaya@apelsin.ru', 'angar.okruzhnaya@apelsin.ru', '8(4912)307-355', '84912307355', '', '8(4912)307-356', '84912307356', '', 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 15, 0),
+('shop_mall_ring_road', 1, 0, 'shop', 204, 'tc.okruzhnaya@apelsin.ru', 'tc.okruzhnaya@apelsin.ru', '8(4912)240-220', '84912240220', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('shop_ostrovskogo', 1, 0, 'shop', 203, 'ostrovskogo@apelsin.ru', 'ostrovskogo@apelsin.ru', '8(4912)226-160', '84912226160', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('shop_pushkina', 1, 0, 'shop', 212, 'luhovitsy@apelsin.ru', 'luhovitsy@apelsin.ru', '8(496)639-6100', '84966396100', '', '', '', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0),
+('shop_shabulina', 1, 0, 'shop', 206, 'shabulina@apelsin.ru', 'shabulina@apelsin.ru', '8(4912)950-395', '84912950395', '', '8(4912)950-340', '84912950340', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 17, 0),
+('shop_svyazi', 1, 0, 'shop', 211, 'sokolovka@apelsin.ru', 'sokolovka@apelsin.ru', '8(4912)288-891', '84912288891', '', '8(4912)502-020', '84912502020', '', 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 17, 0, 9, 0, 15, 0),
+('shop_verkhnyaya', 1, 0, 'shop', 202, 'verhnaya@apelsin.ru', 'verhnaya@apelsin.ru', '8(4912)950-148', '84912950148', '', '8(4912)950-149', '84912950149', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('shop_yesenina', 1, 0, 'shop', 201, 'esenina@apelsin.ru', 'esenina@apelsin.ru', '8(4912)240-220', '84912240220', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('shop_zubkovoy', 1, 0, 'shop', 205, 'zubkovoy@apelsin.ru', 'zubkovoy@apelsin.ru', '8(4912)950-377', '84912950377', '', '8(4912)950-380', '84912950380', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
 ('studio_furniture_ostrovskogo', 1, 0, 'studio_furniture', 302, 'mebel.apelsin@yandex.ru', 'mebel.apelsin@yandex.ru', '8(4912)513-220', '84912513220', '', '', '', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
 ('studio_furniture_shabulina', 1, 0, 'studio_furniture', 303, 'mebel.apelsin@yandex.ru', 'mebel.apelsin@yandex.ru', '8(4912)513-220', '84912513220', '', '', '', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 17, 0),
 ('studio_furniture_yesenina', 1, 0, 'studio_furniture', 301, 'mebel.apelsin@yandex.ru', 'mebel.apelsin@yandex.ru', '8(4912)513-220', '84912513220', '', '', '', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
-('svyazi', 1, 0, 'shop', 211, 'sokolovka@apelsin.ru', 'sokolovka@apelsin.ru', '8(4912)288-891', '84912288891', '', '8(4912)502-020', '84912502020', '', 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 17, 0, 9, 0, 15, 0),
-('the_185th_km_of_the_city_ring_road-hangar', 1, 0, 'shop', 210, 'angar.okruzhnaya@apelsin.ru', 'angar.okruzhnaya@apelsin.ru', '8(4912)307-355', '84912307355', '', '8(4912)307-356', '84912307356', '', 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 15, 0),
-('verkhnyaya', 1, 0, 'shop', 202, 'verhnaya@apelsin.ru', 'verhnaya@apelsin.ru', '8(4912)950-148', '84912950148', '', '8(4912)950-149', '84912950149', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
-('yesenina', 1, 0, 'shop', 201, 'esenina@apelsin.ru', 'esenina@apelsin.ru', '8(4912)240-220', '84912240220', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
-('zubkovoy', 1, 0, 'shop', 205, 'zubkovoy@apelsin.ru', 'zubkovoy@apelsin.ru', '8(4912)950-377', '84912950377', '', '8(4912)950-380', '84912950380', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0);
+('wholesale_butyrki', 1, 0, 'wholesale_department', 407, 'butyrki@apelsin.ru', 'butyrki@apelsin.ru', '8(4912)950-378', '84912950378', '', '8(4912)950-379', '84912950379', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 18, 0, 9, 0, 17, 0),
+('wholesale_chernovitskaya', 1, 0, 'wholesale_department', 408, 'chernovitskaya@apelsin.ru', 'chernovitskaya@apelsin.ru', '8(4912)226-160', '84912226160', '', '8(4912)502-020', '84912502020', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0, 9, 0, 15, 0),
+('wholesale_chkalova', 1, 0, 'wholesale_department', 409, 'chkalova@apelsin.ru', 'chkalova@apelsin.ru', '8(4912)248-289', '84912248289', '', '8(4912)758-793', '84912758793', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0, 9, 0, 15, 0),
+('wholesale_hangar_ring_road', 1, 0, 'wholesale_department', 410, 'angar.okruzhnaya@apelsin.ru', 'angar.okruzhnaya@apelsin.ru', '8(4912)307-355', '84912307355', '', '8(4912)307-356', '84912307356', '', 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 15, 0),
+('wholesale_mall_ring_road', 1, 0, 'wholesale_department', 404, 'tc.okruzhnaya@apelsin.ru', 'tc.okruzhnaya@apelsin.ru', '8(4912)240-220', '84912240220', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('wholesale_ostrovskogo', 1, 0, 'wholesale_department', 403, 'ostrovskogo@apelsin.ru', 'ostrovskogo@apelsin.ru', '8(4912)226-160', '84912226160', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('wholesale_pushkina', 1, 0, 'wholesale_department', 412, 'luhovitsy@apelsin.ru', 'luhovitsy@apelsin.ru', '8(496)639-6100', '84966396100', '', '', '', '', 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 19, 0, 9, 0, 17, 0),
+('wholesale_shabulina', 1, 0, 'wholesale_department', 406, 'shabulina@apelsin.ru', 'shabulina@apelsin.ru', '8(4912)950-395', '84912950395', '', '8(4912)950-340', '84912950340', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 17, 0),
+('wholesale_svyazi', 1, 0, 'wholesale_department', 411, 'sokolovka@apelsin.ru', 'sokolovka@apelsin.ru', '8(4912)288-891', '84912288891', '', '8(4912)502-020', '84912502020', '', 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 18, 0, 9, 0, 17, 0, 9, 0, 15, 0),
+('wholesale_verkhnyaya', 1, 0, 'wholesale_department', 402, 'verhnaya@apelsin.ru', 'verhnaya@apelsin.ru', '8(4912)950-148', '84912950148', '', '8(4912)950-149', '84912950149', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('wholesale_yesenina', 1, 0, 'wholesale_department', 401, 'esenina@apelsin.ru', 'esenina@apelsin.ru', '8(4912)240-220', '84912240220', '', '8(4912)502-020', '84912502020', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0),
+('wholesale_zubkovoy', 1, 0, 'wholesale_department', 405, 'zubkovoy@apelsin.ru', 'zubkovoy@apelsin.ru', '8(4912)950-377', '84912950377', '', '8(4912)950-380', '84912950380', '', 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 20, 0, 9, 0, 19, 0, 9, 0, 18, 0);
 
 -- --------------------------------------------------------
 
@@ -312,7 +315,6 @@ INSERT INTO `ContactsUnits` (`unit`, `show`, `showOnMain`, `type`, `sequence`, `
 -- Структура таблицы `ContactsUnitsMaps`
 --
 
-DROP TABLE IF EXISTS `ContactsUnitsMaps`;
 CREATE TABLE IF NOT EXISTS `ContactsUnitsMaps` (
   `unit` varchar(100) NOT NULL,
   `map` varchar(100) NOT NULL,
@@ -326,21 +328,21 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsMaps` (
 --
 
 INSERT INTO `ContactsUnitsMaps` (`unit`, `map`, `show`) VALUES
-('butyrki', '1v_3rd_butyrki_str', 1),
-('chernovitskaya', '5_chernovitskaya_str', 1),
-('chkalova', '70b_chkalova_str', 1),
-('ostrovskogo', '109_ostrovskogo_str', 1),
-('pushkina', '170v_pushkina_str', 1),
-('shabulina', '24b_proezd_shabulina', 1),
-('shopping_mall_on_the_city_ring_road', 'shopping_mall_on_the_city_ring_road', 1),
+('shop_butyrki', '1v_3rd_butyrki_str', 1),
+('shop_chernovitskaya', '5_chernovitskaya_str', 1),
+('shop_chkalova', '70b_chkalova_str', 1),
+('shop_hangar_ring_road', 'the_185th_km_of_the_city_ring_road-hangar', 1),
+('shop_mall_ring_road', 'shopping_mall_on_the_city_ring_road', 1),
+('shop_ostrovskogo', '109_ostrovskogo_str', 1),
+('shop_pushkina', '170v_pushkina_str', 1),
+('shop_shabulina', '24b_proezd_shabulina', 1),
+('shop_svyazi', '10b_svyazi_str_sokolovka', 1),
+('shop_verkhnyaya', '50_verkhnyaya_str', 1),
+('shop_yesenina', '13_yesenina_str', 1),
+('shop_zubkovoy', '27b_zubkovoy_str', 1),
 ('studio_furniture_ostrovskogo', '109_ostrovskogo_str', 1),
 ('studio_furniture_shabulina', '24b_proezd_shabulina', 1),
-('studio_furniture_yesenina', '13_yesenina_str', 1),
-('svyazi', '10b_svyazi_str_sokolovka', 1),
-('the_185th_km_of_the_city_ring_road-hangar', 'the_185th_km_of_the_city_ring_road-hangar', 1),
-('verkhnyaya', '50_verkhnyaya_str', 1),
-('yesenina', '13_yesenina_str', 1),
-('zubkovoy', '27b_zubkovoy_str', 1);
+('studio_furniture_yesenina', '13_yesenina_str', 1);
 
 -- --------------------------------------------------------
 
@@ -348,7 +350,6 @@ INSERT INTO `ContactsUnitsMaps` (`unit`, `map`, `show`) VALUES
 -- Структура таблицы `ContactsUnitsTypes`
 --
 
-DROP TABLE IF EXISTS `ContactsUnitsTypes`;
 CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes` (
   `type` varchar(100) NOT NULL,
   `sequence` tinyint(1) unsigned NOT NULL,
@@ -362,9 +363,11 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes` (
 --
 
 INSERT INTO `ContactsUnitsTypes` (`type`, `sequence`, `show`) VALUES
-('departament', 3, 1),
+('procurement', 5, 1),
 ('shop', 1, 1),
-('studio_furniture', 2, 1);
+('studio_furniture', 2, 1),
+('suppliers', 3, 1),
+('wholesale_department', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -372,7 +375,6 @@ INSERT INTO `ContactsUnitsTypes` (`type`, `sequence`, `show`) VALUES
 -- Структура таблицы `ContactsUnitsTypes_Lang`
 --
 
-DROP TABLE IF EXISTS `ContactsUnitsTypes_Lang`;
 CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes_Lang` (
   `type` varchar(100) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -388,12 +390,16 @@ CREATE TABLE IF NOT EXISTS `ContactsUnitsTypes_Lang` (
 --
 
 INSERT INTO `ContactsUnitsTypes_Lang` (`type`, `lang`, `typeName`, `topText`, `bottomText`) VALUES
-('departament', 'eng', 'Departaments', NULL, '    * To dial an extension number from a stationary phone, please switch     the phone to the tone dialing («*», button or switch     «TONE»). You can begin dialing the number right after the     start of the auto-answer. The users of cellular phones can also dial     the extension right after the start of the auto-answer.<br />    If you come across some difficulties, please wait for the     secretary to answer.<br />    * If you want to send an e-mail, but have difficulties in choosing     the recipient, or can''t find the address of the desired person,     you can always send a message to the general mailbox:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * For the more successful e-mail handling, we kindly request you to     specify the name of the recipient, the department, or the name of     the shop in the [subject] field.'),
-('departament', 'rus', 'Отделы', NULL, '    * Для набора добавочного номера с городского телефона необходимо перевести     его в тональный набор («*», кнопка либо     переключатель «TONE»). Набирать     добавочный номер можно сразу после начала сообщения автоответчика.     С сотовых телефонов набирать добавочные номера можно так же после начала     сообщения автоответчика.<br />    Если у Вас возникают какие-либо трудности - Вы можете     дождаться ответа секретаря.<br />    * При отправке почтовых сообщений, если вы затрудняетесь в выборе     получателя, либо не нашли адрес нужного Вам лица — Вы всегда можете     направить корреспонденцию на общий ящик:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * Убедительная просьба, для более точного получения обозначайте в     поле [тема сообщения] имя получателя, либо отдела, либо наименование     точки.'),
+('procurement', 'eng', 'Procurement department', NULL, '    * To dial an extension number from a stationary phone, please switch     the phone to the tone dialing («*», button or switch     «TONE»). You can begin dialing the number right after the     start of the auto-answer. The users of cellular phones can also dial     the extension right after the start of the auto-answer.<br />    If you come across some difficulties, please wait for the     secretary to answer.<br />    * If you want to send an e-mail, but have difficulties in choosing     the recipient, or can''t find the address of the desired person,     you can always send a message to the general mailbox:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * For the more successful e-mail handling, we kindly request you to     specify the name of the recipient, the department, or the name of     the shop in the [subject] field.'),
+('procurement', 'rus', 'Отдел комплектации', NULL, '    * Для набора добавочного номера с городского телефона необходимо перевести     его в тональный набор («*», кнопка либо     переключатель «TONE»). Набирать     добавочный номер можно сразу после начала сообщения автоответчика.     С сотовых телефонов набирать добавочные номера можно так же после начала     сообщения автоответчика.<br />    Если у Вас возникают какие-либо трудности - Вы можете     дождаться ответа секретаря.<br />    * При отправке почтовых сообщений, если вы затрудняетесь в выборе     получателя, либо не нашли адрес нужного Вам лица — Вы всегда можете     направить корреспонденцию на общий ящик:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * Убедительная просьба, для более точного получения обозначайте в     поле [тема сообщения] имя получателя, либо отдела, либо наименование     точки.'),
 ('shop', 'eng', 'Shops', NULL, '    * To dial an extension number from a stationary phone, please switch     the phone to the tone dialing («*», button or switch     «TONE»). You can begin dialing the number right after the     start of the auto-answer. The users of cellular phones can also dial     the extension right after the start of the auto-answer.<br />    If you come across some difficulties, please wait for the     secretary to answer.<br />    * If you want to send an e-mail, but have difficulties in choosing     the recipient, or can''t find the address of the desired person,     you can always send a message to the general mailbox:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * For the more successful e-mail handling, we kindly request you to     specify the name of the recipient, the department, or the name of     the shop in the [subject] field.'),
 ('shop', 'rus', 'Магазины', NULL, '    * Для набора добавочного номера с городского телефона необходимо перевести     его в тональный набор («*», кнопка либо     переключатель «TONE»). Набирать     добавочный номер можно сразу после начала сообщения автоответчика.     С сотовых телефонов набирать добавочные номера можно так же после начала     сообщения автоответчика.<br />    Если у Вас возникают какие-либо трудности - Вы можете     дождаться ответа секретаря.<br />    * При отправке почтовых сообщений, если вы затрудняетесь в выборе     получателя, либо не нашли адрес нужного Вам лица — Вы всегда можете     направить корреспонденцию на общий ящик:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * Убедительная просьба, для более точного получения обозначайте в     поле [тема сообщения] имя получателя, либо отдела, либо наименование     точки.'),
 ('studio_furniture', 'eng', 'Studio furniture', '<p>Мебель была и остаётся неизменным атрибутом нашего быта. Создавая комфорт в нашей жизни наполняя дом уютом и теплом, качественная мебель \r\nопределяет наше самочувствие и настроение. Где наиболее удобно представлена в Рязани мебель на заказ, надежная и недорогая, современная и функциональная?\r\n- на этот вопрос есть ответ. </p>\r\n\r\n<p>Студия мебели"Апельсин" предлагает купить мебель в Рязани самого разнообразного стиля, дизайна и комплектации. \r\nКорпусная мебель, гостиные, кухни, прихожие, спальни, детские - Наша компания предлагает Вашему вниманию по-настоящему функциональную, \r\nудобную и оригинальную мебель. Вас приятно удивит оптимальное сочетание цены и качества. </p>\r\n\r\n<p>Мы окажем помощь в комплектации любого объекта - квартиры, офиса, коттеджа или любого другого помещения всем необходимым. Наша компания завоевала \r\nдоверие и уважение многих клиентов благодаря соблюдению таких принципов как высокое качество, отличная эргономика и функциональность.</p>\r\n\r\n<p>В фирменных Студиях Мебели «Апельсин» представлен большой ассортимент мебели для дома: для детской комнаты, гостиной, кухни, корпусная мебель, мебельные стенки, \r\nприхожие, столы компьютерные и письменные, тумбы, шкафы-купе.  Любая мебель по доступным ценам.</p>\r\n\r\n<p>На сегодняшний день повышение качества и постоянное обновление линейки производимой корпусной мебели позволяет студии мебели "Апельсин" быть одним из лидеров \r\nсреди производителей корпусной мебели. Производство осуществляется командой квалифицированных сотрудников на итальянском оборудовании из экологически чистого, \r\nкачественного материала — пленки ПВХ (Германия), пластика (Италия), кратки (США), массив древисины (Италия), фурнитура фирмы «Hettichj (Германия), что позволяет нам \r\nгарантировать высокое качество мебели, её надежность и долговечность. Каждое изделие проходит контроль качества.</p>\r\n\r\n<p>Студия мебели "Апельсин" выполняет оптовые заказы на изготовление мебели для гостиниц, институтов, лагерей, общежитий и других общественных организаций.</p>\r\n\r\n<p>Студия мебели "Апельсин" приглашает к взаимовыгодному и долгосрочному сотрудничеству. Наши специалисты проконсультируют Вас по всем интересующим вопросам. Мы всегда рады нашим заказчикам!</p>\r\n\r\n<p>Хорошая мебель - хорошим людям!</p>', '    * To dial an extension number from a stationary phone, please switch     the phone to the tone dialing («*», button or switch     «TONE»). You can begin dialing the number right after the     start of the auto-answer. The users of cellular phones can also dial     the extension right after the start of the auto-answer.<br />    If you come across some difficulties, please wait for the     secretary to answer.<br />    * If you want to send an e-mail, but have difficulties in choosing     the recipient, or can''t find the address of the desired person,     you can always send a message to the general mailbox:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * For the more successful e-mail handling, we kindly request you to     specify the name of the recipient, the department, or the name of     the shop in the [subject] field.'),
-('studio_furniture', 'rus', 'Студия мебели', '<p>Мебель была и остаётся неизменным атрибутом нашего быта. Создавая комфорт в нашей жизни наполняя дом уютом и теплом, качественная мебель \r\nопределяет наше самочувствие и настроение. Где наиболее удобно представлена в Рязани мебель на заказ, надежная и недорогая, современная и функциональная?\r\n- на этот вопрос есть ответ. </p>\r\n\r\n<p>Студия мебели"Апельсин" предлагает купить мебель в Рязани самого разнообразного стиля, дизайна и комплектации. \r\nКорпусная мебель, гостиные, кухни, прихожие, спальни, детские - Наша компания предлагает Вашему вниманию по-настоящему функциональную, \r\nудобную и оригинальную мебель. Вас приятно удивит оптимальное сочетание цены и качества. </p>\r\n\r\n<p>Мы окажем помощь в комплектации любого объекта - квартиры, офиса, коттеджа или любого другого помещения всем необходимым. Наша компания завоевала \r\nдоверие и уважение многих клиентов благодаря соблюдению таких принципов как высокое качество, отличная эргономика и функциональность.</p>\r\n\r\n<p>В фирменных Студиях Мебели «Апельсин» представлен большой ассортимент мебели для дома: для детской комнаты, гостиной, кухни, корпусная мебель, мебельные стенки, \r\nприхожие, столы компьютерные и письменные, тумбы, шкафы-купе.  Любая мебель по доступным ценам.</p>\r\n\r\n<p>На сегодняшний день повышение качества и постоянное обновление линейки производимой корпусной мебели позволяет студии мебели "Апельсин" быть одним из лидеров \r\nсреди производителей корпусной мебели. Производство осуществляется командой квалифицированных сотрудников на итальянском оборудовании из экологически чистого, \r\nкачественного материала — пленки ПВХ (Германия), пластика (Италия), кратки (США), массив древисины (Италия), фурнитура фирмы «Hettichj (Германия), что позволяет нам \r\nгарантировать высокое качество мебели, её надежность и долговечность. Каждое изделие проходит контроль качества.</p>\r\n\r\n<p>Студия мебели "Апельсин" выполняет оптовые заказы на изготовление мебели для гостиниц, институтов, лагерей, общежитий и других общественных организаций.</p>\r\n\r\n<p>Студия мебели "Апельсин" приглашает к взаимовыгодному и долгосрочному сотрудничеству. Наши специалисты проконсультируют Вас по всем интересующим вопросам. Мы всегда рады нашим заказчикам!</p>\r\n\r\n<p>Хорошая мебель - хорошим людям!</p>', '    * Для набора добавочного номера с городского телефона необходимо перевести     его в тональный набор («*», кнопка либо     переключатель «TONE»). Набирать     добавочный номер можно сразу после начала сообщения автоответчика.     С сотовых телефонов набирать добавочные номера можно так же после начала     сообщения автоответчика.<br />    Если у Вас возникают какие-либо трудности - Вы можете     дождаться ответа секретаря.<br />    * При отправке почтовых сообщений, если вы затрудняетесь в выборе     получателя, либо не нашли адрес нужного Вам лица — Вы всегда можете     направить корреспонденцию на общий ящик:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * Убедительная просьба, для более точного получения обозначайте в     поле [тема сообщения] имя получателя, либо отдела, либо наименование     точки.');
+('studio_furniture', 'rus', 'Студия мебели', '<p>Мебель была и остаётся неизменным атрибутом нашего быта. Создавая комфорт в нашей жизни наполняя дом уютом и теплом, качественная мебель \r\nопределяет наше самочувствие и настроение. Где наиболее удобно представлена в Рязани мебель на заказ, надежная и недорогая, современная и функциональная?\r\n- на этот вопрос есть ответ. </p>\r\n\r\n<p>Студия мебели"Апельсин" предлагает купить мебель в Рязани самого разнообразного стиля, дизайна и комплектации. \r\nКорпусная мебель, гостиные, кухни, прихожие, спальни, детские - Наша компания предлагает Вашему вниманию по-настоящему функциональную, \r\nудобную и оригинальную мебель. Вас приятно удивит оптимальное сочетание цены и качества. </p>\r\n\r\n<p>Мы окажем помощь в комплектации любого объекта - квартиры, офиса, коттеджа или любого другого помещения всем необходимым. Наша компания завоевала \r\nдоверие и уважение многих клиентов благодаря соблюдению таких принципов как высокое качество, отличная эргономика и функциональность.</p>\r\n\r\n<p>В фирменных Студиях Мебели «Апельсин» представлен большой ассортимент мебели для дома: для детской комнаты, гостиной, кухни, корпусная мебель, мебельные стенки, \r\nприхожие, столы компьютерные и письменные, тумбы, шкафы-купе.  Любая мебель по доступным ценам.</p>\r\n\r\n<p>На сегодняшний день повышение качества и постоянное обновление линейки производимой корпусной мебели позволяет студии мебели "Апельсин" быть одним из лидеров \r\nсреди производителей корпусной мебели. Производство осуществляется командой квалифицированных сотрудников на итальянском оборудовании из экологически чистого, \r\nкачественного материала — пленки ПВХ (Германия), пластика (Италия), кратки (США), массив древисины (Италия), фурнитура фирмы «Hettichj (Германия), что позволяет нам \r\nгарантировать высокое качество мебели, её надежность и долговечность. Каждое изделие проходит контроль качества.</p>\r\n\r\n<p>Студия мебели "Апельсин" выполняет оптовые заказы на изготовление мебели для гостиниц, институтов, лагерей, общежитий и других общественных организаций.</p>\r\n\r\n<p>Студия мебели "Апельсин" приглашает к взаимовыгодному и долгосрочному сотрудничеству. Наши специалисты проконсультируют Вас по всем интересующим вопросам. Мы всегда рады нашим заказчикам!</p>\r\n\r\n<p>Хорошая мебель - хорошим людям!</p>', '    * Для набора добавочного номера с городского телефона необходимо перевести     его в тональный набор («*», кнопка либо     переключатель «TONE»). Набирать     добавочный номер можно сразу после начала сообщения автоответчика.     С сотовых телефонов набирать добавочные номера можно так же после начала     сообщения автоответчика.<br />    Если у Вас возникают какие-либо трудности - Вы можете     дождаться ответа секретаря.<br />    * При отправке почтовых сообщений, если вы затрудняетесь в выборе     получателя, либо не нашли адрес нужного Вам лица — Вы всегда можете     направить корреспонденцию на общий ящик:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * Убедительная просьба, для более точного получения обозначайте в     поле [тема сообщения] имя получателя, либо отдела, либо наименование     точки.'),
+('suppliers', 'eng', 'Suppliers', NULL, '    * To dial an extension number from a stationary phone, please switch     the phone to the tone dialing («*», button or switch     «TONE»). You can begin dialing the number right after the     start of the auto-answer. The users of cellular phones can also dial     the extension right after the start of the auto-answer.<br />    If you come across some difficulties, please wait for the     secretary to answer.<br />    * If you want to send an e-mail, but have difficulties in choosing     the recipient, or can''t find the address of the desired person,     you can always send a message to the general mailbox:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * For the more successful e-mail handling, we kindly request you to     specify the name of the recipient, the department, or the name of     the shop in the [subject] field.'),
+('suppliers', 'rus', 'Поставщикам', NULL, '    * Для набора добавочного номера с городского телефона необходимо перевести     его в тональный набор («*», кнопка либо     переключатель «TONE»). Набирать     добавочный номер можно сразу после начала сообщения автоответчика.     С сотовых телефонов набирать добавочные номера можно так же после начала     сообщения автоответчика.<br />    Если у Вас возникают какие-либо трудности - Вы можете     дождаться ответа секретаря.<br />    * При отправке почтовых сообщений, если вы затрудняетесь в выборе     получателя, либо не нашли адрес нужного Вам лица — Вы всегда можете     направить корреспонденцию на общий ящик:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * Убедительная просьба, для более точного получения обозначайте в     поле [тема сообщения] имя получателя, либо отдела, либо наименование     точки.'),
+('wholesale_department', 'eng', 'Wholesale department', NULL, '    * To dial an extension number from a stationary phone, please switch     the phone to the tone dialing («*», button or switch     «TONE»). You can begin dialing the number right after the     start of the auto-answer. The users of cellular phones can also dial     the extension right after the start of the auto-answer.<br />    If you come across some difficulties, please wait for the     secretary to answer.<br />    * If you want to send an e-mail, but have difficulties in choosing     the recipient, or can''t find the address of the desired person,     you can always send a message to the general mailbox:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * For the more successful e-mail handling, we kindly request you to     specify the name of the recipient, the department, or the name of     the shop in the [subject] field.'),
+('wholesale_department', 'rus', 'Оптовый отдел', NULL, '    * Для набора добавочного номера с городского телефона необходимо перевести     его в тональный набор («*», кнопка либо     переключатель «TONE»). Набирать     добавочный номер можно сразу после начала сообщения автоответчика.     С сотовых телефонов набирать добавочные номера можно так же после начала     сообщения автоответчика.<br />    Если у Вас возникают какие-либо трудности - Вы можете     дождаться ответа секретаря.<br />    * При отправке почтовых сообщений, если вы затрудняетесь в выборе     получателя, либо не нашли адрес нужного Вам лица — Вы всегда можете     направить корреспонденцию на общий ящик:     <a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a>.<br />    * Убедительная просьба, для более точного получения обозначайте в     поле [тема сообщения] имя получателя, либо отдела, либо наименование     точки.');
 
 -- --------------------------------------------------------
 
@@ -401,7 +407,6 @@ INSERT INTO `ContactsUnitsTypes_Lang` (`type`, `lang`, `typeName`, `topText`, `b
 -- Структура таблицы `ContactsUnitsWokers`
 --
 
-DROP TABLE IF EXISTS `ContactsUnitsWokers`;
 CREATE TABLE IF NOT EXISTS `ContactsUnitsWokers` (
   `unit` varchar(100) NOT NULL,
   `worker` varchar(100) NOT NULL,
@@ -424,7 +429,60 @@ INSERT INTO `ContactsUnitsWokers` (`unit`, `worker`) VALUES
 ('procurement_department', 'Исаков Владислав Александрович'),
 ('procurement_department', 'Козырев Денис Владимирович'),
 ('procurement_department', 'Кузнецов Геннадий Васильевич'),
-('procurement_department', 'Филиппов Денис Юрьевич');
+('procurement_department', 'Филиппов Денис Юрьевич'),
+('shop_mall_ring_road', 'Жилина Анастасия Валерьевна'),
+('wholesale_butyrki', 'Жилина Анастасия Валерьевна'),
+('wholesale_butyrki', 'Золотарёва Юлия Николаевна'),
+('wholesale_chernovitskaya', 'Прохорова Надежда Александровна'),
+('wholesale_chernovitskaya', 'Чикова Галина Викторовна'),
+('wholesale_chkalova', 'Довыдова Ольга Сергеевна'),
+('wholesale_chkalova', 'Солдатова Марина Николаевна'),
+('wholesale_chkalova', 'Тарасова Ольга Николаевна'),
+('wholesale_hangar_ring_road', 'Варда Андрей'),
+('wholesale_hangar_ring_road', 'Петрова Ирина Владимировна'),
+('wholesale_hangar_ring_road', 'Филькова Наталья Юрьевна'),
+('wholesale_mall_ring_road', 'Гришина Марина Александровна'),
+('wholesale_mall_ring_road', 'Живанов Василий Васильевич'),
+('wholesale_mall_ring_road', 'Зенин Дмитрий Николаевич'),
+('wholesale_mall_ring_road', 'Комарова Кристина Игоревна'),
+('wholesale_mall_ring_road', 'Моторина Лидия Николаевна'),
+('wholesale_mall_ring_road', 'Нестеров Сергей Викторович'),
+('wholesale_mall_ring_road', 'Суркова Анастасия Николаевна'),
+('wholesale_mall_ring_road', 'Терентьева Марина Александровна'),
+('wholesale_mall_ring_road', 'Трухин Максим Александрович'),
+('wholesale_mall_ring_road', 'Шараева Виктория Романовна'),
+('wholesale_ostrovskogo', 'Архипцева Вера Юрьевна'),
+('wholesale_ostrovskogo', 'Плащинская Алла Вячеславовна'),
+('wholesale_ostrovskogo', 'Родина Маргарита Витальевна'),
+('wholesale_pushkina', 'Андриянов Николай Николаевич'),
+('wholesale_pushkina', 'Ксандопуло Юлия Сергеевна'),
+('wholesale_pushkina', 'Фомина Елена Павловна'),
+('wholesale_pushkina', 'Холопова Ольга Валериевна'),
+('wholesale_pushkina', 'Хохлова Надежда Александровна'),
+('wholesale_shabulina', 'Егорова Светлана Сергеевна'),
+('wholesale_shabulina', 'Коршунова Ольга Сергеевна'),
+('wholesale_shabulina', 'Лескина Маргарита Олеговна'),
+('wholesale_shabulina', 'Павлова Ольга Владиславовна'),
+('wholesale_shabulina', 'Савушкина Ольга Сергеевна'),
+('wholesale_svyazi', 'Марсакова Наталья Васильевна'),
+('wholesale_verkhnyaya', 'Давыдова Татьяна Игоревна'),
+('wholesale_verkhnyaya', 'Желтенко Елена Васильевна'),
+('wholesale_verkhnyaya', 'Игнатьева Татьяна Владимировна'),
+('wholesale_verkhnyaya', 'Копылова Татьяна Викторовна'),
+('wholesale_verkhnyaya', 'Сорогин Денис Юрьевич'),
+('wholesale_verkhnyaya', 'Юсова Анастасия Викторовна'),
+('wholesale_yesenina', 'Авраменко Нина Александровна'),
+('wholesale_yesenina', 'Белякова Светлана Олеговна'),
+('wholesale_yesenina', 'Водопьянов Алексей Евгеньевич'),
+('wholesale_yesenina', 'Кованова Ольга Михайловна'),
+('wholesale_yesenina', 'Коркина Ксения Александровна'),
+('wholesale_yesenina', 'Николаева Евгения'),
+('wholesale_yesenina', 'Патрина Екатерина Александровна'),
+('wholesale_yesenina', 'Решетников Анатолий Павлович'),
+('wholesale_yesenina', 'Родин Сергей Иванович'),
+('wholesale_yesenina', 'Стрельченко Галина Михайловна'),
+('wholesale_zubkovoy', 'Воеводин Алексей Анатольевич'),
+('wholesale_zubkovoy', 'Осьмухина Ольга Николаевна');
 
 -- --------------------------------------------------------
 
@@ -432,7 +490,6 @@ INSERT INTO `ContactsUnitsWokers` (`unit`, `worker`) VALUES
 -- Структура таблицы `ContactsUnits_Lang`
 --
 
-DROP TABLE IF EXISTS `ContactsUnits_Lang`;
 CREATE TABLE IF NOT EXISTS `ContactsUnits_Lang` (
   `unit` varchar(100) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -449,39 +506,61 @@ CREATE TABLE IF NOT EXISTS `ContactsUnits_Lang` (
 --
 
 INSERT INTO `ContactsUnits_Lang` (`unit`, `lang`, `name`, `adress`, `postAdress`, `text`) VALUES
-('butyrki', 'eng', '1V 3rd Butyrki str.', '1V 3rd Butyrki str., 390000 Ryazan', NULL, NULL),
-('butyrki', 'rus', 'Бутырки 3, 1В', '390000, г. Рязань, ул. 3 Бутырки, д.1В', NULL, NULL),
-('chernovitskaya', 'eng', '5 Chernovitskaya str.', '5 Chernovitskaya str., 390035 Ryazan', NULL, NULL),
-('chernovitskaya', 'rus', 'Черновицкая, 5', '390035, г. Рязань, ул. Черновицкая, д. 5', NULL, NULL),
-('chkalova', 'eng', '70B Chkalova str.', '70B Chkalova str., 390029 Ryazan', NULL, NULL),
-('chkalova', 'rus', 'Чкалова, 70Б', '390029, г. Рязань, ул. Чкалова, д. 70Б', NULL, NULL),
-('general_enquiries_department', 'eng', 'Our contacts', '13 Yesenina str., 390006 Ryazan', '13 Yesenina str., 390023 Ryazan, POB 109', '<p>If you don''t know whom to address your     questions, please feel free to contact the     <a href="./general_enquiries_department/en/">GENERAL ENQUIRIES DEPARTMENT</a>     via one of the telephone numbers mentioned above. Our secretaries will     be glad to provide all the necessary information, or forward the call to     the corresponding specialist.</p><p>For the questions related to our products,     prices, assortment and stock status, please contact the     <a href="./sales_department/en/">SALES DEPARTMENT</a>     via the telephone numbers <span class="main_text">8 (4912) 240-220#555</span>.</p>'),
-('general_enquiries_department', 'rus', 'Наши контакты', '390023 г. Рязань, ул. Есенина, 13', '390023 г. Рязань, а/я 109', '<p>Уважаемые клиенты, если Вы не знаете кому     адресовать Ваш вопрос - обращайтесь в     <a href="./general_enquiries_department/ru/">ОТДЕЛ ИНФОРМАЦИИ</a>     по вышеуказанным     телефонам. Наши секретари предоставят интересующую Вас информацию,     либо перенаправят к необходимому адресату.</p><p>По вопросам, связанным с     товарами, ценами, ассортиментом и наличием на складах - обращайтесь в     <a href="./sales_department/ru/">ОТДЕЛ ПРОДАЖ</a>    по телефону <span class="main_text">8 (4912) 240-220 доб. 555</span>. Наши менеджеры предоставят     интересующую Вас информацию, либо перенаправят к необходимому адресату.</p>'),
 ('marketing_department', 'eng', 'Marketing department', NULL, NULL, 'For the questions related to the cooperation     for the supply and disposal of goods, please contact line managers of     the <a href="./marketing_department/en/">MARKETING DEPARTMENT</a>.'),
 ('marketing_department', 'rus', 'Отдел маркетинга', NULL, NULL, 'По вопросам сотрудничества в рамках поставок     и реализации товара обращайтесь к Руководителям направлений     <a href="./marketing_department/ru/">ОТДЕЛА МАРКЕТИНГА</a>.По вопросам сотрудничества в рамках поставок     и реализации товара обращайтесь к Руководителям направлений     <a href="./marketing_department/ru/">ОТДЕЛА МАРКЕТИНГА</a>.'),
-('ostrovskogo', 'eng', '109 Ostrovskogo str.', '109-2 Ostrovskogo str., 390029 Ryazan', NULL, NULL),
-('ostrovskogo', 'rus', 'Островского, 109/2', '390029, ул. Островского, д. 109/2', NULL, NULL),
 ('procurement_department', 'eng', 'Procurement department', NULL, NULL, 'Managers of Procurement department will     help you to provide all the necessary materials for the     heating and water supply systems, and will calculate     and select the appropriate equipment on an individual basis.'),
 ('procurement_department', 'rus', 'Отдел комплектации', NULL, NULL, 'Менеджеры «Отдела комплектации»     помогут Вам обеспечить объекты недвижимости всеми необходимым     для систем отопления и водоснабжения, а так же, в индивидуальном     порядке, рассчитают и подберут подходящее оборудование.'),
-('pushkina', 'eng', '170v Pushkina str.', '170v Pushkina str., 140500 Luhovitsy', NULL, NULL),
-('pushkina', 'rus', 'Луховицы, Пушкина, 170В', '140500, г. Луховицы, ул. Пушкина, д. 170B', NULL, NULL),
-('shabulina', 'eng', '24B Directions Shabulina', '24B Directions Shabulina, 390043 Ryazan', NULL, NULL),
-('shabulina', 'rus', 'Шабулина, 24Б', '390043, г. Рязань, Проезд Шабулина, д. 24Б', NULL, NULL),
-('shopping_mall_on_the_city_ring_road', 'eng', 'Shopping mall on the city ring road', 'Shopping mall on the city ring road, Ryazan', NULL, NULL),
-('shopping_mall_on_the_city_ring_road', 'rus', 'ТЦ на Окружной', 'г. Рязань, Окружная дорога, 185 км', NULL, NULL),
+('shop_butyrki', 'eng', '1V 3rd Butyrki str.', '1V 3rd Butyrki str., 390000 Ryazan', NULL, NULL),
+('shop_butyrki', 'rus', 'Бутырки 3, 1В', '390000, г. Рязань, ул. 3 Бутырки, д.1В', NULL, NULL),
+('shop_chernovitskaya', 'eng', '5 Chernovitskaya str.', '5 Chernovitskaya str., 390035 Ryazan', NULL, NULL),
+('shop_chernovitskaya', 'rus', 'Черновицкая, 5', '390035, г. Рязань, ул. Черновицкая, д. 5', NULL, NULL),
+('shop_chkalova', 'eng', '70B Chkalova str.', '70B Chkalova str., 390029 Ryazan', NULL, NULL),
+('shop_chkalova', 'rus', 'Чкалова, 70Б', '390029, г. Рязань, ул. Чкалова, д. 70Б', NULL, NULL),
+('shop_hangar_ring_road', 'eng', 'The 185th km of the beltway (Hangar)', 'The 185th km of the beltway (Hangar), Ryazan', NULL, NULL),
+('shop_hangar_ring_road', 'rus', 'Окружная дорога, 185 км (Ангар)', 'г. Рязань, Окружная дорога, 185 км (Ангар)', NULL, NULL),
+('shop_mall_ring_road', 'eng', 'Shopping mall on the city ring road', 'Shopping mall on the city ring road, Ryazan', NULL, NULL),
+('shop_mall_ring_road', 'rus', 'ТЦ на Окружной', 'г. Рязань, Окружная дорога, 185 км', NULL, NULL),
+('shop_ostrovskogo', 'eng', '109 Ostrovskogo str.', '109-2 Ostrovskogo str., 390029 Ryazan', NULL, NULL),
+('shop_ostrovskogo', 'rus', 'Островского, 109/2', '390029, ул. Островского, д. 109/2', NULL, NULL),
+('shop_pushkina', 'eng', '170v Pushkina str.', '170v Pushkina str., 140500 Luhovitsy', NULL, NULL),
+('shop_pushkina', 'rus', 'Луховицы, Пушкина, 170В', '140500, г. Луховицы, ул. Пушкина, д. 170B', NULL, NULL),
+('shop_shabulina', 'eng', '24B Directions Shabulina', '24B Directions Shabulina, 390043 Ryazan', NULL, NULL),
+('shop_shabulina', 'rus', 'Шабулина, 24Б', '390043, г. Рязань, Проезд Шабулина, д. 24Б', NULL, NULL),
+('shop_svyazi', 'eng', '10B Svyazi str., Sokolovka', '10B Svyazi str., Sokolovka, 390047 Ryazan', NULL, NULL),
+('shop_svyazi', 'rus', 'Соколовка, Связи, 10Б', '390047, г. Рязань, пос. Соколовка, ул. Связи, 10Б', NULL, NULL),
+('shop_verkhnyaya', 'eng', '50 Verkhnyaya str.', '50 Verkhnyaya str., 390037 Ryazan', NULL, NULL),
+('shop_verkhnyaya', 'rus', 'Верхняя, 50', '390037, г. Рязань, ул. Верхняя, д. 50', NULL, NULL),
+('shop_yesenina', 'eng', '13 Yesenina str.', '13 Yesenina str., 390006 Ryazan', NULL, NULL),
+('shop_yesenina', 'rus', 'Есенина, 13', '390006, г. Рязань, ул. Есенина, д.13', NULL, NULL),
+('shop_zubkovoy', 'eng', '27B Zubkovoy str.', '27B Zubkovoy str., 390048 Ryazan', NULL, NULL),
+('shop_zubkovoy', 'rus', 'Зубковой, 27Б', '390048, г. Рязань, ул. Зубковой, д. 27Б', NULL, NULL),
 ('studio_furniture_ostrovskogo', 'rus', 'Студия мебели на Островского', '390029, ул. Островского, д. 109/2', NULL, NULL),
 ('studio_furniture_shabulina', 'rus', 'Студия мебели на Шабулина', '390043 г. Рязань, Шабулина, д. 24Б', NULL, NULL),
 ('studio_furniture_yesenina', 'rus', 'Студия мебели на Есенина', '390006 г. Рязань, ул. Есенина, 13', NULL, NULL),
-('svyazi', 'eng', '10B Svyazi str., Sokolovka', '10B Svyazi str., Sokolovka, 390047 Ryazan', NULL, NULL),
-('svyazi', 'rus', 'Соколовка, Связи, 10Б', '390047, г. Рязань, пос. Соколовка, ул. Связи, 10Б', NULL, NULL),
-('the_185th_km_of_the_city_ring_road-hangar', 'eng', 'The 185th km of the beltway (Hangar)', 'The 185th km of the beltway (Hangar), Ryazan', NULL, NULL),
-('the_185th_km_of_the_city_ring_road-hangar', 'rus', 'Окружная дорога, 185 км (Ангар)', 'г. Рязань, Окружная дорога, 185 км (Ангар)', NULL, NULL),
-('verkhnyaya', 'eng', '50 Verkhnyaya str.', '50 Verkhnyaya str., 390037 Ryazan', NULL, NULL),
-('verkhnyaya', 'rus', 'Верхняя, 50', '390037, г. Рязань, ул. Верхняя, д. 50', NULL, NULL),
-('yesenina', 'eng', '13 Yesenina str.', '13 Yesenina str., 390006 Ryazan', NULL, NULL),
-('yesenina', 'rus', 'Есенина, 13', '390006, г. Рязань, ул. Есенина, д.13', NULL, NULL),
-('zubkovoy', 'eng', '27B Zubkovoy str.', '27B Zubkovoy str., 390048 Ryazan', NULL, NULL),
-('zubkovoy', 'rus', 'Зубковой, 27Б', '390048, г. Рязань, ул. Зубковой, д. 27Б', NULL, NULL);
+('wholesale_butyrki', 'eng', '1V 3rd Butyrki str.', '1V 3rd Butyrki str., 390000 Ryazan', NULL, NULL),
+('wholesale_butyrki', 'rus', 'Бутырки 3, 1В', '390000, г. Рязань, ул. 3 Бутырки, д.1В', NULL, NULL),
+('wholesale_chernovitskaya', 'eng', '5 Chernovitskaya str.', '5 Chernovitskaya str., 390035 Ryazan', NULL, NULL),
+('wholesale_chernovitskaya', 'rus', 'Черновицкая, 5', '390035, г. Рязань, ул. Черновицкая, д. 5', NULL, NULL),
+('wholesale_chkalova', 'eng', '70B Chkalova str.', '70B Chkalova str., 390029 Ryazan', NULL, NULL),
+('wholesale_chkalova', 'rus', 'Чкалова, 70Б', '390029, г. Рязань, ул. Чкалова, д. 70Б', NULL, NULL),
+('wholesale_hangar_ring_road', 'eng', 'The 185th km of the beltway (Hangar)', 'The 185th km of the beltway (Hangar), Ryazan', NULL, NULL),
+('wholesale_hangar_ring_road', 'rus', 'Окружная дорога, 185 км (Ангар)', 'г. Рязань, Окружная дорога, 185 км (Ангар)', NULL, NULL),
+('wholesale_mall_ring_road', 'eng', 'Shopping mall on the city ring road', 'Shopping mall on the city ring road, Ryazan', NULL, NULL),
+('wholesale_mall_ring_road', 'rus', 'ТЦ на Окружной', 'г. Рязань, Окружная дорога, 185 км', NULL, NULL),
+('wholesale_ostrovskogo', 'eng', '109 Ostrovskogo str', '109-2 Ostrovskogo str., 390029 Ryazan', NULL, NULL),
+('wholesale_ostrovskogo', 'rus', 'Островского, 109/2', '390029, ул. Островского, д. 109/2', NULL, NULL),
+('wholesale_pushkina', 'eng', '170v Pushkina str.', '170v Pushkina str., 140500 Luhovitsy', NULL, NULL),
+('wholesale_pushkina', 'rus', 'Луховицы, Пушкина, 170В', '140500, г. Луховицы, ул. Пушкина, д. 170B', NULL, NULL),
+('wholesale_shabulina', 'eng', '24B Directions Shabulina', '24B Directions Shabulina, 390043 Ryazan', NULL, NULL),
+('wholesale_shabulina', 'rus', 'Шабулина, 24Б', '390043, г. Рязань, Проезд Шабулина, д. 24Б', NULL, NULL),
+('wholesale_svyazi', 'eng', '10B Svyazi str., Sokolovka', '10B Svyazi str., Sokolovka, 390047 Ryazan', NULL, NULL),
+('wholesale_svyazi', 'rus', 'Соколовка, Связи, 10Б', '390047, г. Рязань, пос. Соколовка, ул. Связи, 10Б', NULL, NULL),
+('wholesale_verkhnyaya', 'eng', '50 Verkhnyaya str.', '50 Verkhnyaya str., 390037 Ryazan', NULL, NULL),
+('wholesale_verkhnyaya', 'rus', 'Верхняя, 50', '390037, г. Рязань, ул. Верхняя, д. 50', NULL, NULL),
+('wholesale_yesenina', 'eng', '13 Yesenina str.', '13 Yesenina str., 390006 Ryazan', NULL, NULL),
+('wholesale_yesenina', 'rus', 'Есенина, 13', '390006, г. Рязань, ул. Есенина, д.13', NULL, NULL),
+('wholesale_zubkovoy', 'eng', '27B Zubkovoy str.', '27B Zubkovoy str., 390048 Ryazan', NULL, NULL),
+('wholesale_zubkovoy', 'rus', 'Зубковой, 27Б', '390048, г. Рязань, ул. Зубковой, д. 27Б', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -489,7 +568,6 @@ INSERT INTO `ContactsUnits_Lang` (`unit`, `lang`, `name`, `adress`, `postAdress`
 -- Структура таблицы `ContactsWorkers`
 --
 
-DROP TABLE IF EXISTS `ContactsWorkers`;
 CREATE TABLE IF NOT EXISTS `ContactsWorkers` (
   `worker` varchar(50) NOT NULL,
   `post` varchar(50) NOT NULL,
@@ -510,17 +588,69 @@ CREATE TABLE IF NOT EXISTS `ContactsWorkers` (
 --
 
 INSERT INTO `ContactsWorkers` (`worker`, `post`, `email1`, `email2`, `phoneText1`, `phone1`, `additional1`, `phoneText2`, `phone2`, `additional2`) VALUES
+('Авраменко Нина Александровна', 'Менеджер', 'avramenko@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '1103', '8(4912)502-020', '84912502020', '1103'),
+('Андриянов Николай Николаевич', 'Оптовый Менеджер VIP', 'andreyanov@apelsin.ru', NULL, '8(496)639-6100', '84966396100', '2147', NULL, NULL, NULL),
+('Архипцева Вера Юрьевна', 'Оптовый Менеджер VIP', 'arhipceva@apelsin.ru', NULL, '8(4912)226-160', '84912226160', '2942', '8(4912)502-020', '84912502020', '2942'),
+('Белякова Светлана Олеговна', 'Оптовый Менеджер VIP', 'sheretuska@mail.ru', '', '8(4912)502-020', '84912502020', '5003', '8(4912)240-220', '84912240220', '5003'),
+('Варда Андрей', 'Оптовый Менеджер VIP', 'varda.87@mail.ru', NULL, '8(4912)307-355', '84912307355', '2509', '8(4912)307-356', '84912307356', '2509'),
+('Водопьянов Алексей Евгеньевич', 'Менеджер', 'a_vodopyanov@mail.ru', NULL, '8(4912)240-220', '84912240220', '1107', '8(4912)502-020', '84912502020', '1107'),
+('Воеводин Алексей Анатольевич', 'Оптовый Менеджер VIP', 'voevodin@apelsin.ru', NULL, '8(4912)950-377', '84912950377', '3241', '8(4912)950-380', '84912950380', '3241'),
+('Гришина Марина Александровна', 'Оптовый Менеджер VIP', 'grishina@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '3049', '8(4912)502-020', '84912502020', '3049'),
 ('Гуськова Валентина', 'Маркетолог', 'guskova@apelsin.ru', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Давыдова Татьяна Игоревна', 'Оптовый Менеджер VIP', 'davidova_t@apelsin.ru', NULL, '8(4912)950-148', '84912950148', '3316', '8(4912)950-149', '84912950149', '3316'),
+('Довыдова Ольга Сергеевна', 'Оптовый Менеджер VIP', 'davidova@apelsin.ru', NULL, '8(4912)248-289', '84912248289', '2402', '8(4912)758-793', '84912758793', '2402'),
+('Егорова Светлана Сергеевна', 'Оптовый Менеджер VIP', 'egorova@apelsin.ru', NULL, '8(4912)950-395', '84912950395', '3542', '8(4912)950-340', '84912950340', '3542'),
 ('Епишин Алексей', 'Маркетолог', 'epishin@apelsin.ru', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Желтенко Елена Васильевна', 'Оптовый Менеджер', 'lovkova28@mail.ru', '', '8(4912)950-148', '84912950148', '1112', '8(4912)950-149', '84912950149', '1112'),
+('Живанов Василий Васильевич', 'Оптовый Менеджер', 'zhivanov@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '1113', '8(4912)502-020', '84912502020', '1113'),
+('Жилина Анастасия Валерьевна', 'Оптовый Менеджер VIP', 'zhilina@apelsin.ru', NULL, '8(4912)950-378', '84912950378', '3403', '8(4912)950-379', '84912950379', '3403'),
+('Зенин Дмитрий Николаевич', 'Оптовый Менеджер', 'zenin@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '1104', '8(4912)502-020', '84912502020', '1104'),
+('Золотарёва Юлия Николаевна', 'Оптовый Менеджер VIP', 'zolotareva@apelsin.ru', NULL, '8(4912)950-378', '84912950378', '3401', '8(4912)950-379', '84912950379', '3401'),
+('Игнатьева Татьяна Владимировна', 'Оптовый Менеджер', 'ignateva@apelsin.ru', NULL, '8(4912)950-148', '84912950148', '1118', '8(4912)950-149', '84912950149', '1118'),
 ('Исаков Владислав Александрович', 'Менеджер', 'isakov@apelsin.ru', NULL, '8(910)904-28-80', '89109042880', NULL, '8(4912)240-220', '84912240220', '3104'),
 ('Калинин Сергей', 'Маркетолог', 'kalinin@apelsin.ru', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('Кандалова Светлана', 'Маркетолог', 'kandalova@apelsin.ru', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('Клюкин Борис', 'Маркетолог', 'klyukin@apelsin.ru', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Кованова Ольга Михайловна', 'Менеджер', 'kovanova@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '1108', '8(4912)502-020', '84912502020', '1108'),
 ('Козырев Денис Владимирович', 'Менеджер', 'kozyrev@apelsin.ru', NULL, '8(965)712-00-75', '89657120075', NULL, '8(968)081-58-30', '89680815830', NULL),
+('Комарова Кристина Игоревна', 'Оптовый Менеджер', 'komarova@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '1117', '8(4912)502-020', '84912502020', '1117'),
+('Копылова Татьяна Викторовна', 'Оптовый Менеджер VIP', 'kopylova@apelsin.ru', '', '8(4912)950-148', '84912950148', '3316', '8(4912)950-149', '84912950149', '3316'),
+('Коркина Ксения Александровна', 'Оптовый Менеджер VIP', 'mail@apelsin.ru', '', '8(4912)240-220', '84912240220', '5004', '8(4912)502-020', '84912502020', '5004'),
+('Коршунова Ольга Сергеевна', 'Управляющий', 'korshunova@apelsin.ru', NULL, '8(4912)950-395', '84912950395', '3508', '8(4912)950-340', '84912950340', '3508'),
+('Ксандопуло Юлия Сергеевна', 'Оптовый Менеджер VIP', 'mail@apelsin.ru', '', '8(496)639-6100', '84966396100', '2105', '', '', ''),
 ('Кузнецов Геннадий Васильевич', 'Начальник отдела', 'kuznetsov_gennadiy@apelsin.ru', NULL, '8(920)956-63-00', '89209566300', NULL, '8(4912)240-220', '84912240220', '425'),
 ('Кузнецов Евгений', 'Маркетолог', 'kuznetsov_evgeniy@apelsin.ru', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Лескина Маргарита Олеговна', 'Оптовый Менеджер VIP', 'leskina@apelsin.ru', '', '8(4912)950-395', '84912950395', '3543', '8(4912)950-340', '84912950340', '3543'),
+('Марсакова Наталья Васильевна', 'Оптовый Менеджер VIP', 'marsakova@apelsin.ru', NULL, '8(4912)288-891', '84912288891', '2303', '8(4912)502-020', '84912502020', '2303'),
+('Моторина Лидия Николаевна', 'Оптовый Менеджер VIP', 'motorina@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '3014', '8(4912)502-020', '84912502020', '3014'),
+('Нестеров Сергей Викторович', 'Оптовый Менеджер VIP', 'nesterov@apelsin.ru', '', '8(4912)240-220', '84912240220', '3021', '8(4912)502-020', '84912502020', '3021'),
 ('Нечайкин Павел', 'Маркетолог', 'nechaikin@apelsin.ru', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('Филиппов Денис Юрьевич', 'Менеджер', 'philippov@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '3101', '8(4912)950-378', '84912950378', '3101');
+('Николаева Евгения', 'Менеджер', 'nikolaeva@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '1106', '8(4912)502-020', '84912502020', '1106'),
+('Осьмухина Ольга Николаевна', 'Оптовый Менеджер', 'osmuhina@apelsin.ru', NULL, '8(4912)950-377', '84912950377', '3222', '8(4912)950-380', '84912950380', '3222'),
+('Павлова Ольга Владиславовна', 'Оптовый Менеджер VIP', 'pavlova_o@apelsin.ru', NULL, '8(4912)950-395', '84912950395', '3525', '8(4912)950-340', '84912950340', '3525'),
+('Патрина Екатерина Александровна', 'Оптовый Менеджер VIP', 'mail@apelsin.ru', '', '8(4912)240-220', '84912240220', '5004', '8(4912)502-020', '84912502020', '5004'),
+('Петрова Ирина Владимировна', 'Оптовый Менеджер VIP', 'irinapetrova1973@gmail.com', NULL, '8(4912)307-355', '84912307355', '2501', '8(4912)307-356', '84912307356', '2501'),
+('Плащинская Алла Вячеславовна', 'Оптовый Менеджер VIP', 'plaschinskaya@apelsin.ru', NULL, '8(4912)226-160', '84912226160', '2905', '8(4912)502-020', '84912502020', '2905'),
+('Прохорова Надежда Александровна', 'Оптовый Менеджер VIP', 'prohorova@apelsin.ru', NULL, '8(4912)226-160', '84912226160', '2702', '8(4912)502-020', '84912502020', '2702'),
+('Решетников Анатолий Павлович', 'Менеджер', 'reshetnikov@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '1114', '8(4912)502-020', '84912502020', '1114'),
+('Родин Сергей Иванович', 'Менеджер', 'rodin.apelsin@gmail.com', NULL, '8(4912)240-220', '84912240220', '1116', '8(4912)502-020', '84912502020', '1116'),
+('Родина Маргарита Витальевна', 'Оптовый Менеджер VIP', 'rodina@apelsin.ru', NULL, '8(4912)226-160', '84912226160', '2924', '8(4912)502-020', '84912502020', '2924'),
+('Савушкина Ольга Сергеевна', 'Оптовый Менеджер VIP', 'mail@apelsin.ru', NULL, '8(4912)950-395', '84912950395', '3507', '8(4912)950-340', '84912950340', '3507'),
+('Солдатова Марина Николаевна', 'Оптовый Менеджер VIP', 'soldatova@apelsin.ru', NULL, '8(4912)248-289', '84912248289', '2401', '8(4912)758-793', '84912758793', '2401'),
+('Сорогин Денис Юрьевич', 'Оптовый Менеджер VIP', 'sorogin@apelsin.ru', '', '8(4912)950-148', '84912950148', '1115', '8(4912)950-149', '84912950149', '1115'),
+('Стрельченко Галина Михайловна', 'Оптовый Менеджер VIP', 'mail@apelsin.ru', '', '8(4912)240-220', '84912240220', '5003', '8(4912)502-020', '84912502020', '5003'),
+('Суркова Анастасия Николаевна', 'Оптовый Менеджер VIP', 'surkova@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '3048', '8(4912)502-020', '84912502020', '3048'),
+('Тарасова Ольга Николаевна', 'Оптовый Менеджер VIP', 'tarasova@apelsin.ru', NULL, '8(4912)248-289', '84912248289', '2409', '8(4912)758-793', '84912758793', '2409'),
+('Терентьева Марина Александровна', 'Оптовый Менеджер', 'terentyeva_m@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '1105', '8(4912)502-020', '84912502020', '1105'),
+('Трухин Максим Александрович', 'Оптовый Менеджер VIP', 'trukhinmaksim@gmail.com', NULL, '8(4912)240-220', '84912240220', '3049', '8(4912)502-020', '84912502020', '3049'),
+('Филиппов Денис Юрьевич', 'Менеджер', 'philippov@apelsin.ru', NULL, '8(4912)240-220', '84912240220', '3101', '8(4912)950-378', '84912950378', '3101'),
+('Филькова Наталья Юрьевна', 'Оптовый Менеджер VIP', 'filkova@apelsin.ru', NULL, '8(4912)307-355', '84912307355', '2501', '8(4912)307-356', '84912307356', '2501'),
+('Фомина Елена Павловна', 'Оптовый Менеджер VIP', 'fomina_e@apelsin.ru', '', '8(496)639-6100', '84966396100', '2123', '', '', ''),
+('Холопова Ольга Валериевна', 'Оптовый Менеджер', 'olga_kholopova@mail.ru', NULL, '8(496)639-6100', '84966396100', '2138', NULL, NULL, NULL),
+('Хохлова Надежда Александровна', 'Оптовый Менеджер VIP', 'hohlova@apelsin.ru', '', '8(496)639-6100', '84966396100', '2135', '', '', ''),
+('Чикова Галина Викторовна', 'Оптовый Менеджер VIP', 'chikova@apelsin.ru', NULL, '8(4912)226-160', '84912226160', '2703', '8(4912)502-020', '84912502020', '2703'),
+('Шараева Виктория Романовна', 'Оптовый Менеджер', 'sharaeva@apelsin.ru', '', '8(4912)240-220', '84912240220', '1102', '8(4912)502-020', '84912502020', '1102'),
+('Юсова Анастасия Викторовна', 'Оптовый Менеджер VIP', 'yusova@apelsin.ru', '', '8(4912)950-148', '84912950148', '3322', '8(4912)950-149', '84912950149', '3322');
 
 -- --------------------------------------------------------
 
@@ -528,7 +658,6 @@ INSERT INTO `ContactsWorkers` (`worker`, `post`, `email1`, `email2`, `phoneText1
 -- Структура таблицы `ContactsWorkersPosts`
 --
 
-DROP TABLE IF EXISTS `ContactsWorkersPosts`;
 CREATE TABLE IF NOT EXISTS `ContactsWorkersPosts` (
   `post` varchar(50) NOT NULL,
   `sequence` int(2) unsigned NOT NULL,
@@ -546,7 +675,9 @@ INSERT INTO `ContactsWorkersPosts` (`post`, `sequence`) VALUES
 ('Ст. менеджер', 3),
 ('Менеджер кредитного отдела', 4),
 ('Маркетолог', 5),
-('Менеджер', 6);
+('Оптовый Менеджер VIP', 6),
+('Оптовый Менеджер', 7),
+('Менеджер', 10);
 
 -- --------------------------------------------------------
 
@@ -554,7 +685,6 @@ INSERT INTO `ContactsWorkersPosts` (`post`, `sequence`) VALUES
 -- Структура таблицы `ContactsWorkersPosts_Lang`
 --
 
-DROP TABLE IF EXISTS `ContactsWorkersPosts_Lang`;
 CREATE TABLE IF NOT EXISTS `ContactsWorkersPosts_Lang` (
   `post` varchar(50) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -576,6 +706,10 @@ INSERT INTO `ContactsWorkersPosts_Lang` (`post`, `lang`, `postName`) VALUES
 ('Менеджер кредитного отдела', 'rus', 'Менеджер кредитного отдела'),
 ('Начальник отдела', 'eng', 'Department head'),
 ('Начальник отдела', 'rus', 'Начальник отдела'),
+('Оптовый Менеджер', 'eng', 'Sales assistant'),
+('Оптовый Менеджер', 'rus', 'Менеджер'),
+('Оптовый Менеджер VIP', 'eng', 'Sales assistant'),
+('Оптовый Менеджер VIP', 'rus', 'Менеджер'),
 ('Ст. менеджер', 'eng', 'Senior sales assistant'),
 ('Ст. менеджер', 'rus', 'Ст. менеджер'),
 ('Управляющий', 'eng', 'Store manager'),
@@ -587,12 +721,11 @@ INSERT INTO `ContactsWorkersPosts_Lang` (`post`, `lang`, `postName`) VALUES
 -- Структура таблицы `ContactsWorkers_Lang`
 --
 
-DROP TABLE IF EXISTS `ContactsWorkers_Lang`;
 CREATE TABLE IF NOT EXISTS `ContactsWorkers_Lang` (
   `worker` varchar(50) NOT NULL,
   `lang` varchar(3) NOT NULL,
   `fio` varchar(50) NOT NULL,
-  `info` text NOT NULL,
+  `info` text,
   PRIMARY KEY (`worker`,`lang`),
   KEY `fk_ContactsWorkers_Lang_2_idx` (`lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -602,10 +735,44 @@ CREATE TABLE IF NOT EXISTS `ContactsWorkers_Lang` (
 --
 
 INSERT INTO `ContactsWorkers_Lang` (`worker`, `lang`, `fio`, `info`) VALUES
+('Авраменко Нина Александровна', 'eng', 'Avramenko Nina Aleksandrovna', ''),
+('Авраменко Нина Александровна', 'rus', 'Авраменко Нина Александровна', ''),
+('Андриянов Николай Николаевич', 'eng', 'Andriyanov Nikolay Nikolayevich', ''),
+('Андриянов Николай Николаевич', 'rus', 'Андриянов Николай Николаевич', ''),
+('Архипцева Вера Юрьевна', 'eng', 'Arhipceva Vera Jurevna', ''),
+('Архипцева Вера Юрьевна', 'rus', 'Архипцева Вера Юрьевна', ''),
+('Белякова Светлана Олеговна', 'eng', 'Belyakova Svetlana Olegovna', ''),
+('Белякова Светлана Олеговна', 'rus', 'Белякова Светлана Олеговна', ''),
+('Варда Андрей', 'eng', 'Varda Andrej', ''),
+('Варда Андрей', 'rus', 'Варда Андрей', ''),
+('Водопьянов Алексей Евгеньевич', 'eng', 'Vodopyanov Aleksey Evgenevich', ''),
+('Водопьянов Алексей Евгеньевич', 'rus', 'Водопьянов Алексей Евгеньевич', ''),
+('Воеводин Алексей Анатольевич', 'eng', 'Voevodin Aleksej Anatol''evich', ''),
+('Воеводин Алексей Анатольевич', 'rus', 'Воеводин Алексей Анатольевич', ''),
+('Гришина Марина Александровна', 'eng', 'Grishina Marina Aleksandrovna', ''),
+('Гришина Марина Александровна', 'rus', 'Гришина Марина Александровна', ''),
 ('Гуськова Валентина', 'eng', 'Gus''kova Valentine', 'Wallpaper, chandeliers, clocks, styrofoam and polyurethane.'),
 ('Гуськова Валентина', 'rus', 'Гуськова Валентина', 'Обои, люстры, часы, изделия из пенополистирола и полиуретана.'),
+('Давыдова Татьяна Игоревна', 'eng', 'Davydova Tatyana Igorevna', ''),
+('Давыдова Татьяна Игоревна', 'rus', 'Давыдова Татьяна Игоревна', ''),
+('Довыдова Ольга Сергеевна', 'eng', 'Dovydova Olga Sergeevna', ''),
+('Довыдова Ольга Сергеевна', 'rus', 'Довыдова Ольга Сергеевна', ''),
+('Егорова Светлана Сергеевна', 'eng', 'Egorova Svetlana Sergeevna', ''),
+('Егорова Светлана Сергеевна', 'rus', 'Егорова Светлана Сергеевна', ''),
 ('Епишин Алексей', 'eng', 'Yepishin Alex', 'Ceramic tile.'),
 ('Епишин Алексей', 'rus', 'Епишин Алексей', 'Плитка керамическая.'),
+('Желтенко Елена Васильевна', 'eng', 'Zheltenko Elena Vassilyevna', ''),
+('Желтенко Елена Васильевна', 'rus', 'Желтенко Елена Васильевна', ''),
+('Живанов Василий Васильевич', 'eng', 'Zhivanov Vasilij Vasil''evich', ''),
+('Живанов Василий Васильевич', 'rus', 'Живанов Василий Васильевич', ''),
+('Жилина Анастасия Валерьевна', 'eng', 'Zilina Anastasia Valerevna', ''),
+('Жилина Анастасия Валерьевна', 'rus', 'Жилина Анастасия Валерьевна', ''),
+('Зенин Дмитрий Николаевич', 'eng', 'Zenin Dmitrij Nikolaevich', ''),
+('Зенин Дмитрий Николаевич', 'rus', 'Зенин Дмитрий Николаевич', ''),
+('Золотарёва Юлия Николаевна', 'eng', 'Zolotarjova Julija Nikolaevna', ''),
+('Золотарёва Юлия Николаевна', 'rus', 'Золотарёва Юлия Николаевна', ''),
+('Игнатьева Татьяна Владимировна', 'eng', 'Ignateva Tatyana Vladimirovna', ''),
+('Игнатьева Татьяна Владимировна', 'rus', 'Игнатьева Татьяна Владимировна', ''),
 ('Исаков Владислав Александрович', 'eng', 'Vladislav Isakov', '1V 3rd Butyrki str.'),
 ('Исаков Владислав Александрович', 'rus', 'Исаков Владислав Александрович', 'Бутырки 3, 1В.'),
 ('Калинин Сергей', 'eng', 'Sergei Kalinin', 'Floor coverings.'),
@@ -614,16 +781,86 @@ INSERT INTO `ContactsWorkers_Lang` (`worker`, `lang`, `fio`, `info`) VALUES
 ('Кандалова Светлана', 'rus', 'Кандалова Светлана', 'Сухие смеси, профиль и комплектующие, гипсокартон.'),
 ('Клюкин Борис', 'eng', 'Boris Klyukin', 'Facade systems and siding, pvc panel and MDF, metal, insulation, adhesives and sealants, paints and varnishes, ceiling systems, roof.'),
 ('Клюкин Борис', 'rus', 'Клюкин Борис', 'Фасадные системы и сайдинг, панели пвх и мдф, металлопрокат, теплоизоляция, клея и герметики, лакокрасочная продукция, потолочные системы, кровля.'),
+('Кованова Ольга Михайловна', 'eng', 'Kovanova Olga Michailovna', ''),
+('Кованова Ольга Михайловна', 'rus', 'Кованова Ольга Михайловна', ''),
 ('Козырев Денис Владимирович', 'eng', 'Denis Kozyrev', '1V 3rd Butyrki str.<br>Luhovicy, 170V Pushkina str.'),
 ('Козырев Денис Владимирович', 'rus', 'Козырев Денис Владимирович', 'Бутырки 3, 1В.<br>Луховицы, Пушкина, 170В'),
+('Комарова Кристина Игоревна', 'eng', 'Komarova Kristina Igorevna', ''),
+('Комарова Кристина Игоревна', 'rus', 'Комарова Кристина Игоревна', ''),
+('Копылова Татьяна Викторовна', 'eng', 'Kopylova Tatyana Viktorovna', ''),
+('Копылова Татьяна Викторовна', 'rus', 'Копылова Татьяна Викторовна', ''),
+('Коркина Ксения Александровна', 'eng', 'Korkina Kseniya Aleksandrovna', ''),
+('Коркина Ксения Александровна', 'rus', 'Коркина Ксения Александровна', ''),
+('Коршунова Ольга Сергеевна', 'eng', 'Korshunova Olga Sergeevna', ''),
+('Коршунова Ольга Сергеевна', 'rus', 'Коршунова Ольга Сергеевна', ''),
+('Ксандопуло Юлия Сергеевна', 'eng', 'Ksandopulo Julija Sergeevna', ''),
+('Ксандопуло Юлия Сергеевна', 'rus', 'Ксандопуло Юлия Сергеевна', ''),
 ('Кузнецов Геннадий Васильевич', 'eng', 'Gennady Kuznetsov', '1V 3rd Butyrki str.'),
 ('Кузнецов Геннадий Васильевич', 'rus', 'Кузнецов Геннадий Васильевич', 'Бутырки 3, 1В.'),
 ('Кузнецов Евгений', 'eng', 'Evgeny Kuznetsov', 'Heating and water supply, plumbing.'),
 ('Кузнецов Евгений', 'rus', 'Кузнецов Евгений', 'Отопление и водоснабжение, сантехника.'),
+('Лескина Маргарита Олеговна', 'eng', 'Leskina Margarita Olegovna', ''),
+('Лескина Маргарита Олеговна', 'rus', 'Лескина Маргарита Олеговна', ''),
+('Марсакова Наталья Васильевна', 'eng', 'Marsakova Natalya Vasilevna', ''),
+('Марсакова Наталья Васильевна', 'rus', 'Марсакова Наталья Васильевна', ''),
+('Моторина Лидия Николаевна', 'eng', 'Motorina Lidiya Nikolaevna', ''),
+('Моторина Лидия Николаевна', 'rus', 'Моторина Лидия Николаевна', ''),
+('Нестеров Сергей Викторович', 'eng', 'Nesterov Sergey Viktorovich', ''),
+('Нестеров Сергей Викторович', 'rus', 'Нестеров Сергей Викторович', ''),
 ('Нечайкин Павел', 'eng', 'Nechaykin Paul', 'Doors, tools, fasteners, ventilation, fittings, electric, fittings for furniture, lumber.'),
 ('Нечайкин Павел', 'rus', 'Нечайкин Павел', 'Двери, инструменты, крепежные элементы, вентиляция, фурнитура, электроматериалы, фурнитура для мебели, пиломатериалы.'),
+('Николаева Евгения', 'eng', 'Nikolaeva Evgenija', ''),
+('Николаева Евгения', 'rus', 'Николаева Евгения', ''),
+('Осьмухина Ольга Николаевна', 'eng', 'Osmukhina Olga Nikolaevna', ''),
+('Осьмухина Ольга Николаевна', 'rus', 'Осьмухина Ольга Николаевна', ''),
+('Павлова Ольга Владиславовна', 'eng', 'Pavlova Olga Vladislavovna', ''),
+('Павлова Ольга Владиславовна', 'rus', 'Павлова Ольга Владиславовна', ''),
+('Патрина Екатерина Александровна', 'eng', 'Patrina Ekaterina Aleksandrovna', ''),
+('Патрина Екатерина Александровна', 'rus', 'Патрина Екатерина Александровна', ''),
+('Петрова Ирина Владимировна', 'eng', 'Petrova Irina Vladimirovna', ''),
+('Петрова Ирина Владимировна', 'rus', 'Петрова Ирина Владимировна', ''),
+('Плащинская Алла Вячеславовна', 'eng', 'Plashchinskaya Alla Vyacheslavovna', ''),
+('Плащинская Алла Вячеславовна', 'rus', 'Плащинская Алла Вячеславовна', ''),
+('Прохорова Надежда Александровна', 'eng', 'Prokhorova Nadezhda Alexandrovna', ''),
+('Прохорова Надежда Александровна', 'rus', 'Прохорова Надежда Александровна', ''),
+('Решетников Анатолий Павлович', 'eng', 'Reshetnikov Anatoliy Pavlovich', ''),
+('Решетников Анатолий Павлович', 'rus', 'Решетников Анатолий Павлович', ''),
+('Родин Сергей Иванович', 'eng', 'Rodin Sergey Ivanovich', ''),
+('Родин Сергей Иванович', 'rus', 'Родин Сергей Иванович', ''),
+('Родина Маргарита Витальевна', 'eng', 'Rodina Margarita Vitalievna', ''),
+('Родина Маргарита Витальевна', 'rus', 'Родина Маргарита Витальевна', ''),
+('Савушкина Ольга Сергеевна', 'eng', 'Savushkina Ol''ga Sergeevna', ''),
+('Савушкина Ольга Сергеевна', 'rus', 'Савушкина Ольга Сергеевна', ''),
+('Солдатова Марина Николаевна', 'eng', 'Soldatova Marina Nikolaevna', ''),
+('Солдатова Марина Николаевна', 'rus', 'Солдатова Марина Николаевна', ''),
+('Сорогин Денис Юрьевич', 'eng', 'Sorogin Denis Yurevich', ''),
+('Сорогин Денис Юрьевич', 'rus', 'Сорогин Денис Юрьевич', ''),
+('Стрельченко Галина Михайловна', 'eng', 'Strelchenko Galina Mikhaylovna', ''),
+('Стрельченко Галина Михайловна', 'rus', 'Стрельченко Галина Михайловна', ''),
+('Суркова Анастасия Николаевна', 'eng', 'Surkova Anastasiya Nikolaevna', ''),
+('Суркова Анастасия Николаевна', 'rus', 'Суркова Анастасия Николаевна', ''),
+('Тарасова Ольга Николаевна', 'eng', 'Tarasova Olga Nikolaevna', ''),
+('Тарасова Ольга Николаевна', 'rus', 'Тарасова Ольга Николаевна Менеджер', ''),
+('Терентьева Марина Александровна', 'eng', 'Terent''eva Marina Aleksandrovna', ''),
+('Терентьева Марина Александровна', 'rus', 'Терентьева Марина Александровна', ''),
+('Трухин Максим Александрович', 'eng', 'Truhin Maksim Aleksandrovich', ''),
+('Трухин Максим Александрович', 'rus', 'Трухин Максим Александрович', ''),
 ('Филиппов Денис Юрьевич', 'eng', 'Denis Filippov', '1V 3rd Butyrki str.'),
-('Филиппов Денис Юрьевич', 'rus', 'Филиппов Денис Юрьевич', 'Бутырки 3, 1В.');
+('Филиппов Денис Юрьевич', 'rus', 'Филиппов Денис Юрьевич', 'Бутырки 3, 1В.'),
+('Филькова Наталья Юрьевна', 'eng', 'Filkova Natalya Yurevna', ''),
+('Филькова Наталья Юрьевна', 'rus', 'Филькова Наталья Юрьевна', ''),
+('Фомина Елена Павловна', 'eng', 'Fomina Elena Pavlovna', ''),
+('Фомина Елена Павловна', 'rus', 'Фомина Елена Павловна', ''),
+('Холопова Ольга Валериевна', 'eng', 'Holopova Ol''ga Valerievna', ''),
+('Холопова Ольга Валериевна', 'rus', 'Холопова Ольга Валериевна', ''),
+('Хохлова Надежда Александровна', 'eng', 'Hohlova Nadezhda Aleksandrovna', ''),
+('Хохлова Надежда Александровна', 'rus', 'Хохлова Надежда Александровна', ''),
+('Чикова Галина Викторовна', 'eng', 'Chikova Galina Viktorovna', ''),
+('Чикова Галина Викторовна', 'rus', 'Чикова Галина Викторовна', ''),
+('Шараева Виктория Романовна', 'eng', 'Sharaeva Viktorija Romanovna', ''),
+('Шараева Виктория Романовна', 'rus', 'Шараева Виктория Романовна', ''),
+('Юсова Анастасия Викторовна', 'eng', 'Yusova Anastasia Victorovna', ''),
+('Юсова Анастасия Викторовна', 'rus', 'Юсова Анастасия Викторовна', '');
 
 -- --------------------------------------------------------
 
@@ -631,7 +868,6 @@ INSERT INTO `ContactsWorkers_Lang` (`worker`, `lang`, `fio`, `info`) VALUES
 -- Структура таблицы `CreatedModules`
 --
 
-DROP TABLE IF EXISTS `CreatedModules`;
 CREATE TABLE IF NOT EXISTS `CreatedModules` (
   `id` bigint(20) unsigned NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -662,7 +898,6 @@ INSERT INTO `CreatedModules` (`id`, `name`, `module`) VALUES
 -- Структура таблицы `DBerrors`
 --
 
-DROP TABLE IF EXISTS `DBerrors`;
 CREATE TABLE IF NOT EXISTS `DBerrors` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `element` varchar(200) NOT NULL,
@@ -677,7 +912,6 @@ CREATE TABLE IF NOT EXISTS `DBerrors` (
 -- Структура таблицы `HtmlModul`
 --
 
-DROP TABLE IF EXISTS `HtmlModul`;
 CREATE TABLE IF NOT EXISTS `HtmlModul` (
   `name` varchar(100) NOT NULL,
   `description` text,
@@ -699,7 +933,6 @@ INSERT INTO `HtmlModul` (`name`, `description`) VALUES
 -- Структура таблицы `HtmlModul_Lang`
 --
 
-DROP TABLE IF EXISTS `HtmlModul_Lang`;
 CREATE TABLE IF NOT EXISTS `HtmlModul_Lang` (
   `htmlModul` varchar(100) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -725,7 +958,6 @@ INSERT INTO `HtmlModul_Lang` (`htmlModul`, `lang`, `html`) VALUES
 -- Структура таблицы `JCropTypes`
 --
 
-DROP TABLE IF EXISTS `JCropTypes`;
 CREATE TABLE IF NOT EXISTS `JCropTypes` (
   `type` varchar(50) NOT NULL,
   `aspectRatio` float unsigned NOT NULL DEFAULT '0',
@@ -755,7 +987,6 @@ INSERT INTO `JCropTypes` (`type`, `aspectRatio`, `bgColor`, `bgOpacity`, `sideHa
 -- Структура таблицы `Jquery`
 --
 
-DROP TABLE IF EXISTS `Jquery`;
 CREATE TABLE IF NOT EXISTS `Jquery` (
   `fileName` varchar(100) NOT NULL,
   `version` varchar(10) NOT NULL,
@@ -782,7 +1013,6 @@ INSERT INTO `Jquery` (`fileName`, `version`, `min`) VALUES
 -- Структура таблицы `Lang`
 --
 
-DROP TABLE IF EXISTS `Lang`;
 CREATE TABLE IF NOT EXISTS `Lang` (
   `lang` varchar(3) NOT NULL,
   `langName` varchar(50) NOT NULL,
@@ -806,7 +1036,6 @@ INSERT INTO `Lang` (`lang`, `langName`, `default`) VALUES
 -- Структура таблицы `Logo`
 --
 
-DROP TABLE IF EXISTS `Logo`;
 CREATE TABLE IF NOT EXISTS `Logo` (
   `lang` varchar(3) NOT NULL,
   `text` text NOT NULL,
@@ -829,7 +1058,6 @@ INSERT INTO `Logo` (`lang`, `text`, `urlTitle`) VALUES
 -- Структура таблицы `MapBildings`
 --
 
-DROP TABLE IF EXISTS `MapBildings`;
 CREATE TABLE IF NOT EXISTS `MapBildings` (
   `alias` varchar(100) NOT NULL,
   `block` varchar(100) NOT NULL,
@@ -852,7 +1080,6 @@ CREATE TABLE IF NOT EXISTS `MapBildings` (
 -- Структура таблицы `MapBildingsBlocks`
 --
 
-DROP TABLE IF EXISTS `MapBildingsBlocks`;
 CREATE TABLE IF NOT EXISTS `MapBildingsBlocks` (
   `block` varchar(100) NOT NULL,
   `sequence` int(5) unsigned NOT NULL,
@@ -875,7 +1102,6 @@ INSERT INTO `MapBildingsBlocks` (`block`, `sequence`) VALUES
 -- Структура таблицы `MapBildings_Lang`
 --
 
-DROP TABLE IF EXISTS `MapBildings_Lang`;
 CREATE TABLE IF NOT EXISTS `MapBildings_Lang` (
   `bild` varchar(100) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -890,7 +1116,6 @@ CREATE TABLE IF NOT EXISTS `MapBildings_Lang` (
 -- Структура таблицы `Maps`
 --
 
-DROP TABLE IF EXISTS `Maps`;
 CREATE TABLE IF NOT EXISTS `Maps` (
   `alias` varchar(100) NOT NULL,
   `sid` varchar(100) NOT NULL,
@@ -926,7 +1151,6 @@ INSERT INTO `Maps` (`alias`, `sid`, `width`, `height`) VALUES
 -- Структура таблицы `Materials`
 --
 
-DROP TABLE IF EXISTS `Materials`;
 CREATE TABLE IF NOT EXISTS `Materials` (
   `alias` varchar(200) NOT NULL,
   `created` datetime NOT NULL,
@@ -943,12 +1167,12 @@ CREATE TABLE IF NOT EXISTS `Materials` (
 --
 
 INSERT INTO `Materials` (`alias`, `created`, `lastChange`, `showTitle`, `showCreated`, `showChange`) VALUES
-('about', '2013-08-01 00:00:00', '2013-08-01 00:00:00', 0, 0, 0),
-('credit', '2013-08-01 00:00:00', '2014-11-28 05:11:10', 1, 0, 0),
-('delivery', '2013-08-01 00:00:01', '2014-11-25 07:21:34', 1, 0, 0),
-('discount', '2013-08-01 00:00:00', '2014-11-25 05:36:09', 1, 0, 0),
-('documentation', '2013-08-01 00:00:00', '2014-11-25 05:35:36', 1, 0, 0),
-('gift_cards', '2013-08-01 00:00:00', '2014-11-25 07:10:08', 1, 0, 0),
+('about', '2200-01-09 00:00:00', '2015-02-10 10:00:11', 0, 0, 0),
+('credit', '2013-08-01 00:00:00', '2015-02-10 10:03:36', 1, 0, 0),
+('delivery', '2013-08-01 00:00:01', '2015-02-10 09:51:10', 1, 0, 0),
+('discount', '2013-08-01 00:00:00', '2015-02-10 09:51:05', 1, 0, 0),
+('documentation', '2013-08-01 00:00:00', '2015-02-10 09:55:17', 1, 0, 0),
+('gift_cards', '2013-08-01 00:00:00', '2015-02-10 09:51:08', 1, 0, 0),
 ('homePage', '2014-12-17 00:00:00', '2014-12-17 00:00:00', 0, 0, 0),
 ('main', '2013-08-01 00:00:00', '2013-08-01 00:00:00', 0, 0, 0),
 ('news_aksessuar_dlja_vannoj_i_discount', '2014-07-04 00:00:00', '2014-12-09 09:08:30', 1, 0, 0),
@@ -971,16 +1195,16 @@ INSERT INTO `Materials` (`alias`, `created`, `lastChange`, `showTitle`, `showCre
 ('news_oboi_i_gift_3p1', '2014-06-02 00:00:01', '2014-12-09 11:45:08', 1, 0, 0),
 ('news_osb_3_i_good_price', '2014-01-19 00:00:01', '2014-11-24 10:21:54', 1, 0, 0),
 ('news_parketnaja_doska_i_gift_5p1', '2013-08-02 00:00:00', '2014-12-10 07:58:08', 1, 0, 0),
-('news_proflist_c8_c21_i_best_price', '2013-08-22 00:00:00', '2014-11-24 10:23:42', 1, 0, 0),
-('news_programma_bonus_i_service', '2016-01-09 00:00:00', '2014-11-29 10:21:05', 1, 0, 0),
-('news_skidka_vyhodnogo_dnja_i_discount', '2016-01-08 00:00:00', '2014-11-24 10:13:39', 1, 0, 0),
+('news_proflist_c8_c21_i_best_price', '2013-08-22 00:00:00', '2015-01-28 09:28:27', 1, 0, 0),
+('news_programma_bonus_i_service', '2016-01-09 00:00:00', '2015-02-10 09:53:39', 1, 0, 0),
+('news_skidka_vyhodnogo_dnja_i_discount', '2016-01-08 00:00:00', '2015-02-05 07:15:47', 1, 0, 0),
 ('news_smesitel_verznoj_i_discount', '2014-09-02 00:00:00', '2014-12-09 11:08:50', 1, 0, 0),
 ('news_specodezhda_i_advertising_goods', '2013-08-11 00:00:00', '2014-12-01 07:16:48', 1, 0, 0),
 ('news_teksturol_KLASSIK_i_good_price', '2014-11-01 00:00:00', '2014-11-29 10:25:46', 1, 0, 0),
 ('news_vannaja_akrilovaja_i_best_price', '2013-11-04 01:04:00', '2014-11-24 10:22:25', 1, 0, 0),
 ('news_vannaja_akrilovaja_i_good_price', '2013-08-17 00:00:00', '2014-11-29 11:47:48', 1, 0, 0),
 ('news_vannaja_gidromassazhnaja_i_good_price', '2013-08-10 00:00:00', '2014-11-25 05:01:59', 1, 0, 0),
-('payment', '2013-08-01 10:45:31', '2014-11-25 07:17:19', 1, 0, 0);
+('payment', '2013-08-01 10:45:31', '2015-02-10 09:51:11', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -988,7 +1212,6 @@ INSERT INTO `Materials` (`alias`, `created`, `lastChange`, `showTitle`, `showCre
 -- Структура таблицы `MaterialsCategories`
 --
 
-DROP TABLE IF EXISTS `MaterialsCategories`;
 CREATE TABLE IF NOT EXISTS `MaterialsCategories` (
   `alias` varchar(200) NOT NULL,
   `created` datetime NOT NULL,
@@ -1013,7 +1236,6 @@ INSERT INTO `MaterialsCategories` (`alias`, `created`, `lastChange`) VALUES
 -- Структура таблицы `MaterialsCategoriesInList`
 --
 
-DROP TABLE IF EXISTS `MaterialsCategoriesInList`;
 CREATE TABLE IF NOT EXISTS `MaterialsCategoriesInList` (
   `category` varchar(200) NOT NULL,
   `list` varchar(200) NOT NULL,
@@ -1038,7 +1260,6 @@ INSERT INTO `MaterialsCategoriesInList` (`category`, `list`, `sequence`) VALUES
 -- Структура таблицы `MaterialsCategoriesList`
 --
 
-DROP TABLE IF EXISTS `MaterialsCategoriesList`;
 CREATE TABLE IF NOT EXISTS `MaterialsCategoriesList` (
   `name` varchar(200) NOT NULL,
   `showFullMaterialsText` tinyint(1) unsigned NOT NULL DEFAULT '0',
@@ -1060,11 +1281,8 @@ CREATE TABLE IF NOT EXISTS `MaterialsCategoriesList` (
 --
 
 INSERT INTO `MaterialsCategoriesList` (`name`, `showFullMaterialsText`, `showShortMaterialsText`, `showCategories`, `showCreated`, `showChange`, `categorialsAsURL`, `titleAsURL`, `showAllOnPage`, `onPage`, `maxPages`) VALUES
-('about', 1, 0, 0, 0, 0, 0, 0, 1, 10, 6),
-('info', 0, 0, 0, 0, 0, 0, 0, 1, 10, 6),
-('payment_and_delivery', 1, 0, 0, 0, 0, 0, 0, 1, 10, 5),
-('promo', 1, 1, 0, 0, 0, 0, 0, 0, 10, 5),
-('useful_article', 0, 0, 1, 0, 0, 1, 1, 1, 10, 5);
+('info', 1, 1, 0, 0, 0, 0, 0, 1, 10, 6),
+('promo', 1, 1, 0, 0, 0, 0, 0, 0, 10, 5);
 
 -- --------------------------------------------------------
 
@@ -1072,7 +1290,6 @@ INSERT INTO `MaterialsCategoriesList` (`name`, `showFullMaterialsText`, `showSho
 -- Структура таблицы `MaterialsCategoriesList_Lang`
 --
 
-DROP TABLE IF EXISTS `MaterialsCategoriesList_Lang`;
 CREATE TABLE IF NOT EXISTS `MaterialsCategoriesList_Lang` (
   `list` varchar(200) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -1088,12 +1305,8 @@ CREATE TABLE IF NOT EXISTS `MaterialsCategoriesList_Lang` (
 --
 
 INSERT INTO `MaterialsCategoriesList_Lang` (`list`, `lang`, `name`, `description`) VALUES
-('payment_and_delivery', 'eng', 'Payment and delivery', NULL),
-('payment_and_delivery', 'rus', 'Оплата и доставка', NULL),
 ('promo', 'eng', 'News', NULL),
-('promo', 'rus', 'Акции', NULL),
-('useful_article', 'eng', 'Useful article', '<p class="more_inf">В данном разделе собраны справочники по строительным материалам, \n    инструкции по монтажу и обзоры наиболее популярных стройматериалов.<p>'),
-('useful_article', 'rus', 'Полезные статьи', '<p class="more_inf">В данном разделе собраны справочники по строительным материалам, \n    инструкции по монтажу и обзоры наиболее популярных стройматериалов.<p>');
+('promo', 'rus', 'Акции', NULL);
 
 -- --------------------------------------------------------
 
@@ -1101,7 +1314,6 @@ INSERT INTO `MaterialsCategoriesList_Lang` (`list`, `lang`, `name`, `description
 -- Структура таблицы `MaterialsCategories_Lang`
 --
 
-DROP TABLE IF EXISTS `MaterialsCategories_Lang`;
 CREATE TABLE IF NOT EXISTS `MaterialsCategories_Lang` (
   `category` varchar(200) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -1131,7 +1343,6 @@ INSERT INTO `MaterialsCategories_Lang` (`category`, `lang`, `name`, `description
 -- Структура таблицы `MaterialsInCategories`
 --
 
-DROP TABLE IF EXISTS `MaterialsInCategories`;
 CREATE TABLE IF NOT EXISTS `MaterialsInCategories` (
   `material` varchar(200) NOT NULL,
   `category` varchar(200) NOT NULL,
@@ -1145,6 +1356,7 @@ CREATE TABLE IF NOT EXISTS `MaterialsInCategories` (
 --
 
 INSERT INTO `MaterialsInCategories` (`material`, `category`) VALUES
+('about', 'info'),
 ('about', 'pages'),
 ('credit', 'info'),
 ('credit', 'pages'),
@@ -1177,7 +1389,9 @@ INSERT INTO `MaterialsInCategories` (`material`, `category`) VALUES
 ('news_osb_3_i_good_price', 'promo'),
 ('news_parketnaja_doska_i_gift_5p1', 'promo'),
 ('news_proflist_c8_c21_i_best_price', 'promo'),
+('news_programma_bonus_i_service', 'info'),
 ('news_programma_bonus_i_service', 'promo'),
+('news_skidka_vyhodnogo_dnja_i_discount', 'info'),
 ('news_skidka_vyhodnogo_dnja_i_discount', 'promo'),
 ('news_smesitel_verznoj_i_discount', 'promo'),
 ('news_specodezhda_i_advertising_goods', 'promo'),
@@ -1194,7 +1408,6 @@ INSERT INTO `MaterialsInCategories` (`material`, `category`) VALUES
 -- Структура таблицы `Materials_Lang`
 --
 
-DROP TABLE IF EXISTS `Materials_Lang`;
 CREATE TABLE IF NOT EXISTS `Materials_Lang` (
   `material` varchar(200) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -1210,8 +1423,8 @@ CREATE TABLE IF NOT EXISTS `Materials_Lang` (
 --
 
 INSERT INTO `Materials_Lang` (`material`, `lang`, `title`, `text`) VALUES
-('about', 'eng', 'About Apelsin', '\n<p class="main_paragraph"><span class="main_text">"APELSIN"</span> - company was found in 1997, and now it is the largest regional store chain in Ryazan, that sells construction and repair materials wholesale and retail. </p>\n<p class="main_paragraph">"Apelsin" - is an authorized dealer of many well-known brand manufacturers that produce tools, construction and finish materials.</p>\n<p class="main_paragraph">"Apelsin" - includes <span class="main_text"><a href="./contacts/en/">12 stores</a></span> и <span class="main_text">4 warehouse terminals</span> located within walking distance, thus, allowing to reach the maximum range of potential customers.</p>\n<p class="main_paragraph">The total sales area is <span class="main_text">25 000</span> quare meters. Warehouse area is <span class="main_text">35 000</span> square meters. Every day we meet dozens of heavy trucks with goods from our suppliers.</p>\n<p class="main_paragraph">Our business priority is the availability of goods in stock. The range of products offered by "Apelsin" store chain is more than <span class="main_text">300 000</span> items. </p>\n<p class="main_paragraph">We also provide the service related to the procurement of building and finishing materials for the construction sites.</p>\n<p class="main_paragraph">Flexible discount system and individual attention to each client make the work with us mutually beneficial for the largest construction companies, individual businessmen and private customers.</p>\n<p class="main_paragraph">We offer everything for the construction, repair and finishing of any level: from the economy class to the highest one. The professional will find the products of the manufacturers he is used to working with. If you are at a loss, we will help you to make the optimum choice that will suit you most.</p> \n<p class="main_paragraph">Our sales managers are highly experienced; they have been trained at seminars, trade shows, production centers of the companies that have chosen "Apelsin" as their authorized dealer and representative. </p>\n<p class="main_paragraph">Thus, "Apelsin" company is a reliable, fast growing trade network that tends to enhance the existing business relations and establish new partnerships. </p>\n'),
-('about', 'rus', 'О компании', '<p class="main_paragraph">Компания <span class="main_text">"Апельсин"</span> - основана в 1997 году и является крупнейшей региональной сетью магазинов в Рязани, которая реализует оптом и в розницу материалы для строительства и ремонта.</p>\n<p class="main_paragraph">«Апельсин» - официальный дилер многих известных торговых марок производителей строительных, отделочных материалов и инструмента.</p>\n<p class="main_paragraph">Компания «Апельсин» - это <span class="main_text"><a href="./contacts/ru/">12 магазинов</a></span> и <span class="main_text">4 склада-терминала</span> — расположенных по принципу шаговой доступности, позволяющий охватить максимальный круг потенциального потребителя.</p>\n<p class="main_paragraph">Общая торговая площадь сети магазинов составляет <span class="main_text">25 тысяч</span> квадратных метров. Складская площадь занимает <span class="main_text">35 тысяч</span> квадратных метров. Каждый день мы принимаем от наших партнеров-поставщиков десятки большегрузных фур.</p>\n<p class="main_paragraph">Приоритетным направлением компании «Апельсин» является наличие товара на складе. Ассортимент продукции предлагаемой сетью магазинов «Апельсин» - это более <span class="main_text">300 тысяч</span> наименований.</p>\n<p class="main_paragraph">Мы предоставляем услугу полной комплектации объектов строительно-отделочными материалами.</p>\n<p class="main_paragraph">Гибкая система скидок и индивидуальный подход к каждому клиенту делают работу с нами обоюдно выгодной крупным строительным компаниям, индивидуальным предпринимателям и физическим лицам.</p>\n<p class="main_paragraph">Мы предлагаем все для строительства, ремонта и отделки любого уровня - от эконом класса, до самого высокого. Профессионалу мы предложим товары тех производителей, с которыми он привык работать, а тем, кто сомневается в выборе, поможем остановиться на нужном варианте.</p>\n<p class="main_paragraph">Наши продавцы-консультанты имеют большой опыт работы, прошли обучение на семинарах, выставках производственных базах тех компаний, официальными дилерами и представителями которых является компания «Апельсин».</p>\n<p class="main_paragraph">Итак, «Апельсин» - надежная, динамично развивающаяся торговая сеть, стремящаяся к укреплению сложившихся и созданию новых партнерских отношений.</p>'),
+('about', 'eng', 'About Apelsin', '<p class="main_paragraph"><span class="main_text">"APELSIN"</span> - company was found in 1997, and now it is the largest regional store chain in Ryazan, that sells construction and repair materials wholesale and retail. </p>\r\n<p class="main_paragraph">"Apelsin" - is an authorized dealer of many well-known brand manufacturers that produce tools, construction and finish materials.</p>\r\n<p class="main_paragraph">"Apelsin" - includes <span class="main_text"><a href="./contacts/en/">12 stores</a></span> и <span class="main_text">4 warehouse terminals</span> located within walking distance, thus, allowing to reach the maximum range of potential customers.</p>\r\n<p class="main_paragraph">The total sales area is <span class="main_text">25 000</span> quare meters. Warehouse area is <span class="main_text">35 000</span> square meters. Every day we meet dozens of heavy trucks with goods from our suppliers.</p>\r\n<p class="main_paragraph">Our business priority is the availability of goods in stock. The range of products offered by "Apelsin" store chain is more than <span class="main_text">300 000</span> items. </p>\r\n<p class="main_paragraph">We also provide the service related to the procurement of building and finishing materials for the construction sites.</p>\r\n<p class="main_paragraph">Flexible discount system and individual attention to each client make the work with us mutually beneficial for the largest construction companies, individual businessmen and private customers.</p>\r\n<p class="main_paragraph">We offer everything for the construction, repair and finishing of any level: from the economy class to the highest one. The professional will find the products of the manufacturers he is used to working with. If you are at a loss, we will help you to make the optimum choice that will suit you most.</p> \r\n<p class="main_paragraph">Our sales managers are highly experienced; they have been trained at seminars, trade shows, production centers of the companies that have chosen "Apelsin" as their authorized dealer and representative. </p>\r\n<p class="main_paragraph">Thus, "Apelsin" company is a reliable, fast growing trade network that tends to enhance the existing business relations and establish new partnerships. </p>\r\n'),
+('about', 'rus', 'О КОМПАНИИ', '<p class="main_paragraph">Компания <span class="main_text">"Апельсин"</span> - основана в 1997 году и является крупнейшей региональной сетью магазинов в Рязани, которая реализует оптом и в розницу материалы для строительства и ремонта.</p>\r\n<p class="main_paragraph">«Апельсин» - официальный дилер многих известных торговых марок производителей строительных, отделочных материалов и инструмента.</p>\r\n<p class="main_paragraph">Компания «Апельсин» - это <span class="main_text"><a href="./contacts/ru/">12 магазинов</a></span> и <span class="main_text">4 склада-терминала</span> — расположенных по принципу шаговой доступности, позволяющий охватить максимальный круг потенциального потребителя.</p>\r\n<p class="main_paragraph">Общая торговая площадь сети магазинов составляет <span class="main_text">25 тысяч</span> квадратных метров. Складская площадь занимает <span class="main_text">35 тысяч</span> квадратных метров. Каждый день мы принимаем от наших партнеров-поставщиков десятки большегрузных фур.</p>\r\n<p class="main_paragraph">Приоритетным направлением компании «Апельсин» является наличие товара на складе. Ассортимент продукции предлагаемой сетью магазинов «Апельсин» - это более <span class="main_text">300 тысяч</span> наименований.</p>\r\n<p class="main_paragraph">Мы предоставляем услугу полной комплектации объектов строительно-отделочными материалами.</p>\r\n<p class="main_paragraph">Гибкая система скидок и индивидуальный подход к каждому клиенту делают работу с нами обоюдно выгодной крупным строительным компаниям, индивидуальным предпринимателям и физическим лицам.</p>\r\n<p class="main_paragraph">Мы предлагаем все для строительства, ремонта и отделки любого уровня - от эконом класса, до самого высокого. Профессионалу мы предложим товары тех производителей, с которыми он привык работать, а тем, кто сомневается в выборе, поможем остановиться на нужном варианте.</p>\r\n<p class="main_paragraph">Наши продавцы-консультанты имеют большой опыт работы, прошли обучение на семинарах, выставках производственных базах тех компаний, официальными дилерами и представителями которых является компания «Апельсин».</p>\r\n<p class="main_paragraph">Итак, «Апельсин» - надежная, динамично развивающаяся торговая сеть, стремящаяся к укреплению сложившихся и созданию новых партнерских отношений.</p>'),
 ('credit', 'eng', 'CREDIT', '<p class="main_paragraph">Dear customers! For your convenience Apelsin company offers an opportunity to buy the construction materials on credit.</p>\r\n<p class="main_paragraph">We wish to draw your attention to the fact that Apelsin''s credit service system is based on complete absence of any benefits from mediation between the Client and the Bank.</p>\r\n<p class="main_paragraph">This means that we do not take for our own benefit any interest from the loan transaction or service charges.</p>\r\n<p class="main_paragraph">Apelsin company provides help in credit arrangement in the following banks:</p>\r\n\r\n<div class="clear"></div>\r\n<center>\r\n<div class="showOnPageMode">\r\n<a class="fancybox" href="#leto_bank" title=""><button type="button" class="apelsin_button_gray"><img src="./resources/Images/materials_images/leto_bank.png" width="150" height="83"></button></a>\r\n<a class="fancybox" href="#russkiyi_standart_bank" title=""><button type="button" class="apelsin_button_gray"><img src="./resources/Images/materials_images/russkiyi_standart_bank.png" width="150" height="83"></button></a>\r\n<a class="fancybox" href="#home_credit_bank" title=""><button type="button" class="apelsin_button_gray"><img src="./resources/Images/materials_images/home_credit_bank.png" width="150" height="83"></button></a>\r\n<a class="fancybox" href="#rusfinans_bank" title=""><button type="button" class="apelsin_button_gray"><img src="./resources/Images/materials_images/rusfinans_bank.png" width="150" height="83"></button></a>\r\n\r\n<div  id="leto_bank" style="display: none;" >\r\n    <img src="./resources/Images/materials_images/leto_bank.png" width="65" height="30" align="left">  \r\n    <span class="inf">ОАО «Лето Банк».<br>\r\n    Лицензия ЦБ РФ №650 от 15.10.2012.</span>\r\n    <table class="table_whith_border" >\r\n        <tr>\r\n            <th> </th>\r\n            <th>0% переплаты</th>\r\n            <th>10 - 10 - 10</th>\r\n            <th>1% переплаты</th>\r\n        </tr><tr>\r\n            <td>Сумма</td>\r\n            <td>от 3 000 до 50 000 руб.</td>\r\n            <td>от 3 000 до 300 000</td>\r\n            <td>от 3 000 до 300 000</td>\r\n        </tr><tr>\r\n            <td>Срок</td>\r\n            <td>6 либо 10 месяцев</td>\r\n            <td>10 месяцев</td>\r\n            <td>6, 8, 10, 12, 16-24 месяцев</td>\r\n        </tr><tr>\r\n            <td>Первоначальный взнос</td>\r\n            <td>0%</td>\r\n            <td>10%</td>\r\n            <td>0%, 10%, 20% либо 30%</td>\r\n        </tr><tr>\r\n            <td>Переплата</td>\r\n            <td>0%</td>\r\n            <td>10%</td>\r\n            <td>1% в месяц</td>\r\n        </tr><tr>\r\n            <td>Документы</td>\r\n            <td>Паспорт РФ</td>\r\n            <td>Паспорт РФ</td>\r\n            <td>Паспорт РФ</td>\r\n        </tr><tr>\r\n            <td>Прописка</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n        </tr><tr>\r\n            <td>Возраст</td>\r\n            <td>М — от 21 до 65 лет<br />Ж — от 18 до 70 лет</td>\r\n            <td>М — от 21 до 65 лет<br />Ж — от 18 до 70 лет</td>\r\n            <td>М — от 21 до 65 лет<br />Ж — от 18 до 70 лет</td>\r\n        </tr>\r\n    </table>\r\n    <p class="more_inf">\r\n    *Не на весь товар. Подробности спрашивайте у менеджеров кредитного отдела.\r\n    </p>\r\n</div>\r\n\r\n<div  id="russkiyi_standart_bank"  style="display: none;">\r\n<img src="./resources/Images/materials_images/russkiyi_standart_bank.png" width="65" height="30" align="left">    \r\n    <span class="inf">ЗАО «Банк Русский стандарт». Генеральная лицензия Банка России<br>\r\n    №2289 выдана бессрочно 19 июля 2001 года.</span>\r\n    <table class="table_whith_border">\r\n        <tr>\r\n            <th> </th>\r\n            <th>10 - 10 - 10</th>\r\n            <th>1% переплаты</th>\r\n        </tr><tr>\r\n            <td>Сумма</td>\r\n            <td>от 3 000 до 200 000</td>\r\n            <td>от 3 000 до 200 000</td>\r\n        </tr><tr>\r\n            <td>Срок</td>\r\n            <td>10 месяцев</td>\r\n            <td>от 3 до 24 месяцев</td>\r\n        </tr><tr>\r\n            <td>Первоначальный взнос</td>\r\n            <td>10%</td>\r\n            <td>0-50%</td>\r\n        </tr><tr>\r\n            <td>Переплата</td>\r\n            <td>10%</td>\r\n            <td>1% в месяц</td>\r\n        </tr><tr>\r\n            <td>Документы</td>\r\n            <td>\r\n                Паспорт РФ + 2-й документ:<br />\r\n                - страх. пенс. свид-во;<br />\r\n                - водит. удостоверение;<br />\r\n                - загран. паспорт;<br />\r\n                - пенсионное удост. (обязательно, если клиент неработающий пенсионер)\r\n            </td>\r\n            <td>\r\n                Паспорт РФ + 2-й документ:<br />\r\n                - страх. пенс. свид-во;<br />\r\n                - водит. удостоверение;<br />\r\n                - загран. паспорт;<br />\r\n                - пенсионное удост. (обязательно, если клиент неработающий пенсионер)\r\n            </td>\r\n        </tr><tr>\r\n            <td>Прописка</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n        </tr><tr>\r\n            <td>Возраст</td>\r\n            <td>М — от 20 до 65 лет<br>Ж — от 18 до 65 лет</td>\r\n            <td>М — от 20 до 65 лет<br>Ж — от 18 до 65 лет</td>\r\n        </tr>\r\n    </table>\r\n    <p class="more_inf">\r\n    *Не на весь товар. Подробности спрашивайте у менеджеров кредитного отдела.\r\n    </p>\r\n</div>\r\n\r\n<div  id="home_credit_bank" style="display: none;">\r\n    <img src="./resources/Images/materials_images/home_credit_bank.png" width="65" height="30" align="left">          \r\n    <span class="inf">ООО «ХКФ Банк». Генеральная лицензия Банка России<br>\r\n    №316 выдана бессрочно 13 октября 2011 года.</span>\r\n    <table class="table_whith_border" >\r\n        <tr>\r\n            <th> </th>\r\n            <th>10 - 10 - 10</th>\r\n            <th>1% переплаты</th>\r\n        </tr><tr>\r\n            <td>Сумма</td>\r\n            <td>от 3 000 до 200 000</td>\r\n            <td>от 3 000 до 200 000</td>\r\n        </tr><tr>\r\n            <td>Срок</td>\r\n            <td>10 месяцев</td>\r\n            <td>от 4, 6, 10, 12 и 18  месяцев</td>\r\n        </tr><tr>\r\n            <td>Первоначальный взнос</td>\r\n            <td>10%</td>\r\n            <td>0% либо 10%</td>\r\n        </tr><tr>\r\n            <td>Переплата</td>\r\n            <td>10%</td>\r\n            <td>1% в месяц</td>\r\n        </tr><tr>\r\n            <td>Документы</td>\r\n            <td>\r\n                Паспорт РФ (с постоянной регистрацией в любом регионе)\r\n            </td>\r\n            <td>\r\n                Паспорт РФ (с постоянной регистрацией в любом регионе)\r\n            </td>\r\n        </tr><tr>\r\n            <td>Прописка</td>\r\n            <td>Пост. регистрация в Рязанской обл.</td>\r\n            <td>Пост. регистрация в Рязанской обл.</td>\r\n        </tr><tr>\r\n            <td>Возраст</td>\r\n            <td>Все от 18 до 70 лет включительно</td>\r\n            <td>Все от 18 до 70 лет включительно</td>\r\n        </tr>\r\n    </table>\r\n    <p class="more_inf">\r\n    *Не на весь товар. Подробности спрашивайте у менеджеров кредитного отдела.\r\n    </p>\r\n</div>\r\n\r\n<div  id="rusfinans_bank"  style="display: none;">\r\n    <img src="./resources/Images/materials_images/rusfinans_bank.png" width="65" height="30" align="left">         \r\n    <span class="inf">OOO "Русфинанс Банк". Генеральная лицензия ЦБ РФ<br>\r\n    №1792 выдана 13 февраля 2013 года.</span>\r\n    <table class="table_whith_border">\r\n        <tr>\r\n            <th> </th>\r\n            <th>0% переплаты</th>\r\n            <th>10 - 10 - 10</th>\r\n            <th>1% переплаты</th>\r\n        </tr><tr>\r\n            <td>Сумма</td>\r\n            <td>от 10 000 до 180 000 руб.</td>\r\n            <td>от 3 000 до 180 000</td>\r\n            <td>от 3 000 до 180 000</td>\r\n        </tr><tr>\r\n            <td>Срок</td>\r\n            <td>3 либо 6 месяцев</td>\r\n            <td>10 месяцев</td>\r\n            <td>от 6 до 24 месяцев</td>\r\n        </tr><tr>\r\n            <td>Первоначальный взнос</td>\r\n            <td>0%,10%,20%,30%,40%,50%</td>\r\n            <td>10%</td>\r\n            <td>0-50%</td>\r\n        </tr><tr>\r\n            <td>Переплата</td>\r\n            <td>0%</td>\r\n            <td>10%</td>\r\n            <td>1% в месяц</td>\r\n        </tr><tr>\r\n            <td>Документы</td>\r\n            <td>Паспорт РФ</td>\r\n            <td>\r\n                Паспорт РФ + 2-й документ:<br />\r\n                (Если сумма свыше 30 000)<br />\r\n                - страх. пенс. свид-во;<br />\r\n                - водит. удостоверение;<br />\r\n                - загран. паспорт\r\n            </td>\r\n            <td>\r\n                Паспорт РФ + 2-й документ:<br />\r\n                (Если сумма свыше 30 000)<br />\r\n                - страх. пенс. свид-во;<br />\r\n                - водит. удостоверение;<br />\r\n                - загран. паспорт\r\n            </td>\r\n        </tr><tr>\r\n            <td>Прописка</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n        </tr><tr>\r\n            <td>Возраст</td>\r\n            <td>М — от 21 до 63 лет<br>Ж — от 21 до 68 лет</td>\r\n            <td>М — от 21 до 63 лет<br>Ж — от 21 до 68 лет</td>\r\n            <td>М — от 21 до 63 лет<br>Ж — от 21 до 68 лет</td>\r\n        </tr>\r\n    </table>\r\n    <p class="more_inf">\r\n    *Не на весь товар. Подробности спрашивайте у менеджеров кредитного отдела.\r\n    </p>\r\n</div> \r\n\r\n</center>\r\n<br><br>\r\n<p class="inf">Credit conditions:</p>\r\n<p class="inf">Loan amount: from 3 to 300 thousand rubles; Initial contribution: from 0 to 90% of the product cost;</p>\r\n<p class="inf">Loan term: from 3 to 36 months; Interest rate: from 23.4% to 39.9 % per annum;</p>\r\n<p class="inf">No additional fee.</p>\r\n<p class="inf">Banks make their own decision on loan granting or rejection without providing any explanations for it.</p>\r\n'),
 ('credit', 'rus', 'КРЕДИТ', '<p class="main_paragraph">\r\nУважаемые клиенты, для Вашего удобства компания «Апельсин» \r\nпредоставляет возможность купить строительные материалы в кредит.\r\n</p>\r\n\r\n<p class="main_paragraph">\r\nОбращаем Ваше внимание на то, что система кредитного обслуживания \r\nКомпании основывается на полном отсутствии выгоды от посредничества \r\nмежду Клиентом и Банком. Это означает, что Мы не берем в свою пользу \r\nни процентов от сделки по обеспечению кредита, ни платы за обслуживание.\r\n</p>\r\n\r\n<p class="main_paragraph">\r\nМенеджеры нашего кредитного отдела помогут Вам в выборе обслуживающего \r\nБанка и кредитного продукта, исходя из Ваших индивидуальных потребностей. \r\nПо первому запросу Вам будет предоставлена консультация или справка \r\nна любом шаге оформления.\r\n</p>\r\n\r\n<p class="main_paragraph">\r\nПозвольте себе строить больше, ничего не теряя и экономя главное — время.\r\n</p>\r\n<p class="main_paragraph">Компания «Апельсин» оказывает помощь в оформлении кредита в следующих банках:</p>\r\n\r\n<div class="clear"></div>\r\n<center>\r\n<div class="showOnPageMode">\r\n<a class="fancybox" href="#leto_bank" title=""><button type="button" class="apelsin_button_gray"><img src="./resources/Images/materials_images/leto_bank.png" width="150" height="83"></button></a>\r\n<a class="fancybox" href="#russkiyi_standart_bank" title=""><button type="button" class="apelsin_button_gray"><img src="./resources/Images/materials_images/russkiyi_standart_bank.png" width="150" height="83"></button></a>\r\n<a class="fancybox" href="#home_credit_bank" title=""><button type="button" class="apelsin_button_gray"><img src="./resources/Images/materials_images/home_credit_bank.png" width="150" height="83"></button></a>\r\n<a class="fancybox" href="#rusfinans_bank" title=""><button type="button" class="apelsin_button_gray"><img src="./resources/Images/materials_images/rusfinans_bank.png" width="150" height="83"></button></a>\r\n\r\n<div  id="leto_bank" style="display: none;" >\r\n    <img src="./resources/Images/materials_images/leto_bank.png" width="65" height="30" align="left">  \r\n    <span class="inf">ОАО «Лето Банк».<br>\r\n    Лицензия ЦБ РФ №650 от 15.10.2012.</span>\r\n    <table class="table_whith_border" >\r\n        <tr>\r\n            <th> </th>\r\n            <th>0% переплаты</th>\r\n            <th>10 - 10 - 10</th>\r\n            <th>1% переплаты</th>\r\n        </tr><tr>\r\n            <td>Сумма</td>\r\n            <td>от 3 000 до 50 000 руб.</td>\r\n            <td>от 3 000 до 300 000</td>\r\n            <td>от 3 000 до 300 000</td>\r\n        </tr><tr>\r\n            <td>Срок</td>\r\n            <td>6 либо 10 месяцев</td>\r\n            <td>10 месяцев</td>\r\n            <td>6, 8, 10, 12, 16-24 месяцев</td>\r\n        </tr><tr>\r\n            <td>Первоначальный взнос</td>\r\n            <td>0%</td>\r\n            <td>10%</td>\r\n            <td>0%, 10%, 20% либо 30%</td>\r\n        </tr><tr>\r\n            <td>Переплата</td>\r\n            <td>0%</td>\r\n            <td>10%</td>\r\n            <td>1% в месяц</td>\r\n        </tr><tr>\r\n            <td>Документы</td>\r\n            <td>Паспорт РФ</td>\r\n            <td>Паспорт РФ</td>\r\n            <td>Паспорт РФ</td>\r\n        </tr><tr>\r\n            <td>Прописка</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n        </tr><tr>\r\n            <td>Возраст</td>\r\n            <td>М — от 21 до 65 лет<br />Ж — от 18 до 70 лет</td>\r\n            <td>М — от 21 до 65 лет<br />Ж — от 18 до 70 лет</td>\r\n            <td>М — от 21 до 65 лет<br />Ж — от 18 до 70 лет</td>\r\n        </tr>\r\n    </table>\r\n    <p class="more_inf">\r\n    *Не на весь товар. Подробности спрашивайте у менеджеров кредитного отдела.\r\n    </p>\r\n</div>\r\n\r\n<div  id="russkiyi_standart_bank"  style="display: none;">\r\n<img src="./resources/Images/materials_images/russkiyi_standart_bank.png" width="65" height="30" align="left">    \r\n    <span class="inf">ЗАО «Банк Русский стандарт».  Генеральная лицензия Банка России<br>\r\n    №2289 выдана бессрочно 19 июля 2001 года.</span>\r\n    <table class="table_whith_border">\r\n        <tr>\r\n            <th> </th>\r\n            <th>10 - 10 - 10</th>\r\n            <th>1% переплаты</th>\r\n        </tr><tr>\r\n            <td>Сумма</td>\r\n            <td>от 3 000 до 200 000</td>\r\n            <td>от 3 000 до 200 000</td>\r\n        </tr><tr>\r\n            <td>Срок</td>\r\n            <td>10 месяцев</td>\r\n            <td>от 3 до 24 месяцев</td>\r\n        </tr><tr>\r\n            <td>Первоначальный взнос</td>\r\n            <td>10%</td>\r\n            <td>0-50%</td>\r\n        </tr><tr>\r\n            <td>Переплата</td>\r\n            <td>10%</td>\r\n            <td>1% в месяц</td>\r\n        </tr><tr>\r\n            <td>Документы</td>\r\n            <td>\r\n                Паспорт РФ + 2-й документ:<br />\r\n                - страх. пенс. свид-во;<br />\r\n                - водит. удостоверение;<br />\r\n                - загран. паспорт;<br />\r\n                - пенсионное удост. (обязательно, если клиент неработающий пенсионер)\r\n            </td>\r\n            <td>\r\n                Паспорт РФ + 2-й документ:<br />\r\n                - страх. пенс. свид-во;<br />\r\n                - водит. удостоверение;<br />\r\n                - загран. паспорт;<br />\r\n                - пенсионное удост. (обязательно, если клиент неработающий пенсионер)\r\n            </td>\r\n        </tr><tr>\r\n            <td>Прописка</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n        </tr><tr>\r\n            <td>Возраст</td>\r\n            <td>М — от 20 до 65 лет<br>Ж — от 18 до 65 лет</td>\r\n            <td>М — от 20 до 65 лет<br>Ж — от 18 до 65 лет</td>\r\n        </tr>\r\n    </table>\r\n    <p class="more_inf">\r\n    *Не на весь товар. Подробности спрашивайте у менеджеров кредитного отдела.\r\n    </p>\r\n</div>\r\n\r\n<div  id="home_credit_bank" style="display: none;">\r\n    <img src="./resources/Images/materials_images/home_credit_bank.png" width="65" height="30" align="left">          \r\n    <span class="inf">ООО «ХКФ Банк».   Генеральная лицензия Банка России<br>\r\n    №316 выдана бессрочно 13 октября 2011 года.</span>\r\n    <table class="table_whith_border" >\r\n        <tr>\r\n            <th> </th>\r\n            <th>10 - 10 - 10</th>\r\n            <th>1% переплаты</th>\r\n        </tr><tr>\r\n            <td>Сумма</td>\r\n            <td>от 3 000 до 200 000</td>\r\n            <td>от 3 000 до 200 000</td>\r\n        </tr><tr>\r\n            <td>Срок</td>\r\n            <td>10 месяцев</td>\r\n            <td>от 4, 6, 10, 12 и 18  месяцев</td>\r\n        </tr><tr>\r\n            <td>Первоначальный взнос</td>\r\n            <td>10%</td>\r\n            <td>0% либо 10%</td>\r\n        </tr><tr>\r\n            <td>Переплата</td>\r\n            <td>10%</td>\r\n            <td>1% в месяц</td>\r\n        </tr><tr>\r\n            <td>Документы</td>\r\n            <td>\r\n                Паспорт РФ (с постоянной регистрацией в любом регионе)\r\n            </td>\r\n            <td>\r\n                Паспорт РФ (с постоянной регистрацией в любом регионе)\r\n            </td>\r\n        </tr><tr>\r\n            <td>Прописка</td>\r\n            <td>Пост. регистрация в Рязанской обл.</td>\r\n            <td>Пост. регистрация в Рязанской обл.</td>\r\n        </tr><tr>\r\n            <td>Возраст</td>\r\n            <td>Все от 18 до 70 лет включительно</td>\r\n            <td>Все от 18 до 70 лет включительно</td>\r\n        </tr>\r\n    </table>\r\n    <p class="more_inf">\r\n    *Не на весь товар. Подробности спрашивайте у менеджеров кредитного отдела.\r\n    </p>\r\n</div>\r\n\r\n<div  id="rusfinans_bank"  style="display: none;">\r\n    <img src="./resources/Images/materials_images/rusfinans_bank.png" width="65" height="30" align="left">         \r\n    <span class="inf">OOO "Русфинанс Банк".   Генеральная лицензия ЦБ РФ<br>\r\n    №1792 выдана 13 февраля 2013 года.</span>\r\n    <table class="table_whith_border">\r\n        <tr>\r\n            <th> </th>\r\n            <th>0% переплаты</th>\r\n            <th>10 - 10 - 10</th>\r\n            <th>1% переплаты</th>\r\n        </tr><tr>\r\n            <td>Сумма</td>\r\n            <td>от 10 000 до 180 000 руб.</td>\r\n            <td>от 3 000 до 180 000</td>\r\n            <td>от 3 000 до 180 000</td>\r\n        </tr><tr>\r\n            <td>Срок</td>\r\n            <td>3 либо 6 месяцев</td>\r\n            <td>10 месяцев</td>\r\n            <td>от 6 до 24 месяцев</td>\r\n        </tr><tr>\r\n            <td>Первоначальный взнос</td>\r\n            <td>0%,10%,20%,30%,40%,50%</td>\r\n            <td>10%</td>\r\n            <td>0-50%</td>\r\n        </tr><tr>\r\n            <td>Переплата</td>\r\n            <td>0%</td>\r\n            <td>10%</td>\r\n            <td>1% в месяц</td>\r\n        </tr><tr>\r\n            <td>Документы</td>\r\n            <td>Паспорт РФ</td>\r\n            <td>\r\n                Паспорт РФ + 2-й документ:<br />\r\n                (Если сумма свыше 30 000)<br />\r\n                - страх. пенс. свид-во;<br />\r\n                - водит. удостоверение;<br />\r\n                - загран. паспорт\r\n            </td>\r\n            <td>\r\n                Паспорт РФ + 2-й документ:<br />\r\n                (Если сумма свыше 30 000)<br />\r\n                - страх. пенс. свид-во;<br />\r\n                - водит. удостоверение;<br />\r\n                - загран. паспорт\r\n            </td>\r\n        </tr><tr>\r\n            <td>Прописка</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n            <td>Пост. регистрация в любом регионе</td>\r\n        </tr><tr>\r\n            <td>Возраст</td>\r\n            <td>М — от 21 до 63 лет<br>Ж — от 21 до 68 лет</td>\r\n            <td>М — от 21 до 63 лет<br>Ж — от 21 до 68 лет</td>\r\n            <td>М — от 21 до 63 лет<br>Ж — от 21 до 68 лет</td>\r\n        </tr>\r\n    </table>\r\n    <p class="more_inf">\r\n    *Не на весь товар. Подробности спрашивайте у менеджеров кредитного отдела.\r\n    </p>\r\n</div> \r\n\r\n</center>\r\n<br><br>\r\n<p class="main_paragraph">Оформление покупки в кредит возможнo на следующих условиях:</p>\r\n<p class="inf">Сумма кредита: от 3 до 300 тыс. руб.; Первоначальный взнос: от 0-90% от суммы товара;</p>\r\n<p class="inf">Срок кредита: от 3 до 36 месяцев; Процентная ставка: от 23,4% до 39,9% годовых;</p>\r\n<p class="inf">Дополнительные комиссии отсутствуют.</p>\r\n<p class="inf">Банки самостоятельно принимают решение о предоставлении либо отказе предоставления кредита без объяснения причин.</p>'),
 ('delivery', 'eng', 'DELIVERY', '<p class="main_paragraph">If needed, your purchase will be delivered to your home by our delivery service. To use this service, ask your sales manager about it in advance.</p>'),
@@ -1222,7 +1435,7 @@ INSERT INTO `Materials_Lang` (`material`, `lang`, `title`, `text`) VALUES
 ('documentation', 'rus', 'ДОКУМЕНТЫ', '<p class="main_paragraph">В этом разделе собраны все документы, которые могут быть Вам полезны и помогут съэкономить Ваше время.</p>\r\n<p class="info_paragraph">Документы представлены в формате PDF. Для работы с PDF документами мы рекомендуем установить бесплатную программу <a href="http://get.adobe.com/reader/" target="_blank">Adobe Reader</a> или <a href="http://www.foxitsoftware.com/downloads/" target="_blank">Foxit Reader</a>.</p>\r\n<hr>\r\n<p class="main_paragraph">Банковские реквизиты ИП Кашковский Д.В. (<a href="./files/materials/documents/Details_Kashkovskiy_D.V..pdf" target="_blank">PDF / 89 kb</a>)</p>\r\n<p class="main_paragraph">Банковские реквизиты ООО"Апельсин-Р" (<a href="./files/materials/documents/Details_Apelsin_R.pdf" target="_blank">PDF / 90 kb</a>)</p>\r\n<hr>\r\n<p class="main_paragraph">Уважаемые покупатели! в целях избежания конфликтных ситуаций просим Вас учитывать следующее:</p>\r\n<div class="right"><a href="./files/materials/documents/Attention.pdf" target="_blank">Скачать (PDF / 48 kb)</a></div><br>\r\n<ol>\r\n<li>Отгрузка товара осуществляется в день выписки документа.</li>\r\n<li>Претензии по качеству осветительных приборов принимаются только по электрической части этих приборов.</li>\r\n<li>Претензии по комплектации, внешнему виду и недостаткам товара, которые можно выявить при осмотре товара, принимаются продавцом до подписания сопроводительных документов на товар.</li>\r\n<li>\r\nПретензии по недостаткам товара, выявленным при их использовании (в частности при подготовке к работам по установке в соответствии с назначением) принимаются к рассмотрению продавцом до момента начала использования товара или проведения работ, в т.ч. претензии по качеству керамической плитки, обоям принимаются только до их укладки или оклейки.\r\n<br><span class="more_inf">(Основание: п.17 Правил продажи отдельных видов товаров в ред. постановлений правительства РФ от 20.10.98г. №1222, от 02.10.99г. № 1104, от 06.02.02г. № 81, от 12.07.03г. №421.)</span>\r\n</li>\r\n<li>\r\nЗа недостатки товара, их материальные последствия, возникшие по вине покупателя, продавец ответственности не несет.\r\n<br><span class="more_inf">(Основание: Закон о защите прав потребителей.)</span>\r\n</li>\r\n<li>\r\nНе подлежат возврату либо обмену, купленные Вами, следующие товары надлежащего качества: кабельная продукция (провода шнуры, кабели); строительные и отделочные материалы (линолеум, пленка, ковровые покрытия и другие) и другие товары, отпускаемые продавцом на метраж, а так же уцененные товары или продаваемые по акции.\r\n<br><span class="more_inf">(Основание: Перечень непродовольственных товаров надлежащего качества не подлежащих возврату или обмену в ред. постановлений правительства РФ от 20.10.98г. №1222, от 06.02.02г. № 81).</span>\r\n</li>\r\n<li>\r\nПретензии на размер, форму, габариты, фасон, расцветку или комплектацию товара надлежащего качества принимаются в установленный действующим законодательством срок, если товар не был в употреблении, сохранен его товарный вид, потребительские свойства, пломбы, ярлыки, а также имеются доказательства приобретения товара у данного продавца.\r\n<br><span class="more_inf">(Основание: п.26 Правил продажи отдельных видов товаров в ред. постановлений правительства РФ от 20.10.98г. №1222, от 02.10.99г. № 1104, от 06.02.02г. № 81, от 12.07.03г. №421.)</span>\r\n<br><span class="more_inf">* Данный пункт не распространяется на товар, привезенный по заказу покупателя, и проданный ему.</span>\r\n</li>\r\n<li>\r\nТехнически сложные товары надлежащего качества не подлежат возврату и обмену.\r\n<br><span class="more_inf">(Основание: Перечень непродовольственных товаров надлежащего качества не подлежащих возврату или обмену в ред. постановлений правительства РФ от 20.10.98г. №1222, от 06.02.02г. № 81.)</span>\r\n</li>\r\n<li>\r\nТехнически сложные товары, в которых потребителем обнаружены недостатки, подлежат возврату и обмену только при наличии заключения сервисного центра о том, что недостаток является заводским браком. Для этого Поставщик (продавец) оставляет за собой право на проведение дополнительной проверки \r\nкачества товара в течение 20 дней.\r\n<br><span class="more_inf">(Основание: ст.21 Закона РФ "О защите прав потребителей" №2300-I, от 07.02.92г.)</span>\r\n</li>\r\n</ol>\r\n'),
 ('gift_cards', 'eng', 'GIFT CARDS', '<p class="main_paragraph">Finding the perfect gift for someone isn''t always easy. Whether it''s a birthday present, holiday gift, a gift to celebrate a special occasion, or a simple gesture of appreciation, an Apelsin Gift Card is the perfect present.</p>\r\n<p class="main_paragraph">Gift cards do not restrict the imagination! For the value of the card you can choose anything you like, starting from all sorts of casual trifles to some major purchases.</p>\r\n<p class="main_paragraph">The lifetime gift cards never ever expire and will always remain a desirable gift.</p>\r\n<center><img src="./resources/Images/materials_images/gift_cards_1.png" width="660"></center>\r\n<p class="main_paragraph">We offer Gift cards in the value of 1000, 3000, 5000 and 10 000 rubles. The nominal value of the gift card does not restrict the owner''s choice. Should the value of the gift exceed the value of the gift card, you can pay the rest of the sum in cash or with a bank card.</p>\r\n<center><img src="./resources/Images/materials_images/gift_cards_2.png" width="660"></center>\r\n<p class="main_paragraph">You can buy a gift card in the nearest Apelsin <a href="./contacts/en/">store</a>.</p>\r\n<p class="info_paragraph">*Gift card is a public offer that eliminates the necessity to conclude a contract between the Seller and the Buyer according to article 435 of the Civil Code of the Russian Federation. The gift card can be redeemed in Apelsin retail chain stores only. The remaining balance of the Gift card will be cancelled. If the purchase cost exceeds the value specified on the front side of the Gift card, the buyer pays this difference separately.\r\n<br /><br />\r\nThe certificate shall be withdrawn right after the purchase.<br />\r\nBe careful! Gift card is not subject to exchange or return.<br />\r\nDamaged Gift cards are not valid.</p>\r\n'),
 ('gift_cards', 'rus', 'ПОДАРОЧНЫЕ КАРТЫ', '<p class="main_paragraph">Выбрать подарок близким или коллегам зачастую непросто, но есть прекрасное универсальное решение для любого повода – ПОДАРОЧНАЯ КАРТА от сети магазинов «Апельсин».</p>\r\n<p class="main_paragraph">Подарочные карты не ограничивают фантазию в выборе! На сумму номинала карты можно выбрать всё, что придётся по душе - от множества необходимых расходных мелочей, до серьезных покупок.</p>\r\n<p class="main_paragraph">Подарочная карта не имеет срока давности и всегда останется актуальным подарком.</p>\r\n<center><img src="./resources/Images/materials_images/gift_cards_1.png" width="660"></center>\r\n<p class="main_paragraph">Мы предлагаем Подарочные карты номиналом 1000, 3000, 5000, 10000 рублей. Номинал подарочный карты не ограничивает владельца в выборе: всегда можно доплатить разницу наличными или банковской картой.</p>\r\n<center><img src="./resources/Images/materials_images/gift_cards_2.png" width="660"></center>\r\n<p class="main_paragraph">Приобрести подарочные карты Вы можете в любом ближайшем к Вам <a href="./contacts/ru/">магазине</a> нашей сети.</p>\r\n<p class="info_paragraph">*Подарочная карта является публичной офертой и упраздняет необходимость заключения договора между продавцом и покупателем согласно статьи 435 ГК РФ. Подарочная карта может быть отоварена только в магазинах розничной сети «Апельсин». Остаток денежных средств на Подарочной карте после совершения покупки покупателем аннулируется. В случае если сумма покупки превышает размер номинала, указанного на лицевой стороне Подарочной карты, покупатель выплачивает превышающую сумму покупки отдельно.\r\n<br /><br />\r\nПосле совершения покупки сертификат изымается.<br />\r\nБудьте внимательны! Подарочная карта обмену и возврату не подлежит!<br />\r\nПодарочная карта с механическими повреждениями не действительна.</p>\r\n'),
-('homePage', 'rus', 'Компания Апельсин', '<div class="mainPageInfoBlockElement">\r\nКомпания <span class="main_text">“Апельсин”</span> - основана в 1997 году и является крупнейшей региональной \r\nсетью магазинов в Рязани, которая реализует оптом и в розницу материалы для \r\nстроительства и ремонта. <span class="main_text">“Апельсин”</span> - официальный дилер многих известных \r\nторговых марок производителей строительных, отделочных материалов и инструмента.\r\n</div>\r\n<div class="mainPageInfoBlockElementSeparator">\r\n    <div class="mainPageInfoBlockElementSeparatorLine">\r\n        <div class="mainPageInfoBlockElementSeparatorIMG img01"></div>\r\n    </div>\r\n</div>\r\n<div class="mainPageInfoBlockElement">\r\nКомпания <span class="main_text">“Апельсин”</span> - это \r\n<span class="main_text">12 магазинов и 4 склада-терминала</span> — расположенных по \r\nпринципу шаговой доступности, позволяющий охватить максимальный круг \r\nпотенциального потребителя. Общая торговая площадь сети магазинов составляет \r\n<span class="main_text">25 тысяч</span> квадратных метров. Складская площадь \r\nзанимает <span class="main_text">35 тысяч</span> квадратных \r\nметров. Каждый день мы принимаем от наших партнеров-поставщиков десятки \r\nбольшегрузных фур. Приоритетным направлением компании “Апельсин” является \r\nналичие товара на складе. Ассортимент продукции предлагаемой сетью магазинов \r\n<span class="main_text">“Апельсин”</span> - это более \r\n<span class="main_text">300 тысяч</span> наименований. Мы предоставляем услугу полной \r\nкомплектации объектов строительно-отделочными материалами.\r\n</div>\r\n<div class="mainPageInfoBlockElementSeparator">\r\n    <div class="mainPageInfoBlockElementSeparatorLine">\r\n        <div class="mainPageInfoBlockElementSeparatorIMG img02"></div>\r\n    </div>\r\n</div>\r\n<div class="mainPageInfoBlockElement">\r\nГибкая система скидок и индивидуальный подход к каждому клиенту делают работу \r\nс нами обоюдно выгодной крупным строительным компаниям, индивидуальным \r\nпредпринимателям и физическим лицам. Мы предлагаем все для строительства, \r\nремонта и отделки любого уровня - от эконом класса, до самого высокого. \r\nПрофессионалу мы предложим товары тех производителей, с которыми он привык \r\nработать, а тем, кто сомневается в выборе, поможем остановиться на нужном \r\nварианте.\r\n</div>\r\n<div class="mainPageInfoBlockElementSeparator">\r\n    <div class="mainPageInfoBlockElementSeparatorLine">\r\n        <div class="mainPageInfoBlockElementSeparatorIMG img03"></div>\r\n    </div>\r\n</div>\r\n<div class="mainPageInfoBlockElement">\r\nНаши продавцы-консультанты имеют большой опыт работы, прошли обучение на \r\nсеминарах, выставках производственных базах тех компаний, официальными \r\nдилерами и представителями которых является компания “Апельсин”. Итак, \r\n“Апельсин” - надежная, динамично развивающаяся торговая сеть, стремящаяся \r\nк укреплению сложившихся и созданию новых партнерских отношений.\r\n</div>'),
+('homePage', 'rus', 'Компания Апельсин', '<div class="mainPageInfoBlockElement">\r\nКомпания <span class="main_text">“Апельсин”</span> - основана в 1997 году и является крупнейшей региональной \r\nсетью магазинов в Рязани, которая реализует оптом и в розницу материалы для \r\nстроительства и ремонта. <span class="main_text">“Апельсин”</span> - официальный дилер многих известных \r\nторговых марок производителей строительных, отделочных материалов и инструмента.\r\n</div>\r\n<div class="mainPageInfoBlockElementSeparator">\r\n    <div class="mainPageInfoBlockElementSeparatorLine">\r\n        <div class="mainPageInfoBlockElementSeparatorIMG img01"></div>\r\n    </div>\r\n</div>\r\n<div class="mainPageInfoBlockElement">\r\nКомпания <span class="main_text">“Апельсин”</span> - это \r\n<span class="main_text">12 магазинов и 4 склада-терминала</span> — расположенных по \r\nпринципу шаговой доступности, позволяющий охватить максимальный круг \r\nпотенциального потребителя. Общая торговая площадь сети магазинов составляет \r\n<span class="main_text">25 тысяч</span> квадратных метров. Складская площадь \r\nзанимает <span class="main_text">35 тысяч</span> квадратных \r\nметров. Каждый день мы принимаем от наших партнеров-поставщиков десятки \r\nбольшегрузных фур. Приоритетным направлением компании “Апельсин” является \r\nналичие товара на складе. Ассортимент продукции предлагаемой сетью магазинов \r\n<span class="main_text">“Апельсин”</span> - это более \r\n<span class="main_text">80 тысяч</span> наименований. Мы предоставляем услугу полной \r\nкомплектации объектов строительно-отделочными материалами.\r\n</div>\r\n<div class="mainPageInfoBlockElementSeparator">\r\n    <div class="mainPageInfoBlockElementSeparatorLine">\r\n        <div class="mainPageInfoBlockElementSeparatorIMG img02"></div>\r\n    </div>\r\n</div>\r\n<div class="mainPageInfoBlockElement">\r\nГибкая система скидок и индивидуальный подход к каждому клиенту делают работу \r\nс нами обоюдно выгодной крупным строительным компаниям, индивидуальным \r\nпредпринимателям и физическим лицам. Мы предлагаем все для строительства, \r\nремонта и отделки любого уровня - от эконом класса, до самого высокого. \r\nПрофессионалу мы предложим товары тех производителей, с которыми он привык \r\nработать, а тем, кто сомневается в выборе, поможем остановиться на нужном \r\nварианте.\r\n</div>\r\n<div class="mainPageInfoBlockElementSeparator">\r\n    <div class="mainPageInfoBlockElementSeparatorLine">\r\n        <div class="mainPageInfoBlockElementSeparatorIMG img03"></div>\r\n    </div>\r\n</div>\r\n<div class="mainPageInfoBlockElement">\r\nНаши продавцы-консультанты имеют большой опыт работы, прошли обучение на \r\nсеминарах, выставках производственных базах тех компаний, официальными \r\nдилерами и представителями которых является компания “Апельсин”. Итак, \r\n“Апельсин” - надежная, динамично развивающаяся торговая сеть, стремящаяся \r\nк укреплению сложившихся и созданию новых партнерских отношений.\r\n</div>'),
 ('main', 'eng', 'APELSIN - Company', '\n<div class="main_pic_panel">\n<div class="main_pic o_kompanii">\n<a href="./about/en/">\n<img class="main_pic_img" src="./images/materials/main/o_kompanii.png" title="About" alt="About">\n<img class="main_pic_img_g" src="./images/materials/main/g_o_kompanii.png" title="About" alt="About">\n<div class="main_pic_name">About</div>\n</a>\n</div>\n<div class="main_pic akciya">\n<a href="./news/en/">\n<img class="main_pic_img" src="./images/materials/main/akciya.png" title="News" alt="News">\n<img class="main_pic_img_g" src="./images/materials/main/g_akciya.png" title="News" alt="News">\n<div class="main_pic_name">News</div>\n</a>\n</div>\n<div class="main_pic informaciya">\n<a href="./information/en/">\n<img class="main_pic_img" src="./images/materials/main/informaciya.png" title="Information" alt="Information">\n<img class="main_pic_img_g" src="./images/materials/main/g_informaciya.png" title="Information" alt="Information">\n<div class="main_pic_name">Information</div>\n</a>\n</div>\n<div class="main_pic kontakty">\n<a href="./contacts/en/">\n<img class="main_pic_img" src="./images/materials/main/kontakty.png" title="Contacts" alt="Contacts">\n<img class="main_pic_img_g" src="./images/materials/main/g_kontakty.png" title="Contacts" alt="Contacts">\n<div class="main_pic_name">Contacts</div>\n</a>\n</div>\n<div class="main_pic oplata_i_dostavka">\n<a href="./payment_and_delivery/en/">\n<img class="main_pic_img" src="./images/materials/main/oplata_i_dostavka.png" title="Payment & Delivery" alt="Payment & Delivery">\n<img class="main_pic_img_g" src="./images/materials/main/g_oplata_i_dostavka.png" title="Payment & Delivery" alt="Payment & Delivery">\n<div class="main_pic_name">Payment & Delivery</div>\n</a>\n</div>\n<div class="main_pic kredit">\n<a href="./credit/en/">\n<img class="main_pic_img" src="./images/materials/main/kredit.png" title="Credit" alt="Credit">\n<img class="main_pic_img_g" src="./images/materials/main/g_kredit.png" title="Credit" alt="Credit">\n<div class="main_pic_name">Credit</div>\n</a>\n</div>\n<div class="main_pic diskont">\n<a href="./discount/en/">\n<img class="main_pic_img" src="./images/materials/main/diskont.png" title="Discount" alt="Discount">\n<img class="main_pic_img_g" src="./images/materials/main/g_diskont.png" title="Discount" alt="Discount">\n<div class="main_pic_name">Discount</div>\n</a>\n</div>\n<div class="main_pic podarochnye_karty">\n<a href="./gift_cards/en/">\n<img class="main_pic_img" src="./images/materials/main/podarochnye_karty.png" title="Gift cards" alt="Gift cards">\n<img class="main_pic_img_g" src="./images/materials/main/g_podarochnye_karty.png" title="Gift cards" alt="Gift cards">\n<div class="main_pic_name">Gift cards</div>\n</a>\n</div>\n<div class="main_pic dokumenty">\n<a href="./documents/en/">\n<img class="main_pic_img" src="./images/materials/main/dokumenty.png" title="Documents" alt="Documents">\n<img class="main_pic_img_g" src="./images/materials/main/g_dokumenty.png" title="Documents" alt="Documents">\n<div class="main_pic_name">Documents</div>\n</a>\n</div>\n<div class="main_pic vakansii">\n<a href="./vacancies/en/">\n<img class="main_pic_img" src="./images/materials/main/vakansii.png" title="Vacancies" alt="Vacancies">\n<img class="main_pic_img_g" src="./images/materials/main/g_vakansii.png" title="Vacancies" alt="Vacancies">\n<div class="main_pic_name">Vacancies</div>\n</a>\n</div>\n<div class="main_pic servisnye_centry">\n<a href="./service_centers/en/">\n<img class="main_pic_img" src="./images/materials/main/servisnye_centry.png" title="Service Centers" alt="Service Centers">\n<img class="main_pic_img_g" src="./images/materials/main/g_servisnye_centry.png" title="Service Centers" alt="Service Centers">\n<div class="main_pic_name">Service Centers</div>\n</a>\n</div>\n<div class="main_pic poleznye_stati">\n<a href="./helpful_articles/en/">\n<img class="main_pic_img" src="./images/materials/main/poleznye_stati.png" title="Helpful Articles" alt="Helpful Articles">\n<img class="main_pic_img_g" src="./images/materials/main/\r\ng_poleznye_stati.png" title="Helpful Articles" alt="Helpful Articles">\n<div class="main_pic_name">Helpful Articles</div>\n</a>\n</div>\n<div class="clear"></div>\n</div>\n'),
 ('main', 'rus', 'Компания Апельсин', '\n<div class="main_pic_panel">\n<div class="main_pic o_kompanii">\n<a href="./about/ru/">\n<img class="main_pic_img" src="./images/materials/main/o_kompanii.png" title="О компании" alt="О компании">\n<img class="main_pic_img_g" src="./images/materials/main/g_o_kompanii.png" title="О компании" alt="О компании">\n<div class="main_pic_name">О компании</div>\n</a>\n</div>\n<div class="main_pic akciya">\n<a href="./news/ru/">\n<img class="main_pic_img" src="./images/materials/main/akciya.png" title="Акции" alt="Акции">\n<img class="main_pic_img_g" src="./images/materials/main/g_akciya.png" title="Акции" alt="Акции">\n<div class="main_pic_name">Акции</div>\n</a>\n</div>\n<div class="main_pic informaciya">\n<a href="./information/ru/">\n<img class="main_pic_img" src="./images/materials/main/informaciya.png" title="Информация" alt="Информация">\n<img class="main_pic_img_g" src="./images/materials/main/g_informaciya.png" title="Информация" alt="Информация">\n<div class="main_pic_name">Информация</div>\n</a>\n</div>\n<div class="main_pic kontakty">\n<a href="./contacts/ru/">\n<img class="main_pic_img" src="./images/materials/main/kontakty.png" title="Контакты" alt="Контакты">\n<img class="main_pic_img_g" src="./images/materials/main/g_kontakty.png" title="Контакты" alt="Контакты">\n<div class="main_pic_name">Контакты</div>\n</a>\n</div>\n<div class="main_pic oplata_i_dostavka">\n<a href="./payment_and_delivery/ru/">\n<img class="main_pic_img" src="./images/materials/main/oplata_i_dostavka.png" title="Оплата и доставка" alt="Оплата и доставка">\n<img class="main_pic_img_g" src="./images/materials/main/g_oplata_i_dostavka.png" title="Оплата и доставка" alt="Оплата и доставка">\n<div class="main_pic_name">Оплата и доставка</div>\n</a>\n</div>\n<div class="main_pic kredit">\n<a href="./credit/ru/">\n<img class="main_pic_img" src="./images/materials/main/kredit.png" title="Кредит" alt="Кредит">\n<img class="main_pic_img_g" src="./images/materials/main/g_kredit.png" title="Кредит" alt="Кредит">\n<div class="main_pic_name">Кредит</div>\n</a>\n</div>\n<div class="main_pic diskont">\n<a href="./discount/ru/">\n<img class="main_pic_img" src="./images/materials/main/diskont.png" title="Дисконт" alt="Дисконт">\n<img class="main_pic_img_g" src="./images/materials/main/g_diskont.png" title="Дисконт" alt="Дисконт">\n<div class="main_pic_name">Дисконт</div>\n</a>\n</div>\n<div class="main_pic podarochnye_karty">\n<a href="./gift_cards/ru/">\n<img class="main_pic_img" src="./images/materials/main/podarochnye_karty.png" title="Подарочные карты" alt="Подарочные карты">\n<img class="main_pic_img_g" src="./images/materials/main/g_podarochnye_karty.png" title="Подарочные карты" alt="Подарочные карты">\n<div class="main_pic_name">Подарочные карты</div>\n</a>\n</div>\n<div class="main_pic dokumenty">\n<a href="./documents/ru/">\n<img class="main_pic_img" src="./images/materials/main/dokumenty.png" title="Документы" alt="Документы">\n<img class="main_pic_img_g" src="./images/materials/main/g_dokumenty.png" title="Документы" alt="Документы">\n<div class="main_pic_name">Документы</div>\n</a>\n</div>\n<div class="main_pic vakansii">\n<a href="./vacancies/ru/">\n<img class="main_pic_img" src="./images/materials/main/vakansii.png" title="Вакансии" alt="Вакансии">\n<img class="main_pic_img_g" src="./images/materials/main/g_vakansii.png" title="Вакансии" alt="Вакансии">\n<div class="main_pic_name">Вакансии</div>\n</a>\n</div>\n<div class="main_pic servisnye_centry">\n<a href="./service_centers/ru/">\n<img class="main_pic_img" src="./images/materials/main/servisnye_centry.png" title="Сервисные центры" alt="Сервисные центры">\n<img class="main_pic_img_g" src="./images/materials/main/g_servisnye_centry.png" title="Сервисные центры" alt="Сервисные центры">\n<div class="main_pic_name">Сервисные центры</div>\n</a>\n</div>\n<div class="main_pic poleznye_stati">\n<a href="./helpful_articles/ru/">\n<img class="main_pic_img" src="./images/materials/main/poleznye_stati.png" title="Полезные статьи" alt="Полезные статьи">\n<img class="\r\nmain_pic_img_g" src="./images/materials/main/g_poleznye_stati.png" title="Полезные статьи" alt="Полезные статьи">\n<div class="main_pic_name">Полезные статьи</div>\n</a>\n</div>\n<div class="clear"></div>\n</div>\n'),
 ('news_aksessuar_dlja_vannoj_i_discount', 'rus', 'АКСЕССУАРЫ ДЛЯ ВАННОЙ КОМНАТЫ', '<p>Скидки на все настольные и напольные аксессуары для ванной комнаты - 30%!!!</p>'),
@@ -1235,7 +1448,7 @@ INSERT INTO `Materials_Lang` (`material`, `lang`, `title`, `text`) VALUES
 ('news_kabel_i_discount', 'rus', 'КАБЕЛЬ', '<p>Акция! Каждому покупателю при покупке целой бухты* любого кабеля предоставляется <span class="main_text">скидка - 25% от розничной цены</span>.</p>\r\n<p class="inf">В акции участвует весь ассортимент кабеля.</p>\r\n<p class="inf">При покупке количества превышающего длину бухты скидка предоставляется только на целые бухты.</p>\r\n<p class="inf">*Для кабелей СИП, КГ, ПВ скидка предоставляется при покупке длины от 100 м.</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_kabel_i_discount.jpg">\r\n</div>\r\n'),
 ('news_kandicionery_i_advertising_goods', 'rus', 'КОНДИЦИОНЕРЫ В КАЖДЫЙ ДОМ', '<p>Внимание!!! <span class="main_text">Кондиционеры</span> самых известных \r\n    марок - Fujitsu, General Climat, Hitachi, LG, Panasonic, Toshiba \r\n    мы предлагаем <span class="main_text">по Супернизким ценам</span>!!!</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_kandicionery_i_advertising_goods.jpg">\r\n</div>\r\n'),
 ('news_kolerovka_i_service', 'rus', 'КОЛЕРОВКА', '<p>Внимание! Компьютерная колеровка совершенно <span class="main_text">БЕСПЛАТНО*</span>!</p>\r\n<p class="inf">*Данное предложение действует для розничных покупателей и распространяется на определенные цвета. Более подробная информация у менеджеров торгового зала.</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_kolerovka_i_service.jpg">\r\n</div>\r\n'),
-('news_kover_i_discount', 'rus', 'КОВРЫ', '<p>Внимание! Скидки на Ковры до <span class="main_text">50%</span>!!!</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_kover_i_discount.jpg">\r\n</div>\r\n'),
+('news_kover_i_discount', 'rus', 'КОВРЫ', '<p>Внимание! Скидки на Ковры до <span class="main_text">50%</span>!!!</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_kover_i_discount.jpg">\r\n</div>\r\n\r\n\r\n<div class=''MorInfoText''>\r\n<p>\r\n    Купить ковер в Рязани очень просто - в магазине на Есенина, 13 представлен \r\n    огромный выбор по низким ценам. У нас Вы можете купить самые разнообразные \r\n    ковры недорого из множества коллекций. Если Вы пока не приняли решения \r\n    касательно напольного покрытия, то наша экспозиция поможет Вам в этом - \r\n    в наличии сотни моделей на любой вкус. В нашем магазине есть все: разные \r\n    цвета, разные размеры, огромное количество рисунков, текстур и узоров.\r\n</p>		\r\n<p>\r\n    Стоит согласиться, что ковер является не просто предметом интерьера, это \r\n    функциональная вещь, у которой может быть не одна задача. Ковер - это и \r\n    роскошь и стиль и уют, кроме того он выполняет и практическую функцию: \r\n    пылеулавливание, шумопоглощение, термоизоляция. Не стоит думать, что ковер \r\n    – это «персидский» гость из прошлого, сродни тем, что висят на стенах \r\n    бабушкиных квартир. Ковровое покрытие – это очень стильное, современное, \r\n    но главное – очень яркое и приятное решение для любого интерьера. Поэтому \r\n    купить даже дешевый ковер – значит создать уют и сделать свой дом \r\n    комфортным.\r\n</p>\r\n</div>\r\n<div class=''InfoArticle''>\r\n<h1 class=''mainTitle''>Как выбрать ковер?</h1>\r\n<p>\r\n    Мода на ковры не проходит уже несколько веков. В наше время ковер снова на \r\n    пике популярности! Как выбрать ковер, придать с его помощью стильный вид \r\n    интерьеру?  Что надо знать о коврах? \r\n</p>\r\n<h1>Зачем нужен ковер.</h1>\r\n<p>\r\n    Ковролин не может придать комнате тот неповторимый уютный вид, который \r\n    придает ей ковер, а уж голый пол и подавно. Пыль с ковра намного проще \r\n    убрать, чем с пола. Да и заметна на нем она не так сильно. Ковер – \r\n    отличный шумопоглотитель. Зимой ковры отлично защищают от холода, а \r\n    также нормализуют влажность помещения. Шерстяные ковры полезны для ног, \r\n    т.к. он мягко массирует наши ступни. Благодаря этому общий тонус организма  \r\n    улучшается,  повышенное давление нормализуется, происходит профилактика \r\n    болезней ног и позвоночника. \r\n</p>\r\n<img class=''InfoArticleImageBig'' src=''./resources/Images/materials_info_article_image/news_kover_i_discount/01.jpg''>\r\n<h1>Ковер и тип помещения.</h1>\r\n<p>\r\n    Очень важно знать, где именно будет лежать ковер. Для прихожей лучше всего \r\n    подходит искусственный ковер с резиновой основой. Такой коврик прослужит \r\n    долго, а рисунок на ковре скроет нежелательные пятна. Ковровые дорожки для \r\n    прихожей лучше подбирать с орнаментом.\r\n</p>\r\n<p>\r\n    Чтобы правильно подобрать ковер для входа, необходимо учитывать следующий \r\n    фактор. Если на полу у вас лежит плитка, мрамор, гранит или другие гладкие \r\n    или дорогие материалы, то для сохранения пола следует выбирать покрытие без \r\n    металлических частей. Если хотите ковер, не похожий на все другие, закажите \r\n    модульный ковер с логотипом либо орнаментом.\r\n</p>\r\n<p>\r\n    В спальню стелют в большинстве случаев шерстяные ковры с длинным ворсом. \r\n    Благодаря этому ковру в спальне всегда будет уютно. Такой ковер будет \r\n    прекрасно поглощать шум. Для спальни подбирайте  ковер в светлых неярких \r\n    тонах. Также можно украсить прикроватное пространство с помощью мягких \r\n    ковриков.\r\n</p>\r\n<p>\r\n    В детскую или гостиную лучше  стелить ковры со средним, низким ворсом, т.к. \r\n    они более долговечны. Кроме того, на них практически не заметны следы от \r\n    тяжелой мебели. Подбирайте в детскую яркий, заметный ковер.\r\n</p>\r\n<p>\r\n    Коврик в ванной необходимо покупать хлопчатобумажный, стеганный, небольшой \r\n    синтетический коврики с пенорезиновым основанием.\r\n</p>\r\n<p>\r\n    Зрительно увеличить пространство помогают светлые ковры и диагональный \r\n    рисунок.\r\n</p>\r\n<p>\r\n    Если комната одна, но большая, пара-тройка небольших ковриков поможет ее \r\n    зонировать. Например, чтобы отделить зону отдыха от зоны сна. \r\n</p>\r\n<h1>Структура ворса ковров.</h1>\r\n<p>\r\n    Наиболее распространенные структуры ворса ковров:\r\n</p>\r\n<ul>\r\n    <li>\r\n        петлевой многоуровневый - петли различной длины образуют собой \r\n        скульптурный рисунок;\r\n    </li>\r\n    <li>\r\n        петлевой одноуровневый, т.е. петли ворса имеют одинаковую длину, не \r\n        разрезаны и (ковры с подобным ворсом отлично противостоят износу);\r\n    </li>\r\n    <li>\r\n        велюр – короткий (не более 8 мм) разрезанный ворс, создающий \r\n        однородную, похожую на бархат, гладкую поверхность (наиболее \r\n        простой в уходе тип ковра, однако следы шагов на нем хорошо заметны);\r\n    </li>\r\n    <li>\r\n        саксони – стриженый ворс, состоящий из крученой пряжи. Ковер образует \r\n        собой ровную поверхность с характерным «зернистым» видом (саксони ценят \r\n        за особую элегантность);\r\n    </li>\r\n    <li>\r\n        фризе – это сильно скрученный высокий ворс (неоднородность структуры \r\n        скрывает следы шагов или грязь);\r\n    </li>\r\n    <li>\r\n        cut-loop – в нем скомбинированы разрезанный высокий ворс с низкими \r\n        петлями (неразрезанные петли создают красивый скульптурный рисунок, \r\n        помогая скрыть следы шагов или грязи).\r\n    </li>\r\n</ul>\r\n<img class=''InfoArticleImageBig'' src=''./resources/Images/materials_info_article_image/news_kover_i_discount/02.jpg''>\r\n<h1>Плотность ковра.</h1>\r\n<p>\r\n    Чем выше плотность ковра, тем выше его тепло-  звукоизоляционные качества, \r\n    износоустойчивость. Плотность ковра определяется близостью ворсинок, а не \r\n    их длиной. Для оценки плотности обычного тканого ковра следует осмотреть \r\n    его оборотную сторону. При наличии между нитями основы большого расстояния, \r\n    ворс в процессе использования быстро сомнется.\r\n</p>\r\n<p>\r\n    Большой популярностью пользуются , создаваемые по особой технологии \r\n    ручного тафтинга скульптурные ковры. На их сетчатую основу привязывают \r\n    ворс вручную, формируя «ниточки» и петельки разных цветов и размеров. \r\n    Ковер получается рельефным, с богатой цветовой палитрой и объемным рисунком.\r\n</p>\r\n<h1>Ковер и размер помещения.</h1>\r\n<p>\r\n    Слишком большой ковер (от 2.5 метров) обязательно будет притягивать к себе \r\n    максимум внимания. Поэтому для стильных, ярких интерьеров с большим \r\n    разнообразием оригинальных деталей выбрать лучше однотонные ковры и \r\n    ковры со спокойным, неконтрастным рисунком.\r\n</p>\r\n<p>\r\n    Небольшой ковер, до 2х метров, превосходно подчеркнет нужные зоны – зону \r\n    отдыха в вашей гостиной, например.\r\n</p>\r\n<p>\r\n    Совсем маленькие коврики – замечательные аксессуары, с помощью которых \r\n    удобно расставлять милые цветовые акценты,  такие коврики должны быть \r\n    самых разных и ярких цветов и оттенков. Их можно размещать около кровати, \r\n    перед камином, у кресла. Подобных ковриков, обязательно однотипных, может \r\n    лежать несколько. \r\n</p>\r\n<h1>Форма ковра.</h1>\r\n<p>\r\n    Форма ковра имеет большое значение. Интересно и оригинально смотрятся ковры \r\n    в виде среза дерева или цветка. Можно использовать ковер, который повторяет \r\n    форму помещения, очертания дивана или журнального столика. Следует учесть в \r\n    этом случае, что после изменения интерьера такой ковер может уже не \r\n    вписываться в новую обстановку.  Данный вариант подходит людям \r\n    консервативным, предпочитающим хранить верность стилю, интерьеру и \r\n    окружающим их вещам. Кроме того, дизайнеры предлагают ковры с рисунком, \r\n    который повторяет рисунок штор или обивки мягкой мебели.\r\n</p>\r\n<h1>Ковер и цвет.</h1>\r\n<p>\r\n    Цвет ковра, безусловно, очень важен, особенно для большого ковра. \r\n    Цветом можно придать помещению теплый либо наоборот, холодный вид.\r\n</p>\r\n<p>\r\n    Для освещенной комнаты с окнами, выходящими на юг, подойдут ковры немного \r\n    холодных тонов. Для темной комнаты выбирайте теплые тона. Если тон ковра \r\n    совпадает по цвету с полом, то это смотрится более стильно. Если же ваш \r\n    пол темный (бордо, черный или коричневый), то лучше ковру контрастировать \r\n    с ним. Для того, чтобы подчеркнуть оригинальную мебель, подбирайте \r\n    однотонный ковер. Помните, ковры же с рисунком привлекают на себя много \r\n    внимания и отвлекают от всего остального. Хотите купить большой ковер с \r\n    необычным рисунком? Учтите, он будет хорошо смотреться лишь в просторном \r\n    помещении. В заставленной мебелью комнате от подобного ковра будет \r\n    постоянно рябить в глазах. \r\n</p>\r\n<h1>Пикассо под ногами.</h1>\r\n<p>\r\n    Нынче появилась модная тенденция — покрытия с блеклыми, как будто \r\n    выцветшими на солнце красками, в стиле «потертый шик». Такие коврики \r\n    отлично подойдут для интерьера с антикварной мебелью либо для \r\n    классического антуража.\r\n</p>\r\n<p>\r\n    Сама же классика требует исключительно королевских мотивов. Для \r\n    классического интерьера комнаты лучше подбирать ковер с узором, \r\n    копирующим  рисунки известных французских ковров,  с характерными \r\n    цветочными арабесковыми и барочными орнаментами. Модерну же, наоборот, \r\n    необходимы строгость и сдержанность. В этом случае становите выбор на ковре \r\n    однотонном, с геометрическими узорами или авангардными символами. Для \r\n    комнаты в африканской или восточной тематике подойдет лучше всего ковер \r\n    с соответствующими восточными узорами, в бежево-коричневой  гамме.\r\n</p>\r\n<p>\r\n    Особенно актуальный тренд — арт-ковры, т.е. стилизация в духе великих \r\n    художников прошедшего XX века: Пабло Пикассо, Хуана Миро, Казимира \r\n    Малевича, Василия Кандинского, Густава Климта, Энди Уорхола. \r\n    Стелить на пол эти произведения или вешать на стену— вопрос \r\n    индивидуального вкуса.\r\n</p>\r\n<h1>Женские каблуки.</h1>\r\n<p>\r\n    Каблуки бывают самых разных диаметров, и всегда существует обувь, \r\n    каблуки которой проваливаются в ковер. В один вид покрытия одни туфельки, \r\n    во второй – другие. Увы, наши погодные условия никак не позволяют \r\n    использовать ковры с очень мелкими ячейками (слякоть их забивает в \r\n    течении часа и ковер уже не работает). Поэтому подбирайте из коврового \r\n    разнообразия, модульный тип покрытия. Обращайте внимание на твердость и \r\n    эластичность материала, из которого создано напольное покрытие. Качество \r\n    напольного покрытия должно соответствовать заявленным характеристикам \r\n    (некоторые организации, к сожалению, предлагают дешевые клоны или подделки, \r\n    изготовленные по хорошим образцам, но без соблюдения технологий \r\n    изготовления, а также из вторичных материалов. Такие покрытия быстро \r\n    выходят их строя и рассыпаются).\r\n</p>\r\n<h1>Бюджет на покупку.</h1>\r\n<p>\r\n    В первую очередь необходимо определиться с целью. Если хотите купить \r\n    имиджевый товар, который станет  одним из основных аксессуаров комнаты, \r\n    стоит обратить внимание на ковры из натуральной пряжи, высокоплотные, от \r\n    импортных производителей. Если ваша покупка практична и вызвана желанием \r\n    получить тепло, комфорт и уют от ковра, тоне стоит покупать самые дорогие \r\n    ковры. Вполне подойдет импортный или отечественный ковер среднеценового \r\n    диапазона.\r\n</p>\r\n<img class=''InfoArticleImageBig'' src=''./resources/Images/materials_info_article_image/news_kover_i_discount/03.jpg''>\r\n<p>\r\n    Наиболее распространенные структуры ворса ковров:\r\n</p>\r\n<ul>\r\n    <li>\r\n        страна-производитель. Ковры отечественного производства со схожими \r\n        характеристиками импортных покрытий на 30-50% дешевле заграничных \r\n        аналогов.  Сейчас западные и российские инвесторы вкладывают \r\n        значительные суммы в современное автоматизированное производство в  \r\n        России. В таком случае товар производится на современном бельгийском \r\n        или немецком оборудовании. Наиболее дорогими считаются ковры из Непала, \r\n        Ирана, Индии, т.е. из стран с древнейшими традициями ковроткачества. \r\n        Турецкие ковры на порядок дешевле иранских, при этом почти ничем не \r\n        уступают им. Формы у турецких ковров очень разнообразны (дорожки, овалы, \r\n        прямоугольные, восьмигранники, и т.д.). Турецкие ковры создают только из \r\n        натуральной новозеландской шерсти. Пряжа для высококачественных турецких \r\n        ковров окрашена с помощью натуральных и хромовых красителей. очень \r\n        популярны в наше время китайские ковры. Ворс ковров достигает 18 мм, а \r\n        сочетание ворса, разного по длине, в одном ковре создает объемные \r\n        выразительные изображения. Китайские ковры создают из овечьей шерсти, \r\n        из хлопка или натурального шелка.\r\n    </li>\r\n    <li>\r\n        используемые материалы. Самые дорогие материалы -  волокна (или пряжа) \r\n        натурального происхождения (лен, хлопок, сизаль, шерсть, шелк). Ковры с \r\n        использованием такой натуральной пряжи дороже на 50-100% продуктов из \r\n        синтетики (полиэстер, полиакрил, полипропилен, полиамид). Не \r\n        синтетическим, но все-таки искусственным является достаточно \r\n        популярный материал– вискоза, которую называют также «искусственным \r\n        шелком»;\r\n    </li>\r\n    <li>\r\n        тип производства. Безусловно, ковры ручной работы дороже аналогов \r\n        автоматизированного (машинного) производства. Цены на некоторые ручные \r\n        ковры доходят по стоимости до цены небольшой московской квартиры! \r\n        Сравните – производительность машинного производства равняется в \r\n        сутки 2 000 – 2 500 кв.м. на одном станке, а один ковер ручной работы \r\n        могут ткать десятки ткачей 2-3 месяца;\r\n    </li>\r\n    <li>\r\n        качество ковра. Под качеством ковров понимается в данном случае \r\n        сочетание таких характеристик: тип нити (хит-сет, BCF, шегги, фризе), \r\n        высота ворса (6 мм - 50 мм), плотность ворса (на кв.м. 150 000.- 2 000 \r\n        000 ворсовых точек). Самые недорогие - ковры из нити BCF, их плотность \r\n        от 150 000 точек на кв.м. и высота ворса 6-7 мм.\r\n    </li>\r\n</ul>\r\n<h1>Ковер здоровья.</h1>\r\n<p>\r\n    Ковер, очищающий в доме воздух, — необычная новинка, изобретенная \r\n    современными учеными совместно с европейским дизайнерским бюро. \r\n    Специальная технология необычного коврового покрытия  не просто \r\n    поглощает, но и перерабатывает неприятные и даже вредные для здоровья \r\n    запахи, например, запах готовящейся еды, сигаретный дым и т.д.\r\n</p>\r\n<p>\r\n    В подложку ковра вводят специальные катализаторы, помогающие солнечному \r\n    свету расщеплять на безвредные составляющие все нежелательные вещества, \r\n    такие как водяной пар, углекислый газ, азот. «Ковер здоровья» рекомендуется \r\n    аллергикам, семьям с маленькими детьми, а также всем, кто заботится о \r\n    здоровье своем и своих близких.\r\n</p>\r\n<h1>Коврики с подогревом.</h1>\r\n<p>\r\n    Очень важно защищать ваши ноги и ступни. Если не хотите постоянно \r\n    простывать, нужно держать ноги в тепле. Коврики с подогревом  помогут \r\n    людям, страдающим от постоянного замерзания ступней, пожилым людям с \r\n    плохим кровообращением, людям, работающим в условиях сквозняка. Поместите \r\n    коврик на полу либо кровати,  положите покрывало или подушку сверху. \r\n    Благодаря инфракрасному излучению температура будет повышаться, нагревая \r\n    уложенные на коврик вещи с увеличенной интенсивностью. Электроковрик – \r\n    небольшой коврик со шнуром, напоминающий грелку. Для наилучшего комфорта \r\n    некоторыми производителями выпускаются коврики в виде домашних тапочек. \r\n    Такой коврик с подогревом предназначен для обогрева ступней ног. Применение \r\n    локального тепла позволит создать комфортные условия ножкам и обеспечить \r\n    экономию электроэнергии. Коврики Wirt белорусского производства выполнены \r\n    только из высококачественных материалов.  Электроковрики  легко \r\n    разматываются и просто подключаются к ближайшему источнику питания.\r\n</p>\r\n<h1>Рекомендации дизайнеров:</h1>\r\n<ul>\r\n    <li>\r\n        маленькие коврики замечательно украсят отдельные «точки» комнаты – \r\n        пространство перед камином, кроватью, где они создают «всплеск» тепла;\r\n    </li>\r\n    <li>\r\n        ковер среднего размера является самостоятельным элементом декора;\r\n    </li>\r\n    <li>\r\n        большой ковер от 2х3 м и больше формирует облик комнаты в целом;\r\n    </li>\r\n    <li>\r\n        между ковром и стенами должно оставаться около 20-30 см свободного \r\n        пространства;\r\n    </li>\r\n    <li>\r\n        допустимо использовать в помещении несколько однотипных ковриков.\r\n    </li>\r\n</ul>\r\n<p>\r\n    Бытует мнение, что ковер обладает энергетическими свойствами, зависящими во \r\n    многом от формы ковра. К примеру, духовность и мир олицетворяют круглые \r\n    ковры. Их лучше размещать спальне, столовой, гостиной. Для кабинета, офиса, \r\n    библиотеки идеально подойдут ковры квадратной или прямоугольной формы. \r\n    Овальная форма практически будет везде к месту.\r\n</p>\r\n<h1>Советы при покупке.</h1>\r\n<p>\r\n    При покупке коврового покрытия убедитесь, что от него не пахнет овчиной. \r\n    Ковер должен быть обработан антистатиком и антиаллергенами, пропитан \r\n    антигрязевым и антимолевым растворами. \r\n</p>\r\n<p>\r\n    Существует мнение, что чем тяжелей ковер, тем он лучше и богаче. \r\n    Это неправда. Дело в плотности ковра, вычислить ее можно самостоятельно. \r\n    Линейкой на изнанке отмерьте участок размером 10x10 см, посчитайте на нем \r\n    количество узелков и умножьте на 100. Существует закономерность: больше \r\n    плотность - выше цена. \r\n</p>\r\n<p>\r\n    Помните, изнанка ковра ручной работы обязательно должна полностью повторять \r\n    узоры лицевой стороны. Все ковры ручной работы имеют небольшие дефекты \r\n    (небольшую несимметричность либо неправильную форму). Практически все \r\n    подобные ковры имеют с обратной стороны сигнатюр, т.е. подпись автора.\r\n</p>\r\n<p>\r\n    Недавно европейские дизайнеры создали ковер, который заинтересует \r\n    оклонников необычных предметов интерьера. Это стилизованный под песок \r\n    кожаный ковер (имеет бархатный приятный цвет), в поверхности ковра вырезаны \r\n    особым способом смешные углубления, которые имитируют следы ступней ног.\r\n</p>\r\n<p>\r\n    Не пугайтесь, если из нового ковра первое время будут выпадать  волокна - \r\n    это происходит с коврами любого, даже самого высокого качества и всегда .\r\n</p>\r\n<p>\r\n    Если сквозь ворс на месте сгиба просвечивается основа, значит, у ковра \r\n    невысокая плотность и такое покрытие долго не протянет.\r\n</p>\r\n<h1>Как чистить ковер.</h1>\r\n<p>\r\n    Для того, чтобы очистить ковер от загрязнений, необходимо рассыпать мелкую \r\n    поваренную соль на загрязненную поверхность, потом вымести соль щеткой, \r\n    смоченной в теплом растворе  мыльной воды. Остатки соли удаляются пылесосом \r\n    или выбиваются. Соль также можно заменить древесными сухими опилками. \r\n</p>\r\n<p>\r\n    Второй способ чистки: не выкидывайте после чаепития заварку. Рассыпьте \r\n    заварку по всему ковру и аккуратно жесткой щеточкой подметите чай. \r\n    Влажный чай задержит пыль и обрастет «сором. Этот способ нельзя использовать \r\n    для светлых ковров! Чтобы отбелить неокрашенные загрязненные участки ковра, \r\n    приготовьте раствором: 2 г нашатырного спирта и 5 г перекиси водорода на 1 л \r\n    воды, затем промойте несколько раз  участок чистой водой.\r\n</p>\r\n<p>\r\n    Относитесь к ковру бережно, и он прослужит вам долго, сохраняя домашний уют!\r\n</p>\r\n<div class=''InfoArticleEND''>Желаем удачного выбора!</div>\r\n<div class=''InfoArticleSource''>Автор: Светлана Белоногова.</div>\r\n<div class=''InfoArticleSourceURL''>www.kak-vibrat.ru</div>\r\n</div>'),
 ('news_kraska_LAKRA_14KG_akrilovaja_interernaja_belaja_i_good_price', 'rus', 'АКРИЛОВАЯ КРАСКА<br>ЛАКРА ИНТЕРЬЕРНАЯ', '<p>\r\n    Краска вододисперсионная интерьерная белая ЛАКРА 14КГ по суперцене\r\n    <span class="main_text">\r\n        589 руб.\r\n    </span>\r\n    <span class="inf">(Старая цена –\r\n        729 руб.\r\n    )</span>\r\n</p><div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_kraska_LAKRA_14KG_akrilovaja_interernaja_belaja_i_good_price.jpg" align="right"  >\r\n</div>\r\n<p class="inf">Обладает следующими достоинствами:</p>\r\n<ul class="dash">\r\n    <li class="inf">образует ровное матовое покрытие;</li>\r\n    <li class="inf">имеет хорошую адгезию к основанию;</li>\r\n    <li class="inf">хорошая укрывистость;</li>\r\n    <li class="inf">морозостойкая;</li>\r\n    <li class="inf">устойчива к легкой влажной уборке;</li>\r\n    <li class="inf">не мелит.</li>\r\n</ul>\r\n<p class="inf">*Акция действует до 30 ноября.</p>\r\n\r\n'),
 ('news_kraska_PARADE_W110_9L_akrilovaja_dlja_oboev_i_good_price', 'rus', 'АКРИЛОВАЯ КРАСКА<br>PARADE W110', '<p>\r\n    Акриловая краска для обоев PARADE W110 9L по суперцене\r\n    <span class="main_text">\r\n        1 869 руб.\r\n    </span> \r\n    <span class="inf">(Старая цена\r\n        2 337 руб.\r\n    )</span>\r\n</p><div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_kraska_PARADE_W110_9L_akrilovaja_dlja_oboev_i_good_price.jpg" align="right"  style="padding-left:20px;">\r\n</div>\r\n<p class="inf">Обладает следующими достоинствами: </p>\r\n<ul class="dash">\r\n    <li class="inf">для всех типов обоев под окраску;</li>\r\n    <li class="inf">идеально передает фактуру обоев;</li>\r\n    <li class="inf">для помещений с повышенной влажностью, подвергающихся высоким эксплуатационным нагрузкам;</li>\r\n    <li class="inf">покрытие выдерживает частую влажную уборку с применением моющих средств;</li>\r\n    <li class="inf">морозостойкая;</li>\r\n    <li class="inf">колеровка ручная красителями для водных красок;</li>\r\n    <li class="inf">3 000 циклов мытья.</li>\r\n</ul>\r\n<p class="inf">\r\n*Акция действует до 30 ноября.\r\n</p>\r\n\r\n\r\n'),
 ('news_krvoelnyj_meterial_i_discount', 'rus', 'КРОВЕЛЬНЫЕ МАТЕРИАЛЫ', '<p>Сверхнизкая цена на Битумные Рулонные и Наплавляемые материалы!</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_krvoelnyj_meterial_i_discount.jpg">\r\n</div>\r\n'),
@@ -1245,7 +1458,7 @@ INSERT INTO `Materials_Lang` (`material`, `lang`, `title`, `text`) VALUES
 ('news_oboi_i_gift_3p1', 'rus', 'ОБОИ<br>АКЦИЯ 3+1', '<p class="main_paragraph">\r\nВнимание! При покупке 3-х рулонов обоев 4-й Вы получаете <span class="main_text">В ПОДАРОК</span>!*\r\n</p>\r\n<p class="inf">\r\n*Акция распространяется на определенные виды обоев.\r\n</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_oboi_i_gift_3p1.jpg">\r\n</div>'),
 ('news_osb_3_i_good_price', 'rus', 'ПЛИТА OSB-3', '<p>Внимание! Акция на Плиту OSB-3 9 мм (2,44*1,22).</p>\r\n<p>Новая цена: <span class="main_text">449 руб.</span> (Старая цена: 529 руб.)</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_osb_3_i_good_price.jpg">\r\n</div>'),
 ('news_parketnaja_doska_i_gift_5p1', 'rus', 'ПАРКЕТНАЯ ДОСКА<br>АКЦИЯ 5+1', '<p>Продолжает действовать Специальное предложение по Паркетной доске: при \r\n    покупке 5-ти пачек 6-у Вы получаете \r\n    <span class="main_text">БЕСПЛАТНО!</span></p>\r\n<p class="inf">*Акция распространяется на Паркетную доску со стикером.</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_parketnaja_doska_i_gift_5p1.jpg">\r\n</div>\r\n'),
-('news_proflist_c8_c21_i_best_price', 'rus', 'ЛУЧШАЯ ЦЕНА!<br>ПРОФЛИСТ', '<p>Внимание! Профлист С 8 по супернизким ценам - \r\n    <span class="main_text">165 руб./пог.м</span> (Старая цена - 190 руб./пог.м)</p>\r\n<p>В акции участвует:</p>\r\n<p class="inf">Профлист С 8 (оцинк., эконом):<br>\r\n1,2х1,5 = 248 руб./шт.; 1,2х1,8 = 297 руб./шт.; 1,2х2 = 330 руб./шт.</p>\r\n<p>Профлист С 21 по супернизким ценам - \r\n    <span class="main_text">165 руб./пог.м</span> (Старая цена - 190 руб./пог.м)</p>\r\n<p>В акции участвует:</p>\r\n<p class="inf">Профлист С 21 (оцинк., эконом):<br>\r\n1,051х2,0 = 330 руб./шт.; 1,051х2,5 = 412 руб./шт.; 1,051х3 = 495 руб./шт.</p>'),
+('news_proflist_c8_c21_i_best_price', 'rus', 'ЛУЧШАЯ ЦЕНА!<br> ПРОФЛИСТ', '<p>Внимание! Профлист С 8 по супернизким ценам - \r\n    <span class="main_text">165 руб./пог.м</span> (Старая цена - 190 руб./пог.м)</p>\r\n<p>В акции участвует:</p>\r\n<p class="inf">Профлист С 8 (оцинк., эконом):<br>\r\n1,2х1,5 = 248 руб./шт.; 1,2х1,8 = 297 руб./шт.; 1,2х2 = 330 руб./шт.</p>\r\n<p>Профлист С 21 по супернизким ценам - \r\n    <span class="main_text">165 руб./пог.м</span> (Старая цена - 190 руб./пог.м)</p>\r\n<p>В акции участвует:</p>\r\n<p class="inf">Профлист С 21 (оцинк., эконом):<br>\r\n1,051х2,0 = 330 руб./шт.; 1,051х2,5 = 412 руб./шт.; 1,051х3 = 495 руб./шт.</p>\r\n\r\n<div class=''MorInfoText''>\r\n<p>\r\n    Профлист является одним из самых широко используемых материалов при строительстве жилых домов и промышленных объектов. Вам нужно быстро установить забор, обшить стены и сделать кровлю? Решением станет профлист из оцинкованной или холоднокатаной стали. В магазинах сети Апельсин Вы можете купить профлист для разных целей. Наши менеджеры бесплатно проконсультируют и рассчитают количество материала для Ваших работ.\r\n</p>		\r\n</div>\r\n<div class=''InfoArticle''>\r\n<h1 class=''mainTitle''>ПРОФЛИСТ</h1>\r\n<p>\r\nПрофлист изготавливается из листового металла путём проката на специальном оборудовании. В результате, листам придаются определённые формы профиля, каждый из которых имеет своё буквенно-цифровое обозначение. Именно марка, толщина листа и тип покрытия являются главными критериями, по которым можно выбрать профлист.\r\n</p>\r\n<h1>Профлист для кровли</h1>\r\n<img class=''InfoArticleImageBig'' src=''./resources/Images/materials_info_article_image/news_proflist/01.jpg''>\r\n<p>\r\nДля обустройства кровли стоит выбирать только оцинкованные листы. Такие листы служат намного дольше, чем обыкновенные железные, так как имеют специальное защитное покрытие. Оно способно защитить лист от неблагоприятных воздействий окружающей среды. Ржавчина – это самый главный враг любого металла. Профлист, который покрыт цинком, будет надежно защищен от воздействия влаги. Срок службы подобного материала намного дольше, нежели материала, который не имеет защитного покрытия. Именно поэтому для кровли стоит подбирать оцинкованные листы. Крыша здания – это место, где постоянно присутствует влага. Без соответствующей защиты профлист прослужит недолго.\r\n</p>\r\n<p>\r\nНа профлисте должно быть полимерное покрытие. Их существует огромное количество. Выбор конкретного варианта зависит от желаний и финансовых возможностей человека, который решил покрыть крышу именно таким материалом. Можно обойтись экономным вариантом, но не факт, что он прослужит долго. Наибольшее распространение получили листы, которые покрыты пуралом и полиэстером.\r\n</p>\r\n<p>\r\nВсегда необходимо обращать пристальное внимание на маркировку листа. Она содержит всю необходимую информацию, которую должен знать покупатель. На нем указывается толщина листа, его ширина и другие геометрические показатели. Перед тем как выбрать конкретную модель, обязательно необходимо произвести предварительные расчеты, которые покажут, какой именно лист понадобится для конкретной кровли. Многие варианты профильных листов являются универсальными. Они подходят не только для обустройства кровли, но и для других целей. Маркировка расскажет все о конкретном профлисте.\r\n</p>\r\n<h1>Маркировка и применение профлиста</h1>\r\n<p>\r\nЭтот строительный материал является универсальным. Его применяют для строительства заборов, опалубки, кровли и даже стен. Поэтому, выбор в первую очередь, зависит от цели применения. Ведь в каждом случае профиль испытывает разные нагрузки и воздействия окружающей среды.</p>\r\n<p>Существуют три основных вида маркировки:</p>\r\n<p>«С» - применяется преимущественно для заборов, ограждений, перегородок, не испытывающих значительных нагрузок. Однако, он обладает достаточной прочностью и надёжностью. Это наиболее дешёвый профиль.</p>\r\n<p>«НС» - используют как для кровли, так и для ограждений. Также из него делают щитовые и каркасные конструкции, а также стены бытовок, гаражей, павильонов.</p>\r\n<p>«Н» - наиболее прочный и тяжёлый профлист, называемый также профнастилом. Соответственно и применение он находит в более ответственных и нагруженных местах. Это несъёмная опалубка, настил, арматура перекрытий, диафрагмы жёсткости. Но может применяться для тех целей, что и «НС».</p>\r\n<p>\r\nЦифра, которая стоит после марки, означает высоту профиля. Полная же маркировка может иметь следующий вид: Н75-0,5-750-12000. Она означает: Н — марка, 75 — высота, 750 — ширина, 12000 — максимальная длина (всё в мм).\r\n</p>\r\n<img class=''InfoArticleImageBig'' src=''./resources/Images/materials_info_article_image/news_proflist/02.jpg''>\r\n<h1>Советы по выбору профлиста</h1>\r\n<p>\r\nСледует учитывать следующее обстоятельство. Прокат делается из ровного листа, обычно шириной 1250 мм. Поэтому, чем больше высота волны, тем меньше ширина готового профнастила. Соответственно и его расход на фиксированную площадь будет больше.\r\n</p>\r\n<p>\r\nКонечно, не менее важным показателем также является качество металла и покрытия. Но проблема здесь в том, что определить этот показатель визуально весьма затруднительно, хотя в некоторых случаях возможно.\r\n</p>\r\n<p>\r\nНапример, следует обращать внимание на равномерность и однотонность покрытия обоих сторон. Также следует уделить внимание слою полимера на изгибах профлиста. Трещинки и отслоения здесь не допускаются. Геометрия должна быть одинаковой по всей площади листа.\r\n</p>\r\n<p>\r\nСтоит обращать пристальное внимание на то, по каким техническим требованиям изготовлен профлист. Он может быть сделан по ГОСТу или ТУ. Первый вариант считается более предпочтительным, так как ГОСТ – это государственный стандарт, эталон качества. Лист, который сделан по ТУ, разумеется, тоже может быть высочайшего качества. Для того чтобы быть уверенным, лучше использовать профлисты для крыш, сделанные по ГОСТу. ТУ – это технические условия, а это значит, что лист может быть с различными добавками или покрытиями. Они не всегда являются качественными, поэтому стоит выбирать лист, который сделан именно по ГОСТу.\r\n</p>\r\n<p>\r\nЧто же касается других показателей, то без специальных приборов и экспертиз тут не обойтись. Разумеется, что даже серьёзные компании не могут позволить себе проводить исследования каждой партии продукции, тем более частный покупатель. В таком случае, главным критерием качества становится репутация продавца. В компании «АПЕЛЬСИН» отлажен контроль качества поставляемой продукции. Отработанные схемы контроля, позволили нам гарантировать качество продукции. \r\n</p>\r\n<div class=''InfoArticleEND''>Желаем удачного выбора!</div>\r\n<div class=''InfoArticleSource''></div>\r\n<div class=''InfoArticleSourceURL''></div>\r\n</div>'),
 ('news_programma_bonus_i_service', 'rus', 'ПРОГРАММА БОНУС', ' <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_programma_bonus_i_service.jpg"  align="right"  style="padding-left:20px;">\r\n<p>Внимание! Представляем Вам Программу "БОНУС".</p>\r\n\r\n<p>Программa "БОНУС" - это вознаграждение в виде Бонусных баллов за каждую покупку в наших магазинах.</p>\r\n\r\n<p>Это <span class="main_text">Просто</span> - покупай и накапливай баллы.</p>\r\n\r\n<p>Это <span class="main_text">Выгодно</span> - оплачивай баллами следующую покупку.</p>\r\n\r\n<p class="main_text">Внимание! Оплачивай бонусами в КАЖДУЮ СУББОТУ!</p>\r\n<div class="clear"></div>\r\n<h2>Правила участия в программе БОНУС.</h2>\r\n<ul class="without_design">\r\n<li>1. Общая информация.</li>\r\n<li>1.1. Получая Карту Апельсин, Вы становитесь Участником Программы Бонус.</li>\r\n<li>1.2. Карта действует во всех магазинах розничной сети Апельсин, расположенных на территории РФ.</li>\r\n<li>1.3. Участие в Программе доступно физическим лицам гражданам РФ \r\n    старше 18 лет. Юридические лица, предприниматели совершающие покупки \r\n    в коммерческих целях, не могут стать Участниками индивидуальные Программы.</li>\r\n<li>2. Статус Карты.</li>\r\n<li>2.1. Существует три статуса Карты (мелкий ОПТ, средний ОПТ, ОПТ), \r\n    выдаваемых Участнику Программы. Статус карты зависит от накопленной \r\n    суммы покупок, совершенных при предъявлении уже имеющейся Карты, или \r\n    суммы единовременной покупки при оформлении новой Карты.</li>\r\n<li>2.2. Если общая сумма покупок, совершенных при предъявлении Карты одного \r\n    типа, соответствует большему номиналу, то осуществляется автоматический \r\n    перевод карты в новый статус. Накопленная сумма покупок и накопленные \r\n    Бонусные баллы остаются на Карте.</li>\r\n<li>3. Начисление Бонусных баллов.</li>\r\n<li>3.1. В рамках действия Программы на Карту начисляются Бонусные баллы, \r\n    которые могут быть использованы при последующих покупках в магазинах \r\n    Апельсин. Количество Бонусных баллов, зачисляемых на Карту, зависит \r\n    от суммы покупки, наименования товара и не зависит от ее статуса. \r\n    Подробную информацию о возможности начисления бонусных баллов за \r\n    конкретный товар Вы можете уточнить у продавцов-консультантов.</li>\r\n<li>3.2. Бонусные баллы зачисляются на Карту в течении суток с момента покупки.</li>\r\n<li>3.3. При совершении покупки Бонусные баллы начисляются только при предъявлении Карты.</li>\r\n<li>3.4. На сумму покупки, оплаченную Бонусными баллами, Бонусные баллы не начисляются.</li>\r\n<li>4. Использование Бонусных баллов.</li>\r\n<li>4.1. Начисленные на Карту Бонусные баллы могут быть потрачены при совершении последующих покупок в     магазинах розничной сети Апельсин каждую субботу любого месяца (при условии работы магазина). Один Бонусный балл эквивалентен одному рублю.</li>\r\n<li>4.2. Единовременно Бонусными баллами можно оплатить до 20% цены товара.</li>\r\n<li>4.4. В случае возврата товара, оплаченного Бонусными баллами, \r\n    владельцу Карты возвращаются уплаченные средства; израсходованные \r\n    Бонусные баллы восстанавливаются на счете Карты (через сутки); \r\n    денежные начисленные за покупку Бонусные баллы аннулируются. \r\n    При возврате части покупки использованные Бонусные баллы \r\n    восстанавливаются пропорционально сумме возврата.</li>\r\n<li>5. Списание Бонусных баллов.</li>\r\n<li>5.1. Начисленные Бонусные баллы являются срочными. Срок действия Бонусных баллов ограничен и составляет 180 дней с момента зачисления на карту. Неиспользованные баллы сгорают по окончанию срока действия программы.\r\n    Бонусные баллы аннулируются.</li>\r\n<li>6. Иные условия.</li>\r\n<li>6.1. В случае утери Карты, новая может быть выдана при предъявлении \r\n    документа удостоверяющего личность наличие чека, по которому \r\n    совершались покупки с предъявлением Карты). Утерянная Карта \r\n    (желательно блокируется по заявлению клиента, общая сумма \r\n    покупок и Бонусные баллы, накопленные на утерянной Карте, \r\n    переносятся на новую. При несовпадении данных, указанных в \r\n    паспорте, с данными указанными в Анкете, Карта не восстанавливается.</li>\r\n<li>6.2. Карта является собственностью сети магазинов Апельсин и должна быть \r\n    безвозмездно возвращена собственнику по первому его требованию.</li>\r\n<li>6.3. Участник может направлять свои претензии Компании любым удобным для него способом.</li>\r\n<li>6.4. Компания Апельсин оставляет за собой право изменить Условия участия \r\n    в Программе в одностороннем порядке, информация об изменениях \r\n    доступна на сайте WWW.APELSIN.RU.</li>\r\n</ul>'),
 ('news_skidka_vyhodnogo_dnja_i_discount', 'rus', 'СКИДКА ВЫХОДНОГО ДНЯ', '<p class="main_paragraph"><span class="main_text">Внимание!</span> Каждое ВОСКРЕСЕНЬЕ скидка <span class="main_text">до 10%</span> для всех розничных покупателей.</p>\r\n<p class="inf">* Скидка не распространяется на товары, участвующие в иных акциях или распродажах.</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_skidka_vyhodnogo_dnja_i_discount.jpg">\r\n</div>'),
 ('news_smesitel_verznoj_i_discount', 'rus', 'ВРЕЗНОЙ СМЕСИТЕЛЬ', '<p>\r\n    Внимание! При покупке любой акриловой ванны \r\n     - <span class="main_text">\r\n        30% скидка\r\n    </span> на врезной смеситель на борт ванны.* \r\n</p>\r\n<p class=''inf''>\r\n* список смесителей учавствующих в акции у менеджеров торгового зала.\r\n</p>\r\n\r\n<div class="materialPromoIMG_Block">\r\n    <img class="materialPromoIMG" src="./resources/Images/promotional_flyer/news_smesitel_verznoj_i_discount.jpg">\r\n</div>'),
@@ -1263,7 +1476,6 @@ INSERT INTO `Materials_Lang` (`material`, `lang`, `title`, `text`) VALUES
 -- Структура таблицы `Menu`
 --
 
-DROP TABLE IF EXISTS `Menu`;
 CREATE TABLE IF NOT EXISTS `Menu` (
   `name` varchar(100) NOT NULL COMMENT 'Название меню',
   `description` text COMMENT 'описание',
@@ -1279,11 +1491,8 @@ CREATE TABLE IF NOT EXISTS `Menu` (
 --
 
 INSERT INTO `Menu` (`name`, `description`, `type`, `cssClass`) VALUES
-('departments', 'Меню отделов', 'vertical_1_lvl', NULL),
 ('disable', 'disable', 'vertical_1_lvl', NULL),
-('info', 'Меню информации', 'vertical_1_lvl', NULL),
-('main', 'Главное меню сайта', 'horizontal_1_lvl', NULL),
-('shops', 'Меню магазинов', 'vertical_1_lvl', NULL);
+('main', 'Главное меню сайта', 'horizontal_1_lvl', NULL);
 
 -- --------------------------------------------------------
 
@@ -1291,7 +1500,6 @@ INSERT INTO `Menu` (`name`, `description`, `type`, `cssClass`) VALUES
 -- Структура таблицы `MenuItemParent`
 --
 
-DROP TABLE IF EXISTS `MenuItemParent`;
 CREATE TABLE IF NOT EXISTS `MenuItemParent` (
   `menuItem` bigint(20) unsigned NOT NULL COMMENT 'Элемент меню',
   `parent` bigint(20) unsigned NOT NULL COMMENT 'Родитель элемента меню',
@@ -1307,7 +1515,6 @@ CREATE TABLE IF NOT EXISTS `MenuItemParent` (
 -- Структура таблицы `MenuItems`
 --
 
-DROP TABLE IF EXISTS `MenuItems`;
 CREATE TABLE IF NOT EXISTS `MenuItems` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор элемента меню',
   `menu` varchar(100) NOT NULL COMMENT 'идентификатор меню',
@@ -1326,32 +1533,7 @@ CREATE TABLE IF NOT EXISTS `MenuItems` (
 --
 
 INSERT INTO `MenuItems` (`id`, `menu`, `url`, `target`, `sequence`) VALUES
-(5, 'info', '', 2, 1),
-(6, 'info', '', 2, 2),
-(7, 'info', '', 2, 3),
-(8, 'info', '', 2, 4),
-(9, 'info', '', 2, 5),
-(10, 'info', '', 2, 6),
-(11, 'info', '', 2, 7),
-(12, 'disable', '', 2, 8),
-(14, 'shops', '', 2, 1),
-(15, 'shops', '', 2, 2),
-(16, 'shops', '', 2, 3),
-(17, 'shops', '', 2, 4),
-(18, 'shops', '', 2, 5),
-(19, 'shops', '', 2, 6),
-(20, 'shops', '', 2, 7),
-(21, 'shops', '', 2, 8),
-(22, 'shops', '', 2, 9),
-(23, 'shops', '', 2, 10),
-(25, 'shops', '', 2, 12),
-(26, 'departments', '', 2, 5),
-(27, 'departments', '', 2, 2),
-(28, 'departments', '', 2, 3),
-(29, 'departments', '', 2, 4),
-(30, 'shops', '', 2, 13),
-(31, 'departments', NULL, 2, 1),
-(101, 'main', '', 2, 1),
+(101, 'main', NULL, 2, 1),
 (102, 'main', '', 2, 2),
 (103, 'main', NULL, 2, 3),
 (104, 'main', NULL, 2, 4),
@@ -1363,7 +1545,6 @@ INSERT INTO `MenuItems` (`id`, `menu`, `url`, `target`, `sequence`) VALUES
 -- Структура таблицы `MenuItemsPage`
 --
 
-DROP TABLE IF EXISTS `MenuItemsPage`;
 CREATE TABLE IF NOT EXISTS `MenuItemsPage` (
   `menuItem` bigint(20) unsigned NOT NULL,
   `page` varchar(50) NOT NULL,
@@ -1379,12 +1560,6 @@ CREATE TABLE IF NOT EXISTS `MenuItemsPage` (
 --
 
 INSERT INTO `MenuItemsPage` (`menuItem`, `page`, `postfix`) VALUES
-(6, 'credit', NULL),
-(7, 'discount', NULL),
-(8, 'gift_cards', NULL),
-(9, 'documents', NULL),
-(10, 'vacancies', NULL),
-(11, 'service_centers', NULL),
 (101, 'news', NULL),
 (102, 'information', NULL),
 (103, 'vacancies', NULL),
@@ -1397,7 +1572,6 @@ INSERT INTO `MenuItemsPage` (`menuItem`, `page`, `postfix`) VALUES
 -- Структура таблицы `MenuItems_Lang`
 --
 
-DROP TABLE IF EXISTS `MenuItems_Lang`;
 CREATE TABLE IF NOT EXISTS `MenuItems_Lang` (
   `menuItem` bigint(20) unsigned NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -1412,56 +1586,6 @@ CREATE TABLE IF NOT EXISTS `MenuItems_Lang` (
 --
 
 INSERT INTO `MenuItems_Lang` (`menuItem`, `lang`, `title`) VALUES
-(5, 'eng', 'Payment & Delivery'),
-(5, 'rus', 'Оплата и доставка'),
-(6, 'eng', 'Credit'),
-(6, 'rus', 'Кредит'),
-(7, 'eng', 'Discount'),
-(7, 'rus', 'Дисконт'),
-(8, 'eng', 'Gift cards'),
-(8, 'rus', 'Подарочные карты'),
-(9, 'eng', 'Documents'),
-(9, 'rus', 'Документы'),
-(10, 'eng', 'Vacancies'),
-(10, 'rus', 'Вакансии'),
-(11, 'eng', 'Service Centers'),
-(11, 'rus', 'Сервисные центры'),
-(12, 'eng', 'Helpful Articles'),
-(12, 'rus', 'Полезные статьи'),
-(14, 'eng', '13 Yesenina str.'),
-(14, 'rus', 'Есенина, 13'),
-(15, 'eng', '50 Verkhnyaya str.'),
-(15, 'rus', 'Верхняя, 50'),
-(16, 'eng', '24B Proezd Shabulina'),
-(16, 'rus', 'Шабулина, 24Б'),
-(17, 'eng', '1V 3rd Butyrki str.'),
-(17, 'rus', 'Бутырки 3, 1В'),
-(18, 'eng', '27B Zubkovoy str.'),
-(18, 'rus', 'Зубковой, 27Б'),
-(19, 'eng', '109 Ostrovskogo str.'),
-(19, 'rus', 'Островского, 109'),
-(20, 'eng', '70B Chkalova str.'),
-(20, 'rus', 'Чкалова, 70Б'),
-(21, 'eng', '5 Chernovitskaya str.'),
-(21, 'rus', 'Черновицкая, 5'),
-(22, 'eng', '10B Svyazi str., Sokolovka'),
-(22, 'rus', 'Соколовка, связи, 10Б'),
-(23, 'eng', 'Shopping mall on the ring road'),
-(23, 'rus', 'ТЦ На Окружной'),
-(25, 'eng', '185 km, Circular road (Hangar)'),
-(25, 'rus', 'Окружная, 185 км (Ангар)'),
-(26, 'eng', 'Procurement Department'),
-(26, 'rus', 'Отдел комплектации'),
-(27, 'eng', 'General enquiries department'),
-(27, 'rus', 'Отдел информации'),
-(28, 'eng', 'Sales department'),
-(28, 'rus', 'Отдел продаж'),
-(29, 'eng', 'Marketing department'),
-(29, 'rus', 'Отдел маркетинга'),
-(30, 'eng', '170 v Pushkina str.'),
-(30, 'rus', 'Луховицы, Пушкина, 170 В'),
-(31, 'eng', 'Studio furniture'),
-(31, 'rus', 'Студия мебели'),
 (101, 'eng', 'News'),
 (101, 'rus', 'Акции'),
 (102, 'eng', 'Information'),
@@ -1479,7 +1603,6 @@ INSERT INTO `MenuItems_Lang` (`menuItem`, `lang`, `title`) VALUES
 -- Структура таблицы `MenuTypes`
 --
 
-DROP TABLE IF EXISTS `MenuTypes`;
 CREATE TABLE IF NOT EXISTS `MenuTypes` (
   `type` varchar(50) NOT NULL,
   `description` text,
@@ -1502,7 +1625,6 @@ INSERT INTO `MenuTypes` (`type`, `description`, `default`) VALUES
 -- Структура таблицы `Modules`
 --
 
-DROP TABLE IF EXISTS `Modules`;
 CREATE TABLE IF NOT EXISTS `Modules` (
   `alias` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -1550,7 +1672,6 @@ INSERT INTO `Modules` (`alias`, `name`, `author`, `version`, `description`, `mai
 -- Структура таблицы `ModulesDepends`
 --
 
-DROP TABLE IF EXISTS `ModulesDepends`;
 CREATE TABLE IF NOT EXISTS `ModulesDepends` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `elementType` varchar(50) NOT NULL,
@@ -1571,7 +1692,6 @@ CREATE TABLE IF NOT EXISTS `ModulesDepends` (
 -- Структура таблицы `ModulesDependsElementsType`
 --
 
-DROP TABLE IF EXISTS `ModulesDependsElementsType`;
 CREATE TABLE IF NOT EXISTS `ModulesDependsElementsType` (
   `elementType` varchar(50) NOT NULL,
   `tableName` varchar(50) NOT NULL,
@@ -1595,7 +1715,6 @@ INSERT INTO `ModulesDependsElementsType` (`elementType`, `tableName`) VALUES
 -- Структура таблицы `ModulesInBlocks`
 --
 
-DROP TABLE IF EXISTS `ModulesInBlocks`;
 CREATE TABLE IF NOT EXISTS `ModulesInBlocks` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `module` bigint(20) unsigned NOT NULL,
@@ -1609,7 +1728,7 @@ CREATE TABLE IF NOT EXISTS `ModulesInBlocks` (
   UNIQUE KEY `module_UNIQUE` (`module`,`block`),
   UNIQUE KEY `sequence_UNIQUE` (`sequence`,`block`),
   KEY `fk_ModulesInBlocks_2_idx` (`block`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=604 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=802 ;
 
 --
 -- Дамп данных таблицы `ModulesInBlocks`
@@ -1618,7 +1737,7 @@ CREATE TABLE IF NOT EXISTS `ModulesInBlocks` (
 INSERT INTO `ModulesInBlocks` (`id`, `module`, `block`, `sequence`, `showTitle`, `cssClasses`, `display`, `onAllPages`) VALUES
 (1, 2, 1, 4, 0, NULL, 1, 1),
 (2, 1, 2, 1, 0, NULL, 1, 1),
-(3, 3, 1, 3, 0, NULL, 1, 1),
+(3, 3, 1, 3, 0, NULL, 0, 1),
 (4, 4, 3, 1, 0, NULL, 1, 1),
 (5, 5, 1, 1, 0, NULL, 1, 1),
 (6, 6, 1, 2, 0, NULL, 1, 0),
@@ -1632,7 +1751,6 @@ INSERT INTO `ModulesInBlocks` (`id`, `module`, `block`, `sequence`, `showTitle`,
 -- Структура таблицы `ModulesInBlocks_Lang`
 --
 
-DROP TABLE IF EXISTS `ModulesInBlocks_Lang`;
 CREATE TABLE IF NOT EXISTS `ModulesInBlocks_Lang` (
   `module` bigint(20) unsigned NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -1655,7 +1773,6 @@ INSERT INTO `ModulesInBlocks_Lang` (`module`, `lang`, `title`) VALUES
 -- Структура таблицы `ModulesOnPages`
 --
 
-DROP TABLE IF EXISTS `ModulesOnPages`;
 CREATE TABLE IF NOT EXISTS `ModulesOnPages` (
   `module` bigint(20) unsigned NOT NULL,
   `page` varchar(50) NOT NULL,
@@ -1679,7 +1796,6 @@ INSERT INTO `ModulesOnPages` (`module`, `page`) VALUES
 -- Структура таблицы `ModulesParam`
 --
 
-DROP TABLE IF EXISTS `ModulesParam`;
 CREATE TABLE IF NOT EXISTS `ModulesParam` (
   `module` bigint(20) unsigned NOT NULL,
   `param` varchar(100) NOT NULL,
@@ -1702,7 +1818,6 @@ INSERT INTO `ModulesParam` (`module`, `param`, `value`) VALUES
 -- Структура таблицы `ModulesTitleIcon`
 --
 
-DROP TABLE IF EXISTS `ModulesTitleIcon`;
 CREATE TABLE IF NOT EXISTS `ModulesTitleIcon` (
   `module` bigint(20) unsigned NOT NULL,
   `icon` varchar(200) NOT NULL,
@@ -1719,7 +1834,6 @@ CREATE TABLE IF NOT EXISTS `ModulesTitleIcon` (
 -- Структура таблицы `ModulesTitleIconStile`
 --
 
-DROP TABLE IF EXISTS `ModulesTitleIconStile`;
 CREATE TABLE IF NOT EXISTS `ModulesTitleIconStile` (
   `style` varchar(50) NOT NULL,
   `align` varchar(50) NOT NULL,
@@ -1735,7 +1849,6 @@ CREATE TABLE IF NOT EXISTS `ModulesTitleIconStile` (
 -- Структура таблицы `PageParam`
 --
 
-DROP TABLE IF EXISTS `PageParam`;
 CREATE TABLE IF NOT EXISTS `PageParam` (
   `page` varchar(50) NOT NULL,
   `param` varchar(100) NOT NULL,
@@ -1762,7 +1875,6 @@ INSERT INTO `PageParam` (`page`, `param`, `value`) VALUES
 -- Структура таблицы `Pages`
 --
 
-DROP TABLE IF EXISTS `Pages`;
 CREATE TABLE IF NOT EXISTS `Pages` (
   `alias` varchar(50) NOT NULL,
   `showTitle` tinyint(3) unsigned NOT NULL DEFAULT '1',
@@ -1785,7 +1897,7 @@ CREATE TABLE IF NOT EXISTS `Pages` (
 --
 
 INSERT INTO `Pages` (`alias`, `showTitle`, `cssClasses`, `componentElement`, `template`, `isMainPage`, `index`, `follow`, `archive`, `notModifiable`) VALUES
-('about', 1, NULL, 101, 'apelsin', 1, 1, 1, 1, 0),
+('about', 1, NULL, 101, 'apelsin', 0, 1, 1, 1, 0),
 ('accounts', 1, NULL, 999801, 'apelsin', 0, 1, 1, 1, 0),
 ('account_settings', 1, NULL, 999802, 'apelsin', 0, 1, 1, 1, 0),
 ('adminpanel', 1, 'adminpanel', 999901, 'apelsin', 0, 0, 0, 0, 0),
@@ -1794,8 +1906,8 @@ INSERT INTO `Pages` (`alias`, `showTitle`, `cssClasses`, `componentElement`, `te
 ('discount', 1, '', 101, 'apelsin', 0, 1, 1, 1, 0),
 ('documents', 1, '', 101, 'apelsin', 0, 1, 1, 1, 0),
 ('gift_cards', 1, '', 101, 'apelsin', 0, 1, 1, 1, 0),
-('information', 1, 'withoutShortMaterialsText', 105, 'apelsin', 0, 1, 1, 1, 0),
-('news', 1, '', 105, 'apelsin', 0, 1, 1, 1, 0),
+('information', 1, NULL, 105, 'apelsin', 0, 1, 1, 1, 0),
+('news', 1, '', 105, 'apelsin', 1, 1, 1, 1, 0),
 ('registration', 1, NULL, 999803, 'apelsin', 0, 1, 1, 1, 0),
 ('service_centers', 1, '', 301, 'apelsin', 0, 1, 1, 1, 0),
 ('vacancies', 1, '', 401, 'apelsin', 0, 1, 1, 1, 0);
@@ -1806,7 +1918,6 @@ INSERT INTO `Pages` (`alias`, `showTitle`, `cssClasses`, `componentElement`, `te
 -- Структура таблицы `Pages_Lang`
 --
 
-DROP TABLE IF EXISTS `Pages_Lang`;
 CREATE TABLE IF NOT EXISTS `Pages_Lang` (
   `page` varchar(50) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -1854,7 +1965,6 @@ INSERT INTO `Pages_Lang` (`page`, `lang`, `browserTitle`, `pageTitle`, `descript
 -- Структура таблицы `ParamInfo_ComponentsElements`
 --
 
-DROP TABLE IF EXISTS `ParamInfo_ComponentsElements`;
 CREATE TABLE IF NOT EXISTS `ParamInfo_ComponentsElements` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `componentElement` bigint(20) unsigned NOT NULL,
@@ -1886,7 +1996,6 @@ INSERT INTO `ParamInfo_ComponentsElements` (`id`, `componentElement`, `param`, `
 -- Структура таблицы `PluginDefaultParam`
 --
 
-DROP TABLE IF EXISTS `PluginDefaultParam`;
 CREATE TABLE IF NOT EXISTS `PluginDefaultParam` (
   `plugin` varchar(50) NOT NULL,
   `param` varchar(100) NOT NULL,
@@ -1908,7 +2017,6 @@ INSERT INTO `PluginDefaultParam` (`plugin`, `param`, `value`) VALUES
 -- Структура таблицы `PluginDepends`
 --
 
-DROP TABLE IF EXISTS `PluginDepends`;
 CREATE TABLE IF NOT EXISTS `PluginDepends` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `elementType` varchar(50) NOT NULL,
@@ -1929,7 +2037,6 @@ CREATE TABLE IF NOT EXISTS `PluginDepends` (
 -- Структура таблицы `PluginOnPage`
 --
 
-DROP TABLE IF EXISTS `PluginOnPage`;
 CREATE TABLE IF NOT EXISTS `PluginOnPage` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `plugin` varchar(50) NOT NULL,
@@ -1947,7 +2054,6 @@ CREATE TABLE IF NOT EXISTS `PluginOnPage` (
 -- Структура таблицы `PluginParam`
 --
 
-DROP TABLE IF EXISTS `PluginParam`;
 CREATE TABLE IF NOT EXISTS `PluginParam` (
   `plugin` int(10) unsigned NOT NULL,
   `param` varchar(100) NOT NULL,
@@ -1961,7 +2067,6 @@ CREATE TABLE IF NOT EXISTS `PluginParam` (
 -- Структура таблицы `Plugins`
 --
 
-DROP TABLE IF EXISTS `Plugins`;
 CREATE TABLE IF NOT EXISTS `Plugins` (
   `alias` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -1990,7 +2095,7 @@ INSERT INTO `Plugins` (`alias`, `name`, `author`, `version`, `description`, `mai
 ('JCrop', 'Обрезка изображений', 'Compu Project', '1.0', 'Обрезка изображения', 'index.php', 'head.php', '', './admin/index.php', 1, 3),
 ('jquery', 'Библиотека Jquery', 'Compu Project', '1.0', 'Плагин для подключения библиотеки Jquery', 'index.php', 'head.php', '', './admin/index.php', 1, 1),
 ('printPage', 'Версия для печати', 'Compu Project', '1.0', 'Плагин генерирующий кнопку для открытия страницы версии для печати', 'index.php', 'head.php', 'bodyEnd.php', 'admin/index.php', 1, 6),
-('snowflakes', 'Snowflakes', 'CompuProject', '1.0', 'Падающий снег', 'index.php', 'head.php', NULL, 'admin/index.php', 1, 8);
+('snowflakes', 'Snowflakes', 'CompuProject', '1.0', 'Падающий снег', 'index.php', 'head.php', NULL, 'admin/index.php', 0, 8);
 
 -- --------------------------------------------------------
 
@@ -1998,7 +2103,6 @@ INSERT INTO `Plugins` (`alias`, `name`, `author`, `version`, `description`, `mai
 -- Структура таблицы `PluginsDependsElementsType`
 --
 
-DROP TABLE IF EXISTS `PluginsDependsElementsType`;
 CREATE TABLE IF NOT EXISTS `PluginsDependsElementsType` (
   `elementType` varchar(50) NOT NULL,
   `tableName` varchar(50) NOT NULL,
@@ -2022,7 +2126,6 @@ INSERT INTO `PluginsDependsElementsType` (`elementType`, `tableName`) VALUES
 -- Структура таблицы `ROOT_SETTINGS`
 --
 
-DROP TABLE IF EXISTS `ROOT_SETTINGS`;
 CREATE TABLE IF NOT EXISTS `ROOT_SETTINGS` (
   `settingsName` varchar(50) NOT NULL,
   `superKey` varchar(100) NOT NULL,
@@ -2049,7 +2152,6 @@ INSERT INTO `ROOT_SETTINGS` (`settingsName`, `superKey`, `multilanguage`, `siteC
 -- Структура таблицы `SiteMap`
 --
 
-DROP TABLE IF EXISTS `SiteMap`;
 CREATE TABLE IF NOT EXISTS `SiteMap` (
   `alias` varchar(50) NOT NULL,
   `url` varchar(200) DEFAULT NULL,
@@ -2082,7 +2184,6 @@ INSERT INTO `SiteMap` (`alias`, `url`, `sequence`, `group`) VALUES
 -- Структура таблицы `SiteMapGroups`
 --
 
-DROP TABLE IF EXISTS `SiteMapGroups`;
 CREATE TABLE IF NOT EXISTS `SiteMapGroups` (
   `alias` varchar(50) NOT NULL,
   `url` varchar(50) DEFAULT NULL,
@@ -2105,7 +2206,6 @@ INSERT INTO `SiteMapGroups` (`alias`, `url`, `sequence`) VALUES
 -- Структура таблицы `SiteMapGroupsPages`
 --
 
-DROP TABLE IF EXISTS `SiteMapGroupsPages`;
 CREATE TABLE IF NOT EXISTS `SiteMapGroupsPages` (
   `alias` varchar(50) NOT NULL,
   `page` varchar(50) NOT NULL,
@@ -2128,7 +2228,6 @@ INSERT INTO `SiteMapGroupsPages` (`alias`, `page`, `postfix`) VALUES
 -- Структура таблицы `SiteMapGroups_Lang`
 --
 
-DROP TABLE IF EXISTS `SiteMapGroups_Lang`;
 CREATE TABLE IF NOT EXISTS `SiteMapGroups_Lang` (
   `alias` varchar(50) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -2153,7 +2252,6 @@ INSERT INTO `SiteMapGroups_Lang` (`alias`, `lang`, `name`) VALUES
 -- Структура таблицы `SiteMapPages`
 --
 
-DROP TABLE IF EXISTS `SiteMapPages`;
 CREATE TABLE IF NOT EXISTS `SiteMapPages` (
   `alias` varchar(50) NOT NULL,
   `page` varchar(50) NOT NULL,
@@ -2184,7 +2282,6 @@ INSERT INTO `SiteMapPages` (`alias`, `page`, `postfix`) VALUES
 -- Структура таблицы `SiteMap_Lang`
 --
 
-DROP TABLE IF EXISTS `SiteMap_Lang`;
 CREATE TABLE IF NOT EXISTS `SiteMap_Lang` (
   `alias` varchar(50) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -2225,7 +2322,6 @@ INSERT INTO `SiteMap_Lang` (`alias`, `lang`, `name`) VALUES
 -- Структура таблицы `Sliders`
 --
 
-DROP TABLE IF EXISTS `Sliders`;
 CREATE TABLE IF NOT EXISTS `Sliders` (
   `alias` varchar(100) NOT NULL,
   `theme` varchar(50) NOT NULL,
@@ -2286,7 +2382,6 @@ INSERT INTO `Sliders` (`alias`, `theme`, `hideTools`, `show_randomly`, `controls
 -- Структура таблицы `SlidersControlsPosition`
 --
 
-DROP TABLE IF EXISTS `SlidersControlsPosition`;
 CREATE TABLE IF NOT EXISTS `SlidersControlsPosition` (
   `alias` varchar(50) NOT NULL,
   `description` text,
@@ -2311,7 +2406,6 @@ INSERT INTO `SlidersControlsPosition` (`alias`, `description`) VALUES
 -- Структура таблицы `SlidersFocusPosition`
 --
 
-DROP TABLE IF EXISTS `SlidersFocusPosition`;
 CREATE TABLE IF NOT EXISTS `SlidersFocusPosition` (
   `alias` varchar(50) NOT NULL,
   `description` text,
@@ -2336,7 +2430,6 @@ INSERT INTO `SlidersFocusPosition` (`alias`, `description`) VALUES
 -- Структура таблицы `SlidersLabelAnimation`
 --
 
-DROP TABLE IF EXISTS `SlidersLabelAnimation`;
 CREATE TABLE IF NOT EXISTS `SlidersLabelAnimation` (
   `alias` varchar(50) NOT NULL,
   `description` text,
@@ -2360,7 +2453,6 @@ INSERT INTO `SlidersLabelAnimation` (`alias`, `description`) VALUES
 -- Структура таблицы `SlidersNumbersAlign`
 --
 
-DROP TABLE IF EXISTS `SlidersNumbersAlign`;
 CREATE TABLE IF NOT EXISTS `SlidersNumbersAlign` (
   `alias` varchar(50) NOT NULL,
   `description` text,
@@ -2383,7 +2475,6 @@ INSERT INTO `SlidersNumbersAlign` (`alias`, `description`) VALUES
 -- Структура таблицы `SlidersThemes`
 --
 
-DROP TABLE IF EXISTS `SlidersThemes`;
 CREATE TABLE IF NOT EXISTS `SlidersThemes` (
   `alias` varchar(50) NOT NULL,
   `description` text,
@@ -2408,7 +2499,6 @@ INSERT INTO `SlidersThemes` (`alias`, `description`) VALUES
 -- Структура таблицы `Slides`
 --
 
-DROP TABLE IF EXISTS `Slides`;
 CREATE TABLE IF NOT EXISTS `Slides` (
   `fileName` varchar(50) NOT NULL,
   `slider` varchar(100) NOT NULL,
@@ -2543,7 +2633,6 @@ INSERT INTO `Slides` (`fileName`, `slider`, `sequence`, `animation`, `url`, `tex
 -- Структура таблицы `SlidesAnimations`
 --
 
-DROP TABLE IF EXISTS `SlidesAnimations`;
 CREATE TABLE IF NOT EXISTS `SlidesAnimations` (
   `alias` varchar(50) NOT NULL,
   `description` text,
@@ -2601,7 +2690,6 @@ INSERT INTO `SlidesAnimations` (`alias`, `description`) VALUES
 -- Структура таблицы `TemplateBlocks`
 --
 
-DROP TABLE IF EXISTS `TemplateBlocks`;
 CREATE TABLE IF NOT EXISTS `TemplateBlocks` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `block` varchar(50) NOT NULL,
@@ -2635,7 +2723,6 @@ INSERT INTO `TemplateBlocks` (`id`, `block`, `template`, `description`) VALUES
 -- Структура таблицы `TemplateDependence`
 --
 
-DROP TABLE IF EXISTS `TemplateDependence`;
 CREATE TABLE IF NOT EXISTS `TemplateDependence` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `template` varchar(50) NOT NULL,
@@ -2653,7 +2740,6 @@ CREATE TABLE IF NOT EXISTS `TemplateDependence` (
 -- Структура таблицы `Templates`
 --
 
-DROP TABLE IF EXISTS `Templates`;
 CREATE TABLE IF NOT EXISTS `Templates` (
   `alias` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -2680,7 +2766,6 @@ INSERT INTO `Templates` (`alias`, `name`, `author`, `version`, `description`, `d
 -- Структура таблицы `UrlTarget`
 --
 
-DROP TABLE IF EXISTS `UrlTarget`;
 CREATE TABLE IF NOT EXISTS `UrlTarget` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `target` varchar(30) NOT NULL COMMENT 'инструкция об отскрытии ссылки',
@@ -2706,7 +2791,6 @@ INSERT INTO `UrlTarget` (`id`, `target`, `description`) VALUES
 -- Структура таблицы `Users`
 --
 
-DROP TABLE IF EXISTS `Users`;
 CREATE TABLE IF NOT EXISTS `Users` (
   `login` varchar(25) NOT NULL,
   `password` varchar(50) NOT NULL,
@@ -2762,7 +2846,6 @@ INSERT INTO `Users` (`login`, `password`, `email`, `phone`, `ferstName`, `lastNa
 -- Структура таблицы `UsersAgreements`
 --
 
-DROP TABLE IF EXISTS `UsersAgreements`;
 CREATE TABLE IF NOT EXISTS `UsersAgreements` (
   `id` int(10) unsigned NOT NULL,
   `name` varchar(150) NOT NULL,
@@ -2789,7 +2872,6 @@ INSERT INTO `UsersAgreements` (`id`, `name`, `text`, `dateOfChange`, `sequence`,
 -- Структура таблицы `UsersGroups`
 --
 
-DROP TABLE IF EXISTS `UsersGroups`;
 CREATE TABLE IF NOT EXISTS `UsersGroups` (
   `group` varchar(50) NOT NULL,
   `adminDefault` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -2830,7 +2912,6 @@ INSERT INTO `UsersGroups` (`group`, `adminDefault`, `siteDefault`, `loginInAdmin
 -- Структура таблицы `UsersGroups_Lang`
 --
 
-DROP TABLE IF EXISTS `UsersGroups_Lang`;
 CREATE TABLE IF NOT EXISTS `UsersGroups_Lang` (
   `group` varchar(50) NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -2856,7 +2937,6 @@ INSERT INTO `UsersGroups_Lang` (`group`, `lang`, `name`, `description`) VALUES
 -- Структура таблицы `UsersMassage`
 --
 
-DROP TABLE IF EXISTS `UsersMassage`;
 CREATE TABLE IF NOT EXISTS `UsersMassage` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(150) DEFAULT NULL,
@@ -2880,7 +2960,6 @@ CREATE TABLE IF NOT EXISTS `UsersMassage` (
 -- Структура таблицы `UsersNotifications`
 --
 
-DROP TABLE IF EXISTS `UsersNotifications`;
 CREATE TABLE IF NOT EXISTS `UsersNotifications` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user` varchar(25) NOT NULL,
@@ -2907,7 +2986,6 @@ INSERT INTO `UsersNotifications` (`id`, `user`, `date`, `type`) VALUES
 -- Структура таблицы `UsersNotificationsType`
 --
 
-DROP TABLE IF EXISTS `UsersNotificationsType`;
 CREATE TABLE IF NOT EXISTS `UsersNotificationsType` (
   `type` varchar(20) NOT NULL,
   PRIMARY KEY (`type`),
@@ -2929,7 +3007,6 @@ INSERT INTO `UsersNotificationsType` (`type`) VALUES
 -- Структура таблицы `UsersNotifications_Lang`
 --
 
-DROP TABLE IF EXISTS `UsersNotifications_Lang`;
 CREATE TABLE IF NOT EXISTS `UsersNotifications_Lang` (
   `usersNotifications` bigint(20) unsigned NOT NULL,
   `lang` varchar(3) NOT NULL,
@@ -2957,7 +3034,6 @@ INSERT INTO `UsersNotifications_Lang` (`usersNotifications`, `lang`, `title`, `t
 -- Структура таблицы `Vacancies`
 --
 
-DROP TABLE IF EXISTS `Vacancies`;
 CREATE TABLE IF NOT EXISTS `Vacancies` (
   `name` varchar(100) NOT NULL,
   `responsibility` text,
@@ -3000,7 +3076,6 @@ INSERT INTO `Vacancies` (`name`, `responsibility`, `terms`, `requirements`, `imp
 -- Структура таблицы `VacanciesAdress`
 --
 
-DROP TABLE IF EXISTS `VacanciesAdress`;
 CREATE TABLE IF NOT EXISTS `VacanciesAdress` (
   `adress` varchar(100) NOT NULL,
   PRIMARY KEY (`adress`)
@@ -3040,7 +3115,6 @@ INSERT INTO `VacanciesAdress` (`adress`) VALUES
 -- Структура таблицы `VacanciesAdressPages`
 --
 
-DROP TABLE IF EXISTS `VacanciesAdressPages`;
 CREATE TABLE IF NOT EXISTS `VacanciesAdressPages` (
   `adress` varchar(100) NOT NULL,
   `page` varchar(50) NOT NULL,
@@ -3055,7 +3129,6 @@ CREATE TABLE IF NOT EXISTS `VacanciesAdressPages` (
 -- Структура таблицы `VacanciesForm`
 --
 
-DROP TABLE IF EXISTS `VacanciesForm`;
 CREATE TABLE IF NOT EXISTS `VacanciesForm` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `vacancies` varchar(100) NOT NULL,
@@ -3364,7 +3437,6 @@ INSERT INTO `VacanciesForm` (`id`, `vacancies`, `surname`, `name`, `patronymic`,
 -- Структура таблицы `VacanciesFormCar`
 --
 
-DROP TABLE IF EXISTS `VacanciesFormCar`;
 CREATE TABLE IF NOT EXISTS `VacanciesFormCar` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `car` varchar(100) NOT NULL,
@@ -3387,7 +3459,6 @@ INSERT INTO `VacanciesFormCar` (`id`, `car`) VALUES
 -- Структура таблицы `VacanciesFormConviction`
 --
 
-DROP TABLE IF EXISTS `VacanciesFormConviction`;
 CREATE TABLE IF NOT EXISTS `VacanciesFormConviction` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `conviction` varchar(100) NOT NULL,
@@ -3410,7 +3481,6 @@ INSERT INTO `VacanciesFormConviction` (`id`, `conviction`) VALUES
 -- Структура таблицы `VacanciesFormMarriage`
 --
 
-DROP TABLE IF EXISTS `VacanciesFormMarriage`;
 CREATE TABLE IF NOT EXISTS `VacanciesFormMarriage` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `marriage` varchar(100) NOT NULL,
@@ -3434,7 +3504,6 @@ INSERT INTO `VacanciesFormMarriage` (`id`, `marriage`) VALUES
 -- Структура таблицы `VacanciesFormMilitary`
 --
 
-DROP TABLE IF EXISTS `VacanciesFormMilitary`;
 CREATE TABLE IF NOT EXISTS `VacanciesFormMilitary` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `military` varchar(100) NOT NULL,
@@ -3458,7 +3527,6 @@ INSERT INTO `VacanciesFormMilitary` (`id`, `military`) VALUES
 -- Структура таблицы `VacanciesFormStatus`
 --
 
-DROP TABLE IF EXISTS `VacanciesFormStatus`;
 CREATE TABLE IF NOT EXISTS `VacanciesFormStatus` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `status` varchar(100) NOT NULL,
@@ -3484,7 +3552,6 @@ INSERT INTO `VacanciesFormStatus` (`id`, `status`) VALUES
 -- Структура таблицы `VacanciesText`
 --
 
-DROP TABLE IF EXISTS `VacanciesText`;
 CREATE TABLE IF NOT EXISTS `VacanciesText` (
   `lang` varchar(3) NOT NULL,
   `text` longtext NOT NULL,
@@ -3506,7 +3573,6 @@ INSERT INTO `VacanciesText` (`lang`, `text`) VALUES
 -- Структура таблицы `VacanciesValid`
 --
 
-DROP TABLE IF EXISTS `VacanciesValid`;
 CREATE TABLE IF NOT EXISTS `VacanciesValid` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `vacancies` varchar(100) NOT NULL,
