@@ -20,10 +20,12 @@ global $ROOT;
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/account.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/user.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/AdminPanel.css" type="text/css" />
-    <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/ng.css" type="text/css" />
+    <!--<link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/ng.css" type="text/css" />-->
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/futerSiteMap.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/ContactsUI.css" type="text/css" />
+    <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/AnimatedHeader.css" type="text/css" />
     <script type="text/javascript" src="<?php $ROOT->templatePath();?>js/back-top.js"></script>
+    <script type="text/javascript" src="<?php $ROOT->templatePath();?>js/AnimatedHeader.js"></script>
     <!--[if IE]>
         <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/main_ie.css" type="text/css" />
     <![endif]-->
@@ -32,34 +34,41 @@ global $ROOT;
 <body>
 <?php $ROOT->bodyStart();?>
 <div class="rootWrapper">
+    <div class="topWrapperBlock">
+        <div class="AnimatedHeaderBlock">
+            <?php include_once $ROOT->getTemplatePath().'AnimatedHeader.php'; ?>
+        </div>
+        <div class="topWrapper">
+            <div class='topBlock mainBlockArea'>
+                <div class='topLeftBlock'>
+                    <?php $ROOT->block('topLeftBlock');?><!-- 2 -->
+                </div>
+                <div class='topRightBlockArea'>
+                    <div class='topRightBlock'>
+                        <?php $ROOT->block('topRightBlock');?><!-- 3 -->
+                    </div>
+                </div>
+    <!--            <div class="pageTitleWrapper">
+                    <div class="pageTitleBlock">
+                        <?php // $ROOT->title();?>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    
     <div class='topFloatWrapper'>
         <div class='topFloatBlock mainBlockArea'>
-            <?php $ROOT->block('topFloatBlock');?><!-- 1 -->
+            <?php $ROOT->block('topFloatBlock');?>
         </div>
     </div>
-    <div class="topWrapper">
-        <div class='topBlock mainBlockArea'>
-            <div class='topLeftBlock'>
-                <?php $ROOT->block('topLeftBlock');?><!-- 2 -->
-            </div>
-            <div class='topRightBlockArea'>
-                <div class='topRightBlock'>
-                    <?php $ROOT->block('topRightBlock');?><!-- 3 -->
-                </div>
-            </div>
-<!--            <div class="pageTitleWrapper">
-                <div class="pageTitleBlock">
-                    <?php $ROOT->title();?>
-                </div>
-            </div>-->
-        </div>
-    </div>
+
     <div class="middleWrapper">
-        <div class="pageTitleWrapper">
+<!--        <div class="pageTitleWrapper">
             <div class="pageTitleBlock">
-                <?php $ROOT->title();?>
+                <?php // $ROOT->title();?>
             </div>
-        </div>
+        </div>-->
         <div class='mainSiteWrapper mainBlockArea'>
             <div class='middleTopBlock mainBlockArea'>
                 <?php $ROOT->block('middleTopBlock');?><!-- 4 -->

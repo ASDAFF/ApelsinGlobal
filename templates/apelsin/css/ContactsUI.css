@@ -100,6 +100,10 @@
 .ContactsUnitsElementShowHide .ContactsUnitsElementButton:hover {
     background-position: top left;
 }
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButton.active {
+    background-position: top left;
+}
 
 .ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
 .ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_feedback {
@@ -334,7 +338,7 @@ td.reviews_table_inputContactsFeedback.text .textareaContactsFeedback {
 .ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemLeft .ContactsUnitsElementMap {
     width: 560px;
     height: 200px;
-    display: none;
+    /*display: none;*/
     
 }
 .ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemLeft .ContactsUnitsElementText {
@@ -398,6 +402,9 @@ td.reviews_table_inputContactsFeedback.text .textareaContactsFeedback {
 .ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton:hover {
     background-position: top left;
 }
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton.active {
+    background-position: top left;
+}
 
 .ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_feedback {
     background-image: url('../img/contactsUnitIcon/feedback.png');
@@ -453,7 +460,7 @@ td.reviews_table_inputContactsFeedback.text .textareaContactsFeedback {
 .ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsMainInfoElementText {
     font: 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
     width: 350px;
-    /*width: 540px;*/
+    width: 540px;
     height: 100%;
     padding: 20px 0px 10px 9px;
     float: left;

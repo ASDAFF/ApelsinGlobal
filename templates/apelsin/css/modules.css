@@ -34,6 +34,38 @@
 
 /* Menu */
 
+/*.horizontal_1_lvl {
+    display: block;
+    list-style-type: none;
+}
+
+.horizontal_1_lvl.main {
+    height: 30px;
+    border-left: rgba(255,255,255,0.4) 1px solid;
+}
+.horizontal_1_lvl.main li {
+    font: bold 16px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    float: left;
+    text-align: center;
+    position: relative;
+    border-right: rgba(255,255,255,0.4) 1px solid;
+    border-right: #6d6d6d 1px solid;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.horizontal_1_lvl.main li a {
+    display: block;
+    text-decoration: none;
+    padding: 0px 10px 0px 10px;
+    color: #ef7f1a;
+    color: #6d6d6d;
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
+}
+.horizontal_1_lvl.main li a:hover {
+    box-shadow: inset 0px 0px 3px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,.7);
+}*/
+
 .horizontal_1_lvl {
     display: block;
     list-style-type: none;
@@ -48,8 +80,7 @@
     float: left;
     text-align: center;
     position: relative;
-    /*border-right: rgba(255,255,255,0.4) 1px solid;*/
-    border-right: #6d6d6d 1px solid;
+    border-right: #fff 1px solid;
     vertical-align: middle;
     cursor: pointer;
 }
@@ -57,21 +88,18 @@
     display: block;
     text-decoration: none;
     padding: 0px 10px 0px 10px;
-    color: #ef7f1a;
-    color: #6d6d6d;
-    text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
-/*    text-shadow: 
-        1px 0px 0px #FFF,
-        0px 1px 0px #FFF,
-        -1px 0px 0px #FFF,
-        0px -1px 0px #FFF,
-        1px 1px 0px #FFF,
-        -1px -1px 0px #FFF,
-        0px 0px 3px #FFF;*/
+    color: #fff;
+    text-shadow: none;
+    background: #CDCDCD;
 }
 .horizontal_1_lvl.main li a:hover {
     box-shadow: inset 0px 0px 3px rgba(0,0,0,0.5);
-    background: rgba(255,255,255,.7);
+    background: rgba(255,255,255,.2);
+    background: #ef7f1a;
+}
+
+.horizontal_1_lvl.main li.thisPage a {
+    background: #ef7f1a;
 }
 
 /* contactPanel */

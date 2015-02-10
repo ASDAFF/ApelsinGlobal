@@ -10,7 +10,6 @@ function ContactsUnitsTypes_OpenTab(type) {
 }
 
 function ContactsUnitsTypes_OpenBlock(type,unit) {
-    $('#ContactsUnitsMainList').hide();
     jQuery.each($('#ContactsUnitsBlocksContent_'+type).children(), function() {
         $(this).hide();
     });
@@ -28,6 +27,6 @@ function ContactsUnitsTypes_ShowMain(type) {
     jQuery.each($('#ContactsUnitsBlocksMenu_'+type).children(), function() {
         $(this).removeClass('ShowBlock');
     });
-    $('#ContactsUnitsMainList').show();
-    $('#ContactsUnitsBlocksMenuItem_'+type+'_ShowMainBlock').addClass('ShowBlock');
+    $('#ContactsUnitsBlocksContent_'+type).children().first().show();
+    $('#ContactsUnitsBlocksMenu_'+type).children().first().addClass('ShowBlock');
 }
