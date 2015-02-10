@@ -103,18 +103,30 @@ class ContactsUI_ElementsHelpert {
             $html .= "<div class='ContactsUnitsElementShowHide'>";
             $active = 'active';
             if($img) {
+                $html .= "<div class='ContactsUnitsElementButtonBlock'>";
                 $html .= '<div id="ContactsUnitsElementButton_img_'.$inut.'" class="ContactsUnitsElementButton ContactsUnitsElementButton_img '.$active.'" onclick="switchContactsUnitsMoreInfoElement(\''.$inut.'\',\'img\')"></div>';
+                $html .= "Фасад";
+                $html .= "</div>";
                 $active = '';
             }
             if($map) {
+                $html .= "<div class='ContactsUnitsElementButtonBlock'>";
                 $html .= '<div id="ContactsUnitsElementButton_map_'.$inut.'" class="ContactsUnitsElementButton ContactsUnitsElementButton_map '.$active.'" onclick="switchContactsUnitsMoreInfoElement(\''.$inut.'\',\'map\')"></div>';
+                $html .= "Схема проезда";
+                $html .= "</div>";
                 $active = '';
             }
             if($text) {
+                $html .= "<div class='ContactsUnitsElementButtonBlock'>";
                 $html .= '<div id="ContactsUnitsElementButton_text_'.$inut.'" class="ContactsUnitsElementButton ContactsUnitsElementButton_text '.$active.'" onclick="switchContactsUnitsMoreInfoElement(\''.$inut.'\',\'text\')"></div>';
+                $html .= "Информация";
+                $html .= "</div>";
                 $active = '';
             }
+            $html .= "<div class='ContactsUnitsElementButtonBlock'>";
             $html .= '<div id="ContactsUnitsElementButton_feedback_'.$inut.'" class="ContactsUnitsElementButton ContactsUnitsElementButton_feedback '.$active.'" onclick="switchContactsUnitsMoreInfoElement(\''.$inut.'\',\'feedback\')"></div>';
+            $html .= "Оставить отзыв";
+            $html .= "</div>";
             $active = '';
             $html .= "</div>";
         return $html;
