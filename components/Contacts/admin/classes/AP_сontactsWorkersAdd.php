@@ -87,14 +87,13 @@ class AP_сontactsWorkersAdd extends AdminPanel_ComponentPanelUI_Element_Add {
         }
         $local = false;
         foreach ($this->langArray as $langData) {
-            if(isset($_POST['fio'][$langData['lang']]) && $_POST['fio'][$langData['lang']]!=null && $_POST['fio'][$langData['lang']]!="" &&
-                    isset($_POST['info'][$langData['lang']]) && $_POST['info'][$langData['lang']]!=null && $_POST['info'][$langData['lang']]!="") {
+            if(isset($_POST['fio'][$langData['lang']]) && $_POST['fio'][$langData['lang']]!=null && $_POST['fio'][$langData['lang']]!="" ) {
                 $local = true;
             }
         }
         if(!$local){
             $error = true;
-            $this->checkAllValueErrors[] = "Хотя бы для одного языка должны быть заполнено полу 'ФИО'";
+            $this->checkAllValueErrors[] = "Хотя бы для одного языка должны быть заполнено полe 'ФИО'";
         }
         return !$error;
     }
@@ -181,9 +180,7 @@ class AP_сontactsWorkersAdd extends AdminPanel_ComponentPanelUI_Element_Add {
         $queryContactsWorkers_Lang = array();
         foreach ($this->langArray as $langData) {
             if(isset($this->insertValue['fio'][$langData['lang']]) && $this->insertValue['fio'][$langData['lang']]!=null && 
-                    $this->insertValue['fio'][$langData['lang']]!="" && isset($this->insertValue['info'][$langData['lang']]) &&
-                    $this->insertValue['info'][$langData['lang']]!=null && 
-                    $this->insertValue['info'][$langData['lang']]!="") {
+                    $this->insertValue['fio'][$langData['lang']]!="") {
                 $queryLang = "INSERT INTO `ContactsWorkers_Lang` SET ";
                 $queryLang .= "`worker`='".$this->insertValue['alias']."', ";
                 $queryLang .= "`lang`='".$langData['lang']."', ";
