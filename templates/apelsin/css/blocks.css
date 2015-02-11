@@ -5,6 +5,7 @@
     height:100%;
     min-height:100%;
     position: relative; 
+    background: #fff url('../img/main_bg.jpg') 0 0 repeat;
 }
 
 /*.topFloatWrapper {
@@ -130,8 +131,8 @@
 }
 
 .middleWrapper {
-    background: #fff;
-    background: #fff url('../img/main_bg.jpg') 0 0 repeat;
+/*    background: #fff;
+    background: #fff url('../img/main_bg.jpg') 0 0 repeat;*/
     /*padding-bottom: 250px;*/
 }
 
