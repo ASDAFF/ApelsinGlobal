@@ -132,6 +132,7 @@ class AuthorizationUserPanel {
 //                    $out .= '<div class="UserPanelLoginBlockElementMenuElement">Настройка</div>';
 //                    $out .= '<div class="UserPanelLoginBlockElementMenuElement"><a href="'.$this->urlHelper->pageUrl('requests', null).'">Заявки и фестивали</a></div>';
                     if($this->userData->isAdmin()) {
+                        $out .= '<div class="UserPanelLoginBlockElementMenuElement"></div>';
                         $out .= '<div class="UserPanelLoginBlockElementMenuElement"><a href="'.$this->urlHelper->pageUrl('adminpanel', null).'">Админпанель</a></div>';
                         $urlParam[0]="components";
                         $out .= '<div class="UserPanelLoginBlockElementMenuElement"><a href="'.$this->urlHelper->pageUrl('adminpanel', $urlParam).'">Админпанель компонент</a></div>';
@@ -140,6 +141,7 @@ class AuthorizationUserPanel {
                         $urlParam[0]="plugins";
                         $out .= '<div class="UserPanelLoginBlockElementMenuElement"><a href="'.$this->urlHelper->pageUrl('adminpanel', $urlParam).'">Админпанель плагинов</a></div>';
                     }
+                    $out .= '<div class="UserPanelLoginBlockElementMenuElement"></div>';
                     $out .= '<div class="UserPanelLoginBlockElementMenuElement">';
                         $out .= '<a href="./out.php?backURL='.$this->urlHelper->getThisPage().'">Выйти</a>';
                     $out .= '</div>';
