@@ -1,6 +1,7 @@
 var AnimatedHeader_BlocksAmount = 0;
 var AnimatedHeader_RandomAmountMax = 20;
-var AnimatedHeader_ChangeTime = 5000;
+//var AnimatedHeader_ChangeTime = 5000;
+var AnimatedHeader_ChangeTime = 1000;
 var AnimatedHeader_ColorBase = '0123456789ABCDEF';
 var AnimatedHeader_Color = new Array();
 var AnimatedHeader_IMG = new Array();
