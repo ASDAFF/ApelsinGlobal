@@ -16,11 +16,8 @@ class MysqliHelper {
      *      charset - Кодировка.
      */
     public function __construct() {
-        global $_DBSETTINGS;
         $this->error = null;
-        $this->mysqli = new mysqli($_DBSETTINGS['host'], $_DBSETTINGS['user'], 
-                $_DBSETTINGS['password'], $_DBSETTINGS['db_name']);
-        $this->mysqli->set_charset($_DBSETTINGS['charset']);
+        $this->mysqli = MySqliConnectHelper::getConection();
         if (mysqli_connect_errno()) {
             $this->error = "Ошибка подключения к базе данных : ".mysqli_connect_error();
             $this->error .= "<br>Обратитесь к администратору.";
