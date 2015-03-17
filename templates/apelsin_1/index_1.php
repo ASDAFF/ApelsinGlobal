@@ -14,7 +14,6 @@ global $ROOT;
     <link rel="shortcut icon" href="<?php $ROOT->templatePath();?>favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/main.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/blocks.css" type="text/css" />
-    <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/SiteHeder.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/modules.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/content.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/doc_div.css" type="text/css" />
@@ -24,9 +23,7 @@ global $ROOT;
     <!--<link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/ng.css" type="text/css" />-->
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/futerSiteMap.css" type="text/css" />
     <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/ContactsUI.css" type="text/css" />
-    <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/AnimatedHeader.css" type="text/css" />
     <script type="text/javascript" src="<?php $ROOT->templatePath();?>js/back-top.js"></script>
-    <script type="text/javascript" src="<?php $ROOT->templatePath();?>js/AnimatedHeader.js"></script>
     <!--[if IE]>
         <link rel="stylesheet" href="<?php $ROOT->templatePath();?>css/main_ie.css" type="text/css" />
     <![endif]-->
@@ -35,28 +32,34 @@ global $ROOT;
 <body>
 <?php $ROOT->bodyStart();?>
 <div class="rootWrapper">
-    <div class='SiteHeder'>
-        <div class='SiteHederBlock'>
-            <div class='SiteHederLogo'></div>
-            <div class='SiteHederContacts'>
-                <div class='SiteHederContactsElement'><a href="tel:84912240220">8 (4912) 240-220</a></div>
-                <div class='SiteHederContactsElement'><a href="tel:84912502020">8 (4912) 502-020</a></div>
-                <div class='SiteHederContactsElement'><a href="mailto:mail@apelsin.ru">mail@apelsin.ru</a></div>
-            </div>
-        </div>
-    </div>
     <div class='topFloatWrapper'>
         <div class='topFloatBlock mainBlockArea'>
-            <?php $ROOT->block('topFloatBlock');?>
+            <?php $ROOT->block('topFloatBlock');?><!-- 1 -->
         </div>
     </div>
-
-    <div class="middleWrapper">
-<!--        <div class="pageTitleWrapper">
-            <div class="pageTitleBlock">
-                <?php // $ROOT->title();?>
+    <div class="topWrapper">
+        <div class='topBlock mainBlockArea'>
+            <div class='topLeftBlock'>
+                <?php $ROOT->block('topLeftBlock');?><!-- 2 -->
             </div>
-        </div>-->
+            <div class='topRightBlockArea'>
+                <div class='topRightBlock'>
+                    <?php $ROOT->block('topRightBlock');?><!-- 3 -->
+                </div>
+            </div>
+<!--            <div class="pageTitleWrapper">
+                <div class="pageTitleBlock">
+                    <?php $ROOT->title();?>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <div class="middleWrapper">
+        <div class="pageTitleWrapper">
+            <div class="pageTitleBlock">
+                <?php $ROOT->title();?>
+            </div>
+        </div>
         <div class='mainSiteWrapper mainBlockArea'>
             <div class='middleTopBlock mainBlockArea'>
                 <?php $ROOT->block('middleTopBlock');?><!-- 4 -->

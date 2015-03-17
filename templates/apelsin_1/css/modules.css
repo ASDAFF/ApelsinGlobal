@@ -1,0 +1,324 @@
+/* Блоки */
+.topFloatBlock .m_block {
+    float: right;
+}
+.topFloatBlock .m_block.contactPanel, .topFloatBlock .m_block.menu  {
+    float: left;
+}
+.m_block.headContacts {
+    margin-top: 10px;
+}
+
+.m_block.langPanel  {
+    border-right: rgba(255,255,255,0.4) 1px solid;
+}
+
+/* Logo */
+.logoImg {
+    width: 316px;
+    height: 100px;
+    background: url(../img/logo.png) no-repeat center center;
+    margin: -20px 0px -15px -10px;
+}
+
+.logoText {
+    width: 310px;
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+    color: #6d6d6d;
+    text-align: right;
+    font: bold 13px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-right: 5px;
+}
+
+/* Menu */
+
+/*.horizontal_1_lvl {
+    display: block;
+    list-style-type: none;
+}
+
+.horizontal_1_lvl.main {
+    height: 30px;
+    border-left: rgba(255,255,255,0.4) 1px solid;
+}
+.horizontal_1_lvl.main li {
+    font: bold 16px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    float: left;
+    text-align: center;
+    position: relative;
+    border-right: rgba(255,255,255,0.4) 1px solid;
+    border-right: #6d6d6d 1px solid;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.horizontal_1_lvl.main li a {
+    display: block;
+    text-decoration: none;
+    padding: 0px 10px 0px 10px;
+    color: #ef7f1a;
+    color: #6d6d6d;
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
+}
+.horizontal_1_lvl.main li a:hover {
+    box-shadow: inset 0px 0px 3px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,.7);
+}*/
+
+.horizontal_1_lvl {
+    display: block;
+    list-style-type: none;
+}
+
+.horizontal_1_lvl.main {
+    height: 30px;
+    border-left: rgba(255,255,255,0.4) 1px solid;
+}
+.horizontal_1_lvl.main li {
+    font: bold 16px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    float: left;
+    text-align: center;
+    position: relative;
+    border-right: #fff 1px solid;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.horizontal_1_lvl.main li a {
+    display: block;
+    text-decoration: none;
+    padding: 0px 10px 0px 10px;
+    color: #fff;
+    text-shadow: none;
+    background: #CDCDCD;
+}
+.horizontal_1_lvl.main li a:hover {
+    /*box-shadow: inset 0px 0px 3px rgba(0,0,0,0.5);*/
+    background: rgba(255,255,255,.2);
+    background: #ef7f1a;
+}
+
+.horizontal_1_lvl.main li.thisPage a {
+    background: #ef7f1a;
+}
+
+/* contactPanel */
+.HomeIcon,
+.mailIcon,
+.phoneIcon,
+.skypeIcon {
+    padding: 0px;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    float: left;
+    /*border-left: rgba(255,255,255,0.4) 1px solid;*/
+    border-right: #6d6d6d 1px solid;
+}
+.HomeIcon {
+    background: url('../img/contactPanel/homeIcon.png') center center no-repeat;
+    border-left: #6d6d6d 1px solid;
+}
+.mailIcon {
+    background: url('../img/contactPanel/mailIcon.png') center center no-repeat;
+}
+.phoneIcon {
+    background: url('../img/contactPanel/phoneIcon.png') center center no-repeat;
+}
+.skypeIcon {
+    background: url('../img/contactPanel/skypeIcon.png') center center no-repeat;
+}
+.HomeIcon:hover {
+    background: rgba(255,255,255,.7) url('../img/contactPanel/homeIcon.png') center center no-repeat;
+}
+.mailIcon:hover {
+    background: rgba(255,255,255,.7) url('../img/contactPanel/mailIcon.png') center center no-repeat;
+}
+.phoneIcon:hover {
+    background: rgba(255,255,255,.7) url('../img/contactPanel/phoneIcon.png') center center no-repeat;
+}
+.skypeIcon:hover {
+    background: rgba(255,255,255,.7) url('../img/contactPanel/skypeIcon.png') center center no-repeat;
+}
+.HomeIcon:hover,
+.mailIcon:hover,
+.phoneIcon:hover,
+.skypeIcon:hover {
+    box-shadow: inset 0px 0px 3px rgba(0,0,0,0.5);
+}
+
+.HomeIcon a,
+.mailIcon a,
+.phoneIcon a,
+.skypeIcon a {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+/*.HomeIcon a:hover,
+.mailIcon a:hover,
+.phoneIcon a:hover,
+.skypeIcon a:hover {
+    box-shadow: inset 0px 0px 3px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,.7);
+}*/
+
+/* headContacts */
+.headContacts {
+    /*text-shadow: 0 1px 0px rgba(255,255,255,0.5);*/
+    color: #989898;
+}
+
+.headContacts a {
+    /*text-shadow: 0 1px 0px rgba(255,255,255,0.5);*/
+    color: #989898;
+}
+
+.headContacts a:hover {
+    color: #8d8d8d;
+}
+
+.headPhone {
+    font: bold 13px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-shadow: 
+        1px 0px 0px #FFF,
+        0px 1px 0px #FFF,
+        -1px 0px 0px #FFF,
+        0px -1px 0px #FFF,
+        1px 1px 0px #FFF,
+        -1px -1px 0px #FFF,
+        0px 0px 3px #FFF;
+    padding: 0px 25px 0px 0px;
+        
+}
+.mainPhone {
+    font: bold 18px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}
+.headMail {
+    font: bold 13px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-shadow: 
+        1px 0px 0px #FFF,
+        0px 1px 0px #FFF,
+        -1px 0px 0px #FFF,
+        0px -1px 0px #FFF,
+        1px 1px 0px #FFF,
+        -1px -1px 0px #FFF,
+        0px 0px 3px #FFF;
+    padding: 0px 25px 0px 0px;
+        
+}
+
+.headAdress {
+    color: #6d6d6d;
+    font: bold 13px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+/*    text-shadow: 
+        1px 0px 0px #FFF,
+        0px 1px 0px #FFF,
+        -1px 0px 0px #FFF,
+        0px -1px 0px #FFF,
+        1px 1px 0px #FFF,
+        -1px -1px 0px #FFF,
+        0px 0px 3px #FFF;*/
+}
+
+/*.headPhone, .headMail {
+    font: 10px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    height: 15px;
+    text-align: right;
+    padding: 0px 30px 0px 20px;
+}
+.headMail {
+    font: 12px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}
+.headPhone a, .headMail a {
+    text-decoration: none;
+    color: #6d6d6d;
+    font-weight: normal;
+}
+
+.headPhone .mainPhone {
+    font: 14px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+}
+
+.headPhoneBlock, .headAdress {
+    float: right;
+}
+
+.headAdress {
+    color: #6d6d6d;
+    font: 14px/45px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}*/
+
+.bottomWrapper .bottomBottomBlock {
+    font: 11px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+    color: #5f5f5f;
+}
+.bottomWrapper .bottomBottomBlock a {
+    font: 11px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+    color: #5f5f5f;
+}
+.bottomWrapper .bottomBottomBlock a:hover {
+    color: #333;
+}
+.bottomWrapper .bottomBottomBlock p {
+}
+
+.bottomWrapper .bottomBottomBlock .m_block.html.futerCopyright_Left {
+    float: left;
+    text-align: left;
+}
+
+.bottomWrapper .bottomBottomBlock .m_block.html.futerCopyright_Right {
+    float: right;
+    text-align: right;
+}
+
+.bottomWrapper .bottomBottomBlock .m_block.html.futerCopyright_Right .futerAdress {
+    padding-bottom: 10px;
+}
+.bottomWrapper .bottomBottomBlock .m_block.html.futerCopyright_Right .futerCopy {
+    
+}
+
+.socialPanelBox {
+    height: 50px;
+    width: 490px;
+    margin: 0px auto;
+}
+.socialPanelBox .socialPanelElement {
+    height: 50px;
+    width: 100px;
+    float: left;
+}
+.socialPanelBox .socialPanelElement.vk {
+    height: 22px;
+    padding: 14px 0px 14px 0px;
+    width: 90px;
+}
+.socialPanelBox .socialPanelElement.google {
+    height: 20px;
+    padding: 15px 0px 15px 0px;
+    width: 70px;
+}
+.socialPanelBox .socialPanelElement.mailru {
+    height: 20px;
+    padding: 15px 0px 15px 0px;
+    width: 70px;
+}
+.socialPanelBox .socialPanelElement.odnoklassniki {
+    height: 20px;
+    padding: 15px 0px 15px 0px;
+    width: 60px;
+}
+.socialPanelBox .socialPanelElement.facebook {
+    height: 20px;
+    width: 200px;
+    padding: 15px 0px 15px 0px;
+}

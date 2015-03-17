@@ -1,0 +1,193 @@
+/*
+    Document   : content
+    Created on : 26.07.2013, 11:01:47
+    Author     : zaytsev
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.doc_div {
+    max-width: 900px;
+    padding: 25px;
+    text-align: justify;
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.4;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);
+}
+
+.doc_div hr {
+    border: 0;
+    color: #ef7f1a;
+    background-color: #ef7f1a;
+    height: 1px;
+    margin: 5px 30px 5px 30px;
+}
+
+.doc_div p {
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.doc_div ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.doc_div ol li {
+    margin-bottom: 10px;
+}
+.doc_div ul {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+.doc_div ul.dash {
+    list-style-type: none;
+}
+.doc_div ul.dash li:before {
+    content: "- ";
+}
+
+.doc_div ul.without_design {
+    list-style-type: none;
+}
+
+.doc_div .main_paragraph {
+    /*font-weight: bold;*/
+}
+.doc_div .info_paragraph {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.doc_div .main_text {
+    color: #ef7f1a;
+    font-weight: bold;
+}
+
+.doc_div .more_inf {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.doc_div .inf {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    /*padding: 20px;*/
+}
+
+.doc_div .inf a{
+    color: #999;
+    font-style: normal;
+}
+
+.doc_div .right {
+    text-align: right;
+}
+
+.doc_div .apelsin_button, .apelsin_button {
+    height: 20px;
+    background-color: #ef7f1a;
+    border-radius: 5px;
+    text-decoration: none;
+    font: 12px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    text-shadow: none;
+    color: #fff;
+    text-align: center;
+    box-shadow: none;
+    border: none;
+    margin: 3px;
+    padding: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+
+.doc_div .apelsin_button:hover, .apelsin_button:hover {
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5), inset 0px 1px 10px rgba(0,0,0,0.5);
+}
+
+.doc_div table.table_whith_border, table.table_whith_border{
+    border-collapse: collapse;
+}
+.doc_div table.table_whithout_border, table.table_whithout_border {
+    border: none;
+    border-collapse: collapse;
+}
+.doc_div table.table_whith_border th, table.table_whith_border th {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.2);
+    padding: 5px;
+    font-size: 12px;
+}
+.doc_div table.table_whith_border td, table.table_whith_border td {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    padding: 5px;
+    color: #333;
+    font-size: 12px;
+}
+.doc_div table.table_whithout_border td, table.table_whithout_border td {
+    border: none;
+    border-collapse: collapse;
+    padding: 5px;
+    color: #333;
+    font-size: 12px;
+}
+.doc_div table.table_whithout_border th, table.table_whithout_border th {
+    border: none;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.2);
+    padding: 5px;
+    font-size: 12px;
+}
+
+.table_whith_border {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    font: 14px/16px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    line-height: 1.4;
+    color: #000;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,1);
+    margin: 5px;
+}
+
+.doc_div table {
+    width: 100%;
+    border: 1px #999 solid;
+    border-collapse: collapse;
+}
+
+.doc_div table th {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.2);
+    padding: 5px;
+    font-size: 12px;
+}
+
+.doc_div table td {
+    border: 1px #999 solid;
+    border-collapse: collapse;
+    padding: 5px;
+    color: #333;
+    font-size: 12px;
+}
+
+.doc_div .epigraph {
+    text-align: right;
+    color: #666;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+.doc_div .info_paragraph {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 20px;
+}

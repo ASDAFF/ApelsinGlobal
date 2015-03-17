@@ -1,0 +1,115 @@
+.SiteHeder {
+    height: 95px;
+    background: #fff;
+    /*background: rgba(255,255,255,.9);*/
+}
+.SiteHeder .SiteHederBlock {
+    width: 960px;
+    margin: 0 auto;
+    height: 75px;
+    padding: 10px 0px 10px 0px;
+    /*background: #fff;*/
+}
+
+.SiteHeder .SiteHederBlock .SiteHederLogo {
+    float: left;
+    background: url('../img/SiteLogo.png') center center no-repeat;
+    width: 200px;
+    height: 75px;
+/*    background: url('../img/SiteLogo2.png') center center no-repeat;
+    background-size: 200px 73px;*/
+/*    width: 250px;
+    height: 100px;*/
+}
+
+.SiteHeder .SiteHederBlock .SiteHederContacts {
+    float: right;
+}
+
+.SiteHeder .SiteHederBlock .SiteHederContactsElement {
+    margin: 43px 3px 0px 0px;
+    float: left;
+    height: 20px;
+    border-right: 1px dashed #8B8B8B;
+}
+.SiteHeder .SiteHederBlock .SiteHederContactsElement:last-child {
+    border: none;
+}
+.SiteHeder .SiteHederBlock .SiteHederContactsElement a {
+    display: block;
+    height: 20px;
+    padding: 0px 5px 0px 5px;
+    font: bold 16px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    /*background: #ef7f1a;*/
+    /*background: #EFEFEF;*/
+    color: #8B8B8B;
+    /*border: 2px solid #E0E0E0;*/
+    /*margin: 17px 10px 0px 0px;*/
+}
+.SiteHeder .SiteHederBlock .SiteHederContactsElement a:hover {
+    /*background: #fff;*/
+    color: #ef7f1a;
+}
+
+
+
+
+.rootWrapper {
+    /*background: url('../img/bg.gif') 0 0 repeat;*/
+    background: #FFFFFF;
+}
+
+.topFloatWrapper {
+    background: none;
+    /*background: #ef7f1a;*/
+    margin: 5px 0px 10px 0px;
+    border-top: 1px solid #ef7f1a;
+    border-bottom: 1px solid #ef7f1a;
+}
+
+.topFloatBlock {
+    height: 30px;
+    /*background: transparent;*/
+    /*background: #CDCDCD;*/
+}
+
+.langPanel {
+    /*background: #CDCDCD;*/
+}
+
+.material_element {
+    margin: 0px 9px 25px 9px;
+    border: 1px solid #DDD;
+    /*border: 1px solid #DDD;*/
+    /*border: 1px solid #ef7f1a;*/
+    /*width: 298px;*/
+}
+/*.material_element {
+    border: 1px solid #DDD;
+    width: 298px;
+    margin: 0px 9px 25px 9px;
+}*/
+
+.m_block.menu .horizontal_1_lvl.main li {
+    border-right: 1px solid #FFFFFF;
+}
+
+.m_block.menu .horizontal_1_lvl.main li a {
+    background: none;
+    color: #8B8B8B;
+}
+
+.m_block.menu .horizontal_1_lvl.main li a:hover,
+.m_block.menu .horizontal_1_lvl.main li.thisPage a {
+    background: #ef7f1a;
+    color: #FFFFFF;
+}
+
+.bottomWrapper {
+    background: none;
+}
+
+.bottomWrapper .bottomBottomWrapper {
+    border-top: 1px solid #ef7f1a;
+    background: none;
+}

@@ -1,0 +1,503 @@
+.ContactsTabsHead {
+    height: 30px;
+    margin-bottom: 10px;
+    background: #CDCDCD;
+/*    margin-left: 4px;
+    -webkit-transform: skew(-15deg);
+       -moz-transform: skew(-15deg);
+         -o-transform: skew(-15deg);*/
+}
+
+.ContactsTabsHead .ContactsTabsHeadElement {
+    float: left;
+    height: 30px;
+    text-transform: uppercase;
+    font: bold 16px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    padding: 0px 10px 0px 10px;
+    color: #fff;
+    /*text-shadow: 0 1px 1px rgba(0,0,0,0.5);*/
+    text-shadow: none;
+    border-right: 3px solid #fff;
+    cursor: pointer;
+}
+
+.ContactsTabsHead .ContactsTabsHeadElement:hover,
+.ContactsTabsHead .ContactsTabsHeadElement.OpenTab {
+    background: #ef7f1a;
+}
+
+
+.ContactsUnitsList {
+    /*display: none;*/
+}
+.ContactsUnitsList .ContactsUnitsListTitle {
+    height: 40px;
+    color: #4d4d4d;
+    font: bold 20px/40px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: center;
+}
+.ContactsUnitsList .ContactsUnitsListTopText {
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: justify;
+}
+.ContactsUnitsList .ContactsUnitsListBottomText {
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: justify;
+    margin-bottom: 20px;
+    color: #777;
+}
+.ContactsUnitsList .ContactsUnitsElement {
+    border-top: 2px solid #ef7f1a;
+    height: 200px;
+    margin-bottom: 10px;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo {
+    float: left;
+    width: 400px;
+    height: 200px;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementTitle {
+    text-align: center;
+    padding: 0px;
+    height: 30px;
+    color: #4f4f4f;
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+    font: bold 20px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    margin-bottom: 10px;
+}
+
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementContacts {
+    height: 150px;
+    width: 250px;
+    float: left;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementContacts .ContactsElement {
+    font: 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: left;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementTable {
+    height: 150px;
+    width: 150px;
+    float: right;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo .ContactsUnitsElementShowHide {
+    margin-top: 10px;
+    height: 50px;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButtonBlock {
+    font: 10px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButton {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+    background-position: bottom left;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButton:hover {
+    background-position: top left;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButton.active {
+    background-position: top left;
+}
+
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_feedback {
+    background-image: url('../img/contactsUnitIcon/feedback.png');
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_img {
+    background-image: url('../img/contactsUnitIcon/img.png');
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_map {
+    background-image: url('../img/contactsUnitIcon/map.png');
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementInfo 
+.ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_text {
+    background-image: url('../img/contactsUnitIcon/text.png');
+}
+
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementMoreInfo {
+    float: right;
+    width: 560px;
+    height: 200px;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementMoreInfo .ContactsUnitsElementIMG {
+    width: 560px;
+    height: 200px;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementMoreInfo .ContactsUnitsElementMap {
+    width: 560px;
+    height: 200px;
+    display: none;
+    
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementMoreInfo .ContactsUnitsElementText {
+    width: 540px;
+    height: 180px;
+    padding: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+    display: none;
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementMoreInfo .ContactsUnitsElementText p {
+    
+}
+.ContactsUnitsList .ContactsUnitsElement .ContactsUnitsElementMoreInfo .ContactsUnitsElementFeedback {
+    width: 560px;
+    height: 200px;
+    display: none;
+}
+
+.ContactsUnitsElementTable {
+    width: 150px;
+}
+
+.ContactsUnitsElementTable .time_table {
+    border-collapse: collapse;
+    border: none;
+    float: right;
+}
+
+.ContactsUnitsElementTable .time_table td {
+    border-collapse: collapse;
+    border: none;
+    font: bold 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    padding: 3px;
+}
+.ContactsUnitsElementTable .time_table td.time_table_text {
+    text-align: right;
+}
+.ContactsUnitsElementTable .mainDay {
+    color: #ef7f1a;
+}
+
+/* ContactsUnitsElementFeedback */
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback {
+    border: none;
+    border-collapse: collapse;
+    width: 560px;
+    height: 120px;
+    padding: 0px;
+    margin: 0px;
+}
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback,
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback td {
+    height: 26px;
+    border: none;
+    border-collapse: collapse;
+    padding: 2px;
+    margin: 0px;
+}
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback td.reviews_table_labelContactsFeedback{
+    font: 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: right;
+    width: 56px;
+}
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback td.reviews_table_inputContactsFeedback {
+    width: 196px;
+}
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback td.reviews_table_inputContactsFeedback.text {
+    width: 296px;
+}
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback 
+td.reviews_table_inputContactsFeedback input[type=text] {
+    width: 176px;
+}
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback 
+td.reviews_table_inputContactsFeedback .selectBox {
+    width: 196px;
+}
+
+.ContactsUnitsElementFeedback table.reviews_tableContactsFeedback 
+td.reviews_table_inputContactsFeedback.text .textareaContactsFeedback {
+    min-width: 276px;
+    min-height: 109px;
+    max-width: 276px;
+    max-height: 109px;
+    resize: none;
+}
+.ContactsUnitsElementFeedback .inf.infContactsFeedback {
+    text-align: right;
+}
+.ContactsUnitsElementFeedback .resultsContactsFeedback {
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    width: 540px;
+    height: 28px;
+    padding: 5px 10px;
+    margin-top: 10px; 
+}
+.ContactsUnitsElementFeedback input[type=submit].apelsin_buttonContactsFeedback {
+    background: #ef7f1a;
+    font: 12px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    font-weight: bold;
+    text-shadow: none;
+    color: #fff;
+    padding: 0 5px;
+    margin: 0;
+    border: none;
+}
+
+/* ContactsUnitsElementWokersBlock */
+.ContactsUnitsElementWokersBlock {
+    margin-bottom: 10px;
+}
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement {
+    width: 226px;
+    height: 110px;
+    /*height: 120px;*/
+    margin: 2px;
+    padding: 5px;
+    float: left;
+    background: rgba(255,255,255,0.75) url(../img/grid.png) repeat center center;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementFIO {
+    font: bold 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #ef7f1a;
+    text-align: right;
+}
+
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementPost {
+    font: bold 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #777;
+    text-align: right;
+}
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementInfo {
+    /*height: 50px;*/
+    font: 10px/11px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    color: #777;
+    text-align: justify;
+    margin: 5px 0px 5px 0px;
+}
+.ContactsUnitsElementWokersBlock .ContactsUnitsElementWokersElement .ContactsUnitsElementWokersElementContacts {
+    font: 10px/15px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+}
+
+
+
+/* ContactsUnitsBlocks */
+.ContactsUnitsBlocks {
+    width: 960px;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksMenu {
+    width: 195px;
+    float: left;
+    background: #CDCDCD;
+}
+
+.ContactsUnitsBlocks .ContactsUnitsBlocksMenu .ContactsUnitsBlocksMenuItem {
+    font: bold 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    height: auto;
+    padding: 7px 10px 7px 10px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: none;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+    text-align: left;
+}
+
+.ContactsUnitsBlocks .ContactsUnitsBlocksMenu .ContactsUnitsBlocksMenuItem:hover,
+.ContactsUnitsBlocks .ContactsUnitsBlocksMenu .ContactsUnitsBlocksMenuItem.ShowBlock {
+    background: #ef7f1a;
+}
+
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent {
+    margin-left: 200px
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItem {
+    display: none;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemTitle {
+    height: 27px;
+    text-transform: uppercase;
+    font: bold 14px/27px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    padding: 0px 10px 0px 10px;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    text-shadow: none;
+    background: #ef7f1a;
+    /*margin-bottom: 10px;*/
+    text-align: left;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemLeft {
+    width: 560px;
+    float: left;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemLeft .ContactsUnitsElementIMG {
+    width: 560px;
+    height: 200px;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemLeft .ContactsUnitsElementMap {
+    width: 560px;
+    height: 200px;
+    /*display: none;*/
+    
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemLeft .ContactsUnitsElementText {
+    width: 540px;
+    height: 180px;
+    padding: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+    display: none;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemLeft .ContactsUnitsElementText p {
+    
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemLeft .ContactsUnitsElementFeedback {
+    width: 560px;
+    height: 200px;
+    display: none;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemRight {
+    width: 180px;
+    float: right;
+    padding: 0px 10px 0px 10px;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemRight .ContactsUnitsBlocksContentItemInfo {
+    font: 13px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: center;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemRight .ContactsUnitsBlocksContentItemInfo .ContactsElement {
+    font: 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    padding: 3px 0px 3px 0px;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemRight .ContactsUnitsBlocksContentItemInfo .ContactsElement.adress {
+    font: bold 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    padding: 3px 10px 3px 10px;
+}
+
+
+
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemRight .ContactsUnitsElementTable {
+    margin: 0px 25px 10px 25px;
+}
+.ContactsUnitsBlocks .ContactsUnitsBlocksContent .ContactsUnitsBlocksContentItemRight .ContactsUnitsElementTable .time_table {
+    float: none;
+}
+
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide {
+    height: 30px;
+    margin-left: 50px;
+}
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButtonBlock {
+    font: 10px/30px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+    background-position: bottom left;
+}
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton:hover {
+    background-position: top left;
+}
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton.active {
+    background-position: top left;
+}
+
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_feedback {
+    background-image: url('../img/contactsUnitIcon/feedback.png');
+}
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_img {
+    background-image: url('../img/contactsUnitIcon/img.png');
+}
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_map {
+    background-image: url('../img/contactsUnitIcon/map.png');
+}
+.ContactsUnitsBlocks .ContactsUnitsElementShowHide .ContactsUnitsElementButton.ContactsUnitsElementButton_text {
+    background-image: url('../img/contactsUnitIcon/text.png');
+}
+
+/* ContactsUnitsMainList */
+
+.ContactsUnitsMainList {
+    /*clear: both;*/
+}
+
+.ContactsUnitsMainList .ContactsUnitsMainInfoElement {
+    margin-bottom: 25px;
+}
+
+.ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsMainInfoElementTitle {
+    height: 40px;
+    color: #4d4d4d;
+    font: bold 20px/40px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: center;
+}
+
+.ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsTypesElementInfo {
+    float: left;
+    width: 400px;
+}
+
+.ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsTypesElementInfo .ContactsUnitsTypesElementContacts {
+    padding: 0px 0px 10px 0px;
+    float: left;
+}
+
+.ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsTypesElementInfo .ContactsUnitsTypesElementContacts .ContactsElement {
+    font: bold 12px/14px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: left;
+}
+
+.ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsTypesElementInfo .ContactsUnitsTypesElementtimeTable {
+    float: right;
+    padding: 20px 0px 10px 0px;
+    /*border-right: 1px dotted #ccc;*/
+}
+
+.ContactsUnitsMainList .ContactsUnitsMainInfoElement .ContactsUnitsMainInfoElementText {
+    font: 11px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    width: 350px;
+    width: 540px;
+    height: 100%;
+    padding: 20px 0px 10px 9px;
+    float: left;
+    border-left: 1px dotted #ccc;
+}
+
+.ContactsUnitsTypesElementtimeTable {
+    float: right;
+    width: 160px;
+}
+
+.ContactsUnitsTypesElementtimeTable .time_table {
+    border-collapse: collapse;
+    border: none;
+    float: right;
+}
+
+.ContactsUnitsTypesElementtimeTable .time_table td {
+    border-collapse: collapse;
+    border: none;
+    font: bold 12px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    padding: 3px;
+}
+.ContactsUnitsTypesElementtimeTable .time_table td.time_table_text {
+    text-align: right;
+}
+.ContactsUnitsTypesElementtimeTable .mainDay {
+    color: #ef7f1a;
+}

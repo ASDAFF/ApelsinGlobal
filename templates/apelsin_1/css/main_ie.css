@@ -1,0 +1,37 @@
+.topBlock {
+    background: url(../img/header_ie.png) no-repeat center bottom;
+}
+
+.topFloatWrapper {
+    background: url(../img/glass/blackGlass50.png) repeat center center;
+}
+
+.HomeIcon,
+.mailIcon,
+.phoneIcon,
+.skypeIcon,
+.horizontal_1_lvl.main {
+    border-left: white 1px solid
+}
+
+.skypeIcon, 
+.m_block.langPanel,
+.horizontal_1_lvl.main li {
+    border-right: white 1px solid
+}
+
+.HomeIcon a:hover,
+.mailIcon a:hover,
+.phoneIcon a:hover,
+.skypeIcon a:hover,
+.wrapper-dropdown-2:hover,
+.horizontal_1_lvl.main li a:hover {
+    background: url(../img/glass/whiteGlass25.png);
+}
+
+.contentBlock .ContactsShopBuilding_contacts, 
+.contentBlock .ContactsDepartments_contacts,
+.contentBlock .ContactsDepartments_tableTime,
+.contentBlock .ContactsShopBuilding_tableTime {
+    background: url(../img/glass/whiteGlass75.png);
+}

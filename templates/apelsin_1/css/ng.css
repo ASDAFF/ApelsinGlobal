@@ -1,0 +1,9 @@
+.topWrapper {
+    background: #ccc url(../img/head-bg_ng.png) repeat center center;
+}
+
+.logoImg {
+    height: 120px;
+    background: url(../img/logo_ng.png) no-repeat center center;
+    margin: -40px 0px -15px -10px;
+}

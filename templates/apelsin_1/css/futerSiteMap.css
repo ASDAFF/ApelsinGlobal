@@ -1,0 +1,119 @@
+/* Общие стили */
+.futerSiteMapWrapper, .futerSiteMapMoreInfo {
+    margin-top: 5px;
+}
+/* Карта сайта */
+.futerSiteMapWrapper {
+    float: left;
+}
+.futerSiteMapWrapper a {
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+    color: #5f5f5f;
+}
+.futerSiteMapWrapper .SiteMapGroup {
+    float: left;
+    font: 11px/11px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+    color: #5f5f5f;
+}
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupTitleWrapper {
+    width: 100%;
+}
+
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupTitleWrapper .SiteMapGroupTitle a {
+    display: block;
+    font: bold 12px/20px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-align: center;
+}
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupTitleWrapper .SiteMapGroupTitle a:hover {
+    background: #EDEDED;
+}
+
+
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupElementBlock {
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    border-right: #EDEDED 1px solid;
+    min-height: 54px;
+    min-height: 36px;
+    margin-bottom: 10px;
+    border: none;
+}
+.futerSiteMapWrapper .SiteMapGroup.SiteMapGroup_site_pages .SiteMapGroupElementBlock:last-child {
+    border-right: #EDEDED 1px solid;
+}
+.futerSiteMapWrapper .SiteMapGroup.SiteMapGroup_information .SiteMapGroupElementBlock {
+    border: none;
+}
+
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupElementBlock .SiteMapGroupElement {
+    
+}
+
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupElementBlock 
+.SiteMapGroupElement .SiteMapGroupElementTitleWrapper{
+    
+}
+
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupElementBlock 
+.SiteMapGroupElement .SiteMapGroupElementTitleWrapper:hover{
+}
+
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupElementBlock 
+.SiteMapGroupElement .SiteMapGroupElementTitleWrapper .SiteMapGroupElementTitle{
+    padding: 0px 10px 0px 10px;
+}
+
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupElementBlock 
+.SiteMapGroupElement .SiteMapGroupElementTitleWrapper .SiteMapGroupElementTitle a{
+    display: block;
+    font: 11px/17px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    border-bottom: #EDEDED 1px dotted;
+}
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupElementBlock 
+.SiteMapGroupElement .SiteMapGroupElementTitleWrapper .SiteMapGroupElementTitle a:hover{
+    background: #EDEDED;
+}
+.futerSiteMapWrapper .SiteMapGroup .SiteMapGroupElementBlock 
+.SiteMapGroupElement:last-child .SiteMapGroupElementTitleWrapper .SiteMapGroupElementTitle a{
+    border: none;
+}
+
+/*  MapMoreInfo  */
+.futerSiteMapMoreInfo {
+    float: right;
+}
+.futerSiteMapMoreInfo a{
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+    color: #5f5f5f;
+}
+.futerSiteMapMoreInfo a:hover {
+    color: #333;
+}
+.futerSiteMapMoreInfo .SiteMapContacts {
+    font: 12px/12px "PT Sans",helvetica,"segoe UI",arial,sans-serif;
+    text-shadow: 0 1px 0px rgba(255,255,255,0.5);
+    color: #5f5f5f;
+    padding: 10px 0px 0px 0px;
+    text-align: right;
+}
+
+.futerSiteMapMoreInfo .SiteMapContacts .futerPhone {
+    padding: 2px 0px 0px 0px;
+}
+
+.futerSiteMapMoreInfo .SiteMapContacts .futerMail {
+    padding: 5px 0px 0px 0px;
+}
+
+.futerSiteMapMoreInfo .SiteMapContacts .futerAdress {
+    padding: 30px 0px 5px 0px;
+}
+
+.futerSiteMapMoreInfo .SiteMapContacts .futerCopy {
+    
+}
+
+.futerSiteMapMoreInfo .SiteMapContacts a {
+}
