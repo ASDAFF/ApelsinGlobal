@@ -34,11 +34,13 @@ class AP_VacanciesValidInserFromFile {
         $items = $xmlwebi->xmlwebi($this->dir.$this->fileName);
         $this->elements = array();
         $i = 0;
-        foreach ($items['BodyJobFile'][0]['#']['Item'] as $element) {
-            foreach ($this->elementsCells as $elementsCell) {
-                $this->elements[$i][$elementsCell['mysql']] = $this->getElementCellValue($element, $elementsCell['1c']);
+        if(isset($items['BodyJobFile'][0]['#']['Item'])) {
+            foreach ($items['BodyJobFile'][0]['#']['Item'] as $element) {
+                foreach ($this->elementsCells as $elementsCell) {
+                    $this->elements[$i][$elementsCell['mysql']] = $this->getElementCellValue($element, $elementsCell['1c']);
+                }
+                $i++;
             }
-            $i++;
         }
     }
 
